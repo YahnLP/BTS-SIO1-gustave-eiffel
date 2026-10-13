@@ -1,6 +1,11 @@
 title: Semestre 1
 nav:
   - README.md
+  - S01-hardware-software-composants
+  - S02-unites-debits-poste
+  - S03-processeurs-serveurs-choix
+  - S04-systemes-exploitation-windows
+  - S05-decouvrir-linux
   - S06-virtualisation-premieres-vm
   - S07-virtualisation-avancee
   - S08-terminal-commandes-de-base

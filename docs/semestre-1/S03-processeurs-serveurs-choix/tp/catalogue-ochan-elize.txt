@@ -1,0 +1,20 @@
+CATALOGUE FICTIF - Société Ochan-Elizé (S03)
+
+Document pédagogique : les PRIX sont inventés. Les modèles de processeur sont réels (Intel Core
+de 12e génération) ; leurs caractéristiques sont à vérifier par l'étudiant sur la fiche du
+constructeur et sur un site de benchmark. Toutes les machines sont des ordinateurs fixes
+compatibles Windows 11.
+
+Enveloppe budgétaire du projet : 25 000 EUR TTC (fictif), pour 22 postes.
+
+  Config  | Nom         | Processeur      | RAM          | Stockage        | Graphique            | Prix unitaire
+  --------+-------------+-----------------+--------------+-----------------+----------------------+--------------
+  C1      | Bureau      | Core i3-12100   | 8 Go DDR4    | SSD 256 Go      | intégré au processeur| 520 EUR
+  C2      | Polyvalent  | Core i5-12400   | 16 Go DDR4   | SSD NVMe 512 Go | intégré au processeur| 690 EUR
+  C3      | Développeur | Core i7-12700   | 32 Go DDR4   | SSD NVMe 1 To   | intégré au processeur| 980 EUR
+  C4      | Création    | Core i9-12900   | 32 Go DDR4   | SSD NVMe 1 To   | carte dédiée 12 Go   | 1 650 EUR
+
+Parc à équiper :
+  - 15 salariés : développement Web et applications mobiles
+  -  5 graphistes : design, pages Web, logos, charte graphique
+  -  2 salariés : recrutement et secrétariat (bureautique)

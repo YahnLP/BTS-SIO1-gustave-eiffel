@@ -1,0 +1,14 @@
+Questionnaire de positionnement - S01 (non noté, sert à situer le groupe)
+
+Réponds seul, sans chercher. "Je ne sais pas" est une réponse utile.
+
+ 1. Quelle différence fais-tu entre "hardware" et "software" ?
+ 2. Cite trois composants qui se trouvent à l'intérieur d'une unité centrale.
+ 3. À quoi sert la RAM ? Que devient son contenu quand on éteint l'ordinateur ?
+ 4. Quelle différence entre un disque dur (HDD) et un SSD ?
+ 5. Que signifient "Go" et "Gio" ? Sont-ils égaux ?
+ 6. Qu'est-ce qu'un système d'exploitation ? Cites-en deux.
+ 7. As-tu déjà ouvert un ordinateur ? Installé un système d'exploitation ?
+ 8. As-tu déjà utilisé un terminal (invite de commandes, PowerShell, bash) ?
+ 9. As-tu déjà utilisé une machine virtuelle ?
+10. Qu'attends-tu de cette formation ? Qu'est-ce qui t'inquiète le plus ?

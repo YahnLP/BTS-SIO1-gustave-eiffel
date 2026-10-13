@@ -18,7 +18,7 @@ Cours, TP et aide-mémoire de **BTS SIO option SISR, 1re année** (21 séances d
 
 ## Avancement
 
-Séances publiées : **S06 – Virtualisation : premières machines virtuelles**, **S07 – Virtualisation avancée**, **S08 – Terminal Linux, commandes de base** (séance modèle), **S09 – Utilisateurs, droits et liens** et **S10 – Paquets et premiers scripts Bash**. Les autres séances sont indiquées « à venir » dans les tableaux de progression.
+Séances publiées : **toutes les séances du semestre 1 (S01 à S10)** : hardware et culture informatique (S01 à S03), systèmes d'exploitation (S04 et S05), virtualisation (S06 et S07), terminal Linux (S08 à S10). Le semestre 2 (S11 à S21) est indiqué « à venir » dans son tableau de progression.
 
 ## Principe pédagogique
 

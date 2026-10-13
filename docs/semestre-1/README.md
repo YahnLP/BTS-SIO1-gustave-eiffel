@@ -9,11 +9,11 @@
 
 | Séance | Semaine | Section | Thème | Statut |
 |---|---|---|---|---|
-| S01 | 01 | Hardware et culture informatique | Accueil, diagnostic, vocabulaire hardware et software | à venir |
-| S02 | 02 | Hardware et culture informatique | Composants du poste, choix d'un matériel (appel d'offres) | à venir |
-| S03 | 03 | Hardware et culture informatique | Technologies des serveurs | à venir |
-| S04 | 04 | Systèmes d'exploitation | Rôle d'un système d'exploitation, installer et prendre en main Windows | à venir |
-| S05 | 05 | Systèmes d'exploitation | Découvrir Linux | à venir |
+| S01 | 01 | Hardware et culture informatique | [Hardware et software : vocabulaire et composants](S01-hardware-software-composants/README.md) | **disponible** |
+| S02 | 02 | Hardware et culture informatique | [Unités, débits et analyse d'un poste de travail](S02-unites-debits-poste/README.md) | **disponible** |
+| S03 | 03 | Hardware et culture informatique | [Processeurs, serveurs et choix d'un matériel](S03-processeurs-serveurs-choix/README.md) | **disponible** |
+| S04 | 04 | Systèmes d'exploitation | [Système d'exploitation, démarrage et prise en main de Windows](S04-systemes-exploitation-windows/README.md) | **disponible** |
+| S05 | 05 | Systèmes d'exploitation | [Découvrir Linux](S05-decouvrir-linux/README.md) | **disponible** |
 | S06 | 06 | Virtualisation | [Hyperviseurs, premières machines virtuelles](S06-virtualisation-premieres-vm/README.md) | **disponible** |
 | S07 | 07 | Virtualisation | [Virtualisation avancée : réseau, snapshots, Guest Additions](S07-virtualisation-avancee/README.md) | **disponible** |
 | S08 | 08 | Terminal Linux (bash) | [Commandes de base](S08-terminal-commandes-de-base/README.md) | **disponible** |
