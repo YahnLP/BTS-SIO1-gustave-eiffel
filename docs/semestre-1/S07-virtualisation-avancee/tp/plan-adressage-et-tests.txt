@@ -1,0 +1,26 @@
+Plan d'adressage et tableau de tests (TP S07)
+
+Reseau interne "LAN" (etapes de la partie E)
+  VM Windows : 192.168.100.1   masque 255.255.255.0
+  VM Kali    : 192.168.100.2   masque 255.255.255.0
+  (adresses de l'exemple de la trace ecrite ; pas de passerelle)
+
+Modes a tester, dans l'ordre :
+  1. Acces par pont      (carte reliee au reseau du lycee)
+  2. NAT
+  3. Reseau NAT
+  4. Reseau interne "LAN"
+  5. Reseau interne : "LAN" pour Windows et "LAN2" pour Kali
+
+Rappel : apres chaque changement de mode dans VirtualBox, desactiver puis reactiver
+la carte reseau dans le systeme de la VM pour relancer sa configuration reseau.
+
+Tableau a completer (OK = reponse au ping, KO = pas de reponse, a copier dans le compte rendu) :
+
+Mode                     | Adresse Windows | Adresse Kali | W -> K | K -> W | W -> hote | K -> hote | Internet
+-------------------------|-----------------|--------------|--------|--------|-----------|-----------|---------
+Acces par pont           |                 |              |        |        |           |           |
+NAT                      |                 |              |        |        |           |           |
+Reseau NAT               |                 |              |        |        |           |           |
+Reseau interne (LAN)     |                 |              |        |        |           |           |
+Reseau interne (LAN/LAN2)|                 |              |        |        |           |           |
