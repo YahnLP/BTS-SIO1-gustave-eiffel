@@ -14,7 +14,7 @@ Les « Éléments de réponse » sont repliés dans le TP. Ce document ajoute le
 | Projet GNU annoncé | septembre 1983 |
 | Proposition du Web (CERN) | mars 1989 |
 | Annonce du noyau Linux | août 1991 |
-| Création de Debian | août 1993 |
+| Création de Debian | août 1994 |
 | Première version d'Ubuntu | octobre 2004 |
 | Windows 11 | octobre 2021 |
 

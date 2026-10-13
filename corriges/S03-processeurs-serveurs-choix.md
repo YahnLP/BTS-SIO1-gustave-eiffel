@@ -8,7 +8,7 @@ Les réponses des parties A à E sont repliées dans le TP. Ce document ajoute l
 
 | Critère | i3-12100 | i5-12400 | i7-12700 | i9-12900 |
 |---|---|---|---|---|
-| Cœurs / threads | 4 / 8 | 6 / 12 | 12 (8 P + 4 E) / 20 | 16 (8 P + 8 E) / 24 |
+| Cœurs / threads | 4 / 8 | 6 / 14 | 12 (8 P + 4 E) / 20 | 16 (8 P + 8 E) / 24 |
 | Turbo maximal | ≈ 4,3 GHz | ≈ 4,4 GHz | ≈ 4,9 GHz | ≈ 5,1 GHz |
 | Cache L3 | ≈ 12 Mo | ≈ 18 Mo | ≈ 25 Mo | ≈ 30 Mo |
 | TDP de base | ≈ 60 W | ≈ 65 W | ≈ 65 W | ≈ 65 W |

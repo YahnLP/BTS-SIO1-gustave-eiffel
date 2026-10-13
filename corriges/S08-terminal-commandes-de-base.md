@@ -10,7 +10,7 @@ Réponse attendue sur NAT / accès par pont : voir « Éléments de réponse » 
 
 | Étape | Éléments attendus |
 |---|---|
-| 1 | `sudo reboot` : la VM redémarre ; mot de passe de l'utilisateur demandé |
+| 1 | `sudo reboot` : la VM redémarre ; mot de passe de root demandé |
 | 2 | `su -` (mot de passe de root) ou `sudo -i` (mot de passe de l'utilisateur) ; le prompt se termine par `#` ; `exit` pour sortir |
 | 3 | Les flèches parcourent les commandes déjà tapées |
 | 4 | `Ctrl + R` : recherche inversée dans l'historique, la commande complète est proposée |

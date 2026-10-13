@@ -10,7 +10,7 @@ Les commandes de la mission ont été **rejouées dans le moteur de DockerLab** 
 
 | Preuve | Résultat observé dans le moteur |
 |---|---|
-| P1 `docker ps` | `jc-web` publie `0.0.0.0:8080->80/tcp` ; `jc-db` n'affiche que `5432/tcp` (non publié) |
+| P1 `docker ps` | `jc-web` publie `0.0.0.0:8080->80/tcp` ; `jc-db` n'affiche que `3306/tcp` (non publié) |
 | P2 `curl localhost:8080` | affiche la page écrite dans le volume |
 | P3 ping depuis alpine sur le réseau | `PING jc-db (172.18.0.2)` : résolu par le DNS interne |
 | P4 ping depuis alpine hors réseau | `ping: bad address 'jc-db'` |

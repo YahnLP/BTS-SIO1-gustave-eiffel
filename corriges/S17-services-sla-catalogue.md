@@ -8,7 +8,7 @@ Les réponses aux questions sont repliées dans le TP. Les éléments d'InfraLab
 
 | TP | Éléments |
 |---|---|
-| 22 SLA | Deux tickets attendent depuis 10 minutes (temps simulé) ; le premier bloque la comptabilité (P1 : 15 min / 4 h) ; le SLA court dès la création ; « en attente » suspend l'horloge de résolution |
+| 22 SLA | Deux tickets attendent depuis 10 minutes (temps simulé) ; le premier bloque la comptabilité (P1 : 15 min / 6 h) ; le SLA court dès la création ; « en attente » suspend l'horloge de résolution |
 | 41 Week-end | Vendredi 17 h, imprimante, P3 (24 h) ; lundi 7 h, affiché « dépassé » avec un calendrier continu ; à régler en heures ouvrées (lundi–vendredi 8 h–18 h), puis choisir le calendrier d'un service promis 24 h / 24 |
 | 20 Incident majeur | Commutateur central du siège éteint ; comptabilité P1, imprimante P4 ; rallumer, informer sur le ticket principal, résoudre et documenter le ticket de la comptabilité |
 

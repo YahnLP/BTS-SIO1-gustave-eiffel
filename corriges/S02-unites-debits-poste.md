@@ -8,7 +8,7 @@ Les parties A et B sont corrigées dans le TP (réponses repliées). Ce document
 
 | Calcul | Résultat |
 |---|---|
-| 10¹² ÷ 2³⁰ | 931,32 Gio |
+| 10¹² ÷ 2³⁰ | 931,23 Gio |
 | 500 × 10⁹ ÷ 2³⁰ | 465,66 Gio |
 | 32 × 10⁹ ÷ 2³⁰ | 29,80 Gio |
 | 4,7 × 10⁹ ÷ 2³⁰ | 4,377 Gio |

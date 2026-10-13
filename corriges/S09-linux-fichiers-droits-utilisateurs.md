@@ -14,7 +14,7 @@ Les commandes de ce TP ont été essayées dans un environnement Ubuntu 24.04 (p
 |---|---|
 | 2 | `mkdir CommandesLinux && cd CommandesLinux` |
 | 3 | `mkdir -p cours1/cours2/cours3/cours4` |
-| 4 | `ls -R` |
+| 4 | `ls -r` |
 | 5 | `rmdir cours1` : échec (« Directory not empty ») |
 | 6 | `rm -r cours1` ou `rmdir -p cours1/cours2/cours3/cours4` ; vérification avec `ls -R` |
 | structure | `mkdir -p couleur/froide forme/angle forme/courbe` |

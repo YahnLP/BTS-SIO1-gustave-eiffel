@@ -6,7 +6,7 @@ Le script de référence est dans `corriges/S10-create_tp.sh`. Il a été testé
 
 ## Partie A
 
-Selon l'image : `tree` absent au départ (`which tree` ne renvoie rien) ; `apt show tree` affiche version et dépendances ; `apt update` rafraîchit la liste ; l'installation annonce les paquets supplémentaires éventuels ; `dpkg -L tree` liste les fichiers ; `apt -s upgrade` simule ; après `remove`, `which tree` ne renvoie plus rien.
+Selon l'image : `tree` absent au départ (`which tree` ne renvoie rien) ; `apt show tree` affiche version et dépendances ; `apt update` met à jour les paquets installés ; l'installation annonce les paquets supplémentaires éventuels ; `dpkg -L tree` liste les fichiers ; `apt -s upgrade` simule ; après `remove`, `which tree` ne renvoie plus rien.
 
 ## Partie B
 

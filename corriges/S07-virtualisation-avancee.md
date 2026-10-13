@@ -17,7 +17,7 @@ Déduits du cours ; **non vérifiés** sur un poste de la salle.
 | Mode | Entre VM | Vers l'hôte | Vers Internet | Remarque |
 |---|---|---|---|---|
 | Accès par pont | oui | oui | oui | adresses fournies par le DHCP du lycée (ou statiques) ; `ping` Windows souvent bloqué par le pare-feu |
-| NAT | non | non selon la trace (à vérifier) | oui | chaque VM a `10.0.2.15` par défaut |
+| NAT | non | non (à vérifier) | oui | chaque VM a `10.0.2.15` par défaut |
 | Réseau NAT | oui | non | oui | nécessite un réseau NAT créé dans VirtualBox |
 | Réseau interne `LAN` | oui | non | non | adresses manuelles `192.168.100.1` et `.2` |
 | Réseau interne `LAN` / `LAN2` | non | non | non | deux réseaux distincts : le nom est l'étiquette du réseau |

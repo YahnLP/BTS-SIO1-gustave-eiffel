@@ -6,7 +6,7 @@
 
 ## TP 40 : solution du catalogue
 
-1. Lier les trois tickets à leurs postes ; rallumer l'équipement amont éteint (le commutateur SW02).
+1. Lier les trois tickets à leurs postes ; rallumer l'équipement amont éteint (le commutateur SW03).
 2. Installer l'agent sur les quatre postes et forcer l'inventaire.
 3. Affecter PC22 à Chloé Dubois, déclarer 4 licences Office, créer Karim Benali comme technicien (sans droit d'administration).
 4. Résoudre et documenter les tickets (dans les délais), créer le **problème** avec sa cause racine, préparer et faire **approuver** le changement (remplacement de SW02) par Éric Moreau.

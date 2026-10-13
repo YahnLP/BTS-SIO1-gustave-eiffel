@@ -11,7 +11,7 @@ Les réponses sont repliées dans le TP. Ce document ajoute la vérification du 
 | Lignes | 19 (1 en-tête + 18 équipements) |
 | Colonnes par ligne | 12 pour toutes les lignes |
 | Numéros de série en double | `SN-A100201`, `SN-A200311` |
-| Numéros de série vides | INV-0007, INV-0012 |
+| Numéros de série vides | INV-0007, INV-0011 |
 | Valeurs de `etat` | `En service` ×13, `en service` ×1, `EN SERVICE ` ×1, `Actif` ×1, `En panne` ×1, `Retire` ×1 |
 | Dates hors format ISO | INV-0004 (`13/02/2024`) |
 | Date future | INV-0015 (`2027-03-01`) |
