@@ -1,0 +1,36 @@
+title: CCNA
+nav:
+  - README.md
+  - feuille-de-route.md
+  - glossaire-ccna.md
+  - 1-01-equipements-architectures
+  - 1-02-interfaces-diagnostic
+  - 1-03-tcp-udp-postes
+  - 1-04-ipv4-vlsm
+  - 1-05-ipv6
+  - 1-06-sans-fil-bases
+  - 2-01-commutation-vlan
+  - 2-02-trunk-inter-vlan
+  - 2-03-lldp-etherchannel
+  - 2-04-stp
+  - 2-05-sans-fil-cisco-gestion
+  - 3-01-table-routage
+  - 3-02-routage-statique
+  - 3-03-ospf
+  - 3-04-redondance-premier-saut
+  - 4-01-nat
+  - 4-02-dhcp-dns
+  - 4-03-ntp-snmp-syslog
+  - 4-04-qos
+  - 4-05-ssh-tftp
+  - 5-01-concepts-securite
+  - 5-02-acces-equipements-aaa
+  - 5-03-acl
+  - 5-04-securite-couche2
+  - 5-05-vpn-ipsec
+  - 5-06-securite-wifi
+  - 6-01-automatisation-controleurs
+  - 6-02-api-rest-json
+  - 6-03-ansible-terraform
+  - 7-01-depannage-reseau
+  - examen-blanc
