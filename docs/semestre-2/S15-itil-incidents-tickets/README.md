@@ -28,7 +28,7 @@
 | Document | Rôle |
 |---|---|
 | [Cours](01-cours.md) | ITIL, service, vocabulaire, priorités, SLA, centre de services, niveaux, tickets dans GLPI |
-| [TP : un centre de services](02-tp.md) | Classer, prioriser, rédiger, InfraLab (TP 14, 21, 47), deux tickets dans GLPI, jeu de rôle facultatif, bilan |
+| [TP : un centre de services](02-tp.md) | Classer, prioriser, rédiger, InfraLab (TP 14, 21, 47), deux tickets dans GLPI, jeu de rôle, bilan |
 | [Aide-mémoire](03-aide-memoire.md) | Matrice, statuts, structure d'un ticket |
 | [Fiche de ticket](tp/fiche-ticket-incident.txt) | Modèle papier pour la rédaction préalable |
 | [Grille d'observation](tp/grille-observation-jeu-de-role.txt) | Pour le jeu de rôle |
@@ -43,10 +43,10 @@
 | 1 h 00 – 1 h 15 | **TP partie B** : rédiger un ticket | Binôme |
 | 1 h 15 – 1 h 45 | **TP partie C1 (InfraLab)** : TP 14 « Priorité : impact et urgence » | Binôme, navigateur |
 | 1 h 45 – 2 h 00 | Pause | |
-| 2 h 00 – 2 h 30 | **TP partie C2 (InfraLab)** : TP 21 « Incident ou demande ? » | Binôme |
+| 2 h 00 – 2 h 30 | **TP partie C2 (InfraLab)** : TP 21 « Incident ou demande ? » (remédiation ou plus rapides ; les autres avancent sur C3) | Binôme |
 | 2 h 30 – 3 h 10 | **TP partie C3 (InfraLab)** : TP 47 « Passer la main : l'escalade » | Binôme |
 | 3 h 10 – 3 h 45 | **TP partie D** : préparer GLPI et traiter deux tickets | Individuel |
-| 3 h 45 – 4 h 00 | **Bilan de compétences** (le jeu de rôle, partie E, est facultatif ou en remédiation) | Individuel |
+| 3 h 45 – 4 h 00 | **Bilan de compétences** (précédé du jeu de rôle, partie E, à placer après la partie D si le temps le permet, sinon à reprendre en début de S16) | Individuel |
 
 > [!WARNING]
 > **Séance dense.** Durées à valider en classe. Si le temps manque : la partie D (GLPI) est réduite à la préparation et au ticket 1, ou renvoyée en début de S16.

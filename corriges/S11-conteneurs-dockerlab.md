@@ -30,3 +30,9 @@ Les commandes de la mission ont été **rejouées dans le moteur de DockerLab** 
 
 - Les parties A à D **réutilisent** quatre TP intégrés à DockerLab plutôt que d'en réécrire : cohérence avec l'outil et vérification automatique. Si l'auteur modifie ces TP, la page de TP reste valable tant que les intitulés restent les mêmes.
 - **Barème indicatif (sur 20) :** parties A à D (10 points : captures + réponses « Je comprends ») ; mission (8 points : cahier des charges 4, preuves P1 à P6 3, schéma 1) ; qualité du compte rendu et du journal (2).
+
+## Parties F et G (ajoutées)
+
+- **Non testé** dans l'environnement de rédaction : `apt install docker.io` (paquet de la distribution Debian), les commandes `docker run` et l'accès aux dépôts depuis le réseau du CFA. **À essayer une fois avant la séance.** Si le réseau du CFA bloque le registre d'images, prévoir un travail hors CFA ou une alternative (page Web locale avec le serveur Web installé en S10, par exemple).
+- On valide la **trace** (captures datées, commande et résultat), pas un résultat unique. La fiche R1 est notée sur la complétude des rubriques (annexe VII-1-A), pas sur la technique.
+- Barème : à ajouter 4 points sur 20 (F : 3, G : 1) en réduisant d'autant la partie E.

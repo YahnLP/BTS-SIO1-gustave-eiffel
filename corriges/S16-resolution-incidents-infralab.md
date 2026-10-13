@@ -63,3 +63,8 @@ Le **score d'InfraLab** n'entre pas dans la note : il mesure la complétion et l
 ## Compétences
 
 B1.2 et B2.3 sont une proposition à valider (voir le référentiel du dépôt).
+
+## Partie E (ajoutée)
+
+- **Non testé** : les pannes proposées (câble virtuel décoché, DNS modifié) et les commandes sont standard mais n'ont pas été jouées dans une VM pour cette séance. Le choix de la panne appartient au binôme ; l'enseignant peut imposer une liste.
+- Évaluer : méthode (ordre des tests), journal, clôture du ticket, **message à l'utilisateur** (compréhensible, sans jargon). Cette partie couvre l'indicateur de communication orale/écrite adaptée à l'interlocuteur.

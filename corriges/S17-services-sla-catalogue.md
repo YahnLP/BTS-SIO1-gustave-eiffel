@@ -49,3 +49,8 @@ Le **score d'InfraLab** n'entre pas dans la note.
 ## Compétences
 
 B1.5 et B1.2 sont une proposition à valider (voir le référentiel du dépôt).
+
+## Partie E (ajoutée)
+
+- **Non vérifié** : les intitulés exacts des menus GLPI pour les SLA, calendriers, catégories et gabarits de tickets (variable selon la version). La consigne demande volontairement à l'élève de les repérer et de les noter. Essayer sur la version installée en S13 avant la séance.
+- Valider la **cohérence** entre la fiche de service de la partie D et le SLA configuré (délais, calendrier).

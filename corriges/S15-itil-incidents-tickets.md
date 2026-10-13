@@ -34,10 +34,14 @@ Les réponses aux questions sont repliées dans le TP. **Aucune manipulation n'a
 | InfraLab partie C : constats et justifications (priorité, incident ou demande, escalade) | 7 |
 | Préparation de GLPI (groupes, demandeur, catégories, correspondance des priorités) | 2 |
 | Deux tickets GLPI (création, lien, affectation, escalade, solution, clôture) et temps de résolution comparé | 4 |
-| Jeu de rôle et grille d'observation (facultatif : sinon points reportés sur C) | 2 |
+| Jeu de rôle et grille d'observation (obligatoire : communication orale adaptée) | 2 |
 
 **Matrice d'InfraLab** (lue dans `src/itsm/taxonomy.ts`) : impact élevé / urgence élevée → P1 ; élevé / moyenne → P2 ; élevé / faible → P3 ; moyen / élevée → P2 ; moyen / moyenne → P3 ; moyen / faible → P4 ; faible / élevée → P3 ; faible / moyenne → P4 ; faible / faible → P4.
 
 ## Compétences
 
 B1.2 et B1.1 sont une proposition à valider (voir le référentiel du dépôt).
+
+## Rétablissement du jeu de rôle
+
+Le jeu de rôle avait été rendu facultatif ; il est **rétabli** car il évalue la communication orale adaptée à l'interlocuteur. Contrepartie de temps : le TP 21 (partie C2) passe en remédiation ou pour les plus rapides. Le déroulé du README est à ajuster à la classe : si les parties A à D occupent 3 h 45, le jeu de rôle est repris au début de S16.
