@@ -1,0 +1,19 @@
+Captures d'écran à fournir dans le compte rendu (TP S06 : ma première machine virtuelle)
+
+Partie B - Créer la machine virtuelle
+  1. Résumé de la configuration de la VM Windows dans VirtualBox (nom, système, mémoire, processeurs, disque, réseau)
+
+Partie C - Créer l'ISO (si l'ISO n'est pas fournie)
+  2. Fichier ISO créé, avec son emplacement et sa taille
+
+Partie D - Installer le système
+  3. Emplacements de stockage de la VM (disque dur et disque optique avec l'ISO)
+  4. Fin de la préparation du système (écran de bureau ou de première ouverture)
+
+Partie E - Analyser l'environnement
+  5. Gestionnaire de tâches de l'hôte AVANT le lancement de la VM
+  6. Gestionnaire de tâches de l'hôte APRES le lancement de la VM
+
+Partie F - VM Ubuntu en autonomie
+  7. Configuration de la VM Ubuntu dans VirtualBox
+  8. Bureau Ubuntu dans la VM

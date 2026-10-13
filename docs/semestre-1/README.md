@@ -14,7 +14,7 @@
 | S03 | 03 | Hardware et culture informatique | Technologies des serveurs | à venir |
 | S04 | 04 | Systèmes d'exploitation | Rôle d'un système d'exploitation, installer et prendre en main Windows | à venir |
 | S05 | 05 | Systèmes d'exploitation | Découvrir Linux | à venir |
-| S06 | 06 | Virtualisation | Hyperviseurs, premières machines virtuelles | à venir |
+| S06 | 06 | Virtualisation | [Hyperviseurs, premières machines virtuelles](S06-virtualisation-premieres-vm/README.md) | **disponible** |
 | S07 | 07 | Virtualisation | Virtualisation avancée : réseau, stockage, snapshots | à venir |
 | S08 | 08 | Terminal Linux (bash) | [Commandes de base](S08-terminal-commandes-de-base/README.md) | **disponible** |
 | S09 | 09 | Terminal Linux (bash) | Fichiers, droits, utilisateurs | à venir |
