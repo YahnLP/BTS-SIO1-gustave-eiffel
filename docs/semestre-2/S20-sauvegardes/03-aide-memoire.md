@@ -2,6 +2,8 @@
 
 *BTS SIO SISR 1re année – S20*
 
+> Un mot ou un sigle inconnu ? Passe la souris dessus, ou ouvre le [glossaire](../../ressources/glossaire.md). Repère <span class="technique">notion technique</span> : à lire sans l'apprendre par cœur.
+
 ## Vocabulaire
 
 | Terme | Sens |
@@ -23,12 +25,19 @@
 | Synchroniser | `rsync -a source/ destination/` |
 | Simuler | `rsync -a --dry-run -v source/ destination/` |
 | Empreinte | `sha256sum fichier` |
+| Chiffrer avec une phrase secrète | `gpg --symmetric --cipher-algo AES256 fichier` |
+| Déchiffrer | `gpg --output sortie --decrypt fichier.gpg` |
 | Comparer deux dossiers | `diff -r dossier1 dossier2` |
 | Exporter une base | `sudo mysqldump --single-transaction glpi > glpi-$(date +%F).sql` |
 | Restaurer dans une base de test | `sudo mysql glpi_restauration < glpi-AAAA-MM-JJ.sql` |
 | Lister les fichiers de plus de 7 jours | `find /chemin -name 'glpi-*.sql' -mtime +7 -print` |
 
 > `rsync source/ dest/` copie le **contenu** de `source` ; sans barre finale, elle copie le **dossier**. `--delete` supprime en destination ce qui n'existe plus à la source : danger.
+
+## Pour aller plus loin <span class="technique">notion technique</span>
+
+- **PCA** (plan de continuité) : comment l'activité **continue** pendant l'incident.
+- **PRA** (plan de reprise) : comment on **redémarre** après l'interruption.
 
 ## Rappels
 

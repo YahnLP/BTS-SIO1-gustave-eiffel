@@ -2,6 +2,8 @@
 
 *BTS SIO SISR 1re année – S09*
 
+> Un mot ou un sigle inconnu ? Passe la souris dessus, ou ouvre le [glossaire](../../ressources/glossaire.md). Repère <span class="technique">notion technique</span> : à lire sans l'apprendre par cœur.
+
 ## Utilisateurs et groupes
 
 | Je veux… | Commande |
@@ -36,14 +38,14 @@ drwxrws--- 2 root grp-commerce 4096 oct. 14 09:12 commerce
 
 | Commande | Exemple |
 |---|---|
-| `chmod` octal | `chmod 750 dossier` = `rwxr-x---` |
+| `chmod` octal (`r`=4, `w`=2, `x`=1, on additionne) | `chmod 750 dossier` = `rwxr-x---` ; `640` = `rw-r-----` |
 | `chmod` symbolique | `chmod g+w f` · `chmod o-rwx f` · `chmod u=rwx,g=rx,o= f` |
 | setgid (groupe hérité) | `chmod 2770 dossier` ou `chmod g+s dossier` |
 | tout le contenu | `chmod -R …` |
 | propriétaire et groupe | `sudo chown utilisateur:groupe fichier` · `sudo chgrp groupe fichier` |
-| voir les droits par défaut | `umask` |
+| voir les droits par défaut <span class="technique">notion technique</span> | `umask` |
 
-## Liens
+## Liens <span class="technique">notion technique</span>
 
 | | Lien dur | Lien symbolique |
 |---|---|---|

@@ -2,6 +2,8 @@
 
 *BTS SIO SISR 1re année – S05*
 
+> Un mot ou un sigle inconnu ? Passe la souris dessus, ou ouvre le [glossaire](../../ressources/glossaire.md). Repère <span class="technique">notion technique</span> : à lire sans l'apprendre par cœur.
+
 ## Vocabulaire
 
 | Mot | Sens |

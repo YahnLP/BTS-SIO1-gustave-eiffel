@@ -2,6 +2,8 @@
 
 *BTS SIO SISR 1re année – S03*
 
+> Un mot ou un sigle inconnu ? Passe la souris dessus, ou ouvre le [glossaire](../../ressources/glossaire.md). Repère <span class="technique">notion technique</span> : à lire sans l'apprendre par cœur.
+
 ## Lire un processeur
 
 | Critère | Question à se poser |
@@ -28,8 +30,8 @@
 | 0 | 2 | n × taille | 0 |
 | 1 | 2 | 1 × taille | 1 |
 | 5 | 3 | (n − 1) × taille | 1 |
-| 6 | 4 | (n − 2) × taille | 2 |
-| 10 | 4 | (n ÷ 2) × taille | 1 au minimum |
+| 6 <span class="technique">notion technique</span> | 4 | (n − 2) × taille | 2 |
+| 10 <span class="technique">notion technique</span> | 4 | (n ÷ 2) × taille | 1 au minimum |
 
 **RAID ≠ sauvegarde.**
 
@@ -46,5 +48,5 @@
 | ECC | Mémoire qui corrige certaines erreurs |
 | Hot-swap | Remplacement à chaud d'un disque |
 | U | Unité de hauteur en baie : 44,45 mm |
-| NUMA | Accès mémoire plus rapide vers son propre processeur |
+| NUMA <span class="technique">notion technique</span> | Accès mémoire plus rapide vers son propre processeur |
 | PUE | Énergie totale du site ÷ énergie des équipements informatiques |

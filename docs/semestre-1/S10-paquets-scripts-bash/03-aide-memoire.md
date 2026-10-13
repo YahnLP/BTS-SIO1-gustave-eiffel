@@ -2,6 +2,8 @@
 
 *BTS SIO SISR 1re année – S10*
 
+> Un mot ou un sigle inconnu ? Passe la souris dessus, ou ouvre le [glossaire](../../ressources/glossaire.md). Repère <span class="technique">notion technique</span> : à lire sans l'apprendre par cœur.
+
 ## Paquets Debian (`apt`)
 
 | Je veux… | Commande |
@@ -46,7 +48,7 @@ done
 | commentaire | `# texte` |
 | variable · usage | `NOM="x"` (pas d'espace autour du `=`) · `"$NOM"` |
 | argument · nombre | `$1`, `$2` · `$#` |
-| valeur par défaut | `"${1:-defaut}"` |
+| valeur par défaut <span class="technique">notion technique</span> | `"${1:-defaut}"` |
 | liste · parcours | `L=("a b" "c")` · `for e in "${L[@]}"; do … done` |
 | condition | `if [ test ]; then … elif … else … fi` |
 | code de retour · arrêt | `$?` · `exit 1` |

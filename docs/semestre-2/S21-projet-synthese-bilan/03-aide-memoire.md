@@ -2,12 +2,25 @@
 
 *BTS SIO SISR 1re année – S21*
 
+> Un mot ou un sigle inconnu ? Passe la souris dessus, ou ouvre le [glossaire](../../ressources/glossaire.md). Repère <span class="technique">notion technique</span> : à lire sans l'apprendre par cœur.
+
 ## Ordre d'un lundi chargé
 
 1. **Rétablir** le service (qui est bloqué ?)
 2. **Rendre l'outil fiable** (inventaire, affectations, licences)
 3. **Donner les droits justes** (moindre privilège)
 4. **Comprendre et prévenir** (problème, cause racine, changement approuvé)
+
+## Vocabulaire de l'examen
+
+| Mot | Sens |
+|---|---|
+| Réalisation professionnelle | un travail que **tu** as mené, décrit et prouvé |
+| Fiche de réalisation | décrit le contexte, le besoin, le travail et les preuves |
+| Portfolio | dossier numérique de tes preuves, accessible au jury |
+| Tableau de synthèse | relie réalisations et compétences |
+| Entretien d'explicitation | tu expliques ce que tu as fait et pourquoi |
+| Recette | on montre que la réalisation fonctionne |
 
 ## Incident, problème, changement
 

@@ -2,6 +2,8 @@
 
 *BTS SIO SISR 1re année – S12*
 
+> Un mot ou un sigle inconnu ? Passe la souris dessus, ou ouvre le [glossaire](../../ressources/glossaire.md). Repère <span class="technique">notion technique</span> : à lire sans l'apprendre par cœur.
+
 ## Vocabulaire
 
 | Mot | Sens |
@@ -11,7 +13,7 @@
 | CMDB | Base de données des CI et de leurs relations |
 | Identifiant d'inventaire | Numéro unique et stable collé sur l'équipement |
 | Agent | Programme installé sur le poste qui collecte l'inventaire |
-| Agentless | Inventaire à distance sans agent (SNMP, WMI) |
+| Agentless | Inventaire à distance sans agent (SNMP, WMI <span class="technique">notion technique</span>) |
 | Charte informatique | Règles d'usage signées par les utilisateurs |
 
 ## Attributs d'une fiche

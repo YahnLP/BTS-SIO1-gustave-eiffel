@@ -2,6 +2,8 @@
 
 *BTS SIO SISR 1re année – S16*
 
+> Un mot ou un sigle inconnu ? Passe la souris dessus, ou ouvre le [glossaire](../../ressources/glossaire.md). Repère <span class="technique">notion technique</span> : à lire sans l'apprendre par cœur.
+
 ## Les sept étapes
 
 Signalement → enregistrement → qualification → diagnostic → résolution → validation → clôture.

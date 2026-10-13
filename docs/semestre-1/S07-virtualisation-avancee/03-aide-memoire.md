@@ -2,6 +2,8 @@
 
 *BTS SIO SISR 1re année – S07*
 
+> Un mot ou un sigle inconnu ? Passe la souris dessus, ou ouvre le [glossaire](../../ressources/glossaire.md). Repère <span class="technique">notion technique</span> : à lire sans l'apprendre par cœur.
+
 ## Modes réseau de VirtualBox
 
 | Mode | DHCP | Entre VM | Internet | Hôte | Quand le choisir |

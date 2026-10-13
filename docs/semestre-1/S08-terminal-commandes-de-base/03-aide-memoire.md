@@ -2,6 +2,8 @@
 
 *BTS SIO SISR 1re année – S08*
 
+> Un mot ou un sigle inconnu ? Passe la souris dessus, ou ouvre le [glossaire](../../ressources/glossaire.md). Repère <span class="technique">notion technique</span> : à lire sans l'apprendre par cœur.
+
 ## Se repérer et naviguer
 
 | Commande | Rôle |
@@ -12,6 +14,14 @@
 | `cd ..` · `cd -` · `cd` | remonter d'un niveau · revenir au dossier précédent · aller au dossier personnel |
 | `clear` (ou `Ctrl + L`) | effacer l'écran |
 | `exit` | fermer la session |
+
+## Rediriger et enchaîner
+
+| Symbole | Effet |
+|---|---|
+| `commande > fichier` | écrit le résultat dans un fichier (**écrase**) |
+| `commande >> fichier` | **ajoute** le résultat à la fin du fichier |
+| `commande1 \| commande2` | le résultat de la 1re devient l'entrée de la 2e |
 
 ## Chemins
 
@@ -32,9 +42,9 @@
 | déplacer ou renommer | `mv src dest` |
 | supprimer un fichier · un dossier vide · un dossier et son contenu | `rm fichier` · `rmdir dossier` · `rm -r dossier` |
 | connaître le type d'un fichier | `file fichier` |
-| chercher par nom | `find dossier -name "motif"` |
-| archiver et compresser | `tar -czf archive.tar.gz dossier` |
-| copier vers une autre machine (SSH) | `scp fichier utilisateur@machine:/chemin` |
+| chercher par nom <span class="technique">notion technique</span> | `find dossier -name "motif"` |
+| archiver et compresser <span class="technique">notion technique</span> | `tar -czf archive.tar.gz dossier` |
+| copier vers une autre machine (SSH) <span class="technique">notion technique</span> | `scp fichier utilisateur@machine:/chemin` |
 
 ## Observer la machine
 
