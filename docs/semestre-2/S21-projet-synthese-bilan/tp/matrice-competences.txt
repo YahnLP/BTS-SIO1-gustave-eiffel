@@ -1,7 +1,7 @@
 MA MATRICE DE COMPETENCES - S21
 Nom : ______________   Date : ______________
 
-Pour chaque competence : ton niveau global (NA / EC / A), puis les preuves que tu verses
+Pour chaque competence : ton niveau global (non maitrise / maitrise partielle / bonne maitrise / excellente maitrise), puis les preuves que tu verses
 (seance, document, capture, journal, compte rendu InfraLab). Une preuve = datee, contextualisee,
 personnelle, verifiable par une autre personne.
 

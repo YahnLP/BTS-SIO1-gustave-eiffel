@@ -19,7 +19,7 @@
 1. **Mobiliser** ensemble inventaire, tickets, problèmes, changements, licences et habilitations dans une même situation (projet de synthèse) ;
 2. **Arbitrer** entre l'urgence (rétablir le service) et l'hygiène (inventaire, licences, comptes) ;
 3. **Constituer un dossier de preuves** : choisir, dater, contextualiser ;
-4. **Auto-évaluer** ses compétences avec honnêteté (NA, EC, A) et **identifier** ses axes de progrès ;
+4. **Auto-évaluer** ses compétences avec honnêteté (non maîtrisé, maîtrise partielle, bonne maîtrise, excellente maîtrise) et **identifier** ses axes de progrès ;
 5. **Présenter oralement** une réalisation en cinq minutes, avec une preuve.
 
 ## Contenu de la séance

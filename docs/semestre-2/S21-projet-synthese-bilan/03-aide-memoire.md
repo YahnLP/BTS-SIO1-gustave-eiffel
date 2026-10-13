@@ -19,7 +19,7 @@ Datée · contextualisée · personnelle · vérifiable · pertinente. Pas de mo
 
 ## Auto-évaluation
 
-NA : pas sans aide. EC : avec aide ponctuelle. A : seul, correctement, et je sais l'expliquer.
+Non maîtrisé : pas sans aide. Maîtrise partielle : avec aide ponctuelle. Bonne maîtrise : seul, correctement. Excellente maîtrise : seul, correctement, et je sais l'expliquer et l'adapter à un autre contexte.
 
 ## Oral de 5 minutes
 
