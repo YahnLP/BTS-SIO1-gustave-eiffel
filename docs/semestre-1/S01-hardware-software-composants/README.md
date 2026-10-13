@@ -58,6 +58,6 @@
 - **Choix de découpage :** les conversions d'unités et les débits (questions 7 à 24 d'origine) passent en S02 ; les processeurs, les serveurs et l'appel d'offres en S03 ; BIOS, système d'exploitation et licences en S04 ; l'histoire d'Internet, le quantique et l'énergie en S05.
 - **Sécurité en salle :** débrancher les machines avant ouverture, ne pas toucher le bloc d'alimentation, se décharger de l'électricité statique (toucher le châssis métallique) avant de manipuler une carte.
 - **Corrigé :** dans `corriges/` à la racine du dépôt.
-- **Compétence :** B1.1 est une proposition (recenser et identifier des équipements) ; à valider avec le référentiel officiel.
+- **Compétences :** codes et intitulés relus sur l'arrêté du 8 juillet 2024 ; le choix des compétences pour cette séance est une proposition de l'enseignant.
 
 </details>

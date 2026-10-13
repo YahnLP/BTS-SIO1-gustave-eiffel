@@ -62,6 +62,6 @@ La partie E (améliorations) est pour les étudiants qui avancent vite.
     - l'argument de dossier racine et le mode « simulation » (bonus du support) sont conservés en partie E.
 - **Paquet utilisé en partie A :** `tree`, qui n'est pas installé par défaut sur Debian. Il permet aussi de vérifier l'arborescence de la partie D. À confirmer sur l'image de la salle (accès au dépôt Debian ou à un miroir).
 - **Script de référence :** testé sous Ubuntu 24.04 (Bash), pas sur l'image Debian de la salle. Dans `corriges/S10-create_tp.sh` et expliqué dans `corriges/S10-paquets-scripts-bash.md`.
-- **Compétences :** B2.2 et B2.3 sont une proposition à valider.
+- **Compétences :** codes et intitulés relus sur l'arrêté du 8 juillet 2024 ; le choix des compétences pour cette séance est une proposition de l'enseignant.
 
 </details>

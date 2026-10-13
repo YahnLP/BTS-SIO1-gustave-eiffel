@@ -60,6 +60,6 @@
 - **Mots de passe :** le TP ne les traite pas : un mot de passe initial **ne se met pas** dans un fichier ni en argument de commande. Le sujet est discuté, pas implémenté.
 - **Pas de PowerShell :** l'automatisation sous Windows (PowerShell) est évoquée au cours mais non pratiquée, faute de VM Windows imposée à cette séance.
 - **Lien ITIL :** la partie E rattache l'automatisation à la **demande standard** et au **changement standard** (S15, S17) ; les définitions sont celles du cours de S15.
-- **Compétences :** B2.2 (confirmé par une page tierce) et B1.5 (confirmé par une page tierce) sont une proposition à valider.
+- **Compétences :** codes et intitulés relus sur l'arrêté du 8 juillet 2024 ; le choix des compétences pour cette séance est une proposition de l'enseignant.
 
 </details>

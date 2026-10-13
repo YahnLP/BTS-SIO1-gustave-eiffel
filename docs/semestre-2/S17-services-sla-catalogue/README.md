@@ -57,7 +57,7 @@
 - **Sources :** aucun support d'origine pour cette séance. Elle s'appuie sur **InfraLab** (version 1.2) : TP 22, 41 et 20 du catalogue ; TP 21 (incident ou demande) et 17 / 43 en remédiation ou approfondissement. Les définitions ITIL (SLA, OLA, contrat de sous-traitance, catalogue de services) viennent du cours ITIL d'origine pour le SLA et de **mes connaissances** pour OLA et catalogue : **à vérifier** avec la référence ITIL utilisée en classe.
 - **Calculs de la partie B :** l'échéance en heures ouvrées est **calculée à la main** dans le TP (calendrier lundi–vendredi, 8 h–18 h, comme dans InfraLab) puis **comparée** à l'application. Ma prévision (mercredi 11 h) suppose que « 24 h » se compte en heures **ouvrées** : à vérifier dans l'application avant la séance.
 - **Pas de pénalités chiffrées** : le cours d'origine cite un exemple de réduction de facture à titre d'illustration ; il n'est pas repris comme règle.
-- **Compétences :** B1.5 (« Mettre à disposition des utilisateurs un service informatique ») est confirmé par une page tierce selon le référentiel du dépôt ; B1.2 est de mémoire, à vérifier. À valider.
+- **Compétences :** codes et intitulés relus sur l'arrêté du 8 juillet 2024 ; le choix des compétences pour cette séance est une proposition de l'enseignant.
 - **Licence d'InfraLab :** EUPL 1.2 pour le code ; le nom et l'identité visuelle ne sont pas couverts.
 
 </details>

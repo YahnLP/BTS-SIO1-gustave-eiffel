@@ -61,6 +61,6 @@ La partie E (bi-processeur et NUMA) est facultative.
 - **Dimensionnement (partie D) :** cas, chiffres et règles empiriques (ratio de vCPU par cœur, marge de 25 %) sont de moi et sont signalés comme tels ; ils préparent la virtualisation et les sauvegardes mais ne sont pas dans les supports d'origine.
 - **Sujet du semestre 2 :** le RAID n'est présenté ici que pour la tolérance de panne ; l'étude des sauvegardes (S20) montrera qu'un RAID n'est pas une sauvegarde.
 - **Corrigé :** dans `corriges/` à la racine du dépôt.
-- **Compétences :** B2.1 (concevoir une solution d'infrastructure) et B1.1 sont une proposition à valider.
+- **Compétences :** codes et intitulés relus sur l'arrêté du 8 juillet 2024 ; le choix des compétences pour cette séance est une proposition de l'enseignant.
 
 </details>

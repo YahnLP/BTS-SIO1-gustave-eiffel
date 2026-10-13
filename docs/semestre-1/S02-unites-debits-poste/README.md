@@ -60,6 +60,6 @@ La partie D (raccourcis clavier) est facultative.
 - **Commandes Windows :** les commandes données en aide (repliées) sont celles que je propose ; elles n'ont **pas été exécutées** sur la version de Windows de la salle. À tester avant la séance, en particulier `Get-Package` et la mesure de débit disque. La commande `wmic`, employée dans beaucoup de tutoriels, est dépréciée sur les versions récentes de Windows : elle n'est pas utilisée ici.
 - **Mesure de la vitesse de lecture du disque :** non prévue avec un outil imposé (licence non vérifiée) ; à adapter à ce que la salle autorise.
 - **Corrigé :** dans `corriges/` à la racine du dépôt.
-- **Compétences :** B1.1 et B2.3 sont une proposition à valider.
+- **Compétences :** codes et intitulés relus sur l'arrêté du 8 juillet 2024 ; le choix des compétences pour cette séance est une proposition de l'enseignant.
 
 </details>

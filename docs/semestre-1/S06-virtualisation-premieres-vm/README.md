@@ -57,7 +57,7 @@ Les durées d'origine (40 min, 2 h et 1 h) font 3 h 40 : le déroulé tient en 4
 - **Deuxième disque :** le support d'origine demande « un deuxième disque système avec 20 Go » dans l'installateur. J'ai interprété : une **deuxième partition** de 20 Go sur le disque virtuel de 50 Gio. À confirmer.
 - **Identifiants :** le support d'origine impose un nom de système et un mot de passe précis. Je ne reproduis pas le mot de passe dans le site public : le TP renvoie à « le mot de passe donné par l'enseignant ».
 - **Disque de stockage :** `D:\` ici, `E:\` dans le TP Linux d'origine. Le texte dit « le disque indiqué par l'enseignant ».
-- **Compétences :** B2.1 et B2.2 sont une proposition. La trace écrite d'origine cite d'autres codes (C1.1 à C5.3, blocs B1 à B5) qui ne correspondent pas au référentiel utilisé ici : à aligner.
+- **Compétences :** codes et intitulés relus sur l'arrêté du 8 juillet 2024 ; le choix des compétences pour cette séance est une proposition de l'enseignant.
 - **Corrigé :** `corriges/S06-virtualisation-premieres-vm.md` (hors du site publié).
 
 </details>

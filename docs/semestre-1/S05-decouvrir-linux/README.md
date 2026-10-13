@@ -62,6 +62,6 @@
 - **Cycles de support** (Debian, Ubuntu LTS, RHEL) : volontairement **laissés à rechercher** : ils changent et je ne les fige pas.
 - **Veille :** quantique, énergie des centres de données, sécurité du système sont des sujets qui évoluent vite ; exiger des sources datées.
 - **Corrigé :** dans `corriges/` à la racine du dépôt.
-- **Compétences :** B2.1 (choisir une solution d'infrastructure) et B1.6 (organiser son développement professionnel, ici la veille) sont une proposition à valider ; B1.6 est donné de mémoire dans le référentiel du site.
+- **Compétences :** codes et intitulés relus sur l'arrêté du 8 juillet 2024 ; le choix des compétences pour cette séance est une proposition de l'enseignant.
 
 </details>

@@ -62,6 +62,6 @@
 - **Compte par défaut de l'interface :** à confirmer dans la documentation de la version installée et à **changer** (comme en S13).
 - **Licence de FOG :** la documentation indique une licence GPL, sans préciser la version dans la page consultée : **à vérifier** avant d'afficher.
 - **Questions de sécurité :** l'image contient les données du poste modèle (donc possiblement personnelles) ; le serveur de déploiement est un **point sensible** (qui modifie l'image modifie tous les futurs postes). Le cours les évoque.
-- **Compétences :** B2.2 (confirmé par une page tierce selon le référentiel du dépôt) et B1.1 sont une proposition à valider.
+- **Compétences :** codes et intitulés relus sur l'arrêté du 8 juillet 2024 ; le choix des compétences pour cette séance est une proposition de l'enseignant.
 
 </details>

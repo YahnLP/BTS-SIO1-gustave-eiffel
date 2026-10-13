@@ -69,6 +69,6 @@
 - **Scénarios de la fiche GLPI :** ils supposent un annuaire (compte, groupe `GRP_MARKETING`) que nous n'avons pas : le ticket 3 reste **simulé** comme le prévoit l'original. Ils supposent aussi des groupes, des catégories et un délai cible **déjà créés** : la partie C les prépare.
 - **InfraLab (révision) :** la partie C s'appuie sur les TP 14, 21 et 47 ; les TP 11, 12, 15 et 3 sont en remédiation. Ont été **retirés** du TP : le ticket « demande de service » (couvert par le TP 21), les statistiques de GLPI, la partie sur le MTTR calculé sur trois tickets (reste au cours §6) ; le jeu de rôle devient facultatif. Éléments de réponse d'InfraLab **d'après le catalogue**, à confronter à l'écran.
 - **Rien n'a été exécuté** dans GLPI : écrans et chemins à vérifier avant la séance (voir le [corrigé](https://github.com/YahnLP/BTS-SIO1-gustave-eiffel/blob/main/corriges/S15-itil-incidents-tickets.md)).
-- **Compétences :** B1.2 et B1.1 sont une proposition à valider. Les supports d'origine citent B1.2 « Exploiter des référentiels… (ITIL) », B1.3 et B3.3 avec des intitulés différents du référentiel du dépôt.
+- **Compétences :** codes et intitulés relus sur l'arrêté du 8 juillet 2024 ; le choix des compétences pour cette séance est une proposition de l'enseignant.
 
 </details>

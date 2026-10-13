@@ -10,7 +10,7 @@ Competence (referentiel)                                  | Seances      | Nivea
 B1.1 Gerer le patrimoine informatique                     | S01-03,S12-15,S18 |   |                               |
 B1.2 Repondre aux incidents et aux demandes               | S15-17       |        |                               |
 B1.5 Mettre a disposition un service informatique         | S09,S11,S17,S19 |     |                               |
-B1.6 (code cite en S05, intitule a verifier)               | S05          |        |                               |
+B1.6 Organiser son developpement professionnel           | S05 + lignes de veille |        |                               |
 B2.1 Concevoir une solution d'infrastructure reseau       | S03,S05,S06  |        |                               |
 B2.2 Installer, tester, deployer une solution             | S06-11,S13,S18,S19 |  |                               |
 B2.3 Exploiter, depanner, superviser                      | S02,S04,S07,S08,S10,S11,S16,S20 | |                               |

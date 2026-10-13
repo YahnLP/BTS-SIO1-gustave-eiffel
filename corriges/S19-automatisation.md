@@ -104,3 +104,8 @@ La page d'accueil se crée dans `./html/index.html`. **À jouer dans DockerLab a
 ## Compétences
 
 B2.2 et B1.5 sont une proposition à valider (voir le référentiel du dépôt).
+
+## Partie F (ajoutée)
+
+- **Non testé** : les commandes (`openssh-server`, `ssh-keygen`, `ssh-copy-id`, `sshd_config`) sont standard sur Debian mais n'ont pas été jouées. L'adressage des deux VM dépend du réseau interne choisi en S07 (coordination avec l'enseignant de réseau).
+- Indicateur visé : administration à distance (B2.3). Valider les captures de la clé et de la commande distante.

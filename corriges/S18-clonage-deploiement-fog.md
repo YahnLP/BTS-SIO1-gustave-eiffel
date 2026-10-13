@@ -47,3 +47,7 @@ Le **score d'InfraLab** n'entre pas dans la note.
 ## Compétences
 
 B2.2 et B1.1 sont une proposition à valider (voir le référentiel du dépôt).
+
+## Partie E (ajoutée)
+
+Évaluation : ordre logique (sauvegarde avant déploiement, effacement après restitution), points de contrôle, retour arrière, mise à jour de l'inventaire. Le **détail technique de l'effacement sécurisé** n'est pas fourni : à compléter avec la politique du CFA ou de l'entreprise (non vérifié).

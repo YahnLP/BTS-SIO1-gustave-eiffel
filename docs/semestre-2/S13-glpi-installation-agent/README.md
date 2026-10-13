@@ -70,6 +70,6 @@
 - **Variante OCS :** serveur Apache + Perl + base `ocsweb`, console `ocsreports`, agent Windows, et plugin « OCS Inventory NG » dans GLPI. Le TP d'origine donne la procédure ; non reprise ici car les URLs et numéros de version du TP d'origine (`2.12.x`, `10.0.x`) sont génériques et non vérifiés.
 - **InfraLab (révision) :** la partie A s'appuie sur les TP 6 et 10 du catalogue ; les TP 7 et 8 sont proposés en remédiation. La variante OCS reste au cours ; la partie « serveur d'un voisin » (douze reconfigurations de l'agent) ont été **retirées du TP** : pas de temps, et InfraLab porte la notion. Les éléments de réponse de la partie A d'après le catalogue sont à **confronter à l'écran**.
 - **Corrigé :** dans `corriges/` à la racine du dépôt.
-- **Compétences :** B2.2 et B1.1 sont une proposition à valider.
+- **Compétences :** codes et intitulés relus sur l'arrêté du 8 juillet 2024 ; le choix des compétences pour cette séance est une proposition de l'enseignant.
 
 </details>

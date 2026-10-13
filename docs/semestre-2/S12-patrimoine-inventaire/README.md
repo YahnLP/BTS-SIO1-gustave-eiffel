@@ -67,6 +67,6 @@
 - **Incohérences corrigées :** (1) le support d'origine annonce « intégration GLPI via plugin FusionInventory » pour OCS ; le TP d'origine installe pourtant le plugin « OCS Inventory NG » : ce sont deux composants différents, le TP et le cours de S13 ne parlent que du second. (2) Les compétences citées par les supports d'origine (B1.1, B1.4…) ne correspondent pas aux intitulés du [référentiel du site](../../ressources/referentiel.md) : alignées sur B1.1 et B3.1.
 - **RGPD :** la partie F reste au niveau « principes » (information, finalité, minimisation, charte). Le texte exact de la réponse juridique n'est **pas** un avis juridique ; à compléter avec le référent RGPD de l'établissement.
 - **Corrigé :** dans `corriges/` à la racine du dépôt.
-- **Compétences :** B1.1 et B3.1 sont une proposition à valider (B3.1 est donné de mémoire dans le référentiel du site).
+- **Compétences :** codes et intitulés relus sur l'arrêté du 8 juillet 2024 ; le choix des compétences pour cette séance est une proposition de l'enseignant.
 
 </details>

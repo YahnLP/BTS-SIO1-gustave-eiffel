@@ -49,3 +49,10 @@ Autres éléments : un NAS (NAS-DC-01) dans le même datacenter ; commutateurs ;
 ## Compétences
 
 B3.4 et B2.3 sont une proposition à valider ; les deux sont notées « de mémoire, à vérifier » dans le référentiel du dépôt.
+
+## Parties E et F (ajoutées) et B1.1
+
+- **Non testé** : `gpg --symmetric --cipher-algo AES256`, `--decrypt`, `sha256sum` (commandes standard, à jouer avant la séance ; le paquet `gnupg` peut ne pas être installé dans la VM).
+- PCA/PRA : les définitions sont celles du vocabulaire courant ; vérifier avec le cours si vous souhaitez une autre convention. Évaluer la cohérence plutôt qu'une réponse unique.
+- B1.1 ajouté au bilan : l'inventaire (CMDB) sert à identifier ce qu'on protège et dans quel ordre.
+- Barème : E (2 points) et F (4 points) sont pris sur les parties C et D.

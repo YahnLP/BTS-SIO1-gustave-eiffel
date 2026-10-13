@@ -64,6 +64,6 @@ Les TP de DockerLab « Dépannage », « Réseaux Docker » et « Faire le ména
 - **Licence de DockerLab :** EUPL 1.2, comme le Simulateur Réseau (indication de l'auteur) ; le dépôt de l'outil ne contient pas encore de fichier `LICENSE` (voir la page des licences).
 - **Suite :** Docker Compose et Dockerfile sont aussi simulés par DockerLab (TP intégrés) : à réserver à une séance ultérieure (automatisation, S19) si le planning le permet.
 - **Corrigé :** dans `corriges/` à la racine du dépôt.
-- **Compétences :** B2.2, B2.3 et B1.5 sont une proposition à valider.
+- **Compétences :** codes et intitulés relus sur l'arrêté du 8 juillet 2024 ; le choix des compétences pour cette séance est une proposition de l'enseignant.
 
 </details>

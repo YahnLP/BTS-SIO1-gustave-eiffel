@@ -62,7 +62,7 @@ Les parties F à I (fonctionnalités avancées, accès au réseau de la salle, c
 - **Guest Additions sous Kali :** la procédure d'origine (montage du CD puis `VBoxLinuxAdditions.run`) peut échouer si les outils de compilation et les en-têtes du noyau ne sont pas installés. À tester sur l'image OVA fournie.
 - **Réseau NAT :** ce mode nécessite de créer un réseau NAT dans les préférences ou le gestionnaire de réseau de VirtualBox (l'emplacement varie selon la version). Le support d'origine ne le décrit pas : à préciser en salle.
 - **Salle :** les noms de cartes (Realtek, TP-Link), le dossier `D:\MVORG` et l'adressage `10.[salle].[plot].[poste]` viennent du support d'origine et sont propres à la salle.
-- **Compétences :** B2.2 et B2.3 sont une proposition à valider.
+- **Compétences :** codes et intitulés relus sur l'arrêté du 8 juillet 2024 ; le choix des compétences pour cette séance est une proposition de l'enseignant.
 - **Corrigé :** `corriges/S07-virtualisation-avancee.md` (hors du site publié).
 
 </details>

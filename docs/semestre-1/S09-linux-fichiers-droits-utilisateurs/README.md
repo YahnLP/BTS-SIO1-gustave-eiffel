@@ -64,7 +64,7 @@
 - **`/etc/services` :** présent sur Debian avec le paquet `netbase` (en général installé). À vérifier sur l'image fournie.
 - **Droits par défaut :** le droit attribué à un nouveau fichier dépend du `umask` ; je le fais constater en TP plutôt que de l'affirmer.
 - **Direction générale :** la partie E ne règle pas le cas d'un service qui doit lire les dossiers des autres (listes de contrôle d'accès, `setfacl`, non traité).
-- **Compétences :** B1.5, B2.2 et B3.3 sont une proposition à valider.
+- **Compétences :** codes et intitulés relus sur l'arrêté du 8 juillet 2024 ; le choix des compétences pour cette séance est une proposition de l'enseignant.
 - **Corrigé :** `corriges/S09-linux-fichiers-droits-utilisateurs.md` (hors du site publié).
 
 </details>

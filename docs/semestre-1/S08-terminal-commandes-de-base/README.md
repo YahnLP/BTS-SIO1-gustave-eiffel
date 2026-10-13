@@ -55,7 +55,7 @@ Les parties E et F du TP (recherche de fichiers, script) sont pour les étudiant
 <details markdown="1">
 <summary>Notes pour l'enseignant</summary>
 
-- **Compétences :** B2.2, B2.3 et B1.5 sont une proposition. Les supports d'origine citaient « Protéger l'identité numérique d'une organisation » et « Utiliser un terminal de commande ». À valider avec le référentiel officiel.
+- **Compétences :** codes et intitulés relus sur l'arrêté du 8 juillet 2024 ; le choix des compétences pour cette séance est une proposition de l'enseignant.
 - **Corrigé :** dans `corriges/` à la racine du dépôt (hors du site publié, mais visible dans le dépôt GitHub).
 - **Répartition des contenus :** les liens symboliques et liens durs, les utilisateurs et groupes, `/etc/services` et l'affichage page par page sont prévus en S09. La création de l'utilisateur `tech2025` du support d'origine est donc reportée.
 - **Réseau de la salle :** le schéma d'origine indique une VM en accès par pont sur le réseau du lycée (plage 192.168.51.x) ; à confirmer pour la salle utilisée.

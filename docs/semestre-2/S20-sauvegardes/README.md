@@ -7,7 +7,7 @@
 | **Durée** | 4 heures |
 | **Prérequis** | Terminal et scripts Linux ([S08](../../semestre-1/S08-terminal-commandes-de-base/README.md) à [S10](../../semestre-1/S10-paquets-scripts-bash/README.md)) ; GLPI et sa base ([S13](../S13-glpi-installation-agent/README.md), [S14](../S14-glpi-exploiter-le-parc/README.md)) ; CMDB ([S12](../S12-patrimoine-inventaire/README.md)) ; automatisation ([S19](../S19-automatisation/README.md)) |
 | **Matériel** | Une **VM Debian** ; la **VM GLPI** (snapshot `GLPI parc configuré`) ; un **second disque virtuel** ; un navigateur : **[InfraLab](https://yahnlp.github.io/InfraLab/)** (jeu de données « NovaTech complet ») |
-| **Compétences travaillées** | B3.4 · B2.3 (voir [le référentiel](../../ressources/referentiel.md)) |
+| **Compétences travaillées** | B3.4 · B2.3 · B1.1 (voir [le référentiel](../../ressources/referentiel.md)) |
 
 > [!NOTE]
 > **Question qui guide la séance :** *« Le disque du serveur est détruit ce soir. Qu'a-t-on perdu, en combien de temps remet-on le service en route, et comment le sait-on avant que cela arrive ? »*
@@ -61,6 +61,6 @@
 - **Second disque virtuel :** `lsblk` avant `mkfs` : le formatage détruit les données du disque désigné. À encadrer.
 - **Définitions :** RPO, RTO, règle 3-2-1, types de sauvegarde : vocabulaire courant ; à confronter à la référence de la classe.
 - **RGPD :** le plan évoque la durée de conservation et la présence de données personnelles dans les sauvegardes ; la mise en œuvre précise (droit à l'effacement et sauvegardes) n'est pas traitée et est signalée comme **à voir avec le délégué à la protection des données** de l'établissement.
-- **Compétences :** B3.4 (« Garantir la disponibilité, l'intégrité et la confidentialité… ») est **de mémoire, à vérifier** dans le référentiel du dépôt ; B2.3 aussi. À valider.
+- **Compétences :** codes et intitulés relus sur l'arrêté du 8 juillet 2024 ; le choix des compétences pour cette séance est une proposition de l'enseignant.
 
 </details>

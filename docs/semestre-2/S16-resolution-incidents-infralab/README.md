@@ -60,7 +60,7 @@
 - **Autres TP InfraLab utiles :** TP 17 (serveur arrêté), 20 (incident majeur), 43 (arrêt d'un hyperviseur) : voir le [corrigé](https://github.com/YahnLP/BTS-SIO1-gustave-eiffel/blob/main/corriges/S16-resolution-incidents-infralab.md) pour le placement possible.
 - **Commandes d'origine :** le support d'origine utilise `wmic`, outil **obsolète** dans les versions récentes de Windows (je pense qu'il est désactivé par défaut dans Windows 11 récent ; **à vérifier** sur la version de la salle). Le TP utilise **PowerShell**.
 - **Poste lent :** l'incident doit être **préparé** sur la VM cliente (voir le corrigé) ; la préparation proposée n'a pas été testée.
-- **Compétences :** B1.2 et B2.3 sont une proposition à valider. Les supports d'origine citent B1.3, B1.6 et B3.3 avec d'autres intitulés que le référentiel du dépôt.
+- **Compétences :** codes et intitulés relus sur l'arrêté du 8 juillet 2024 ; le choix des compétences pour cette séance est une proposition de l'enseignant.
 - **Licence d'InfraLab :** code sous EUPL 1.2 ; le nom et l'identité visuelle ne sont pas couverts (page d'accueil du projet).
 
 </details>
