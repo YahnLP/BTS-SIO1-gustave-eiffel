@@ -50,5 +50,5 @@ B1.1, B1.2 et B3.1 sont une proposition à valider (voir le référentiel du dé
 ## Refonte : réalisation individuelle documentée
 
 - La partie B (nouvelle) est la **réalisation individuelle** : fiche au format de l'annexe VII-1-A, productions accessibles, recette. Barème indicatif : environnement réel (4), fiche complète (4), productions et accès (3), recette (4), explication des choix (3) ; à ajuster avec la partie A, qui devient un entraînement (le score InfraLab ne compte pas).
-- **À clarifier avec le CFA :** la place des réalisations d'entreprise dans le contrôle en cours de formation et le rôle du CFA dans leur validation (non vérifié).
+- Pas de CCF dans cette formation (information de l'enseignant) : les réalisations sont destinées à l'épreuve ponctuelle. La recevabilité des réalisations d'entreprise reste à confirmer auprès du jury ou du CFA (non vérifié).
 - Format d'oral : entretien d'explicitation puis recette (20 minutes chacun au maximum à l'examen d'après la circulaire 2026) ; la séance en donne une version réduite.
