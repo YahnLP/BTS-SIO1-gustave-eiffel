@@ -8,7 +8,7 @@ Cours, TP et aide-mémoire de **BTS SIO option SISR, 1re année** (21 séances d
 
 | Dossier | Contenu |
 |---|---|
-| [`docs/semestre-1`](docs/semestre-1/README.md) | Séances S01 à S10 : hardware, systèmes d'exploitation, terminal Linux, virtualisation |
+| [`docs/semestre-1`](docs/semestre-1/README.md) | Séances S01 à S10 : hardware, systèmes d'exploitation, virtualisation, terminal Linux |
 | [`docs/semestre-2`](docs/semestre-2/README.md) | Séances S11 à S21 : conteneurs, gestion de parc, ITIL, services (FOG, automatisation, sauvegardes) |
 | [`docs/ressources`](docs/ressources/README.md) | Référentiel, outils et simulateurs, licences |
 | [`docs/simulateur`](docs/simulateur/) | Le simulateur réseau hors ligne (un seul fichier HTML) |
@@ -18,7 +18,7 @@ Cours, TP et aide-mémoire de **BTS SIO option SISR, 1re année** (21 séances d
 
 ## Avancement
 
-Séance modèle publiée : **S06 – Terminal Linux, commandes de base**. Les autres séances sont indiquées « à venir » dans les tableaux de progression.
+Séance modèle publiée : **S08 – Terminal Linux, commandes de base**. Les autres séances sont indiquées « à venir » dans les tableaux de progression.
 
 ## Principe pédagogique
 

@@ -1,4 +1,4 @@
-# Corrigé (enseignant) – S06 Terminal Linux, commandes de base
+# Corrigé (enseignant) – S08 Terminal Linux, commandes de base
 
 *Document réservé à l'enseignant : hors du dossier `docs/`, il n'est pas publié sur le site (mais il est visible dans le dépôt GitHub).*
 

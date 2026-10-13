@@ -1,6 +1,6 @@
 # Aide-mémoire – Terminal Linux : commandes de base
 
-*BTS SIO SISR 1re année – S06*
+*BTS SIO SISR 1re année – S08*
 
 ## Se repérer et naviguer
 

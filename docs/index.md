@@ -22,7 +22,7 @@ Un administrateur n'apprend pas en lisant : **il anticipe, il manipule, il compr
 <div class="card" markdown>
 
 ### Semestre 1
-**10 séances** – Poste de travail, systèmes d'exploitation, terminal Linux (bash) et virtualisation.
+**10 séances** – Poste de travail, systèmes d'exploitation, virtualisation et terminal Linux (bash).
 
 [**Ouvrir la progression**](semestre-1/README.md){ .go }
 </div>

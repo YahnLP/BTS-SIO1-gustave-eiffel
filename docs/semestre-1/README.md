@@ -14,10 +14,10 @@
 | S03 | 03 | Hardware et culture informatique | Technologies des serveurs | à venir |
 | S04 | 04 | Systèmes d'exploitation | Rôle d'un système d'exploitation, installer et prendre en main Windows | à venir |
 | S05 | 05 | Systèmes d'exploitation | Découvrir Linux | à venir |
-| S06 | 06 | Terminal Linux (bash) | [Commandes de base](S06-terminal-commandes-de-base/README.md) | **disponible** |
-| S07 | 07 | Terminal Linux (bash) | Fichiers, droits, utilisateurs | à venir |
-| S08 | 08 | Terminal Linux (bash) | Paquets, scripts simples | à venir |
-| S09 | 09 | Virtualisation | Hyperviseurs, premières machines virtuelles | à venir |
-| S10 | 10 | Virtualisation | Virtualisation avancée : réseau, stockage, snapshots | à venir |
+| S06 | 06 | Virtualisation | Hyperviseurs, premières machines virtuelles | à venir |
+| S07 | 07 | Virtualisation | Virtualisation avancée : réseau, stockage, snapshots | à venir |
+| S08 | 08 | Terminal Linux (bash) | [Commandes de base](S08-terminal-commandes-de-base/README.md) | **disponible** |
+| S09 | 09 | Terminal Linux (bash) | Fichiers, droits, utilisateurs | à venir |
+| S10 | 10 | Terminal Linux (bash) | Paquets, scripts simples | à venir |
 
 Les numéros de semaine sont ceux de la séquence (semaine 01 à 21) : ils ne correspondent pas à des dates, les semaines n'étant pas consécutives.

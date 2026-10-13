@@ -1,6 +1,6 @@
 # Cours – Le terminal Linux : les commandes de base
 
-*BTS SIO SISR 1re année – S06 – à lire avant le [TP](02-tp.md)*
+*BTS SIO SISR 1re année – S08 – à lire avant le [TP](02-tp.md)*
 
 ## À la fin de ce cours, tu sauras
 
@@ -143,7 +143,7 @@ Avant de demander, on cherche : `commande --help` donne un résumé ; `man comma
 > **Il n'y a pas de corbeille dans le terminal.** `rm` supprime **définitivement**. Avant `rm -r`, vérifie avec `pwd` et `ls` que tu es au bon endroit.
 
 > [!NOTE]
-> `scp` s'appuie sur SSH, qui sera vu plus tard : il est cité ici pour connaître son existence, pas pour être manipulé en S06.
+> `scp` s'appuie sur SSH, qui sera vu plus tard : il est cité ici pour connaître son existence, pas pour être manipulé en S08.
 
 **Je vérifie.** Comment renommer un fichier avec les commandes ci-dessus ?
 
