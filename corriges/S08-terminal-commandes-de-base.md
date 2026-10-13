@@ -2,6 +2,8 @@
 
 *Document réservé à l'enseignant : hors du dossier `docs/`, il n'est pas publié sur le site (mais il est visible dans le dépôt GitHub).*
 
+**Attention aux pièges.**
+
 ## Partie A
 
 Réponse attendue sur NAT / accès par pont : voir « Éléments de réponse » du TP. Prompt de type `utilisateur@machine:~$`.

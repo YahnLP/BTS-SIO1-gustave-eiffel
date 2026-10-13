@@ -2,6 +2,8 @@
 
 *Document réservé à l'enseignant : hors du dossier `docs/`, il n'est pas publié sur le site (mais il est visible dans le dépôt GitHub).*
 
+**Attention aux pièges.**
+
 Les réponses aux questions sont repliées dans le TP. **Aucune commande n'a été exécutée** dans l'environnement de rédaction : le script de référence ci-dessous est une proposition à **tester** sur la VM de la salle avant diffusion.
 
 ## Script de référence (proposition, non testé)

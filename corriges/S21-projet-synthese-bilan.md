@@ -2,6 +2,8 @@
 
 *Document réservé à l'enseignant : hors du dossier `docs/`, il n'est pas publié sur le site (mais il est visible dans le dépôt GitHub).*
 
+**Attention aux pièges.**
+
 **Aucune manipulation n'a été exécutée** dans InfraLab pendant la rédaction ; les éléments sur le TP 40 viennent du catalogue de l'application (version 1.2, dépôt consulté en octobre 2026).
 
 ## TP 40 : solution du catalogue

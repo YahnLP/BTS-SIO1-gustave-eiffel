@@ -2,6 +2,8 @@
 
 *Document réservé à l'enseignant : hors du dossier `docs/`, il n'est pas publié sur le site (mais il est visible dans le dépôt GitHub).*
 
+**Attention aux pièges.**
+
 Les réponses aux questions sont repliées dans le TP. Les solutions d'InfraLab proviennent du catalogue de l'application (version 1.2, dépôt consulté en octobre 2026) ; **je n'ai pas joué les TP dans un navigateur**.
 
 ## Solutions d'InfraLab (d'après le catalogue)

@@ -2,6 +2,8 @@
 
 *Document réservé à l'enseignant : hors du dossier `docs/`, il n'est pas publié sur le site (mais il est visible dans le dépôt GitHub).*
 
+**Attention aux pièges.**
+
 Les « Éléments de réponse » sont repliés dans le TP. Ce document ajoute les repères de notation.
 
 ## Partie A – dates de référence (de mémoire, à confirmer par les sources des étudiants)

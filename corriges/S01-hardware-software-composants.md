@@ -2,6 +2,8 @@
 
 *Document réservé à l'enseignant : hors du dossier `docs/`, il n'est pas publié sur le site (mais il est visible dans le dépôt GitHub).*
 
+**Attention aux pièges.**
+
 Les « Éléments de réponse » des parties A à D sont dans le TP lui-même (repliés). Ce document ajoute ce qui sert à l'enseignant.
 
 ## Questionnaire de positionnement

@@ -2,6 +2,8 @@
 
 *Document réservé à l'enseignant : hors du dossier `docs/`, il n'est pas publié sur le site (mais il est visible dans le dépôt GitHub).*
 
+**Attention aux pièges.**
+
 ## Partie A (activité de découverte)
 
 Voir « Éléments de réponse » du TP et le cours, sections 1 à 5.

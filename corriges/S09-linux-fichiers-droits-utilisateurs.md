@@ -2,6 +2,8 @@
 
 *Document réservé à l'enseignant : hors du dossier `docs/`, il n'est pas publié sur le site (mais il est visible dans le dépôt GitHub).*
 
+**Attention aux pièges.**
+
 Les commandes de ce TP ont été essayées dans un environnement Ubuntu 24.04 (pas dans l'image Debian de la salle) : voir les points à vérifier en fin de document.
 
 ## Partie A

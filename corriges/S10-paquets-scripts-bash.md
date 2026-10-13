@@ -2,6 +2,8 @@
 
 *Document réservé à l'enseignant : hors du dossier `docs/`, il n'est pas publié sur le site (mais il est visible dans le dépôt GitHub).*
 
+**Attention aux pièges.**
+
 Le script de référence est dans `corriges/S10-create_tp.sh`. Il a été testé sous Ubuntu 24.04 (pas sur l'image Debian de la salle) : première exécution, relance, mode simulation, dossier de base inaccessible.
 
 ## Partie A

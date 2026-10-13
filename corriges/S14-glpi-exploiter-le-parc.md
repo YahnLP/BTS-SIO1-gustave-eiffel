@@ -2,6 +2,8 @@
 
 *Document réservé à l'enseignant : hors du dossier `docs/`, il n'est pas publié sur le site (mais il est visible dans le dépôt GitHub).*
 
+**Attention aux pièges.**
+
 Les réponses aux questions sont repliées dans le TP. **Aucune manipulation n'a été exécutée** dans GLPI pendant la rédaction.
 
 ## À tester avant la séance

@@ -2,6 +2,8 @@
 
 *Document réservé à l'enseignant : hors du dossier `docs/`, il n'est pas publié sur le site (mais il est visible dans le dépôt GitHub).*
 
+**Attention aux pièges.**
+
 Les réponses aux questions sont repliées dans le TP. Ce document liste les **points à tester avant la séance** et les pièges probables. **Aucune commande n'a été exécutée** dans l'environnement de rédaction.
 
 ## À tester avant la séance (sur une VM Debian de la salle)

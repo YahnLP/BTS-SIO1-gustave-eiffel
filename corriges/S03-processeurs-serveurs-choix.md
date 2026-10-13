@@ -2,6 +2,8 @@
 
 *Document réservé à l'enseignant : hors du dossier `docs/`, il n'est pas publié sur le site (mais il est visible dans le dépôt GitHub).*
 
+**Attention aux pièges.**
+
 Les réponses des parties A à E sont repliées dans le TP. Ce document ajoute les valeurs de référence et les points d'attention.
 
 ## Partie A – valeurs attendues (à vérifier sur la fiche constructeur avant la séance)

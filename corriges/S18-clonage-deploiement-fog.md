@@ -2,6 +2,8 @@
 
 *Document réservé à l'enseignant : hors du dossier `docs/`, il n'est pas publié sur le site (mais il est visible dans le dépôt GitHub).*
 
+**Attention aux pièges.**
+
 Les réponses aux questions sont repliées dans le TP. **Aucune manipulation n'a été exécutée** dans l'environnement de rédaction : FOG n'a pas été installé. Les commandes et les questions de l'installeur viennent de la **page d'installation officielle de FOG 1.6** et des pages « capture an image » et « deploy an image » consultées à la rédaction.
 
 ## À tester avant la séance (sur le matériel de la salle)

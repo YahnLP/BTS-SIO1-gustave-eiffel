@@ -2,6 +2,8 @@
 
 *Document réservé à l'enseignant : hors du dossier `docs/`, il n'est pas publié sur le site (mais il est visible dans le dépôt GitHub).*
 
+**Attention aux pièges.**
+
 Les parties A et B sont corrigées dans le TP (réponses repliées). Ce document complète.
 
 ## Vérification des calculs

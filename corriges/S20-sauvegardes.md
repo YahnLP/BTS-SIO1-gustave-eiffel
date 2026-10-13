@@ -2,6 +2,8 @@
 
 *Document réservé à l'enseignant : hors du dossier `docs/`, il n'est pas publié sur le site (mais il est visible dans le dépôt GitHub).*
 
+**Attention aux pièges.**
+
 Les réponses aux questions sont repliées dans le TP. **Aucune commande n'a été exécutée** dans l'environnement de rédaction.
 
 ## Lecture de NovaTech complet (d'après le code du jeu de données, à vérifier à l'écran)

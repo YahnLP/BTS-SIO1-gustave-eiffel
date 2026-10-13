@@ -2,6 +2,8 @@
 
 *Document réservé à l'enseignant : hors du dossier `docs/`, il n'est pas publié sur le site (mais il est visible dans le dépôt GitHub).*
 
+**Attention aux pièges.**
+
 Les réponses sont repliées dans le TP. Ce document ajoute la vérification du fichier et le barème.
 
 ## Vérification du CSV (commandes exécutées dans l'environnement de rédaction)
