@@ -2,6 +2,11 @@
 
 *BTS SIO SISR 1re année – S07 – à lire avec le [TP](02-tp.md)*
 
+> [!NOTE] Ce que tu dois savoir déjà
+> - **Prérequis :** créer et démarrer une VM dans VirtualBox (S06) ; savoir ce qu'est une adresse IP : voir la fiche [minimum réseau](../../ressources/minimum-reseau.md).
+> - **Mots déjà vus :** hôte, invité, hyperviseur, ISO.
+> - **Expliqués dans ce cours :** modes réseau de VirtualBox, instantané (snapshot), chaîne de disques, Guest Additions, stockage d'une VM. Les notions de réseau (NAT, DHCP, adresse IP) seront **vues en cours de réseau** : ici, tu retiens seulement ce qui sert à connecter une VM.
+
 ## À la fin de ce cours, tu sauras
 
 - [ ] décrire les **cinq modes réseau** de VirtualBox et choisir le bon selon le besoin ;
@@ -16,16 +21,19 @@
 
 À sa création, une VM reçoit une **carte réseau virtuelle**. Le **mode d'accès** de cette carte décide comment la VM obtient son adresse, à quel réseau elle appartient et avec qui elle peut communiquer.
 
+> [!NOTE]
+> **Mots de réseau dans ce tableau.** *Adresse IP* : numéro d'une machine sur un réseau ; *DHCP* : service qui distribue ces adresses automatiquement ; *NAT* : l'hôte fait sortir la VM sur Internet avec sa propre adresse. Ces notions seront **vues plus en détail en cours de réseau** ; la fiche [minimum réseau](../../ressources/minimum-reseau.md) donne l'essentiel. Ici, tu dois seulement choisir le bon mode pour un besoin donné.
+
 | Mode | Adresse IP automatique (DHCP) | Entre VM | Internet | Avec l'hôte | Usage typique |
 |---|---|---|---|---|---|
-| **NAT** | oui | non | oui | non (d'après la trace du cours, à vérifier) | une VM isolée qui télécharge, met à jour, navigue |
+| **NAT** | oui | non | oui | non (à vérifier en TP) | une VM isolée qui télécharge, met à jour, navigue |
 | **Réseau NAT** | oui | oui | oui | non | plusieurs VM qui se parlent et sortent sur Internet |
 | **Accès par pont** | oui, si un serveur DHCP existe sur le réseau | oui | oui | oui | une VM visible sur le réseau comme une machine physique (serveur web, FTP, DHCP, DNS) |
 | **Réseau interne** | **non** (adresse manuelle) | oui | non | non | réseau isolé pour des tests |
 | **Réseau privé hôte** | oui | oui | non | oui | tester la communication entre l'hôte et une VM |
 
 > [!NOTE]
-> Ce tableau vient de la trace écrite du cours. Les cases « avec l'hôte » du mode NAT dépendent de la version de VirtualBox et de la cible visée : **c'est justement ce que tu vérifies en TP**.
+> Les cases « avec l'hôte » du mode NAT dépendent de la version de VirtualBox et de la cible visée : **c'est justement ce que tu vérifies en TP**.
 
 ### NAT
 

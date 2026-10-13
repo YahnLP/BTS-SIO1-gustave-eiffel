@@ -2,6 +2,11 @@
 
 *BTS SIO SISR 1re année – S02 – à lire avant le [TP](02-tp.md)*
 
+> [!NOTE] Ce que tu dois savoir déjà
+> - **Prérequis :** la fiche d'identité d'un poste (S01) : composants, mémoires, stockage.
+> - **Mots déjà vus :** bit, octet, processeur, mémoire vive, SSD.
+> - **Expliqués dans ce cours :** préfixes (kilo, méga, Kio, Mio), conversions, débit et temps de transfert, PowerShell et CMD.
+
 ## À la fin de ce cours, tu sauras
 
 - [ ] convertir des tailles entre **octets**, **Ko/Mo/Go/To** et **Kio/Mio/Gio/Tio** ;

@@ -2,13 +2,18 @@
 
 *BTS SIO SISR 1re année – S03 – à lire avant le [TP](02-tp.md)*
 
+> [!NOTE] Ce que tu dois savoir déjà
+> - **Prérequis :** lire les caractéristiques d'un poste et convertir les unités (S01, S02).
+> - **Mots déjà vus :** processeur, mémoire vive, SSD, fréquence, octet.
+> - **Expliqués dans ce cours :** cœur, fréquence, benchmark, RAID, serveur et poste, dimensionnement. Le RAID 0, 1 et 5 sont à connaître ; les autres niveaux sont signalés <span class="technique">notion technique</span>.
+
 ## À la fin de ce cours, tu sauras
 
 - [ ] lire les caractéristiques d'un **processeur** et en tirer un usage ;
 - [ ] expliquer pourquoi les **GHz seuls** ne suffisent pas à comparer deux processeurs ;
 - [ ] choisir une configuration **selon un profil d'utilisateur** et un budget ;
 - [ ] distinguer un **poste de travail** d'un **serveur** ;
-- [ ] expliquer le **RAID** (niveaux 0, 1, 5, 6, 10) et sa limite ;
+- [ ] expliquer le **RAID** (niveaux 0, 1 et 5 ; les niveaux 6 et 10 sont facultatifs) et sa limite ;
 - [ ] décrire un serveur à **deux processeurs** et la notion de **NUMA** ;
 - [ ] **dimensionner** un serveur pour héberger des machines virtuelles.
 
@@ -85,15 +90,22 @@ Deux processeurs à 3,5 GHz ne se valent pas : l'architecture (quantité de trav
 | **RAID 0** | Les données sont réparties (*striping*) | 2 | n × taille | **aucune** |
 | **RAID 1** | Miroir : chaque donnée est écrite en double | 2 | 1 × taille | 1 disque |
 | **RAID 5** | Répartition + une parité | 3 | (n − 1) × taille | 1 disque |
-| **RAID 6** | Répartition + deux parités | 4 | (n − 2) × taille | 2 disques |
-| **RAID 10** | Miroirs répartis | 4 | (n ÷ 2) × taille | 1 disque au minimum (jusqu'à un par miroir) |
+| **RAID 6** <span class="technique">notion technique</span> | Répartition + deux parités | 4 | (n − 2) × taille | 2 disques |
+| **RAID 10** <span class="technique">notion technique</span> | Miroirs répartis | 4 | (n ÷ 2) × taille | 1 disque au minimum (jusqu'à un par miroir) |
 
 (n = nombre de disques de même taille.)
+
+**À retenir pour l'évaluation :** RAID 0, 1 et 5. Pour chacun, sache dire à quoi il sert, combien de disques il faut et combien de pannes il supporte. **Exemple pour 3 disques de 1 To en RAID 5 :** capacité utile = (3 − 1) × 1 To = 2 To ; un disque peut tomber sans perte de données.
+
+**Vocabulaire :** la **parité** est une information de contrôle calculée à partir des données, qui permet de **reconstruire** les données d'un disque en panne. *Striping* = répartir les données sur plusieurs disques ; *miroir* = écrire la même donnée sur deux disques.
 
 > [!WARNING]
 > **Un RAID n'est pas une sauvegarde.** Il protège d'une **panne de disque**, pas d'une suppression par erreur, d'un virus, d'un incendie ou d'une corruption : l'erreur est recopiée sur tous les disques. La sauvegarde est traitée au semestre 2.
 
-## 5. Serveur à deux processeurs et NUMA
+## 5. Serveur à deux processeurs et NUMA <span class="technique">notion technique</span>
+
+> [!TIP] Pour aller plus loin
+> Cette section dépasse le socle de première année : retiens seulement qu'un serveur peut avoir **deux processeurs** et que cela coûte plus cher. Le détail de NUMA est facultatif.
 
 Un **processeur physique** est une puce qui se place dans un **socket** de la carte mère. Un serveur à **deux sockets** (« bi-processeur ») accueille deux puces, chacune avec ses propres cœurs.
 

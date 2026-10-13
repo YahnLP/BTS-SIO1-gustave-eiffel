@@ -1,4 +1,4 @@
-# Semestre 1 – Poste de travail, systèmes et virtualisation
+# Semestre 1 (CS1) – Poste de travail, systèmes et virtualisation
 
 **Objectif du semestre :** comprendre et manipuler le poste de travail et le serveur, de la machine physique à la machine virtuelle : matériel, systèmes d'exploitation, terminal Linux et virtualisation.
 

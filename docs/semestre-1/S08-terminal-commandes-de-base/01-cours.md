@@ -2,6 +2,11 @@
 
 *BTS SIO SISR 1re année – S08 – à lire avant le [TP](02-tp.md)*
 
+> [!NOTE] Ce que tu dois savoir déjà
+> - **Prérequis :** importer et démarrer une VM Debian (S06, S07) ; lire une arborescence de dossiers comme sur Windows.
+> - **Mots déjà vus :** shell, bash, noyau, `root` et `sudo` (présentés en S05).
+> - **Expliqués dans ce cours :** terminal et prompt, chemins absolu et relatif, commandes de navigation et de gestion de fichiers, redirection et tube, `sudo`, noms avec espaces. **Session chargée, soyez concentrés** : c'est la base de tout le reste.
+
 ## À la fin de ce cours, tu sauras
 
 - [ ] lire un **prompt** et dire qui tu es, sur quelle machine, dans quel dossier ;
@@ -100,6 +105,9 @@ Trois raccourcis à connaître :
 
 ### Chercher de l'aide
 
+> [!TIP] À toi de chercher
+> Pour chaque commande nouvelle, **ne copie pas la syntaxe : cherche-la** avec `commande --help` ou `man commande`, puis **résume-la en une phrase** dans ta fiche. Exemple à faire : trouve l'option de `ls` qui trie par date de modification, et note-la avec un exemple. Tu retiendras bien mieux ce que tu as trouvé toi-même.
+
 Avant de demander, on cherche : `commande --help` donne un résumé ; `man commande` ouvre le manuel complet (on le quitte avec la touche `q`). Dans bash, `help` décrit les commandes internes au shell.
 
 ## 4. Observer la machine
@@ -135,9 +143,9 @@ Avant de demander, on cherche : `commande --help` donne un résumé ; `man comma
 | supprimer un dossier **vide** | `rmdir dossier` |
 | supprimer un dossier **et son contenu** | `rm -r dossier` |
 | connaître le type d'un fichier | `file fichier` |
-| chercher un fichier | `find dossier -name "motif"` |
-| créer une archive compressée | `tar -czf archive.tar.gz dossier` |
-| copier un fichier vers une autre machine, de façon chiffrée | `scp fichier utilisateur@machine:/chemin` |
+| chercher un fichier <span class="technique">notion technique</span> | `find dossier -name "motif"` |
+| créer une archive compressée <span class="technique">notion technique</span> | `tar -czf archive.tar.gz dossier` |
+| copier un fichier vers une autre machine, de façon chiffrée <span class="technique">notion technique</span> | `scp fichier utilisateur@machine:/chemin` |
 
 > [!WARNING]
 > **Il n'y a pas de corbeille dans le terminal.** `rm` supprime **définitivement**. Avant `rm -r`, vérifie avec `pwd` et `ls` que tu es au bon endroit.
@@ -200,3 +208,27 @@ Les accents (é, è…) fonctionnent si le système est configuré en UTF-8, mai
 Deux dossiers sont créés : `direction` et `générale`, au lieu d'un seul `direction générale`. Il fallait écrire `mkdir "direction générale"`.
 
 </details>
+
+## 8. Rediriger et enchaîner
+
+Une commande affiche son résultat à l'écran. On peut l'envoyer ailleurs :
+
+| Symbole | Effet | Exemple |
+|---|---|---|
+| `>` | envoie le résultat dans un fichier, en **écrasant** son contenu | `ls /etc > liste.txt` |
+| `>>` | **ajoute** le résultat à la fin du fichier | `date >> journal.txt` |
+| `\|` (le « tube ») | le résultat de la commande de gauche devient l'**entrée** de celle de droite | `ls /etc \| wc -l` (compte les éléments) |
+
+> [!WARNING]
+> `>` **écrase** sans prévenir. Si le fichier existe déjà, son ancien contenu est perdu : utilise `>>` pour ajouter.
+
+**Je vérifie.** Que fait `ls -l /etc | more` ?
+
+<details markdown="1">
+<summary>Voir la réponse</summary>
+
+Elle affiche la liste détaillée de `/etc` **page par page** : le résultat de `ls -l` est passé à `more`, qui l'affiche écran par écran (espace pour avancer, `q` pour quitter).
+
+</details>
+
+Les redirections et le tube serviront dans les séances suivantes (S09 et S10) ; retiens simplement leur rôle.

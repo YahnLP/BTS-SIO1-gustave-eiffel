@@ -2,6 +2,11 @@
 
 *BTS SIO SISR 1re année – S13 – à lire avant le [TP](02-tp.md)*
 
+> [!NOTE] Ce que tu dois savoir déjà
+> - **Prérequis :** virtualisation (S06, S07), terminal et paquets (S08 à S10), inventaire (S12).
+> - **Mots déjà vus :** agent, inventaire, CMDB, paquet, VM, instantané.
+> - **Expliqués dans ce cours :** GLPI, base de données, serveur web, agent GLPI, diagnostic d'un poste qui ne remonte pas.
+
 ## À la fin de ce cours, tu sauras
 
 - [ ] décrire l'**architecture** de GLPI et ce qu'il faut installer ;
@@ -37,6 +42,9 @@ flowchart LR
 | **PHP** | Langage de GLPI, avec des **extensions** | `php`, `php-mysql`, `php-curl`, `php-gd`, `php-intl`, `php-xml`, `php-mbstring`, `php-zip`, `php-bz2`… |
 | **Base de données** | Stocke tickets, actifs, utilisateurs | `mariadb-server` |
 | **Application** | Fichiers de GLPI | archive téléchargée sur le site officiel du projet |
+
+> [!NOTE]
+> **Trois mots à connaître.** Un **serveur Web** est un programme qui envoie des pages aux navigateurs. Une **base de données** est un programme qui range et retrouve des informations organisées en tableaux (tickets, postes, utilisateurs). **PHP** est le langage dans lequel GLPI est écrit : le serveur Web l'exécute. Tu n'as pas à les programmer, seulement à les installer et à vérifier qu'ils fonctionnent.
 
 Cet ensemble s'appelle une pile **LAMP** (Linux, Apache, MariaDB, PHP).
 

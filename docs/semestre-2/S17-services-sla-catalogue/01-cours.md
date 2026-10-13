@@ -2,6 +2,11 @@
 
 *BTS SIO SISR 1re année – S17 – à lire avant le [TP](02-tp.md)*
 
+> [!NOTE] Ce que tu dois savoir déjà
+> - **Prérequis :** tickets, priorités et SLA (S15) ; diagnostic (S16) ; CMDB (S12).
+> - **Mots déjà vus :** service, SLA, ticket, priorité, supervision, MTTR.
+> - **Expliqués dans ce cours :** catalogue de services, SLA, OLA, disponibilité, incident majeur, du service aux éléments de configuration, présence en ligne. **Session chargée, soyez concentrés.**
+
 ## À la fin de ce cours, tu sauras
 
 - [ ] définir un **service** et un **catalogue de services** ;
@@ -37,9 +42,6 @@ Une **fiche de service** contient au minimum : nom, description simple, bénéfi
 
 Le SLA ne tient que si les accords qui le soutiennent tiennent : une promesse de 4 heures au client est impossible si le fournisseur du matériel ne promet que 2 jours.
 
-> [!NOTE]
-> Les définitions d'OLA et de contrat de sous-traitance sont celles du vocabulaire ITIL courant ; **vérifie-les** dans la référence ITIL utilisée en classe.
-
 ## 3. Ce que contient un SLA
 
 | Élément | Exemple |
@@ -53,7 +55,7 @@ Le SLA ne tient que si les accords qui le soutiennent tiennent : une promesse de
 
 **Valeurs d'exemple (cours S15, InfraLab).** P1 : 15 min / 4 h ; P2 : 1 h / 8 h ; P3 : 4 h / 24 h ; P4 : 1 jour ouvré / 5 jours. Chaque organisation fixe les siennes.
 
-**Comment fixer les délais d'une organisation.** On ne les copie pas : on les **déduit**. (1) **Le besoin métier** : combien de temps l'activité supporte-t-elle l'arrêt (voir RPO et RTO en S20) ? (2) **La capacité de l'équipe** : un délai de 15 minutes suppose quelqu'un disponible et formé ; une équipe de deux personnes ne peut pas promettre une astreinte permanente. (3) **Les engagements des fournisseurs** : on ne promet pas plus que ce qui soutient le service (contrat de sous-traitance, OLA). (4) **Le coût** : un délai plus court demande plus de ressources. (5) **La mesure** : on publie des délais **tenables**, on les mesure (S16, supervision) et on les révise. Un SLA que l'équipe ne peut pas tenir est pire qu'un SLA modeste.
+**Comment fixer les délais d'une organisation.** On ne les copie pas : on les **déduit**. (1) **Le besoin métier** : combien de temps l'activité supporte-t-elle l'arrêt ? (C'est ce que mesurent le **RTO**, durée maximale d'interruption admise, et le **RPO**, quantité de données qu'on accepte de perdre : ils sont détaillés en [S20](../S20-sauvegardes/README.md).) (2) **La capacité de l'équipe** : un délai de 15 minutes suppose quelqu'un disponible et formé ; une équipe de deux personnes ne peut pas promettre une astreinte permanente. (3) **Les engagements des fournisseurs** : on ne promet pas plus que ce qui soutient le service (contrat de sous-traitance, OLA). (4) **Le coût** : un délai plus court demande plus de ressources. (5) **La mesure** : on publie des délais **tenables**, on les mesure (S16, supervision) et on les révise. Un SLA que l'équipe ne peut pas tenir est pire qu'un SLA modeste.
 
 ## 4. Calculer avec un engagement
 

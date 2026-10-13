@@ -2,6 +2,11 @@
 
 *BTS SIO SISR 1re année – S19 – à lire avant le [TP](02-tp.md)*
 
+> [!NOTE] Ce que tu dois savoir déjà
+> - **Prérequis :** scripts Bash (S10) ; conteneurs (S11) ; changements (S15, S17).
+> - **Mots déjà vus :** script, variable, boucle, code de retour, utilisateur, droits.
+> - **Expliqués dans ce cours :** automatisation, script fiable, création de comptes en masse, `cron`, SSH et clés, annuaire. **Session chargée, soyez concentrés** : les passages marqués <span class="technique">notion technique</span> sont facultatifs.
+
 ## À la fin de ce cours, tu sauras
 
 - [ ] décider **quand** automatiser une tâche ;
@@ -91,7 +96,10 @@ Une ligne contient **cinq champs de temps**, puis la commande :
 > [!NOTE]
 > Il existe aussi les **minuteries systemd** (*timers*), plus récentes ; on ne les pratique pas ici. Sur une VM minimale, le service `cron` peut ne pas être installé : vérifie.
 
-## 5. Impératif ou déclaratif
+## 5. Impératif ou déclaratif <span class="technique">notion technique</span>
+
+> [!TIP] Pour aller plus loin
+> Si le temps manque, retiens seulement la différence : **impératif** = je donne les étapes ; **déclaratif** = je décris le résultat voulu. Le fichier Compose et le YAML sont là pour illustrer.
 
 | | **Impératif** | **Déclaratif** |
 |---|---|---|
@@ -122,7 +130,10 @@ Le **YAML** est un format où l'**indentation par espaces** (jamais de tabulatio
 
 Une **demande standard** (S15, S17), prévisible et bien définie, est la candidate idéale à l'automatisation : création de compte, installation d'un logiciel autorisé. Un **changement standard** (pré-approuvé, risque faible, procédure connue) peut aussi être scripté. Mais le **suivi** reste : la demande est **tracée** dans le ticket, même si l'exécution est automatique.
 
-## 8. Annuaires : centraliser les comptes
+## 8. Annuaires : centraliser les comptes <span class="technique">notion technique</span>
+
+> [!TIP] Pour aller plus loin
+> Les annuaires (LDAP, Active Directory, GPO) dépassent le socle de première année. **Idée à retenir :** un annuaire est une liste centrale des comptes, que plusieurs applications interrogent au lieu d'avoir chacune leurs comptes. Le détail est facultatif ; il sera revu en deuxième année.
 
 Sans **annuaire**, chaque application a ses propres comptes. Un annuaire est une base **en arbre** de personnes, groupes et machines, que les applications interrogent pour **authentifier**. Le protocole **LDAP** (port 389 ; LDAPS, chiffré, 636) l'interroge. Une entrée a un nom unique, le **DN**, par exemple `uid=clefebvre,ou=Personnes,dc=jackcelair,dc=lan` ; elle est décrite par des **attributs** (`uid`, `cn`, `sn`, `mail`) et des **classes d'objet** (`inetOrgPerson`…). On **recherche** avec un filtre (`(uid=clefebvre)`) et on **s'authentifie** par une **liaison** (*bind*) ; un échec renvoie « Invalid credentials ».
 
@@ -134,6 +145,34 @@ Sans **annuaire**, chaque application a ses propres comptes. Un annuaire est une
 
 **Active Directory** est l'annuaire de **Microsoft** : il s'appuie sur LDAP, Kerberos et DNS, et ajoute **domaine**, **contrôleur de domaine** et **stratégies de groupe** (GPO) pour configurer les postes. OpenLDAP n'a ni GPO ni gestion des postes. L'annuaire contient des **données personnelles** (S12) : il entre dans le registre des traitements.
 
+## 9. Se connecter à distance : SSH
+
+Un serveur n'a souvent ni écran ni clavier à portée de main : on s'y connecte **par le réseau**. **SSH** (*Secure Shell*) ouvre un **terminal sur une autre machine**, avec une connexion **chiffrée** (illisible pour qui écoute le réseau). Il écoute sur le **port 22** (voir la fiche [minimum réseau](../../ressources/minimum-reseau.md)).
+
+```text
+ssh utilisateur@adresse_du_serveur
+```
+
+À la **première connexion**, SSH affiche l'**empreinte** du serveur et demande si tu lui fais confiance : c'est la vérification que tu parles bien au bon serveur et pas à un imposteur. Ensuite, tu t'authentifies de deux façons possibles :
+
+| Méthode | Principe | Avantage / limite |
+|---|---|---|
+| **Mot de passe** | Tu tapes le mot de passe du compte | Simple, mais peut être deviné ou volé |
+| **Paire de clés** | Une **clé privée** (secrète, sur ton poste) et une **clé publique** (déposée sur le serveur) | Pas de mot de passe qui circule ; plus sûr |
+
+**Comprendre la paire de clés.** C'est comme un cadenas et sa clé. Tu fabriques les deux ensemble : le **cadenas** (clé publique) peut être copié et posé sur autant de serveurs que tu veux ; la **clé** (clé privée) reste chez toi et **ne se partage jamais**. Seule la clé privée ouvre un cadenas qui lui correspond.
+
+| Étape | Commande |
+|---|---|
+| fabriquer la paire | `ssh-keygen` |
+| déposer la clé publique sur le serveur | `ssh-copy-id utilisateur@adresse_du_serveur` |
+| se connecter ensuite | `ssh utilisateur@adresse_du_serveur` |
+
+> [!TIP] À toi de chercher
+> Avec `man ssh-keygen`, trouve comment choisir le **type de clé** et ce que fait une **phrase secrète** (*passphrase*). Résume-le en deux phrases dans ta fiche.
+
+**Bonnes pratiques :** ne jamais envoyer ni publier sa clé **privée** ; protéger la clé par une phrase secrète ; supprimer la clé publique du serveur quand une personne part.
+
 ## Je retiens
 
 - On automatise ce qui est **fréquent, compris, stable**.
@@ -142,4 +181,5 @@ Sans **annuaire**, chaque application a ses propres comptes. Un annuaire est une
 - **Déclaratif** : on décrit l'état voulu (Compose) ; l'outil fait le reste.
 - Un script se trompe **en masse** : on teste d'abord et on journalise.
 - **Pas de secret** dans un script.
+- **SSH** : terminal à distance chiffré ; une **paire de clés** (publique sur le serveur, privée jamais partagée) évite les mots de passe.
 - Un **annuaire** centralise les comptes (LDAP, DN, filtre, liaison) ; **Active Directory** y ajoute domaine et GPO.

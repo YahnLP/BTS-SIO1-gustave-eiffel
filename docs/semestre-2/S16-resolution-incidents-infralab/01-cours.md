@@ -2,6 +2,11 @@
 
 *BTS SIO SISR 1re année – S16 – à lire avant le [TP](02-tp.md)*
 
+> [!NOTE] Ce que tu dois savoir déjà
+> - **Prérequis :** tickets, priorités, SLA (S15) ; CMDB (S12).
+> - **Mots déjà vus :** incident, ticket, impact, urgence, priorité.
+> - **Expliqués dans ce cours :** cycle de vie d'un incident, méthode de diagnostic, corrélation, base de connaissances, supervision. Les mots « ping », « port » et « DNS » sont dans la fiche [minimum réseau](../../ressources/minimum-reseau.md).
+
 ## À la fin de ce cours, tu sauras
 
 - [ ] décrire le **cycle de vie** d'un incident et ce que le ticket contient à chaque étape ;
@@ -105,7 +110,7 @@ Get-Process | Sort-Object CPU -Descending | Select-Object -First 10 Name, CPU, W
 ```
 
 > [!NOTE]
-> **Commandes et versions.** Le support d'origine employait `wmic`, outil **retiré ou désactivé** dans les versions récentes de Windows. Les commandes PowerShell ci-dessus sont des commandes de référence, à **tester sur la VM de la salle** : note les écarts.
+> **Commandes et versions.** Tu rencontreras sur Internet la commande `wmic`, **retirée ou désactivée** dans les versions récentes de Windows. Les commandes PowerShell ci-dessus sont des commandes de référence, à **tester sur la VM de la salle** : note les écarts.
 
 Les seuils de repos souvent cités (processeur sous 80 %, mémoire sous 85 %, disque sous 80 %, plus de 10 % d'espace libre) sont des **repères**, pas des normes : juge toujours **par comparaison** avec un poste sain.
 

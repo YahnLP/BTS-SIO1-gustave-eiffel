@@ -1,4 +1,4 @@
-# Semestre 2 – Conteneurs, gestion de parc, ITIL et services
+# Semestre 2 (SR1) – Conteneurs, gestion de parc, ITIL et services
 
 **Objectif du semestre :** gérer le patrimoine informatique, organiser le support selon ITIL et mettre à disposition des services (déploiement, automatisation, sauvegardes).
 

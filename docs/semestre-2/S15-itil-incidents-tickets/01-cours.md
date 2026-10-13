@@ -2,6 +2,11 @@
 
 *BTS SIO SISR 1re année – S15 – à lire avant le [TP](02-tp.md)*
 
+> [!NOTE] Ce que tu dois savoir déjà
+> - **Prérequis :** GLPI configuré (S13, S14) ; CMDB (S12).
+> - **Mots déjà vus :** GLPI, CMDB, entité, profil.
+> - **Expliqués dans ce cours :** ITIL, service, incident, problème, demande, changement, impact, urgence, priorité, SLA, centre de services, ticket. **Session chargée, soyez concentrés** : beaucoup de vocabulaire nouveau, un tableau récapitulatif te sert de repère.
+
 ## À la fin de ce cours, tu sauras
 
 - [ ] expliquer ce qu'est **ITIL** et ce qu'est un **service** ;
@@ -16,7 +21,7 @@
 **ITIL** (*Information Technology Infrastructure Library*) est un **référentiel de bonnes pratiques** pour gérer les services informatiques. Ce n'est ni une norme à respecter, ni un logiciel : c'est un vocabulaire et des méthodes issus de l'expérience de nombreuses organisations. La version actuelle est **ITIL 4**, qui décrit **34 pratiques** de gestion.
 
 > [!NOTE]
-> Le support d'origine date la création d'ITIL des années 1980 par une administration britannique. Les dates et l'éditeur actuel sont à **vérifier** sur le site officiel avant d'être cités.
+> ITIL a été créé dans les années 1980 par une administration britannique. Avant de citer une date ou l'éditeur actuel, **vérifie-les** sur le site officiel.
 
 ## 2. Un service, c'est un résultat, pas une machine
 
@@ -96,7 +101,7 @@ Les outils de gestion de tickets (dont GLPI) calculent la priorité à partir de
 À priorité égale, on traite dans l'ordre d'arrivée (**FIFO**, premier entré, premier sorti). Au-dessus de P1, un **incident majeur** (impact extrême sur tous) déclenche une procédure spéciale : cellule de crise, information de la direction, communication régulière.
 
 > [!NOTE]
-> Les délais ci-dessus sont des **exemples** du support d'origine. Dans GLPI, l'échelle est différente (voir §7) : le TP demande de faire la correspondance.
+> Les délais ci-dessus sont des **exemples d'enseignement**. Dans GLPI, l'échelle des niveaux n'a pas les mêmes noms : le TP te demande de faire la correspondance (voir aussi le paragraphe sur le ticket, §7).
 
 ## 5. Le SLA et les indicateurs
 

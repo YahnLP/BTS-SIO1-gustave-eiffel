@@ -2,6 +2,11 @@
 
 *BTS SIO SISR 1re année – S06 – à lire avec le [TP](02-tp.md)*
 
+> [!NOTE] Ce que tu dois savoir déjà
+> - **Prérequis :** composants, système d'exploitation, stockage (S01 à S05).
+> - **Mots déjà vus :** processeur, mémoire vive, noyau, système d'exploitation, ISO.
+> - **Expliqués dans ce cours :** machine virtuelle, hôte et invité, hyperviseur, émulation, conteneur (idée seulement : détaillé en S11), création d'une VM.
+
 ## À la fin de ce cours, tu sauras
 
 - [ ] définir **machine virtuelle**, **hyperviseur** et **virtualisation** ;
@@ -63,7 +68,7 @@ La virtualisation est plus rapide car aucune instruction n'est traduite : l'hôt
 
 ### Machine virtuelle ou conteneur ?
 
-Un **conteneur** (Docker, LXC) est un environnement logiciel isolé qui **partage le noyau** de la machine hôte : il n'a pas son propre système d'exploitation.
+Un **conteneur** (Docker, LXC) est un environnement logiciel isolé qui **partage le noyau** de la machine hôte : il n'a pas son propre système d'exploitation. Pour l'instant, retiens seulement l'idée : on le manipule vraiment en [S11](../../semestre-2/S11-conteneurs-dockerlab/README.md).
 
 | Machine virtuelle | Conteneur |
 |---|---|

@@ -1,6 +1,8 @@
 title: Ressources
 nav:
   - README.md
+  - glossaire.md
+  - minimum-reseau.md
   - referentiel.md
   - couverture-referentiel.md
   - outils.md

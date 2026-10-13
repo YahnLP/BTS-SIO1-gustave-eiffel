@@ -2,6 +2,11 @@
 
 *BTS SIO SISR 1re année – S01 – à lire avant le [TP](02-tp.md)*
 
+> [!NOTE] Ce que tu dois savoir déjà
+> - **Prérequis :** aucun : tout est expliqué ici, même ce qui te paraît évident.
+> - **Mots déjà vus :** aucun.
+> - **Expliqués dans ce cours :** hardware, software, carte mère, processeur, mémoire vive, stockage (HDD, SSD), BIOS/UEFI, bus, pilote. Les sigles sont dans le [glossaire](../../ressources/glossaire.md).
+
 ## À la fin de ce cours, tu sauras
 
 - [ ] distinguer **hardware** et **software** et donner un exemple de chacun ;

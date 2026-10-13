@@ -2,6 +2,11 @@
 
 *BTS SIO SISR 1re année – S11 – à lire avant le [TP](02-tp.md)*
 
+> [!NOTE] Ce que tu dois savoir déjà
+> - **Prérequis :** terminal Linux (S08 à S10) ; ce qu'est une VM (S06) ; port et adresse IP : voir la fiche [minimum réseau](../../ressources/minimum-reseau.md).
+> - **Mots déjà vus :** machine virtuelle, noyau, conteneur (cité en S06), `sudo`, paquet.
+> - **Expliqués dans ce cours :** image, conteneur, registre, cycle de vie, port publié, variable d'environnement, volume, réseau Docker. **Session chargée, soyez concentrés** : prends le temps de remplir ta fiche de commandes.
+
 ## À la fin de ce cours, tu sauras
 
 - [ ] expliquer ce qui distingue un **conteneur** d'une **machine virtuelle** ;
@@ -76,13 +81,16 @@ Un conteneur vit **tant que son processus principal tourne**. S'il se termine, l
 
 ## 5. Publier un port, configurer avec des variables
 
+> [!NOTE]
+> **Rappel : qu'est-ce qu'un port ?** Une machine peut offrir plusieurs services à la fois (un site web, une connexion SSH…). Le **port** est le numéro qui dit « à quel service je m'adresse » : `80` pour le web, `22` pour SSH. Voir la fiche [minimum réseau](../../ressources/minimum-reseau.md).
+
 Un conteneur a **sa propre pile réseau**. Un serveur Web qui écoute sur le port 80 **dans** le conteneur n'est pas joignable depuis l'hôte tant qu'on n'a pas **publié** le port :
 
 > `-p PORT_HÔTE:PORT_CONTENEUR` : `-p 8080:80` envoie ce qui arrive sur le port **8080 de l'hôte** vers le port **80 du conteneur**.
 
 Un port d'hôte ne peut servir qu'**un seul** conteneur à la fois (sinon : « port is already allocated »). Deux conteneurs peuvent en revanche écouter tous les deux sur leur port 80 interne, publiés sur 8080 et 8081.
 
-Une image est **générique** : on l'adapte au démarrage avec des **variables d'environnement** (`-e NOM=valeur`). Exemple : l'image `postgres` exige `POSTGRES_PASSWORD` ; sans elle, le conteneur refuse de démarrer. On ne peut **pas** changer une variable sur un conteneur existant : on le **recrée**.
+Une image est **générique** : on l'adapte au démarrage avec des **variables d'environnement** (`-e NOM=valeur`). Exemple : l'image `postgres` exige `POSTGRES_PASSWORD` ; sans elle, le conteneur refuse de démarrer. Une **variable d'environnement** est un réglage nommé que le programme lit au démarrage (ici, un mot de passe). On ne peut **pas** changer une variable sur un conteneur existant : on le **recrée**.
 
 > [!WARNING]
 > **Une variable d'environnement n'est pas un coffre-fort.** Elle est visible avec `docker inspect`. On évite de coller de vrais mots de passe dans des commandes partagées ; en production, on utilise des mécanismes dédiés aux secrets (hors programme de cette séance).

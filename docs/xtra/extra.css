@@ -1,4 +1,4 @@
-/* ===== Thème moderne – Systèmes et réseaux BTS SIO SISR ===== */
+/* ===== Thème moderne – CS1 SR1 BTS SIO SISR ===== */
 :root {
   --c1: #4f46e5; --c2: #06b6d4; --c3: #10b981;
   --radius: 14px;
@@ -253,3 +253,10 @@ html.projection .side-toggle { display: none; }
   .md-typeset .blank-long { display: block; width: 100%; height: 16mm; border-bottom: 0; margin: .3em 0;
                  background-image: linear-gradient(to bottom, transparent calc(8mm - 1px), #888 calc(8mm - 1px)); background-size: 100% 8mm; }
 }
+
+/* Badge « notion technique » et encadré « Pour aller plus loin » */
+.technique { display: inline-block; padding: 0 .55em; margin-left: .3em; border-radius: 999px; font-size: .68rem; font-weight: 700;
+  letter-spacing: .02em; vertical-align: middle; color: #7c2d12; background: #ffedd5; border: 1px solid #fdba74; white-space: nowrap; }
+[data-md-color-scheme="slate"] .technique { color: #fed7aa; background: #431407; border-color: #9a3412; }
+.technique::before { content: "\2605\00a0"; }
+.md-typeset .callout[data-callout="tip"] { }

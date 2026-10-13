@@ -1,8 +1,9 @@
 <div class="hero" markdown>
 
-# Systèmes et réseaux
+# CS1 · SR1
 
 **BTS SIO option SISR – 1re année**
+**CS1 : semestre 1 · SR1 : semestre 2**
 Cours, TP et aide-mémoire – Yahn LE PRETTRE, Enseignant · Lycée Gustave Eiffel
 
 Un administrateur n'apprend pas en lisant : **il anticipe, il manipule, il comprend, il vérifie.**
@@ -21,7 +22,7 @@ Un administrateur n'apprend pas en lisant : **il anticipe, il manipule, il compr
 
 <div class="card" markdown>
 
-### Semestre 1
+### Semestre 1 – CS1
 **10 séances** – Poste de travail, systèmes d'exploitation, virtualisation et terminal Linux (bash).
 
 [**Ouvrir la progression**](semestre-1/README.md){ .go }
@@ -29,7 +30,7 @@ Un administrateur n'apprend pas en lisant : **il anticipe, il manipule, il compr
 
 <div class="card green" markdown>
 
-### Semestre 2
+### Semestre 2 – SR1
 **11 séances** – Conteneurs, gestion de parc, ITIL, déploiement, automatisation et sauvegardes.
 
 [**Ouvrir la progression**](semestre-2/README.md){ .go }
@@ -83,6 +84,20 @@ Câbler et configurer, sans matériel, hors ligne.
 </div>
 
 </div>
+
+## Comment lire les cours
+
+Chaque cours commence par un encadré **Ce que tu dois savoir déjà** : ce qu'il faut maîtriser avant, les mots déjà vus, les mots expliqués dans la séance.
+
+| Repère | Sens |
+|---|---|
+| <span class="technique">notion technique</span> | Notion plus avancée que le socle de première année : tu peux la lire sans la retenir. |
+| **Pour aller plus loin** (encadré) | Passage facultatif, pour les curieux ou si tu avances vite. |
+| **À toi de chercher** (encadré) | Cherche toi-même la syntaxe (`--help`, `man`), puis résume-la avec tes mots. |
+| **Session chargée, soyez concentrés** | Séance dense : lis le cours avant et garde ta fiche sous la main. |
+| Survol d'un sigle (BIOS, DHCP…) | Une infobulle donne sa définition ; le [glossaire](ressources/glossaire.md) les réunit tous. |
+
+Les notions de réseau sont vues plus en détail **en cours de réseau** ; la fiche [minimum réseau](ressources/minimum-reseau.md) donne l'essentiel.
 
 > [!NOTE]
 > Les contenus sont placés sous licence **CC BY-NC-SA 4.0**. Voir [licences et crédits](ressources/licences.md).

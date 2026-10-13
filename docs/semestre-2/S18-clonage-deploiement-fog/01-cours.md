@@ -2,6 +2,11 @@
 
 *BTS SIO SISR 1re année – S18 – à lire avant le [TP](02-tp.md)*
 
+> [!NOTE] Ce que tu dois savoir déjà
+> - **Prérequis :** VM et réseaux de VirtualBox (S06, S07) ; terminal (S08 à S10) ; cycle de vie des équipements (S12) ; la fiche [minimum réseau](../../ressources/minimum-reseau.md).
+> - **Mots déjà vus :** DHCP, adresse IP, instantané, VM.
+> - **Expliqués dans ce cours :** clonage, démarrage par le réseau (PXE), image maîtresse, identité d'une machine après clonage.
+
 ## À la fin de ce cours, tu sauras
 
 - [ ] expliquer le **clonage** et l'intérêt d'une **image maîtresse** ;
@@ -13,6 +18,8 @@
 ## 1. Pourquoi cloner
 
 Installer un poste à la main (système, pilotes, logiciels, réglages) prend du temps, et deux postes « installés pareil » ne le sont jamais tout à fait. Le **clonage** consiste à **préparer un poste modèle une seule fois**, à en **capturer une image**, puis à la **déployer** sur autant de postes que nécessaire.
+
+**Deux mots à connaître.** Le **clonage** consiste à copier à l'identique le disque d'un poste sur d'autres postes. Le poste de départ, installé et réglé avec soin, s'appelle le **poste modèle** ; sa copie enregistrée s'appelle l'**image maîtresse**. Attention : un clone n'est ni un instantané de VM (S07) ni une sauvegarde (S20).
 
 | | Installation à la main | Clonage |
 |---|---|---|

@@ -2,6 +2,11 @@
 
 *BTS SIO SISR 1re année – S20 – à lire avant le [TP](02-tp.md)*
 
+> [!NOTE] Ce que tu dois savoir déjà
+> - **Prérequis :** scripts et `cron` (S10, S19) ; GLPI et sa base de données (S13, S14).
+> - **Mots déjà vus :** sauvegarde, instantané, base de données, `cron`, SSH.
+> - **Expliqués dans ce cours :** RPO, RTO, règle 3-2-1, types de sauvegarde, différence avec instantané et réplication, empreinte, chiffrement.
+
 ## À la fin de ce cours, tu sauras
 
 - [ ] définir **sauvegarde**, **restauration**, **RPO**, **RTO** ;
@@ -83,10 +88,24 @@ Un NAS posé **à côté** du serveur protège d'une panne de disque, pas d'un i
 ## 7. Sécurité et protection des données
 
 - Les sauvegardes contiennent **les mêmes données que l'original**, donc des **données personnelles** : leur accès doit être aussi **restreint** que celui de l'original, et leur durée de conservation **justifiée**.
-- Une sauvegarde peut être **chiffrée** ; alors la **clé** devient critique : si elle est perdue, la sauvegarde est inutilisable. Elle se conserve **ailleurs** que la sauvegarde.
+- Une sauvegarde peut être **chiffrée** (rendue illisible sans clé) ; alors la **clé** devient critique : si elle est perdue, la sauvegarde est inutilisable. Elle se conserve **ailleurs** que la sauvegarde.
 - Le **compte** qui sauvegarde a les droits d'**écriture** sur les sauvegardes : s'il est compromis, elles le sont aussi.
 - Les sauvegardes sont à **superviser** : une sauvegarde qui échoue en silence est une fausse sécurité (S19).
 - La question de l'effacement des données personnelles **dans** les sauvegardes est à voir avec le **délégué à la protection des données** de l'organisation.
+
+### Chiffrer un fichier avec `gpg`
+
+`gpg` (GnuPG) est un outil libre de chiffrement. Il propose deux façons de faire :
+
+| | Principe | Exemple |
+|---|---|---|
+| **Avec une phrase secrète** (chiffrement *symétrique*) | La **même** phrase chiffre et déchiffre | `gpg -c fichier` puis `gpg fichier.gpg` |
+| **Avec une paire de clés** (chiffrement *asymétrique*) | On chiffre avec la clé **publique** du destinataire ; seul celui qui a la clé **privée** peut déchiffrer (voir la paire de clés de [S19](../S19-automatisation/README.md), partie SSH) | `gpg --encrypt --recipient NOM fichier` |
+
+Dans les deux cas, **sans la phrase secrète ou la clé privée, le fichier est perdu**. Teste toujours le déchiffrement avant de supprimer l'original.
+
+> [!TIP] À toi de chercher
+> Avec `man gpg` ou `gpg --help`, retrouve l'option qui **déchiffre** un fichier et celle qui liste les clés. Résume-les en deux phrases dans ta fiche.
 
 ## 8. Que sauvegarder ?
 
@@ -100,6 +119,11 @@ Pour un service, il faut sauvegarder **tout ce qui est nécessaire pour le remet
 | **Procédure de restauration** | Le **document** qui explique comment faire |
 
 Un oubli classique : sauvegarder la base **sans** les fichiers ou la configuration, ou la procédure.
+
+## Pour aller plus loin : PCA et PRA <span class="technique">notion technique</span>
+
+> [!TIP] Pour aller plus loin
+> Au-delà de la sauvegarde, une organisation prévoit comment **continuer** ou **reprendre** son activité après un sinistre. Le **PCA** (plan de continuité d'activité) décrit comment l'activité se **poursuit** pendant l'incident (mode dégradé, site de secours). Le **PRA** (plan de reprise d'activité) décrit comment **redémarrer** après une interruption. Les deux s'appuient sur les **RTO** et **RPO** de chaque service. Retiens la différence ; le détail est facultatif.
 
 ## Je retiens
 

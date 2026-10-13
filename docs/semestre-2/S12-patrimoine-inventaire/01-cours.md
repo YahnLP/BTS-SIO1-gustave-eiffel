@@ -2,6 +2,11 @@
 
 *BTS SIO SISR 1re année – S12 – à lire avant le [TP](02-tp.md)*
 
+> [!NOTE] Ce que tu dois savoir déjà
+> - **Prérequis :** fiche d'identité d'un poste (S02) ; terminal Linux (S08 à S10).
+> - **Mots déjà vus :** inventaire d'un poste, composants.
+> - **Expliqués dans ce cours :** patrimoine, inventaire, fiche d'inventaire, agent, méthodes manuelle et automatisée, qualité des données, données personnelles et RGPD.
+
 ## À la fin de ce cours, tu sauras
 
 - [ ] définir le **patrimoine informatique** et un **élément de configuration** (CI) ;
@@ -95,7 +100,7 @@ Le temps d'un déploiement automatisé dépend de l'organisation (déploiement p
 > [!TIP]
 > **Dans InfraLab** (TP, partie D) : le TP 1 te fait constater un Parc vide puis le remplir par découverte, le TP 4 complète une fiche (numéro d'inventaire, numéro de série, garantie) et le TP 9 traite une imprimante sans agent. Tu vois **ce que chaque mode sait et ne sait pas**.
 
-**Agent ou sans agent ?** Un **agent** est un petit programme sur chaque poste. Une méthode **sans agent** (*agentless*) interroge à distance par des protocoles réseau comme **SNMP** (équipements réseau, imprimantes) ou **WMI** (Windows). Les deux se combinent : agent pour les postes, SNMP pour les imprimantes et les switchs.
+**Agent ou sans agent ?** Un **agent** est un petit programme sur chaque poste. Une méthode **sans agent** (*agentless*) interroge à distance par des protocoles réseau comme **SNMP** (équipements réseau, imprimantes) ou **WMI** (Windows) <span class="technique">notion technique</span>. Les deux se combinent : agent pour les postes, SNMP pour les imprimantes et les switchs.
 
 ## 5. La qualité des données
 

@@ -2,6 +2,11 @@
 
 *BTS SIO SISR 1re année – S21 – à lire avant le [TP](02-tp.md)*
 
+> [!NOTE] Ce que tu dois savoir déjà
+> - **Prérequis :** les séances S11 à S20 et leurs comptes rendus.
+> - **Mots déjà vus :** tout le vocabulaire du semestre : voir le [glossaire](../../ressources/glossaire.md).
+> - **Expliqués dans ce cours :** fiche de réalisation, tableau de synthèse, portfolio, entretien d'explicitation, recette. **Session chargée, soyez concentrés** : la rédaction demande du temps, commence dès l'étape A.
+
 ## À la fin de ce cours, tu sauras
 
 - [ ] **organiser** un travail complexe : urgent d'abord, propre ensuite, durable à la fin ;
@@ -82,6 +87,22 @@ Deux pièges : **se surestimer** (« j'ai réussi le TP, donc je sais ») ; **se
 | 4,5 – 5 | **Lien avec une compétence** et suite possible |
 
 Parle de **ce que tu as fait**, pas de ce que « le groupe a fait ». Utilise le vocabulaire juste. Prépare une réponse à : « Qu'est-ce qui se passerait si… ? »
+
+## 6. Le vocabulaire de l'examen
+
+Ces mots reviendront en deuxième année ; mieux vaut les comprendre maintenant.
+
+| Mot | Sens |
+|---|---|
+| **Réalisation professionnelle** | Un travail que **tu** as mené (en stage, en entreprise ou en formation), décrit et prouvé. |
+| **Fiche de réalisation** | Le document qui décrit une réalisation : contexte, besoin, travail effectué, preuves. Un modèle est fourni dans les [ressources](../../ressources/fiche-realisation-professionnelle.md). |
+| **Portfolio** | Ton dossier **numérique** qui rassemble les preuves de tes compétences ; il doit rester **accessible** au jury. |
+| **Tableau de synthèse** | Le tableau qui relie chaque réalisation aux **compétences** du référentiel. Voir [le modèle](../../ressources/tableau-synthese.md). |
+| **Entretien d'explicitation** | Échange où tu **expliques** ce que tu as fait, comment et pourquoi : le jury cherche à comprendre **ta** démarche. |
+| **Recette** | Vérification devant le jury que la réalisation **fonctionne** comme prévu (on la montre ou on la teste). |
+
+> [!NOTE]
+> Les durées et les modalités exactes des épreuves sont fixées par le règlement d'examen : ton enseignant te les précisera. Les compétences évaluées sont dans [la page référentiel](../../ressources/referentiel.md).
 
 ## Je retiens
 

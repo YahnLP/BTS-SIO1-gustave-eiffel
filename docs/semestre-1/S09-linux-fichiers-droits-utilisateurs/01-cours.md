@@ -2,6 +2,11 @@
 
 *BTS SIO SISR 1re année – S09 – à lire avec le [TP](02-tp.md)*
 
+> [!NOTE] Ce que tu dois savoir déjà
+> - **Prérequis :** naviguer et gérer des fichiers dans le terminal (S08), utiliser `sudo`.
+> - **Mots déjà vus :** chemin absolu, chemin relatif, `sudo`, `root`, redirection.
+> - **Expliqués dans ce cours :** utilisateur, groupe, propriétaire, droits `rwx` et leur notation en chiffres, `chmod`, `chown`, lien symbolique.
+
 ## À la fin de ce cours, tu sauras
 
 - [ ] expliquer ce qu'est un **utilisateur**, un **groupe**, et où le système les enregistre ;
@@ -127,6 +132,24 @@ En `rwxr-x---` : rien du tout (`---`), il ne peut même pas entrer. En `rwxr-xr-
 
 `chmod -R` applique le changement à tout le contenu du dossier.
 
+**Passer de la lettre au chiffre :** additionne `r`=4, `w`=2, `x`=1 pour **chaque** groupe de trois lettres.
+
+| Lettres | Calcul | Octal |
+|---|---|---|
+| `rwx` | 4 + 2 + 1 | **7** |
+| `rw-` | 4 + 2 + 0 | **6** |
+| `r-x` | 4 + 0 + 1 | **5** |
+| `r--` | 4 + 0 + 0 | **4** |
+
+**Je vérifie.** Écris `rw-r-----` en octal, puis donne les lettres de `755`.
+
+<details markdown="1">
+<summary>Voir la réponse</summary>
+
+`rw-` = 6, `r--` = 4, `---` = 0 : **640**. Et `755` = `rwx` (7), `r-x` (5), `r-x` (5) : **`rwxr-xr-x`**.
+
+</details>
+
 ### `chown` et `chgrp` : changer le propriétaire et le groupe
 
 | Commande | Effet |
@@ -137,7 +160,10 @@ En `rwxr-x---` : rien du tout (`---`), il ne peut même pas entrer. En `rwxr-xr-
 
 Ces changements demandent en général les droits d'administrateur (`sudo`).
 
-### Droits par défaut : le `umask`
+### Droits par défaut : le `umask` <span class="technique">notion technique</span>
+
+> [!TIP] Pour aller plus loin
+> Le `umask` n'est pas exigé en première année : retiens seulement que **les nouveaux fichiers reçoivent des droits par défaut**, que l'on corrige ensuite avec `chmod`.
 
 Les droits d'un **nouveau** fichier ou dossier dépendent d'un réglage de l'utilisateur appelé **`umask`**. Tape `umask` pour le voir et crée un fichier pour constater le résultat.
 
@@ -154,7 +180,10 @@ Quand un utilisateur crée un fichier, celui-ci appartient normalement à **son*
 
 </details>
 
-## 4. Les liens
+## 4. Les liens <span class="technique">notion technique</span>
+
+> [!TIP] Pour aller plus loin
+> Les liens ne font pas partie du socle exigé : retiens qu'un **lien symbolique** est un raccourci, et que le **lien dur** (même `inode`, c'est-à-dire même numéro interne de fichier) est une notion technique facultative.
 
 Un **lien** permet d'atteindre un même contenu sous un autre nom ou depuis un autre endroit.
 

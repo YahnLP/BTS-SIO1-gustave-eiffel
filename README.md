@@ -1,4 +1,4 @@
-# Systèmes et réseaux – BTS SIO SISR 1re année
+# CS1 · SR1 – BTS SIO SISR 1re année
 
 Cours, TP et aide-mémoire de **BTS SIO option SISR, 1re année** (21 séances de 4 h). Auteur : Yahn LE PRETTRE, Enseignant · Lycée Gustave Eiffel ([formaxionlandes.fr](https://formaxionlandes.fr/)) – licence CC BY-NC-SA 4.0.
 

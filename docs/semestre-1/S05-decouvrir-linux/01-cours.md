@@ -2,6 +2,11 @@
 
 *BTS SIO SISR 1re année – S05 – à lire avant le [TP](02-tp.md)*
 
+> [!NOTE] Ce que tu dois savoir déjà
+> - **Prérequis :** ce qu'est un système d'exploitation, ses licences et ses outils (S04).
+> - **Mots déjà vus :** noyau, système d'exploitation, logiciel libre, licence.
+> - **Expliqués dans ce cours :** distribution, environnement de bureau, GPL, familles de distributions, comparaison Windows/Linux. `sudo` et `root` sont seulement **présentés** ; tu les utiliseras vraiment en S08.
+
 ## À la fin de ce cours, tu sauras
 
 - [ ] situer **Unix**, **GNU**, **Linux**, **Internet** et le **Web** dans le temps ;
@@ -79,6 +84,9 @@ Serveurs Web et d'entreprise, infrastructures **cloud**, conteneurs, **Android**
 | **Licence** | Propriétaire, payante | Libre (GPL…) |
 
 **Plusieurs systèmes sur une machine.** Multiboot, machine virtuelle (S06), ou **WSL** (Linux sous Windows, vu en S04).
+
+> [!NOTE]
+> **`root` et `sudo`, en une phrase.** Sous Linux, le compte **root** peut tout faire, y compris casser le système ; on utilise donc un compte normal et on emprunte les droits de root, le temps d'**une seule commande**, avec `sudo`. Tu n'as rien à taper pour le moment : tu t'en serviras à partir de [S08](../S08-terminal-commandes-de-base/README.md).
 
 ## 7. Culture informatique : de l'assembleur à Internet
 

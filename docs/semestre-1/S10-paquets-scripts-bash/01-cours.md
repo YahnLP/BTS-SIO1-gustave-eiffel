@@ -2,6 +2,11 @@
 
 *BTS SIO SISR 1re année – S10 – à lire avec le [TP](02-tp.md)*
 
+> [!NOTE] Ce que tu dois savoir déjà
+> - **Prérequis :** commandes de base, droits et `sudo` (S08, S09).
+> - **Mots déjà vus :** tube, redirection, droits, chemin, `sudo`.
+> - **Expliqués dans ce cours :** paquet et gestionnaire de paquets, script, variable, condition, boucle, code de retour.
+
 ## À la fin de ce cours, tu sauras
 
 - [ ] expliquer ce qu'est un **paquet**, un **dépôt** et une **dépendance** ;
@@ -100,7 +105,7 @@ echo "Premier argument : $1"
 | `$NOM` | valeur de la variable |
 | `$1`, `$2` | arguments donnés au script : `./script.sh a b` donne `$1` = `a`, `$2` = `b` |
 | `$#` | nombre d'arguments |
-| `${1:-defaut}` | `$1` s'il est donné, sinon la valeur `defaut` |
+| `${1:-defaut}` <span class="technique">notion technique</span> | `$1` s'il est donné, sinon la valeur `defaut` |
 
 > [!IMPORTANT]
 > **Entoure toujours tes variables de guillemets : `"$NOM"`.** Sans guillemets, si la valeur contient un espace (`relation client`), le shell la coupe en **deux** mots : exactement le piège de `mkdir relation client` en [S08](../S08-terminal-commandes-de-base/01-cours.md).
@@ -151,7 +156,10 @@ else
 fi
 ```
 
-`>&2` envoie le message sur la sortie **d'erreur** ; `exit 1` arrête le script avec un code d'échec.
+`>&2` envoie le message sur la sortie **d'erreur** (c'est une redirection, comme `>` vu en S08) ; `exit 1` arrête le script avec un code d'échec.
+
+> [!TIP] À toi de chercher
+> Tape `man test` (ou `help test`) et retrouve **deux autres tests** que ceux du tableau (par exemple sur la lecture ou l'écriture d'un fichier). Note leur syntaxe et **explique-les avec tes mots** dans ta fiche.
 
 ## 4. Les boucles
 
