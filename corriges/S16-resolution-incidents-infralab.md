@@ -68,3 +68,7 @@ B1.2 et B2.3 sont une proposition à valider (voir le référentiel du dépôt).
 
 - **Non testé** : les pannes proposées (câble virtuel décoché, DNS modifié) et les commandes sont standard mais n'ont pas été jouées dans une VM pour cette séance. Le choix de la panne appartient au binôme ; l'enseignant peut imposer une liste.
 - Évaluer : méthode (ordre des tests), journal, clôture du ticket, **message à l'utilisateur** (compréhensible, sans jargon). Cette partie couvre l'indicateur de communication orale/écrite adaptée à l'interlocuteur.
+
+## Supervision intégrée à S16
+
+La supervision est intégrée à la **partie E** (et au cours) faute de séance dédiée : le TP 18 (partie B) passe en remédiation. **Non testé** : déploiement de l'outil par conteneur, sondes, alertes. L'outil et sa version sont à relever dans la documentation officielle avant la séance. InfraLab ne couvre pas la supervision. Barème : E (6 points) pris sur B et D. Si le temps manque, la partie E se termine en début de S17.

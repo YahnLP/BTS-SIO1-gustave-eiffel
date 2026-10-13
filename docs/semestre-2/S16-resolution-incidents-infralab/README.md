@@ -7,7 +7,7 @@
 | **Durée** | 4 heures |
 | **Prérequis** | Tickets et priorités ([S15](../S15-itil-incidents-tickets/README.md)) ; notion de CMDB ([S12](../S12-patrimoine-inventaire/README.md)) |
 | **Matériel** | Un navigateur par étudiant : **[InfraLab](https://yahnlp.github.io/InfraLab/)** (aucune installation) ; pour la partie D, la VM cliente Windows de S06 |
-| **Compétences travaillées** | B1.2 · B2.3 (voir [le référentiel](../../ressources/referentiel.md)) |
+| **Compétences travaillées** | B1.2 · B2.3 · B3.4 (voir [le référentiel](../../ressources/referentiel.md)) |
 
 > [!NOTE]
 > **Question qui guide la séance :** *« Trois utilisateurs appellent : pas de réseau. Faut-il intervenir sur trois postes, ou chercher ce qu'ils ont en commun ? Et comment prouver, après coup, ce qu'on a fait ? »*
@@ -40,10 +40,11 @@
 | 0 h 00 – 0 h 10 | **Accroche** : « Hors ligne » veut-il dire « éteint » ? | Discussion |
 | 0 h 10 – 0 h 35 | **Mini-cours** : cycle de vie, méthode, corrélation (cours §1 à §4) | Cours et questions |
 | 0 h 35 – 1 h 25 | **TP partie A** : InfraLab, TP 16 « PC déconnecté » | Binôme |
-| 1 h 25 – 1 h 50 | **TP partie B** : InfraLab, TP 18 « Switch en panne » | Binôme |
+| 1 h 25 – 1 h 50 | **TP partie B** : InfraLab, TP 18 « Switch en panne » (remédiation ou plus rapides ; les autres avancent) | Binôme |
 | 1 h 50 – 2 h 05 | Pause | |
 | 2 h 05 – 3 h 05 | **TP partie C** : InfraLab, TP 19 « Plusieurs utilisateurs impactés » | Binôme |
 | 3 h 05 – 3 h 40 | **TP partie D** : poste Windows lent, ticket et fiche de connaissance | Binôme |
+| (suite) | **TP partie E** : supervision légère et panne provoquée sur VM (à caler sur les temps gagnés ; sinon reprise en début de S17) | Binôme |
 | 3 h 40 – 4 h 00 | **Bilan de compétences** et retour sur les « pourquoi » | Individuel puis oral |
 
 ## Évaluation

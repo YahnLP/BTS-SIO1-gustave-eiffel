@@ -96,6 +96,25 @@ Plusieurs tickets qui arrivent en même temps ont souvent **une seule cause** (S
 
 Un service dépend d'éléments (serveurs, commutateurs, hôtes de virtualisation, fournisseurs). La **CMDB** garde ces **relations**. Quand un élément tombe, la CMDB permet de dire **quels services sont touchés** (analyse d'impact) ; l'inverse permet de savoir **quoi vérifier** quand un service ne répond plus.
 
+## Présence en ligne
+
+La **présence en ligne** d'une organisation, c'est tout ce qu'on trouve d'elle sur Internet : son **site**, ses **profils** sur les réseaux, ses fiches sur les cartes et annuaires, les **avis**. Elle fait partie de son **identité numérique** et de son image (**e-réputation**).
+
+| Élément | Points d'attention |
+|---|---|
+| **Nom de domaine** | Réservé auprès d'un bureau d'enregistrement ; pointe vers le serveur par le **DNS** (enregistrements d'adresse, de messagerie) ; à renouveler |
+| **Hébergement** | Disponibilité (S17), sauvegarde (S20), supervision (S16) |
+| **HTTPS** | Un certificat chiffre les échanges et rassure ; il **expire** et doit être renouvelé |
+| **Mentions légales** | Identité de l'éditeur, de l'hébergeur et du responsable de la publication (site professionnel) |
+| **Données personnelles et cookies** | Informer, recueillir le consentement quand il est nécessaire (RGPD, S12) |
+| **Accessibilité** | Un site utilisable par tous ; obligation pour certaines organisations publiques |
+| **Référencement** | Titre et description clairs, plan du site, contenu utile : l'organisation se fait trouver |
+| **Gouvernance** | Qui publie, qui valide, qui administre ; comptes individuels, double authentification |
+| **Veille d'e-réputation** | Surveiller ce qu'on dit de l'organisation, répondre aux avis |
+
+> [!WARNING]
+> Ces points sont un **rappel de principes**, pas un avis juridique. Les obligations exactes dépendent de l'organisation et se vérifient auprès de son référent juridique ou du DPO.
+
 ## Je retiens
 
 - Un catalogue décrit **ce qu'on propose**, avec ses engagements.
@@ -104,3 +123,4 @@ Un service dépend d'éléments (serveurs, commutateurs, hôtes de virtualisatio
 - Le calendrier du SLA doit correspondre à ce qui est promis.
 - L'horloge court dès la création, se **suspend** à bon escient.
 - Incident majeur : cause d'abord, coordinateur, communication, revue.
+- **Présence en ligne** : domaine et DNS, hébergement, HTTPS, mentions légales, cookies et RGPD, référencement, gouvernance de la publication.

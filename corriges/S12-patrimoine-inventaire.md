@@ -42,3 +42,7 @@ Partie A (3) · partie B (2) · partie C (2) · partie D, InfraLab (6) · partie
 | « Intégration GLPI (via plugin FusionInventory) » pour OCS | Corrigé dans les notes : le plugin d'intégration d'OCS s'appelle « OCS Inventory NG » ; FusionInventory est un autre agent |
 | Compétences B1.1 et B1.4 (« outils de gestion de parc ») | Alignées sur B1.1 (et B3.1 pour les données personnelles) ; B1.4 du référentiel du site est « travailler en mode projet » |
 | Tableau de gain (45 min → 2 min, etc.) | Conservé comme **ordre de grandeur à discuter**, avec le calcul du temps manuel |
+
+## Partie G (ajoutée)
+
+Rubriques inspirées des rubriques usuelles d'un registre de traitements (finalité, catégories de données, personnes, destinataires, durée, sécurité). Vérifier la liste exacte auprès de la CNIL avant d'en faire un modèle de référence. Évaluer la cohérence avec la partie F ; ce n'est pas un avis juridique. B3.1 est travaillée ici de façon concrète.

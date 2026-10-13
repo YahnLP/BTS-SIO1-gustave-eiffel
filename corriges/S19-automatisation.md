@@ -109,3 +109,7 @@ B2.2 et B1.5 sont une proposition à valider (voir le référentiel du dépôt).
 
 - **Non testé** : les commandes (`openssh-server`, `ssh-keygen`, `ssh-copy-id`, `sshd_config`) sont standard sur Debian mais n'ont pas été jouées. L'adressage des deux VM dépend du réseau interne choisi en S07 (coordination avec l'enseignant de réseau).
 - Indicateur visé : administration à distance (B2.3). Valider les captures de la clé et de la commande distante.
+
+## Annuaire intégré à S19 (partie G)
+
+Faute de séance dédiée, les **annuaires** sont rattachés à la création de comptes en masse. **Non testé** : installation d'OpenLDAP (`slapd`, `ldap-utils`), assistant `dpkg-reconfigure slapd`, import, `ldappasswd`, `ldapwhoami`, liaison avec GLPI (menus à relever sur la version de la salle). S19 est la séance la plus dense : la partie C (DockerLab) devient facultative. Le réseau (adressage entre VM) est vu avec l'enseignant de réseau. Active Directory n'est pas pratiqué (licences, capacité des PC) : traité en cours et, pour les apprentis qui le peuvent, en observation. Licence d'OpenLDAP : à confirmer avant de l'ajouter à la page des licences. Barème : G (5 points) pris sur C et D.

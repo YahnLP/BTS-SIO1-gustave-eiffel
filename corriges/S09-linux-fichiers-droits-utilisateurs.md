@@ -85,3 +85,10 @@ Résultats des tests (constatés dans mon essai) :
 
 - Image Debian de la salle : `adduser`, `addgroup`, `sudo`, `less`, `man` installés ; `/etc/services` présent (paquet `netbase`) ; valeur du `umask`.
 - Les noms de comptes (`tech2025`, `alice`, `bruno`, `carla`) sont des propositions ; supprimer les comptes de test en fin de séance (`sudo deluser --remove-home nom`).
+
+## Partie F (ajoutée) : hygiène numérique
+
+- Calculs : 26⁸ = 208 827 064 576 ; 62⁸ = 218 340 105 584 896 ; 26¹² = 95 428 956 661 682 176 (à refaire avec `python3` avant la séance).
+- **Non testé** dans l'environnement de rédaction : `chage -M`, `chage -l`, lecture de `/etc/shadow` dans la VM de la salle.
+- La double authentification se fait sur un compte **personnel** de l'élève : ne rien lui demander de montrer. Les messages de F3 sont fictifs (domaines `.example`).
+- Compétence B3.3 (sécuriser les équipements et les usages) : cette partie en est la preuve la plus directe de la séance. Barème : F = 4 points, pris sur la partie E.

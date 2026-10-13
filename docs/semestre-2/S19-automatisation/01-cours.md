@@ -122,6 +122,18 @@ Le **YAML** est un format où l'**indentation par espaces** (jamais de tabulatio
 
 Une **demande standard** (S15, S17), prévisible et bien définie, est la candidate idéale à l'automatisation : création de compte, installation d'un logiciel autorisé. Un **changement standard** (pré-approuvé, risque faible, procédure connue) peut aussi être scripté. Mais le **suivi** reste : la demande est **tracée** dans le ticket, même si l'exécution est automatique.
 
+## 8. Annuaires : centraliser les comptes
+
+Sans **annuaire**, chaque application a ses propres comptes. Un annuaire est une base **en arbre** de personnes, groupes et machines, que les applications interrogent pour **authentifier**. Le protocole **LDAP** (port 389 ; LDAPS, chiffré, 636) l'interroge. Une entrée a un nom unique, le **DN**, par exemple `uid=clefebvre,ou=Personnes,dc=jackcelair,dc=lan` ; elle est décrite par des **attributs** (`uid`, `cn`, `sn`, `mail`) et des **classes d'objet** (`inetOrgPerson`…). On **recherche** avec un filtre (`(uid=clefebvre)`) et on **s'authentifie** par une **liaison** (*bind*) ; un échec renvoie « Invalid credentials ».
+
+| Risque | Parade |
+|---|---|
+| Mots de passe en clair sur le port 389 | LDAPS ou StartTLS |
+| Compte de service trop puissant | Moindre privilège : lecture seule, un compte par application |
+| Départs oubliés | Procédure d'arrivée et de départ |
+
+**Active Directory** est l'annuaire de **Microsoft** : il s'appuie sur LDAP, Kerberos et DNS, et ajoute **domaine**, **contrôleur de domaine** et **stratégies de groupe** (GPO) pour configurer les postes. OpenLDAP n'a ni GPO ni gestion des postes. L'annuaire contient des **données personnelles** (S12) : il entre dans le registre des traitements.
+
 ## Je retiens
 
 - On automatise ce qui est **fréquent, compris, stable**.
@@ -130,3 +142,4 @@ Une **demande standard** (S15, S17), prévisible et bien définie, est la candid
 - **Déclaratif** : on décrit l'état voulu (Compose) ; l'outil fait le reste.
 - Un script se trompe **en masse** : on teste d'abord et on journalise.
 - **Pas de secret** dans un script.
+- Un **annuaire** centralise les comptes (LDAP, DN, filtre, liaison) ; **Active Directory** y ajoute domaine et GPO.

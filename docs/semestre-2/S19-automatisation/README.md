@@ -7,7 +7,7 @@
 | **Durée** | 4 heures |
 | **Prérequis** | Scripts Bash ([S10](../../semestre-1/S10-paquets-scripts-bash/README.md)) ; conteneurs ([S11](../S11-conteneurs-dockerlab/README.md)) ; services et changements ([S17](../S17-services-sla-catalogue/README.md)) |
 | **Matériel** | Une **VM Debian** (celle de S08 à S10) avec `sudo` ; un navigateur par étudiant : **[DockerLab](https://yahnlp.github.io/DockerLab/)** (aucune installation) |
-| **Compétences travaillées** | B2.2 · B1.5 (voir [le référentiel](../../ressources/referentiel.md)) |
+| **Compétences travaillées** | B2.2 · B1.5 · B2.3 · B3.3 (voir [le référentiel](../../ressources/referentiel.md)) |
 
 > [!NOTE]
 > **Question qui guide la séance :** *« Vingt-deux comptes à créer, la même tâche chaque semaine, la même application à relancer à l'identique : faut-il la refaire à la main à chaque fois ? Et qu'est-ce qui rend un script fiable plutôt que dangereux ? »*
@@ -41,9 +41,10 @@
 | 0 h 40 – 1 h 30 | **TP partie A** : script de création de comptes depuis un fichier | Binôme |
 | 1 h 30 – 2 h 00 | **TP partie B** : planifier un rapport avec `cron` | Binôme |
 | 2 h 00 – 2 h 15 | Pause | |
-| 2 h 15 – 2 h 55 | **TP partie C** : DockerLab, « Docker Compose : lancer une application en une commande » | Individuel |
+| 2 h 15 – 2 h 55 | **TP partie C** : DockerLab, « Docker Compose » (facultative ou à la maison) ; les autres passent à **G** | Individuel |
 | 2 h 55 – 3 h 30 | **TP partie D** : la mission de S11 en un fichier Compose | Binôme |
 | 3 h 30 – 3 h 40 | **TP partie E** : automatiser, oui, mais quand ? | Individuel |
+| (selon avancement) | **TP partie F** (SSH) et **partie G** (annuaire OpenLDAP) : preuve réelle | Binôme |
 | 3 h 40 – 4 h 00 | **Bilan de compétences** et retour sur les « pourquoi » | Individuel puis oral |
 
 ## Évaluation

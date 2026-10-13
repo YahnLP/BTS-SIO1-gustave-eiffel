@@ -109,6 +109,30 @@ Get-Process | Sort-Object CPU -Descending | Select-Object -First 10 Name, CPU, W
 
 Les seuils de repos souvent cités (processeur sous 80 %, mémoire sous 85 %, disque sous 80 %, plus de 10 % d'espace libre) sont des **repères**, pas des normes : juge toujours **par comparaison** avec un poste sain.
 
+## Détecter avant l'utilisateur : la supervision
+
+La **supervision** consiste à **surveiller en continu** l'état des équipements et des services, à **alerter** quand quelque chose sort de la normale, et à **garder l'historique**. Elle est **proactive** : elle voit parfois la panne **avant** l'utilisateur, ou avant qu'elle n'arrive (disque presque plein).
+
+| Pratique | Question à laquelle elle répond |
+|---|---|
+| **Inventaire** (S12) | Qu'avons-nous ? |
+| **Supervision** | Est-ce que ça marche **maintenant** ? |
+| **Dépannage** (cette séance) | **Pourquoi** ça ne marche plus ? |
+| **Sauvegarde** (S20) | Peut-on **récupérer** ? |
+
+**Quoi surveiller ?** La disponibilité (ping, port ouvert), le service (page Web, base), les ressources (processeur, mémoire, **espace disque**), des éléments de sécurité (certificat qui expire), un traitement métier (la sauvegarde de la nuit a-t-elle eu lieu ?). On choisit ce qui a un **impact** et on suit la CMDB : services critiques d'abord.
+
+**Comment ?** Une **sonde active** interroge la cible depuis l'extérieur (ping, port TCP, requête HTTP) et voit ce que l'utilisateur voit ; un **agent** installé sur la cible voit l'intérieur ; le protocole **SNMP** (UDP 161) interroge les équipements réseau et les imprimantes. Les anciennes versions de SNMP protègent l'accès par une simple « communauté » en clair ; la version 3 ajoute authentification et chiffrement.
+
+**Seuils et états.** Un seuil fixe quand une mesure devient anormale. On utilise couramment trois états : **OK**, **avertissement**, **critique** (par exemple disque à 80 % puis 90 %). Trop bas, les seuils déclenchent des **fausses alertes** qu'on finit par ignorer ; trop hauts, ils préviennent trop tard. Une alerte dit **quoi**, **où**, **depuis quand**, quelle **gravité**, et vers **qui**. Elle donne un **ticket** (S15) traité selon son SLA (S17).
+
+**Disponibilité mesurée** = temps où le service répond ÷ temps total. Sur 30 jours (43 200 minutes), 99,9 % tolère 43,2 minutes d'arrêt.
+
+**Outils** (licences et versions à vérifier) : Zabbix, Nagios et dérivés, Centreon (complets, plus lourds) ; Uptime Kuma (léger, disponibilité de sites et de ports) ; outils intégrés des hébergeurs.
+
+> [!NOTE]
+> InfraLab ne couvre pas la supervision : cette partie se fait en environnement réel (partie E du TP).
+
 ## Je retiens
 
 - Sept étapes ; le ticket se remplit **en temps réel**.
@@ -117,3 +141,4 @@ Les seuils de repos souvent cités (processeur sous 80 %, mémoire sous 85 %, di
 - Plusieurs symptômes simultanés : **chercher la cause commune en amont**.
 - Résolu = constaté **des deux côtés** ; chaque ticket a sa solution et sa vérification.
 - Une solution bien rédigée devient une **fiche de connaissance**.
+- La **supervision** surveille, alerte et garde l'historique : sondes, agents, SNMP, seuils (OK, avertissement, critique).
