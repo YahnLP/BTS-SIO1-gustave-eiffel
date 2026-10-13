@@ -1,9 +1,5 @@
 nav:
-  - index.md
-  - seconde
-  - premiere
-  - terminale
-  - ccna
-  - serveurs
-  - stormshield
+  - Accueil: index.md
+  - semestre-1
+  - semestre-2
   - ressources

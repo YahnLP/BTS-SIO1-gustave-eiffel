@@ -1,126 +1,88 @@
 <div class="hero" markdown>
 
-# Réseaux et systèmes
+# Systèmes et réseaux
 
-**Bac Pro CIEL – module E31 (U31)**
-Mise en œuvre de réseaux informatiques – Yahn LE PRETTRE, Enseignant à la MFR de Pontonx
+**BTS SIO option SISR – 1re année**
+Cours, TP et aide-mémoire – Yahn LE PRETTRE, Enseignant · Lycée Gustave Eiffel
 
-On n'apprend pas un réseau en le regardant : **on le câble, on le configure, on le casse, on le répare.**
+Un administrateur n'apprend pas en lisant : **il anticipe, il manipule, il comprend, il vérifie.**
 
-<a class="hero-btn" href="seconde/">🌱 Commencer en Seconde</a>
-<a class="hero-btn alt" href="simulateur/simulateur-reseau.html">🖥️ Ouvrir le simulateur</a>
+<a class="hero-btn" href="semestre-1/">Commencer : semestre 1</a>
+<a class="hero-btn alt" href="https://yahnlp.github.io/InfraLab/">Ouvrir InfraLab</a>
 
 </div>
 
 > [!NOTE]
-> **Ici, on apprend en faisant.** Chaque notion commence par une manipulation, puis on la **nomme**, on la **comprend**, on la **configure**, on la **dépanne**, on la **documente**. Chaque cours contient des **questions pour vérifier la compréhension**.
+> **Une méthode en quatre temps.** Avant de manipuler, on écrit ce qu'on **anticipe**. On manipule, on **comprend** ce que fait chaque commande (« pourquoi ? »), puis on **vérifie** et on fait le **bilan de ses compétences**.
 
-## 🗺️ Choisis ton année
+## Choisir un semestre
 
 <div class="cards" markdown>
 
 <div class="card" markdown>
-<span class="big">🌱</span>
 
-### Seconde
-**18 séances** – Devenir **autonome** sur le matériel et le réseau de base.
+### Semestre 1
+**10 séances** – Poste de travail, systèmes d'exploitation, terminal Linux (bash) et virtualisation.
 
-[**Ouvrir la progression →**](seconde/README.md){ .go }
+[**Ouvrir la progression**](semestre-1/README.md){ .go }
 </div>
 
 <div class="card green" markdown>
-<span class="big">🌿</span>
 
-### Première
-**20 séances** – **Comprendre** ce qui circule et **configurer** des équipements administrables.
+### Semestre 2
+**11 séances** – Conteneurs, gestion de parc, ITIL, déploiement, automatisation et sauvegardes.
 
-[**Ouvrir la progression →**](premiere/README.md){ .go }
-</div>
-
-<div class="card amber" markdown>
-<span class="big">🌳</span>
-
-### Terminale
-**19 séances** – Réaliser des **chantiers complets en autonomie** (E31 / U31).
-
-[**Ouvrir la progression →**](terminale/README.md){ .go }
+[**Ouvrir la progression**](semestre-2/README.md){ .go }
 </div>
 
 <div class="card violet" markdown>
-<span class="big">🚀</span>
 
-### Parcours CCNA
-**Complémentaire** – Pour les plus rapides : le programme **CCNA** avec le simulateur.
+### Ressources
+Référentiel du BTS, outils et simulateurs, licences et crédits.
 
-[**Ouvrir le parcours →**](ccna/README.md){ .go }
-</div>
-
-<div class="card violet" markdown>
-<span class="big">🌐</span>
-
-### Parcours serveurs
-**Complémentaire** – Web, FTP, NAS et Active Directory sur **VirtualBox**.
-
-[**Ouvrir le parcours →**](serveurs/README.md){ .go }
-</div>
-
-<div class="card violet" markdown>
-<span class="big">🔥</span>
-
-### Parcours Stormshield
-**Complémentaire** – Administrer un pare-feu et préparer le **CSNA**.
-
-[**Ouvrir le parcours →**](stormshield/README.md){ .go }
+[**Ouvrir les ressources**](ressources/README.md){ .go }
 </div>
 
 </div>
 
-## 🧱 Une séance, c'est quoi ?
+## Une séance, c'est quoi ?
 
 <div class="steps" markdown>
-<div markdown>**📋 Fiche séance**<br>Objectifs, déroulé, évaluation, mission en entreprise</div>
-<div markdown>**📖 Cours**<br>Une idée à la fois, avec questions pour vérifier</div>
-<div markdown>**🛠️ TP**<br>Manipulations guidées avec points de contrôle ✅</div>
-<div markdown>**🖥️ Simulateur**<br>Fichiers `.json` à ouvrir hors ligne</div>
+<div markdown>**Fiche séance**<br>Objectifs, déroulé, évaluation</div>
+<div markdown>**Cours**<br>Une idée à la fois, avec questions pour vérifier</div>
+<div markdown>**TP**<br>« J'anticipe », « Je comprends », points de contrôle, bilan</div>
+<div markdown>**Aide-mémoire**<br>Les commandes à garder sous la main</div>
 </div>
 
-> [!EXAMPLE] 🚀 Pour aller plus loin
-> Ce pictogramme signale un contenu **au-delà du programme**, utile au métier de technicien, **non exigé à l'épreuve terminale**. Tu peux le lire pour t'enrichir ; il n'est pas à apprendre par cœur.
-
-## 🧰 Ressources
+## Outils
 
 <div class="cards" markdown>
 
 <div class="card" markdown>
-### 🖥️ Simulateur réseau
-Câbler, configurer, tester, observer les trames, **sans matériel**.
+
+### InfraLab
+Gestion de parc et ITSM dans le navigateur.
+
+[Ouvrir InfraLab](https://yahnlp.github.io/InfraLab/){ .go }
+</div>
+
+<div class="card" markdown>
+
+### DockerLab
+Simulateur Docker dans le navigateur.
+
+[Ouvrir DockerLab](https://yahnlp.github.io/DockerLab/){ .go }
+</div>
+
+<div class="card" markdown>
+
+### Simulateur réseau
+Câbler et configurer, sans matériel, hors ligne.
 
 [Ouvrir le simulateur](simulateur/simulateur-reseau.html){ .go }
 </div>
 
-<div class="card" markdown>
-### 📘 Utiliser les TP
-Ouvrir un fichier de TP, enregistrer, recommencer.
-
-[Voir le mode d'emploi](ressources/simulateur.md){ .go }
 </div>
 
-<div class="card" markdown>
-### 📋 Passeport d'autonomie
-Suivre ce que je sais faire **seul**.
-
-[Ouvrir le passeport](ressources/passeport-autonomie.md){ .go }
-</div>
-
-<div class="card" markdown>
-### 📖 Glossaire
-Les mots du métier, expliqués simplement.
-
-[Ouvrir le glossaire](ressources/glossaire.md){ .go }
-</div>
-
-</div>
-
-## ⚖️ Licence
-
-Contenus sous licence **CC BY-NC-SA 4.0**.<br>Le simulateur réseau est distribué sous licence **EUPL 1.2**.<br>[Détail des licences et des outils tiers](ressources/licences.md)
+> [!NOTE]
+> Les contenus sont placés sous licence **CC BY-NC-SA 4.0**. Voir [licences et crédits](ressources/licences.md).

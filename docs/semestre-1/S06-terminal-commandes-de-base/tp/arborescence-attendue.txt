@@ -1,0 +1,21 @@
+Arborescence attendue pour l'entreprise JackCelair (à créer sous /var/partage)
+Relevée sur le schéma du TP d'origine : à relire si le schéma change.
+
+/var/partage/JackCelair
+├── commerce
+│   ├── vente
+│   └── relation client
+├── etudes
+│   ├── développeur
+│   ├── mécanicien
+│   └── expert technique
+├── direction générale
+├── comptabilité
+├── ressources humaines
+└── communication
+
+Vérification : 12 dossiers au total, JackCelair compris :
+  - JackCelair : 1
+  - commerce et ses 2 sous-dossiers : 3
+  - etudes et ses 3 sous-dossiers : 4
+  - direction générale, comptabilité, ressources humaines, communication : 4

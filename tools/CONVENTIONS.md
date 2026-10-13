@@ -1,10 +1,14 @@
-# Conventions de maintenance du site (à relire avant toute modification)
+# Conventions de rédaction du site (à relire avant toute modification)
 
-1. **Logique du site conservée** ; tout changement de contenu est validé par l'enseignant avant publication.
-2. **Contenu hors référentiel** : pictogramme 🚀 et titre « Pour aller plus loin » (encadré `> [!EXAMPLE]+ 🚀 Pour aller plus loin`).
-3. **Commandes** : choisies pour de futurs techniciens de maintenance informatique, même si le référentiel n'en impose aucune.
-4. **VirtualBox** : les élèves peuvent réaliser des TP sur machines virtuelles VirtualBox (déjà utilisé : Seconde S04–S05, Première S10, S12). Les cours doivent rester **ouverts à cette évolution** : prévoir pour chaque TP serveur ou système une variante « VM » (réseau NAT + réseau privé hôte, ISO à télécharger à l'avance, instantanés avant manipulation). Le simulateur ne remplace pas un vrai système (pas de `sshd`, Samba, AD, Apache réels). Ces TP forment le **parcours serveurs** (`docs/serveurs/`), présenté comme **complémentaire** (et non « hors programme » ni « facultatif ») avec les mêmes ressources que les autres parcours : cours, quiz, TP, feuille de route, glossaire.
-5. **Épreuve E31** : épreuve ponctuelle pratique de 3 h, coefficient 5, pas de CCF ; le « livret » est un dossier de preuves non évalué.
-6. **Corrigés et plan de formation** : locaux, non publiés.
-7. **Limites du simulateur** : chaque fois qu'une commande ou une notion du programme n'existe pas dans le simulateur du site, le cours ou le TP concerné **signale la limite** et propose une **alternative Cisco Packet Tracer** (encadré `🧊 Alternative avec Cisco Packet Tracer`, avec scénario court). À appliquer à tous les futurs modules (lot 3 CCNA, parcours serveurs VirtualBox).
-8. **Parcours complémentaires** (CCNA, serveurs VirtualBox, Stormshield) : cartes sur l'accueil, mêmes ressources partout (cours + quiz, TP, feuille de route, glossaire). TP Stormshield : `tools/tp/stormshield.js` (simulateur SN210 : zones, règles, NAT, journal) ; limites et alternatives Packet Tracer / VM EVA signalées dans chaque module. Cours originaux (les supports officiels Stormshield restent la référence).
+1. **Tout changement de contenu est validé par l'enseignant** avant publication sur `main`.
+2. **Gabarit d'une séance** (`docs/semestre-N/Sxx-nom/`) : `README.md` (fiche séance), `01-cours.md`, `02-tp.md`, `03-aide-memoire.md`, dossier `tp/` (ressources du TP). Les images vont dans `images/`.
+3. **Principes d'un TP :** « But » et « Contraintes » ; **« J'anticipe »** avant chaque manipulation ; commandes données quand on ne peut pas les deviner, toujours accompagnées d'un **« Je comprends »** ; questions « pourquoi » ; **bilan final** rattaché aux compétences du référentiel du BTS SIO SISR (page `docs/ressources/referentiel.md`).
+4. **Réponses :** les blocs `<details><summary>Voir la réponse</summary>` (ou « Éléments de réponse ») deviennent des zones de réponse manuscrites à l'export PDF. Les blancs `______` et les cellules vides de tableau deviennent des cases à remplir. Les « Notes pour l'enseignant » ne sont pas imprimées.
+5. **Titres :** pas d'emoji dans les titres de la nouvelle structure.
+6. **Corrigés :** dans `corriges/` à la racine, hors du dossier `docs/` (non publiés sur le site).
+7. **Licences :** documents en CC BY-NC-SA 4.0. Toute licence d'outil tiers non vérifiée est marquée « à vérifier » dans `docs/ressources/licences.md` ; n'en inventer aucune. Les outils cités sont détectés par mots-clés dans `docs/xtra/extra.js` (tableau `TOOLS`).
+8. **Contenu technique :** ne rien affirmer qu'on n'a pas vérifié ; signaler les doutes dans le texte (encadré ou « Notes pour l'enseignant »).
+9. **Compétences :** codes uniquement via `docs/ressources/referentiel.md` (page à vérifier sur le texte officiel).
+10. **Simulateurs :** InfraLab et DockerLab sont cités par lien externe. Le simulateur réseau est conservé dans `docs/simulateur/` pour d'éventuelles séances réseau.
+11. **Vérification avant commit :** `mkdocs build --strict` doit passer.
+12. **Numérotation :** les séances sont numérotées S01 à S21, avec une colonne « Semaine » (01 à 21) sans date : les semaines ne sont pas consécutives.

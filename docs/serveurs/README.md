@@ -1,5 +1,8 @@
 # 🌐 Parcours serveurs sur VirtualBox
 
+> [!WARNING]
+> **Contenu repris de la version Bac Pro CIEL, non encore adapté au BTS SIO.** Il est conservé pour être adapté plus tard et n'est volontairement pas listé dans le menu du site. Il fait référence au « passeport d'autonomie » du Bac Pro, qui n'existe plus ici : le bilan de compétences du BTS est décrit dans les séances des semestres 1 et 2.
+
 *Parcours complémentaire : installer, sécuriser et **dépanner** de vrais serveurs.*
 
 > [!NOTE]
@@ -48,4 +51,4 @@ Chaque module suit **le même fil** :
 > Le module 4 (Active Directory) n'a pas pu être testé sur un vrai Windows Server lors de la rédaction : ses commandes sont celles de la documentation Microsoft, **à valider avec ton enseignant**.
 
 > [!TIP]
-> Lien avec le [parcours CCNA](../ccna/README.md) (réseau) et le [parcours Stormshield](../stormshield/README.md) (pare-feu) : les trois se complètent.
+> Ces modules complètent les parcours réseau et pare-feu de la version Bac Pro, qui ne figurent plus sur ce site.

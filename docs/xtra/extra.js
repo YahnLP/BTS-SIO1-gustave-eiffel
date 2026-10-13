@@ -70,17 +70,16 @@ if (window.document$) document$.subscribe(decorate); else document.addEventListe
 /* Enregistrer la page en PDF : bouton dans l'en-tête → ouvre la fenêtre d'impression (« Enregistrer au format PDF »).
    Mise en page « manuel » (voir extra.css), bloc d'identité, zones de réponse manuscrites, licences en fin de document. */
 (function () {
-  var AUTHOR = "Yahn LE PRETTRE", ROLE = "Enseignant · MFR de Pontonx", SITE = "https://yahnlp.github.io/bacprociel-reseau-systeme/";
-  var CLASSES = { "Seconde": "Bac Pro CIEL · Seconde", "Première": "Bac Pro CIEL · Première", "Terminale": "Bac Pro CIEL · Terminale",
-                  "CCNA": "Parcours complémentaire · CCNA", "Serveurs": "Parcours complémentaire · Serveurs", "Stormshield": "Parcours complémentaire · Stormshield" };
+  var AUTHOR = "Yahn LE PRETTRE", ROLE = "Enseignant · Lycée Gustave Eiffel", SITE = "https://yahnlp.github.io/BTS-SIO1-gustave-eiffel/";
+  var CLASSES = { "Semestre 1": "BTS SIO SISR · 1re année · Semestre 1", "Semestre 2": "BTS SIO SISR · 1re année · Semestre 2",
+                  "Ressources": "BTS SIO SISR · 1re année · Ressources", "Serveurs": "Parcours complémentaire · Serveurs" };
   var KINDS = { "cours": "Cours", "tp": "Travaux pratiques", "aide-mémoire": "Aide-mémoire", "aide-memoire": "Aide-mémoire", "comparatif": "Fiche" };
   /* Outils cités dans les documents (détection par mots-clés) : licence indiquée à titre d'information */
   var TOOLS = [
-    { re: /simulateur/i, name: "Simulateur Réseau (outil du site)", lic: "EUPL 1.2", note: "© Yahn LE PRETTRE – Formaxion Landes · code ouvert" },
+    { re: /simulateur r[ée]seau/i, name: "Simulateur Réseau (outil du site)", lic: "EUPL 1.2", note: "© Yahn LE PRETTRE – Formaxion Landes · code ouvert" },
     { re: /packet tracer/i, name: "Cisco Packet Tracer", lic: "Logiciel propriétaire Cisco", note: "gratuit via Cisco Networking Academy ; non redistribuable" },
     { re: /virtualbox/i, name: "Oracle VirtualBox", lic: "GPL v3 (Extension Pack : PUEL)", note: "le pack d'extensions est soumis à une licence propriétaire Oracle" },
     { re: /wireshark/i, name: "Wireshark", lic: "GPL v2 ou ultérieure", note: "" },
-    { re: /\bEVA\b|stormshield|\bSNS\b/i, name: "Stormshield SNS / EVA", lic: "Logiciel propriétaire Stormshield", note: "usage soumis à la licence ou à l'évaluation Stormshield" },
     { re: /apache2?\b|apache2ctl/i, name: "Apache HTTP Server", lic: "Apache License 2.0", note: "" },
     { re: /nginx/i, name: "Nginx", lic: "BSD 2 clauses", note: "" },
     { re: /mariadb/i, name: "MariaDB", lic: "GPL v2", note: "" },
@@ -89,6 +88,12 @@ if (window.document$) document$.subscribe(decorate); else document.addEventListe
     { re: /openvpn/i, name: "OpenVPN", lic: "GPL v2", note: "" },
     { re: /\bdebian\b/i, name: "Debian GNU/Linux", lic: "Logiciel libre (principalement GPL)", note: "" },
     { re: /ubuntu/i, name: "Ubuntu", lic: "Logiciel libre (principalement GPL)", note: "marque Canonical" },
+    { re: /\binfralab\b/i, name: "InfraLab (simulateur ITSM / ITAM)", lic: "EUPL 1.2", note: "© Yahn LE PRETTRE – Formaxion Landes ; le nom et l'identité visuelle ne sont pas cédés par la licence" },
+    { re: /\bdockerlab\b|docker lab/i, name: "DockerLab (simulateur Docker)", lic: "À confirmer", note: "© Yahn LE PRETTRE – Formaxion Landes ; licence non vérifiée" },
+    { re: /\bdocker\b/i, name: "Docker", lic: "Docker Engine : Apache License 2.0 ; Docker Desktop : licence propriétaire Docker", note: "à vérifier auprès de l'éditeur" },
+    { re: /\bbash\b/i, name: "GNU Bash", lic: "GPL v3 ou ultérieure", note: "" },
+    { re: /ocs inventory|\bocs\b/i, name: "OCS Inventory NG", lic: "GPL v2", note: "à vérifier auprès de l'éditeur" },
+    { re: /\bfog\b/i, name: "FOG Project", lic: "GPL v3", note: "à vérifier auprès de l'éditeur" },
     { re: /\bglpi\b/i, name: "GLPI", lic: "GPL v3", note: "" },
     { re: /zabbix/i, name: "Zabbix", lic: "AGPL v3 (depuis la v7.0)", note: "" },
     { re: /uptime kuma/i, name: "Uptime Kuma", lic: "MIT", note: "" },
@@ -104,7 +109,7 @@ if (window.document$) document$.subscribe(decorate); else document.addEventListe
     var section = c[0] || "", mod = (c[1] && c[1] !== full) ? c[1] : "";
     var m = full.match(/^(Cours|TP|Aide-mémoire|Aide-memoire|Comparatif)\s*[–—-]\s*(.+)$/i);
     var kind = m ? (KINDS[m[1].toLowerCase()] || m[1]) : "Document", title = m ? m[2] : full;
-    return { cls: CLASSES[section] || (section ? "Bac Pro CIEL · " + section : "Bac Pro CIEL"), section: section, mod: mod, kind: kind, title: title };
+    return { cls: CLASSES[section] || (section ? "BTS SIO SISR · 1re année · " + section : "BTS SIO SISR · 1re année"), section: section, mod: mod, kind: kind, title: title };
   }
   function build(i) {
     var host = document.querySelector(".md-content__inner"); if (!host) return;
@@ -121,10 +126,10 @@ if (window.document$) document$.subscribe(decorate); else document.addEventListe
     var rows = TOOLS.filter(function (t, k) { return k === 0 ? (hasSim || t.re.test(text)) : t.re.test(text); });
     var col = document.createElement("div"); col.id = "print-colophon";
     col.innerHTML = '<h2>Licences et crédits</h2>' +
-      '<p><b>Ce document</b> – © ' + esc(AUTHOR) + ', enseignant à la MFR de Pontonx. Placé sous licence <b>Creative Commons Attribution – Pas d\'utilisation commerciale – Partage dans les mêmes conditions 4.0 (CC BY-NC-SA 4.0)</b> : vous pouvez le partager et l\'adapter à des fins non commerciales, en citant l\'auteur et en conservant la même licence. <small>creativecommons.org/licenses/by-nc-sa/4.0/deed.fr</small></p>' +
+      '<p><b>Ce document</b> – © ' + esc(AUTHOR) + ', enseignant au Lycée Gustave Eiffel. Placé sous licence <b>Creative Commons Attribution – Pas d\'utilisation commerciale – Partage dans les mêmes conditions 4.0 (CC BY-NC-SA 4.0)</b> : vous pouvez le partager et l\'adapter à des fins non commerciales, en citant l\'auteur et en conservant la même licence. <small>creativecommons.org/licenses/by-nc-sa/4.0/deed.fr</small></p>' +
       (rows.length ? '<table><thead><tr><th>Outil cité ou utilisé</th><th>Licence</th><th>Remarque</th></tr></thead><tbody>' +
         rows.map(function (t) { return '<tr><td>' + esc(t.name) + '</td><td>' + esc(t.lic) + '</td><td>' + esc(t.note) + '</td></tr>'; }).join("") + '</tbody></table>' : "") +
-      '<p><small>Les marques citées (Cisco, Stormshield, Microsoft, Oracle, etc.) appartiennent à leurs propriétaires respectifs. Les licences des outils tiers sont indiquées à titre d\'information : se reporter aux textes officiels. Détail : ' + esc(SITE.replace("https://", "")) + 'ressources/licences/</small></p>';
+      '<p><small>Les marques citées (Cisco, Microsoft, Oracle, Docker, etc.) appartiennent à leurs propriétaires respectifs. Les licences des outils tiers sont indiquées à titre d\'information : se reporter aux textes officiels. Détail : ' + esc(SITE.replace("https://", "")) + 'ressources/licences/</small></p>';
     host.appendChild(col);
   }
   /* En-têtes courants (hors première page) : injectés avec les vraies valeurs du document */

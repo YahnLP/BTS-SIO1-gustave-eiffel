@@ -1,14 +1,14 @@
-site_name: "Réseaux et systèmes – Bac Pro CIEL (E31)"
-site_description: "Cours et TP du module E31 « Mise en œuvre de réseaux informatiques » – Bac Pro CIEL (Seconde, Première, Terminale)"
-site_url: "https://yahnlp.github.io/bacprociel-reseau-systeme/"
+site_name: "Systèmes et réseaux – BTS SIO SISR 1re année"
+site_description: "Cours, TP et aide-mémoire de BTS SIO option SISR, 1re année : matériel, systèmes, Linux, virtualisation, gestion de parc, ITIL et services"
+site_url: "https://yahnlp.github.io/BTS-SIO1-gustave-eiffel/"
 site_author: "Yahn Le Prettre"
-repo_url: "https://github.com/YahnLP/bacprociel-reseau-systeme"
+repo_url: "https://github.com/YahnLP/BTS-SIO1-gustave-eiffel"
 edit_uri: "edit/main/docs/"
 
 copyright: |
-  © Yahn LE PRETTRE, Enseignant à la MFR de Pontonx ·
+  © Yahn LE PRETTRE, Enseignant · Lycée Gustave Eiffel ·
   <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr">Licence CC BY-NC-SA 4.0</a>
-  · Simulateur sous <a href="https://yahnlp.github.io/bacprociel-reseau-systeme/ressources/licences/">licence EUPL 1.2</a>
+  · Simulateur sous <a href="https://yahnlp.github.io/BTS-SIO1-gustave-eiffel/ressources/licences/">licence EUPL 1.2</a>
   · Hébergé sur GitHub Pages
 
 docs_dir: docs

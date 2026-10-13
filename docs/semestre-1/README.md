@@ -1,0 +1,23 @@
+# Semestre 1 – Poste de travail, systèmes et virtualisation
+
+**Objectif du semestre :** comprendre et manipuler le poste de travail et le serveur, de la machine physique à la machine virtuelle : matériel, systèmes d'exploitation, terminal Linux et virtualisation.
+
+> [!NOTE]
+> Chaque séance de 4 h contient une **fiche séance**, un **cours**, un **TP** (avec « J'anticipe » avant de manipuler et un bilan de compétences en fin de séance) et un **aide-mémoire**. Les séances non encore publiées sont indiquées « à venir » : leur titre est une proposition de plan, pas un contenu.
+
+## Progression
+
+| Séance | Semaine | Section | Thème | Statut |
+|---|---|---|---|---|
+| S01 | 01 | Hardware et culture informatique | Accueil, diagnostic, vocabulaire hardware et software | à venir |
+| S02 | 02 | Hardware et culture informatique | Composants du poste, choix d'un matériel (appel d'offres) | à venir |
+| S03 | 03 | Hardware et culture informatique | Technologies des serveurs | à venir |
+| S04 | 04 | Systèmes d'exploitation | Rôle d'un système d'exploitation, installer et prendre en main Windows | à venir |
+| S05 | 05 | Systèmes d'exploitation | Découvrir Linux | à venir |
+| S06 | 06 | Terminal Linux (bash) | [Commandes de base](S06-terminal-commandes-de-base/README.md) | **disponible** |
+| S07 | 07 | Terminal Linux (bash) | Fichiers, droits, utilisateurs | à venir |
+| S08 | 08 | Terminal Linux (bash) | Paquets, scripts simples | à venir |
+| S09 | 09 | Virtualisation | Hyperviseurs, premières machines virtuelles | à venir |
+| S10 | 10 | Virtualisation | Virtualisation avancée : réseau, stockage, snapshots | à venir |
+
+Les numéros de semaine sont ceux de la séquence (semaine 01 à 21) : ils ne correspondent pas à des dates, les semaines n'étant pas consécutives.

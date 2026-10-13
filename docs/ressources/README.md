@@ -1,10 +1,8 @@
-# 🧰 Ressources
+# Ressources
 
 | Ressource | Description |
 |---|---|
-| [🖥️ Simulateur réseau](../simulateur/simulateur-reseau.html) | Le simulateur hors ligne |
-| [📘 Utiliser les TP du simulateur](simulateur.md) | Mode d'emploi |
-| [📋 Passeport d'autonomie](passeport-autonomie.md) | Grille de suivi des compétences sur 3 ans |
-| [📖 Glossaire](glossaire.md) | Les mots du métier |
-| [⚖️ Licences et crédits](licences.md) | Licence des documents, du simulateur et des outils cités |
-| [🌐 Parcours serveurs sur VirtualBox](../serveurs/README.md) | Web, FTP, NAS, Active Directory : cours, TP et quiz |
+| [Référentiel du BTS SIO SISR](referentiel.md) | Les blocs et les compétences utilisés dans les bilans de séance |
+| [Outils et simulateurs](outils.md) | InfraLab, DockerLab, simulateur réseau, VirtualBox |
+| [Utiliser le simulateur réseau](simulateur.md) | Mode d'emploi du simulateur réseau hors ligne |
+| [Licences et crédits](licences.md) | Licence des documents, des simulateurs et des outils cités |

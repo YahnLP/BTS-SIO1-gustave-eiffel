@@ -23,7 +23,7 @@ Le **simulateur réseau** est un fichier unique, qui fonctionne **sans Internet*
 
 ## Enregistrer mon travail
 
-Clique sur **Enregistrer** : un fichier `.json` est créé. Ouvre-le plus tard avec **Ouvrir**. **Nomme-le** `TP-S11-nom.json` pour le retrouver.
+Clique sur **Enregistrer** : un fichier `.json` est créé. Ouvre-le plus tard avec **Ouvrir**. **Nomme-le** `TP-Sxx-nom.json` pour le retrouver.
 
 > [!TIP]
 > Le simulateur n'envoie rien sur Internet. Tout reste dans ton navigateur.
