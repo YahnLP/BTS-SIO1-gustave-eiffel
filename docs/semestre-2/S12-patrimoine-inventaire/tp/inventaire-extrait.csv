@@ -1,0 +1,19 @@
+id_inventaire;type;marque;modele;n_serie;nom;utilisateur;service;localisation;date_achat;etat;systeme
+INV-0001;Poste fixe;MarqueA;Modele-P1;SN-A100201;PC-COM-01;U01;Commerce;Bureau 1;2023-02-13;En service;Windows 11
+INV-0002;Poste fixe;MarqueA;Modele-P1;SN-A100202;PC-COM-02;U02;Commerce;Bureau 1;2023-02-13;En service;Windows 11
+INV-0003;Poste fixe;MarqueA;Modele-P1;SN-A100203;PC-ETU-01;U03;Etudes;Bureau 2;2023-02-13;en service;Windows 11
+INV-0004;Poste fixe;MarqueA;Modele-P2;SN-A200310;PC-ETU-02;U04;Etudes;Bureau 2;13/02/2024;En service;Windows 11
+INV-0005;Portable;MarqueB;Modele-L1;SN-B300411;PC-DIR-01;U05;Direction;Bureau 5;2024-06-03;En service;Windows 11
+INV-0006;Portable;MarqueB;Modele-L1;SN-B300412;PC-DIR-02;U06;Direction;Bureau 5;2024-06-03;EN SERVICE ;Windows 11
+INV-0007;Portable;MarqueB;Modele-L1;;PC-RH-01;U07;RH;Bureau 6;2024-06-03;En service;Windows 11
+INV-0008;Portable;MarqueB;Modele-L2;SN-B300413;PC-RH-02;U08;RH;Bureau 6;2025-01-20;Actif;Windows 11
+INV-0009;Poste fixe;MarqueA;Modele-P2;SN-A200311;PC-CPT-01;U09;Comptabilite;Bureau 7;2024-02-13;En service;Windows 10
+INV-0010;Poste fixe;MarqueA;Modele-P2;SN-A200311;PC-CPT-02;U10;Comptabilite;Bureau 7;2024-02-13;En service;Windows 10
+INV-0011;Ecran;MarqueC;Modele-E1;SN-C400501;;U09;Comptabilite;Bureau 7;2024-02-13;En service;
+INV-0012;Ecran;MarqueC;Modele-E1;;;U10;Comptabilite;Bureau 7;2024-02-13;En service;
+INV-0013;Imprimante;MarqueD;Modele-I1;SN-D500601;IMP-RDC-01;;Commun;Couloir RDC;2022-09-05;En service;
+INV-0014;Switch;MarqueE;Modele-S1;SN-E600701;SW-BAIE-01;;Informatique;Salle serveur;2022-09-05;En service;
+INV-0015;Serveur;MarqueF;Modele-V1;SN-F700801;SRV-FIC-01;;Informatique;Salle serveur;2027-03-01;En service;Debian 12
+INV-0016;Poste fixe;MarqueA;Modele-P1;SN-A100201;PC-COM-03;U11;Commerce;Bureau 1;2023-02-13;Retire;Windows 10
+INV-0017;Portable;MarqueB;Modele-L2;SN-B300414;PC-COM-04;U12;Commerce;Bureau 1;2025-01-20;En service;Windows 11
+INV-0018;Portable;MarqueB;Modele-L2;SN-B300415;PC-COM-05;U12;Commerce;Bureau 1;2025-01-20;En panne;Windows 11

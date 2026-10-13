@@ -1,0 +1,19 @@
+Plan de tests - S13 : GLPI et inventaire (à remplir pendant le TP)
+
+Binôme : ______________________    Date : ______________
+
+ N° | Test                                                       | Résultat attendu                          | Résultat obtenu | OK ?
+ ---+------------------------------------------------------------+-------------------------------------------+-----------------+-----
+ T1 | La VM client joint la VM serveur (ping)                    | Réponses reçues                           |                 |
+ T2 | Apache répond depuis le client (navigateur, http://IP/)    | Page de GLPI ou assistant d'installation  |                 |
+ T3 | La base glpi existe et l'utilisateur dédié s'y connecte    | Connexion réussie                         |                 |
+ T4 | L'assistant d'installation de GLPI affiche tous les        | Aucune extension manquante                |                 |
+    | prérequis en vert                                          |                                           |                 |
+ T5 | Connexion à GLPI avec un compte d'administration           | Tableau de bord affiché                   |                 |
+ T6 | Les mots de passe par défaut ont été changés               | Ancien mot de passe refusé                |                 |
+ T7 | Inventaire activé dans GLPI                                | Case cochée et enregistrée                |                 |
+ T8 | Agent installé sur le poste Windows, service en cours      | Service démarré                           |                 |
+ T9 | Le poste apparaît dans Parc > Ordinateurs                  | Fiche du poste créée                      |                 |
+ T10| Les informations de la fiche correspondent à la fiche S02  | Écarts expliqués                          |                 |
+
+Pour chaque test non réussi : cause trouvée et action corrective (au dos).

@@ -2,3 +2,5 @@ title: Semestre 2
 nav:
   - README.md
   - S11-conteneurs-dockerlab
+  - S12-patrimoine-inventaire
+  - S13-glpi-installation-agent

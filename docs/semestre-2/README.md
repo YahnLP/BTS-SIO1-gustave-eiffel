@@ -10,8 +10,8 @@
 | Séance | Semaine | Section | Thème | Statut |
 |---|---|---|---|---|
 | S11 | 11 | Conteneurs | [Conteneurs avec DockerLab](S11-conteneurs-dockerlab/README.md) | **disponible** |
-| S12 | 12 | Gestion de parc | Patrimoine informatique et inventaire | à venir |
-| S13 | 13 | Gestion de parc | Agent GLPI et inventaire automatique (OCS Inventory en repli) | à venir |
+| S12 | 12 | Gestion de parc | [Patrimoine informatique et inventaire](S12-patrimoine-inventaire/README.md) | **disponible** |
+| S13 | 13 | Gestion de parc | [Agent GLPI et inventaire automatique (OCS Inventory en repli)](S13-glpi-installation-agent/README.md) | **disponible** |
 | S14 | 14 | Gestion de parc | GLPI | à venir |
 | S15 | 15 | ITIL et support | ITIL, incidents, tickets | à venir |
 | S16 | 16 | ITIL et support | Résolution d'incidents avec InfraLab | à venir |
