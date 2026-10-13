@@ -260,3 +260,12 @@ html.projection .side-toggle { display: none; }
 [data-md-color-scheme="slate"] .technique { color: #fed7aa; background: #431407; border-color: #9a3412; }
 .technique::before { content: "\2605\00a0"; }
 .md-typeset .callout[data-callout="tip"] { }
+
+/* Page d'accueil : présentation du bandeau */
+.hero .hero-kicker { letter-spacing: .06em; font-size: .78rem; font-weight: 700; opacity: .9; margin: 0 0 .2rem; }
+.hero .hero-sem { display: flex; justify-content: center; gap: .6rem; flex-wrap: wrap; margin: .6rem auto .2rem; }
+.hero .hero-sem span { background: rgba(255,255,255,.18); border: 1px solid rgba(255,255,255,.45); border-radius: 999px; padding: .2em .9em; font-weight: 600; font-size: .85rem; }
+.hero .hero-sub { font-size: 1.05rem; font-weight: 600; margin-top: .7rem; }
+.hero .hero-author { font-size: .85rem; opacity: .85; }
+.hero .hero-quote { margin: 1.1rem auto .2rem; padding-top: .9rem; border-top: 1px solid rgba(255,255,255,.3); max-width: 30rem; font-size: 1rem; font-style: italic; line-height: 1.5; }
+.hero .hero-quote strong { font-style: normal; }

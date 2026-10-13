@@ -1,15 +1,18 @@
 <div class="hero" markdown>
 
+<p class="hero-kicker">BTS SIO option SISR – 1re année</p>
+
 # CS1 · SR1
 
-**BTS SIO option SISR – 1re année**
-**CS1 : semestre 1 · SR1 : semestre 2**
-Cours, TP et aide-mémoire – Yahn LE PRETTRE, Enseignant · Lycée Gustave Eiffel
+<p class="hero-sem"><span>CS1 : semestre 1</span><span>SR1 : semestre 2</span></p>
 
-Un administrateur n'apprend pas en lisant : **il anticipe, il manipule, il comprend, il vérifie.**
+<p class="hero-sub">Cours, TP et aide-mémoire</p>
+
+<p class="hero-author">Yahn LE PRETTRE, enseignant · Lycée Gustave Eiffel</p>
+
+<p class="hero-quote">Un administrateur n'apprend pas en lisant :<br><strong>il anticipe, il manipule, il comprend, il vérifie.</strong></p>
 
 <a class="hero-btn" href="semestre-1/">Commencer : semestre 1</a>
-<a class="hero-btn alt" href="https://yahnlp.github.io/InfraLab/">Ouvrir InfraLab</a>
 
 </div>
 
