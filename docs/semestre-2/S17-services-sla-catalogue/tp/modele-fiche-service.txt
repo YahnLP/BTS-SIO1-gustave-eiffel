@@ -1,0 +1,17 @@
+FICHE DE SERVICE - CATALOGUE DE SERVICES (modele de laboratoire) - S17
+
+Nom du service : ______________________________________
+Type : [ ] service rendu aux utilisateurs (ex. messagerie)  [ ] demande standard (ex. creation de compte)
+Description (en 2 phrases, sans jargon) : ________________________________
+Pour qui : ______________________   Qui valide (si necessaire) : ______________
+Comment demander : [ ] portail [ ] telephone [ ] courriel   Prerequis : ______________
+
+Engagements (SLA) :
+  Plage de service : ______________________ (ex. lundi-vendredi 8 h-18 h)
+  Disponibilite visee : ________ %      Prise en charge : ________   Resolution / livraison : ________
+  Exclusions : ____________________________________________
+
+Elements de configuration dont depend le service (CMDB) :
+  ________________________________________________________________
+Equipe responsable (niveau 1 / 2) : ______________   Fournisseur externe eventuel : ______________
+Indicateur de suivi : ______________________________

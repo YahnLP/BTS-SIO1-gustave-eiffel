@@ -15,7 +15,7 @@
 | S14 | 14 | Gestion de parc | [Exploiter le parc dans GLPI](S14-glpi-exploiter-le-parc/README.md) | **disponible** |
 | S15 | 15 | ITIL et support | [ITIL : incidents, demandes et tickets](S15-itil-incidents-tickets/README.md) | **disponible** |
 | S16 | 16 | ITIL et support | [Résoudre des incidents avec InfraLab](S16-resolution-incidents-infralab/README.md) | **disponible** |
-| S17 | 17 | Mise à disposition de services | Services, SLA, catalogue | à venir |
+| S17 | 17 | Mise à disposition de services | [Services, SLA et catalogue de services](S17-services-sla-catalogue/README.md) | **disponible** |
 | S18 | 18 | Mise à disposition de services | Clonage et déploiement (FOG) | à venir |
 | S19 | 19 | Mise à disposition de services | Automatisation | à venir |
 | S20 | 20 | Mise à disposition de services | Sauvegardes | à venir |
