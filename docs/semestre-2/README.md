@@ -16,7 +16,7 @@
 | S15 | 15 | ITIL et support | [ITIL : incidents, demandes et tickets](S15-itil-incidents-tickets/README.md) | **disponible** |
 | S16 | 16 | ITIL et support | [Résoudre des incidents avec InfraLab](S16-resolution-incidents-infralab/README.md) | **disponible** |
 | S17 | 17 | Mise à disposition de services | [Services, SLA et catalogue de services](S17-services-sla-catalogue/README.md) | **disponible** |
-| S18 | 18 | Mise à disposition de services | Clonage et déploiement (FOG) | à venir |
+| S18 | 18 | Mise à disposition de services | [Cloner et déployer des postes avec FOG](S18-clonage-deploiement-fog/README.md) | **disponible** |
 | S19 | 19 | Mise à disposition de services | Automatisation | à venir |
 | S20 | 20 | Mise à disposition de services | Sauvegardes | à venir |
 | S21 | 21 | Mise à disposition de services | Projet de synthèse et bilan | à venir |

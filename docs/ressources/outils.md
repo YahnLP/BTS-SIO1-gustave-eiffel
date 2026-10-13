@@ -10,4 +10,4 @@
 Les simulateurs ne se connectent à aucun vrai réseau ni à aucun vrai outil.
 
 > [!NOTE]
-> **Limites d'InfraLab** (d'après sa page) : pas de supervision, pas d'Active Directory ni de GPO, pas de déploiement de logiciels, pas de haute disponibilité. **DockerLab** (d'après le README de son dépôt) : commandes `docker run/ps/stop/start/logs/exec/inspect…`, volumes, réseaux, Docker Compose et Dockerfile simulés, 18 TP intégrés avec vérification automatique, 13 images ; limites : aucun vrai programme n'est exécuté, `psql` n'est pas simulé. Le dépôt ne contient pas de fichier de licence (voir la page des licences).
+> **Limites d'InfraLab** (d'après sa page) : pas de supervision, pas d'Active Directory ni de GPO, pas de déploiement de logiciels, pas de haute disponibilité. **DockerLab** (d'après le README de son dépôt) : commandes `docker run/ps/stop/start/logs/exec/inspect…`, volumes, réseaux, Docker Compose et Dockerfile simulés, 18 TP intégrés avec vérification automatique, 13 images ; limites : aucun vrai programme n'est exécuté, `psql` n'est pas simulé. Licence : EUPL 1.2, d'après l'auteur (voir la page des licences).

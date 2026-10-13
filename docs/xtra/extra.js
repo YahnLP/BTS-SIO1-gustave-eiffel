@@ -89,7 +89,7 @@ if (window.document$) document$.subscribe(decorate); else document.addEventListe
     { re: /\bdebian\b/i, name: "Debian GNU/Linux", lic: "Logiciel libre (principalement GPL)", note: "" },
     { re: /ubuntu/i, name: "Ubuntu", lic: "Logiciel libre (principalement GPL)", note: "marque Canonical" },
     { re: /\binfralab\b/i, name: "InfraLab (simulateur ITSM / ITAM)", lic: "EUPL 1.2", note: "© Yahn LE PRETTRE – Formaxion Landes ; le nom et l'identité visuelle ne sont pas cédés par la licence" },
-    { re: /\bdockerlab\b|docker lab/i, name: "DockerLab (simulateur Docker)", lic: "À confirmer", note: "© Yahn LE PRETTRE – Formaxion Landes ; licence non vérifiée" },
+    { re: /\bdockerlab\b|docker lab/i, name: "DockerLab (simulateur Docker)", lic: "EUPL 1.2", note: "© Yahn LE PRETTRE – Formaxion Landes ; le nom et l'identité visuelle ne sont pas cédés par la licence" },
     { re: /\bdocker\b/i, name: "Docker", lic: "Docker Engine : Apache License 2.0 ; Docker Desktop : licence propriétaire Docker", note: "à vérifier auprès de l'éditeur" },
     { re: /\bbash\b/i, name: "GNU Bash", lic: "GPL v3 ou ultérieure", note: "" },
     { re: /ocs inventory|\bocs\b/i, name: "OCS Inventory NG", lic: "GPL v2", note: "à vérifier auprès de l'éditeur" },

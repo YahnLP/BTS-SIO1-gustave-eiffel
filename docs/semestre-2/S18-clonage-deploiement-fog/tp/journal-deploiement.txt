@@ -1,0 +1,34 @@
+JOURNAL DE DEPLOIEMENT - S18
+Binome : ______________   Version de FOG : ______   Date : ______
+
+1. Plan d'adressage (reseau INTERNE isole uniquement)
+   Serveur FOG : ______________ / ____    Plage DHCP : ______________
+   Poste modele (master) : MAC ______________    Poste cible : MAC ______________
+
+2. Installation du serveur (noter les questions de l'installeur et vos reponses)
+   Question de l'installeur                | Reponse choisie | Pourquoi
+   ----------------------------------------+-----------------+----------------------
+                                           |                 |
+                                           |                 |
+                                           |                 |
+   Incident rencontre et correction : ______________________________________
+
+3. Tests
+   T1 Interface web accessible depuis un navigateur          : [ ] oui [ ] non
+   T2 Identifiants par defaut changes                         : [ ] oui [ ] non
+   T3 Poste modele demarre en reseau et voit le menu FOG      : [ ] oui [ ] non
+   T4 Poste modele enregistre (visible dans la liste d'hotes) : [ ] oui [ ] non
+   T5 Image capturee (taille sur le serveur : ______ )        : [ ] oui [ ] non
+   T6 Poste cible deploye et demarre sur le systeme clone     : [ ] oui [ ] non
+   T7 Les deux postes ont des identites DIFFERENTES           : [ ] oui [ ] non
+
+4. Chronometrage
+   Duree de la capture : ______ min     Duree du deploiement : ______ min
+
+5. Apres clonage : ce qui est identique et ne doit pas l'etre
+   Element                 | Identique sur les 2 postes ? | Consequence | Correction
+   ------------------------+------------------------------+-------------+-----------
+   Nom d'hote              |                              |             |
+   Adresse IP / MAC        |                              |             |
+   Identifiant de machine  |                              |             |
+   Cles SSH du serveur     |                              |             |
