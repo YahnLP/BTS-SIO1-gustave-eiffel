@@ -11,7 +11,7 @@
 | Demande de service | Demande standard, sans panne |
 | Changement | Modification planifiée de l'infrastructure |
 
-## Matrice de priorité (celle d'InfraLab)
+## Matrice de priorité (exemple d'enseignement, celle d'InfraLab ; à adapter à chaque organisation)
 
 | Urgence ↓ / Impact → | Haut | Moyen | Bas |
 |---|---|---|---|

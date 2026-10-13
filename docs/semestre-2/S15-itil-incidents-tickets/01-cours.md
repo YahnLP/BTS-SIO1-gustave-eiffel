@@ -70,6 +70,19 @@ La **priorité** décide de l'ordre de traitement. Elle combine :
 
 Chaque organisation fixe sa propre matrice et ses délais ; celle-ci est un exemple d'enseignement.
 
+### Construire et adapter une matrice à une organisation
+
+Une matrice n'est pas une table à recopier : c'est une **décision** de l'organisation, prise avec ses métiers. Pour en construire une (ou adapter celle-ci) :
+
+1. **Définir les niveaux d'impact avec des critères de l'organisation.** « Beaucoup d'utilisateurs » ne veut rien dire en général : pour JackCelair (22 postes), haut peut vouloir dire « plus de cinq personnes ou la facturation », alors que pour une entreprise de 2 000 postes le seuil est tout autre. On cite des **chiffres** (nombre de personnes), des **services critiques** (ceux de la CMDB, S12 à S14) et les **conséquences** (financières, légales, d'image).
+2. **Définir les niveaux d'urgence** : échéances métier (clôture mensuelle, paie), existence d'un **contournement**, criticité de l'équipement. Fixer qui a le droit de la **modifier** (ex. la direction pour les VIP).
+3. **Choisir le nombre de priorités** : quatre (P1 à P4) est courant ; moins de niveaux simplifie, plus de niveaux complique sans bénéfice. Les cases se remplissent en **combinant** impact et urgence ; certaines cases voisines peuvent donner la même priorité (ici, P4 en trois cases).
+4. **Associer à chaque priorité des délais** de prise en charge et de résolution : ils viennent du **besoin métier**, de la **capacité de l'équipe** et des **engagements des fournisseurs** (S17). Une priorité sans délai ne sert à rien.
+5. **Tester la matrice** sur des tickets passés : donne-t-elle le résultat que les métiers attendaient ? Sinon, on ajuste les critères, pas seulement les cases.
+6. **Valider, publier, réviser.** Les métiers valident ; la matrice est **expliquée** aux utilisateurs et aux techniciens, puis **révisée** régulièrement (trop de P1 : la matrice est trop généreuse).
+
+Les outils de gestion de tickets (dont GLPI) calculent la priorité à partir de l'impact et de l'urgence selon une correspondance **paramétrable** : à repérer dans la configuration de ta version, ce n'est pas une règle universelle.
+
 > [!TIP]
 > **Dans InfraLab** (TP, partie C) : le TP 14 te fait qualifier deux tickets d'apparence semblable ; le TP 21 distingue incident et demande ; le TP 47 te fait escalader au bon moment.
 

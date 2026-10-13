@@ -45,3 +45,7 @@ B1.2 et B1.1 sont une proposition à valider (voir le référentiel du dépôt).
 ## Rétablissement du jeu de rôle
 
 Le jeu de rôle avait été rendu facultatif ; il est **rétabli** car il évalue la communication orale adaptée à l'interlocuteur. Contrepartie de temps : le TP 21 (partie C2) passe en remédiation ou pour les plus rapides. Le déroulé du README est à ajuster à la classe : si les parties A à D occupent 3 h 45, le jeu de rôle est repris au début de S16.
+
+## Construire et adapter une matrice (ajout)
+
+Le cours explique désormais comment construire la matrice d'une organisation (critères chiffrés, nombre de priorités, délais, test sur tickets passés, révision) et le TP ajoute une partie « A bis » (adapter la matrice à JackCelair, 10 min, points pris sur A). La correspondance paramétrable de GLPI n'a pas été vérifiée à l'écran : chemin à relever sur la version installée.

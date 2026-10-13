@@ -58,3 +58,7 @@ B1.5 et B1.2 sont une proposition à valider (voir le référentiel du dépôt).
 ## Présence en ligne intégrée à S17 (partie F)
 
 Faute de séance dédiée, la **présence en ligne** (B1.3) est rattachée aux services. **Non testé** : `apt install nginx`, répertoire `/var/www/html`, `curl`, `nslookup`/`dig` (le DNS depuis la salle dépend du réseau verrouillé). La partie « mentions légales » est un **rappel de principes** à vérifier auprès du référent juridique ; le TP n'invente aucune règle. L'audit est à faire sur l'**entreprise de l'apprenti** (observation) ou une organisation publique : ne jamais cibler une personne privée. Le TP 41 passe en remédiation pour libérer le temps. Barème : F (5 points) pris sur B et D.
+
+## Fixer les délais d'une organisation (ajout)
+
+Le cours explique désormais d'où viennent les délais d'un SLA (besoin métier, capacité de l'équipe, engagements des fournisseurs, coût, mesure). Les valeurs P1 à P4 restent un exemple d'enseignement.

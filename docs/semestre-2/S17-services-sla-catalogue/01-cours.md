@@ -53,6 +53,8 @@ Le SLA ne tient que si les accords qui le soutiennent tiennent : une promesse de
 
 **Valeurs d'exemple (cours S15, InfraLab).** P1 : 15 min / 4 h ; P2 : 1 h / 8 h ; P3 : 4 h / 24 h ; P4 : 1 jour ouvré / 5 jours. Chaque organisation fixe les siennes.
 
+**Comment fixer les délais d'une organisation.** On ne les copie pas : on les **déduit**. (1) **Le besoin métier** : combien de temps l'activité supporte-t-elle l'arrêt (voir RPO et RTO en S20) ? (2) **La capacité de l'équipe** : un délai de 15 minutes suppose quelqu'un disponible et formé ; une équipe de deux personnes ne peut pas promettre une astreinte permanente. (3) **Les engagements des fournisseurs** : on ne promet pas plus que ce qui soutient le service (contrat de sous-traitance, OLA). (4) **Le coût** : un délai plus court demande plus de ressources. (5) **La mesure** : on publie des délais **tenables**, on les mesure (S16, supervision) et on les révise. Un SLA que l'équipe ne peut pas tenir est pire qu'un SLA modeste.
+
 ## 4. Calculer avec un engagement
 
 **Disponibilité.** Indisponibilité tolérée = (1 − disponibilité) × durée de la période.
