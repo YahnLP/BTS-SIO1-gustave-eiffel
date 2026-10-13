@@ -1,0 +1,20 @@
+Matrice des habilitations - dossiers partages de JackCelair (sous /var/partage/JackCelair)
+
+rw = lire, creer, modifier, supprimer    -- = aucun acces (pas meme entrer dans le dossier)
+
+Groupe                | commerce | etudes | direction generale | comptabilite | ressources humaines | communication
+----------------------|----------|--------|--------------------|--------------|---------------------|--------------
+grp-commerce          |    rw    |   --   |         --         |      --      |         --          |      --
+grp-etudes            |    --    |   rw   |         --         |      --      |         --          |      --
+grp-direction         |    --    |   --   |         rw         |      --      |         --          |      --
+grp-compta            |    --    |   --   |         --         |      rw      |         --          |      --
+grp-rh                |    --    |   --   |         --         |      --      |         rw          |      --
+grp-communication     |    --    |   --   |         --         |      --      |         --          |      rw
+
+Les sous-dossiers héritent du service : vente et relation client -> commerce ; développeur, mécanicien et expert technique -> etudes.
+Le dossier JackCelair lui-meme reste en lecture et traversee pour tous (on voit les noms des services, on n'entre que dans le sien).
+
+Comptes de test (fictifs) :
+  alice  -> grp-commerce
+  bruno  -> grp-etudes
+  carla  -> grp-compta
