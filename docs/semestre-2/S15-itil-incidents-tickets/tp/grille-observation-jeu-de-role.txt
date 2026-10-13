@@ -1,0 +1,17 @@
+GRILLE D'OBSERVATION - JEU DE ROLE N1 / UTILISATEUR (S15)
+Observateur : ______________   Technicien N1 observe : ______________
+Scenario joue : [ ] 3.1  [ ] 3.2  [ ] 3.3
+
+Critere                                                     | Observe ? | Remarque
+------------------------------------------------------------+-----------+---------
+Accueil professionnel (se presente, note le nom)            | oui / non |
+Collecte toutes les infos du ticket (quoi, quand, impact)   | oui / non |
+Pose les questions de diagnostic (deja fonctionne ? change ?)| oui / non |
+Utilise le vocabulaire ITIL (incident, ticket, priorite...) | oui / non |
+Tente une resolution N1 avant d'escalader                   | oui / non |
+Justifie l'escalade (ou l'absence d'escalade)               | oui / non |
+Informe l'utilisateur de la suite (delai, qui le rappelle)  | oui / non |
+Reste calme face a un utilisateur stresse                   | oui / non |
+
+Un point fort : ____________________________________________
+Un point a ameliorer : _____________________________________

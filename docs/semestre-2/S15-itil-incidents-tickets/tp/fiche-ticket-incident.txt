@@ -1,0 +1,44 @@
+TICKET D'INCIDENT - Centre de services JackCelair (modele de laboratoire)
+
+N° ticket : ______________      Date / heure : ______________
+Technicien N1 : ______________  Statut : [ ] Ouvert  [ ] En cours  [ ] Clos
+
+UTILISATEUR
+  Nom : ______________________   Service : ______________________
+  Poste / extension : ________   Email : ___________________________
+  Equipement concerne (nom de la fiche GLPI) : ______________________
+
+QUALIFICATION
+  Type : [ ] Incident  [ ] Demande de service  [ ] Probleme  [ ] Changement
+  Impact : [ ] haut [ ] moyen [ ] bas     Urgence : [ ] haute [ ] moyenne [ ] basse
+  Priorite (matrice) : [ ] P1 [ ] P2 [ ] P3 [ ] P4
+  Niveau : [ ] N1 [ ] N2 [ ] N3        Delai cible (SLA) : ______________
+
+TITRE (10 mots maximum) :
+_______________________________________________________________
+
+DESCRIPTION (quoi, quand, comment reproduire, message d'erreur exact) :
+_______________________________________________________________
+_______________________________________________________________
+_______________________________________________________________
+
+IMPACT METIER (qui est bloque, quel processus, quelle echeance) :
+_______________________________________________________________
+
+ACTIONS DEJA TENTEES PAR L'UTILISATEUR :
+_______________________________________________________________
+
+ACTIONS N1 / DIAGNOSTIC (heure - action - resultat) :
+_______________________________________________________________
+_______________________________________________________________
+
+ESCALADE (si applicable)
+  Vers : ______________   Raison : ______________________________
+
+RESOLUTION - solution appliquee :
+_______________________________________________________________
+
+CLOTURE
+  Date / heure : ______________
+  Valide par l'utilisateur : [ ] oui [ ] non [ ] non joignable
+  A documenter en base de connaissances : [ ] oui [ ] non
