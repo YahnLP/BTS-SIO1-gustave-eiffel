@@ -39,11 +39,3 @@ Erreurs typiques : « Linux est gratuit donc moins cher » ; choisir Linux pour 
 
 Prédictions à comparer avec l'aide-mémoire. **Les commandes Linux seront testées en S08 sur la VM Debian** ; aucune n'est vérifiée dans cette séance (pas de terminal Linux). Le point « sensible à la casse » est à reprendre en S08.
 
-## Écarts avec le support d'origine
-
-| Support d'origine | Décision |
-|---|---|
-| Fortran, COBOL « années 1960 » | Corrigé : fin des années 1950 |
-| CentOS parmi les OS serveurs | Signalé comme non maintenu ; Rocky, AlmaLinux, CentOS Stream |
-| Exemple de transmission : fibre optique « quelle couche OSI ? » sans réponse | Réponse donnée : couche physique ; OSI abordé en réseau |
-| Quantique : « casser une clé RSA en quelques heures (en théorie) » | Non repris tel quel : formulé en « menace certains algorithmes » + cryptographie post-quantique, car les capacités actuelles évoluent |

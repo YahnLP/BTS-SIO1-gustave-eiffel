@@ -53,8 +53,8 @@
 <details markdown="1">
 <summary>Notes pour l'enseignant</summary>
 
-- **Source :** « Travail 8 » du support d'origine (utilisateur `tech2025`, arborescence `CommandesLinux`, liens, `/etc/issue`, `/etc/services`). Les parties D (droits) et E (habilitations de JackCelair) sont **ajoutées** : le support d'origine annonce « des habilitations en fonction des différents services » sans les traiter. Les groupes, les comptes de test et la politique de droits de la partie E sont ma proposition.
-- **Incohérences du support d'origine, corrigées ici :**
+- **Contenu :** le TP utilise l'utilisateur `tech2025`, l'arborescence `CommandesLinux`, les liens, `/etc/issue` et `/etc/services`. Les parties D (droits) et E (habilitations de JackCelair) sont ma proposition : groupes, comptes de test et politique de droits.
+- **Choix de rédaction :**
     - `carre.txt` et `carré.txt` : un seul nom, `carre.txt` ;
     - « Supprimez le répertoire `cours1` » puis « supprimez l'arborescence `cours1/cours2/cours3/cours4` » : la première suppression échoue (dossier non vide), ce qui est exploité pour faire comprendre la différence entre `rmdir` et `rm -r` ;
     - « Copier le répertoire sous le nom `chaude` » ne dit pas lequel : c'est `froide` ;

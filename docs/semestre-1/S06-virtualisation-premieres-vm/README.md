@@ -42,21 +42,20 @@
 | 2 h 50 – 3 h 45 | **TP partie F** : refaire seul avec Ubuntu LTS | Individuel |
 | 3 h 45 – 4 h 00 | **Bilan de compétences** | Individuel |
 
-Les durées d'origine (40 min, 2 h et 1 h) font 3 h 40 : le déroulé tient en 4 h sans marge. Si le temps manque, la création de l'ISO (partie C) peut être fournie préparée.
+Le déroulé tient en 4 h sans marge. Si le temps manque, la création de l'ISO (partie C) peut être fournie préparée.
 
 ## Évaluation
 
-- Compte rendu PDF avec captures d'écran et explications, nommé `RENDU-CS1-TPVirtualisation1-VOTRENOM.pdf` (convention du support d'origine).
+- Compte rendu PDF avec captures d'écran et explications, nommé `RENDU-CS1-TPVirtualisation1-VOTRENOM.pdf`.
 - Bilan de compétences rempli à la fin du TP.
 
 <details markdown="1">
 <summary>Notes pour l'enseignant</summary>
 
-- **Source :** activité de découverte 1 (questions 1 à 7), TP « Les bases de la virtualisation » et trace écrite « Virtualisation » (sections I à VII). Les sections VIII (modes réseau) et les snapshots sont prévus en S07.
-- **Windows :** les supports d'origine citent « Windows 10/11 ». Windows 10 n'est plus pris en charge par Microsoft depuis le 14 octobre 2025 (à vérifier), et Windows 11 exige en principe 4 Go de mémoire, TPM 2.0 et Secure Boot : la configuration d'origine (2 048 Mo) convient à Windows 10, pas forcément à Windows 11. L'outil de création de média Windows 10 est-il encore proposé ? À vérifier. Le texte du TP laisse « 10 ou 11 » et demande de suivre la consigne de l'enseignant.
-- **Deuxième disque :** le support d'origine demande « un deuxième disque système avec 20 Go » dans l'installateur. J'ai interprété : une **deuxième partition** de 20 Go sur le disque virtuel de 50 Gio. À confirmer.
-- **Identifiants :** le support d'origine impose un nom de système et un mot de passe précis. Je ne reproduis pas le mot de passe dans le site public : le TP renvoie à « le mot de passe donné par l'enseignant ».
-- **Disque de stockage :** `D:\` ici, `E:\` dans le TP Linux d'origine. Le texte dit « le disque indiqué par l'enseignant ».
+- **Windows :** le TP cite « Windows 10/11 ». Windows 10 n'est plus pris en charge par Microsoft depuis le 14 octobre 2025 (à vérifier), et Windows 11 exige en principe 4 Go de mémoire, TPM 2.0 et Secure Boot : une configuration à 2 048 Mo convient à Windows 10, pas forcément à Windows 11. L'outil de création de média Windows 10 est-il encore proposé ? À vérifier. Le texte du TP laisse « 10 ou 11 » et demande de suivre la consigne de l'enseignant.
+- **Deuxième disque :** le TP demande une **deuxième partition** de 20 Go sur le disque virtuel de 50 Gio (interprétation de « un deuxième disque système de 20 Go » dans l'installateur). À confirmer.
+- **Identifiants :** le mot de passe n'est pas reproduit dans le site public : le TP renvoie à « le mot de passe donné par l'enseignant ».
+- **Disque de stockage :** le texte dit « le disque indiqué par l'enseignant » (`D:\` ou `E:\` selon la salle).
 - **Compétences :** codes et intitulés relus sur l'arrêté du 8 juillet 2024 ; le choix des compétences pour cette séance est une proposition de l'enseignant.
 - **Corrigé :** `corriges/S06-virtualisation-premieres-vm.md` (hors du site publié).
 

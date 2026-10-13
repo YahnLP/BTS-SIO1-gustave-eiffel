@@ -52,13 +52,13 @@ Les TP de DockerLab « Dépannage », « Réseaux Docker » et « Faire le ména
 
 ## Évaluation
 
-- Compte rendu PDF nommé `RENDU-S11-NOM.pdf` (convention nouvelle de ce site : il n'y avait pas de convention d'origine pour cette séance), avec les captures et le journal de commandes de la mission.
+- Compte rendu PDF nommé `RENDU-S11-NOM.pdf`, avec les captures et le journal de commandes de la mission.
 - Bilan de compétences rempli à la fin du TP (individuel).
 
 <details markdown="1">
 <summary>Notes pour l'enseignant</summary>
 
-- **Support :** pas de PDF d'origine pour cette séance. La séance s'appuie sur **DockerLab** (outil de l'auteur du site) : ses TP « Première rencontre avec Docker », « Le cycle de vie d'un conteneur », « Publier des ports et configurer par variables » et « Volumes : garder ses données quand le conteneur disparaît » sont intégrés au simulateur avec consignes commentées et vérification automatique. Cette page ne les **reproduit pas** : elle les **encadre** (anticiper, comprendre, preuves) et ajoute une mission finale.
+- **Support :** la séance s'appuie sur **DockerLab** (outil de l'auteur du site) : ses TP « Première rencontre avec Docker », « Le cycle de vie d'un conteneur », « Publier des ports et configurer par variables » et « Volumes : garder ses données quand le conteneur disparaît » sont intégrés au simulateur avec consignes commentées et vérification automatique. Cette page ne les **reproduit pas** : elle les **encadre** (anticiper, comprendre, preuves) et ajoute une mission finale.
 - **Vérification technique :** j'ai relu le code du dépôt DockerLab (liste de commandes, 18 TP, 13 images) et **rejoué en Node** les commandes de la mission dans son moteur : elles produisent bien le comportement décrit. Je n'ai **pas** ouvert l'interface dans un navigateur : les intitulés exacts des boutons (« TP d'exemple », « Nouveau », « Recommencer ») viennent du README du dépôt.
 - **Limites du simulateur** (d'après son README et mes essais) : aucun vrai programme exécuté, 13 images (alpine, busybox, ubuntu, debian, nginx, httpd, redis, postgres, mysql, mariadb, node, python, hello-world), `psql` non simulé (seul `pg_isready` répond), `curl` et `ping` absents des conteneurs nginx (ils existent dans alpine). Docker réel : à montrer en démonstration si la salle l'autorise.
 - **Licence de DockerLab :** EUPL 1.2, comme le Simulateur Réseau (indication de l'auteur) ; le dépôt de l'outil ne contient pas encore de fichier `LICENSE` (voir la page des licences).

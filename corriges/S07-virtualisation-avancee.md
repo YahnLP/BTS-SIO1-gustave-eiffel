@@ -12,7 +12,7 @@ Voir « Éléments de réponse » du TP. Vérifier sur les captures : snapshot n
 
 ## Partie E : résultats attendus (à contrôler sur le poste avant de corriger)
 
-Déduits de la trace écrite ; **non vérifiés** sur un poste de la salle.
+Déduits du cours ; **non vérifiés** sur un poste de la salle.
 
 | Mode | Entre VM | Vers l'hôte | Vers Internet | Remarque |
 |---|---|---|---|---|

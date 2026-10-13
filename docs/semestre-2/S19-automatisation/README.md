@@ -55,7 +55,7 @@
 <details markdown="1">
 <summary>Notes pour l'enseignant</summary>
 
-- **Sources :** aucun support d'origine pour cette séance. Elle s'appuie sur S10 (scripts, relançabilité), sur les **TP de DockerLab** (« Docker Compose : lancer une application en une commande », catalogue de l'application, dépôt consulté en octobre 2026) et sur la mission de S11. Les commandes Linux (`useradd`, `getent`, `crontab`…) sont des commandes courantes de Debian, **non exécutées** dans l'environnement de rédaction : à tester sur la VM de la salle.
+- **Sources :** la séance s'appuie sur S10 (scripts, relançabilité), sur les **TP de DockerLab** (« Docker Compose : lancer une application en une commande », catalogue de l'application, dépôt consulté en octobre 2026) et sur la mission de S11. Les commandes Linux (`useradd`, `getent`, `crontab`…) sont des commandes courantes de Debian, **non exécutées** dans l'environnement de rédaction : à tester sur la VM de la salle.
 - **Partie D (hors catalogue) :** c'est un TP **non intégré** à DockerLab : les consignes sont dans ce site et se jouent dans un **laboratoire vide** de DockerLab. Compose y est **simulé** : les options exactes prises en charge sont à vérifier en jouant le TP avant la séance (champs `networks`, `volumes`, `environment`, `ports`).
 - **Fichier des utilisateurs :** il contient des **défauts volontaires** : doublon, ligne vide, majuscules, accent, espace dans l'identifiant, colonne manquante, colonne en trop. Les noms sont fictifs.
 - **Mots de passe :** le TP ne les traite pas : un mot de passe initial **ne se met pas** dans un fichier ni en argument de commande. Le sujet est discuté, pas implémenté.

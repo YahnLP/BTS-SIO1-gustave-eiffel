@@ -49,19 +49,19 @@ Les parties F à I (fonctionnalités avancées, accès au réseau de la salle, c
 
 ## Évaluation
 
-- Compte rendu PDF avec captures d'écran, tests `ping` et explications, nommé `RENDU-CS1-TPVirtualisation2-VOTRENOM.pdf` (convention du support d'origine).
+- Compte rendu PDF avec captures d'écran, tests `ping` et explications, nommé `RENDU-CS1-TPVirtualisation2-VOTRENOM.pdf`.
 - Bilan de compétences rempli en fin de séance.
 
 <details markdown="1">
 <summary>Notes pour l'enseignant</summary>
 
-- **Sources :** activité de découverte 2 (questions 1 à 18 et snapshots), TP « Virtualisation avancée » (étapes 1 à 24), trace écrite sections VIII et IX. L'ensemble dépasse 4 h (3 h 40 pour l'activité seule d'après le support, 3 h à 4 h pour le TP) : **le tri est ma proposition**. Les questions 1 à 6, 9, 10 et 14 de l'activité (paramètres généraux, mémoire, cœurs et threads, formats, systèmes de fichiers, OS Live), les fonctionnalités (copier-coller, glisser-déposer, dossier partagé) et l'accès au réseau de la salle sont déplacés en parties facultatives. À arbitrer.
-- **Adressage du réseau interne :** le support d'origine ne donne pas d'adresses pour les étapes 16 à 19. J'ai repris l'exemple de la trace écrite : 192.168.100.1 (Windows) et 192.168.100.2 (Kali), masque 255.255.255.0.
-- **Résultats attendus :** les cases du tableau de tests sont déduites de la trace écrite et ne sont **pas toutes vérifiées sur un poste**. En particulier, la communication entre la VM en mode NAT et l'hôte dépend de la version de VirtualBox et de la cible visée : à contrôler en salle avant de corriger.
+- **Durée :** le contenu dépasse 4 h ; **le tri est ma proposition**. Les paramètres généraux, la mémoire, les cœurs et threads, les formats, les systèmes de fichiers, l'OS Live, les fonctionnalités (copier-coller, glisser-déposer, dossier partagé) et l'accès au réseau de la salle sont en parties facultatives. À arbitrer.
+- **Adressage du réseau interne :** exemple 192.168.100.1 (Windows) et 192.168.100.2 (Kali), masque 255.255.255.0.
+- **Résultats attendus :** les cases du tableau de tests sont déduites du cours et ne sont **pas toutes vérifiées sur un poste**. En particulier, la communication entre la VM en mode NAT et l'hôte dépend de la version de VirtualBox et de la cible visée : à contrôler en salle avant de corriger.
 - **Pare-feu Windows :** par défaut, Windows bloque en général les requêtes `ping` entrantes. Un `ping` sans réponse vers une VM ou un poste Windows ne prouve donc pas l'absence de liaison. Le TP le signale.
-- **Guest Additions sous Kali :** la procédure d'origine (montage du CD puis `VBoxLinuxAdditions.run`) peut échouer si les outils de compilation et les en-têtes du noyau ne sont pas installés. À tester sur l'image OVA fournie.
-- **Réseau NAT :** ce mode nécessite de créer un réseau NAT dans les préférences ou le gestionnaire de réseau de VirtualBox (l'emplacement varie selon la version). Le support d'origine ne le décrit pas : à préciser en salle.
-- **Salle :** les noms de cartes (Realtek, TP-Link), le dossier `D:\MVORG` et l'adressage `10.[salle].[plot].[poste]` viennent du support d'origine et sont propres à la salle.
+- **Guest Additions sous Kali :** la procédure (montage du CD puis `VBoxLinuxAdditions.run`) peut échouer si les outils de compilation et les en-têtes du noyau ne sont pas installés. À tester sur l'image OVA fournie.
+- **Réseau NAT :** ce mode nécessite de créer un réseau NAT dans les préférences ou le gestionnaire de réseau de VirtualBox (l'emplacement varie selon la version). À préciser en salle.
+- **Salle :** les noms de cartes (Realtek, TP-Link), le dossier `D:\MVORG` et l'adressage `10.[salle].[plot].[poste]` sont propres à la salle.
 - **Compétences :** codes et intitulés relus sur l'arrêté du 8 juillet 2024 ; le choix des compétences pour cette séance est une proposition de l'enseignant.
 - **Corrigé :** `corriges/S07-virtualisation-avancee.md` (hors du site publié).
 

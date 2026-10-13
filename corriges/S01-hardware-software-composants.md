@@ -18,8 +18,3 @@ Sert à repérer : les étudiants qui ont déjà ouvert une machine, installé u
 
 Voir la trace dans le TP. Barème indicatif : trace correcte (4 pts) ; question 2 (2 pts) ; question 3 (1 pt) ; programme de la question 4 (2 pts) ; question 5 (1 pt).
 
-## Écarts avec le support d'origine
-
-- **Documents 1 à 3 :** remplacés par l'observation d'une machine réelle.
-- **Skype** (exemple de logiciel gratuit non libre dans le support d'origine) : non repris ; l'exemple sera donné en S04 sans dépendre d'un service susceptible de disparaître.
-- **Mémoire ROM :** le support d'origine la présente comme « conserve les données ». Précision ajoutée : en pratique, la ROM des machines actuelles est de la mémoire flash réinscriptible.

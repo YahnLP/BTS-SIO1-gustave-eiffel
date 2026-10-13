@@ -48,14 +48,14 @@
 
 ## Évaluation
 
-- Compte rendu PDF nommé `RENDU-CS1-TP1.1-NOM.pdf` (convention du support d'origine), avec les réponses et les photos ou captures demandées.
+- Compte rendu PDF nommé `RENDU-CS1-TP1.1-NOM.pdf`, avec les réponses et les photos ou captures demandées.
 - Bilan de compétences rempli à la fin du TP (individuel).
 
 <details markdown="1">
 <summary>Notes pour l'enseignant</summary>
 
-- **Sources :** cette séance reprend les parties « Matériel », « Software » et une partie de « Culture informatique » du support d'origine *Hardware, software et culture informatique* (questions 1 à 6, 26, 29 du corrigé). Les documents 1, 2 et 3 du support (équipements, composants internes, connecteurs) sont des images : ils sont remplacés ici par l'observation d'une machine réelle, ce qui est plus parlant. À défaut de machine ouverte, utiliser des photos annotées.
-- **Choix de découpage :** les conversions d'unités et les débits (questions 7 à 24 d'origine) passent en S02 ; les processeurs, les serveurs et l'appel d'offres en S03 ; BIOS, système d'exploitation et licences en S04 ; l'histoire d'Internet, le quantique et l'énergie en S05.
+- **Observation d'une machine réelle :** la séance repose sur l'observation d'un poste de récupération ouvert. À défaut de machine ouverte, utiliser des photos annotées.
+- **Découpage :** les conversions d'unités et les débits passent en S02 ; les processeurs, les serveurs et l'appel d'offres en S03 ; BIOS, système d'exploitation et licences en S04 ; l'histoire d'Internet, le quantique et l'énergie en S05.
 - **Sécurité en salle :** débrancher les machines avant ouverture, ne pas toucher le bloc d'alimentation, se décharger de l'électricité statique (toucher le châssis métallique) avant de manipuler une carte.
 - **Corrigé :** dans `corriges/` à la racine du dépôt.
 - **Compétences :** codes et intitulés relus sur l'arrêté du 8 juillet 2024 ; le choix des compétences pour cette séance est une proposition de l'enseignant.

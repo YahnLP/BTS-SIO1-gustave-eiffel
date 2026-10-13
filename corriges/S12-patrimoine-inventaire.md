@@ -29,19 +29,11 @@ Remarque : la comparaison « date future » suppose la date du jour d'octobre 20
 
 - Les étudiants qui travaillent sous **tableur** peuvent rencontrer le séparateur `;` mal interprété selon la langue du logiciel : prévoir l'import avec séparateur explicite.
 - `grep -c "Windows 10"` compte aussi une éventuelle mention dans un autre champ : sans conséquence sur ce fichier.
-- Les durées « automatisé » du support d'origine ne sont pas sourcées : ne pas les valider comme des faits ; les faire **discuter**.
+- Les durées « automatisé » ne sont pas sourcées : ne pas les valider comme des faits ; les faire **discuter**.
 
 ## Barème indicatif (sur 20)
 
 Partie A (3) · partie B (2) · partie C (2) · partie D, InfraLab (6) · partie E, CSV (5) · partie F (2).
-
-## Écarts avec le support d'origine
-
-| Support d'origine | Décision |
-|---|---|
-| « Intégration GLPI (via plugin FusionInventory) » pour OCS | Corrigé dans les notes : le plugin d'intégration d'OCS s'appelle « OCS Inventory NG » ; FusionInventory est un autre agent |
-| Compétences B1.1 et B1.4 (« outils de gestion de parc ») | Alignées sur B1.1 (et B3.1 pour les données personnelles) ; B1.4 du référentiel du site est « travailler en mode projet » |
-| Tableau de gain (45 min → 2 min, etc.) | Conservé comme **ordre de grandeur à discuter**, avec le calcul du temps manuel |
 
 ## Partie G (ajoutée)
 

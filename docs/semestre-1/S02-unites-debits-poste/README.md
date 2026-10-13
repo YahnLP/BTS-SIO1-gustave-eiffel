@@ -55,8 +55,6 @@ La partie D (raccourcis clavier) est facultative.
 <details markdown="1">
 <summary>Notes pour l'enseignant</summary>
 
-- **Sources :** cette séance reprend les questions 6 à 24 du support *Hardware, software et culture informatique* et les travaux 1 à 9 du *TP 1.1 Hardware et software*.
-- **Incohérences corrigées :** (1) le support d'origine convertit « 2 Ko » en 2048 octets alors qu'il distingue lui-même Ko (1000) et Kio (1024) : le TP demande les **deux** conversions. (2) Pour 500 Go sur des clés de 32 Go, le corrigé d'origine confond 500 Go et 500 Gio (réponse 17) : le TP pose la question dans les deux sens (réponses 16 et 17) et en tire une règle.
 - **Commandes Windows :** les commandes données en aide (repliées) sont celles que je propose ; elles n'ont **pas été exécutées** sur la version de Windows de la salle. À tester avant la séance, en particulier `Get-Package` et la mesure de débit disque. La commande `wmic`, employée dans beaucoup de tutoriels, est dépréciée sur les versions récentes de Windows : elle n'est pas utilisée ici.
 - **Mesure de la vitesse de lecture du disque :** non prévue avec un outil imposé (licence non vérifiée) ; à adapter à ce que la salle autorise.
 - **Corrigé :** dans `corriges/` à la racine du dépôt.

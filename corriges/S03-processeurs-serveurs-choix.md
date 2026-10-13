@@ -33,7 +33,3 @@ Les réponses des parties A à E sont repliées dans le TP. Ce document ajoute l
 
 Voir les calculs du TP (12 vCPU, 28 Go, 880 Go ; 40 Go ; 6 cœurs ; RAID 5 = 3 To utiles, RAID 10 = 2 To utiles). Ratios et marges **proposés par l'auteur, non issus d'un support** : les discuter avec les étudiants plutôt que les imposer.
 
-## Écarts avec le support d'origine
-
-- Le support d'origine demandait de « choisir la meilleure configuration pour chaque employé » sans budget : un **budget** a été ajouté pour imposer un arbitrage.
-- Les questions Xeon, bi-processeur et NUMA du support « processeurs et serveurs » sont réparties entre le cours (§3 et §5), la partie C et la partie E facultative.

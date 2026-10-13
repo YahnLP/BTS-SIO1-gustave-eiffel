@@ -53,8 +53,8 @@ La partie E (améliorations) est pour les étudiants qui avancent vite.
 <details markdown="1">
 <summary>Notes pour l'enseignant</summary>
 
-- **Source :** la partie « pour les plus rapides : automatiser la préparation du TP » du support d'origine (script `nom_prenom_create_tp.sh`, critères, règles sur l'IA, bonus). Le support ne traitait ni `apt`, ni les bases du langage Bash : la progression A à C est **ajoutée** pour que le script de la partie D soit à portée de tous.
-- **Améliorations apportées au sujet d'origine :**
+- **Contenu :** la partie D (script de préparation du TP, critères, règles sur l'IA, bonus) est précédée d'une progression A à C (`apt`, bases de Bash) pour qu'elle soit à portée de tous.
+- **Améliorations :**
     - la construction du script est **guidée** (blocs de syntaxe isolés, avec des exemples **sans rapport** avec JackCelair), pour ne pas donner la solution ;
     - les **noms avec espaces** de JackCelair sont le piège central : l'importance des guillemets, vue en S08, est réinvestie ;
     - le **dossier de travail par défaut** est `$HOME/partage-test` (sans `sudo`) ; `/var/partage` est réservé à l'extension, avec `sudo` ;

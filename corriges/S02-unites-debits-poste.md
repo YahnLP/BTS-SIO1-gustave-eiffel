@@ -15,13 +15,13 @@ Les parties A et B sont corrigées dans le TP (réponses repliées). Ce document
 | 500 Gio en Go | 536,87 Go |
 | 500 ÷ 32 · 536,87 ÷ 32 | 15,6 · 16,8 |
 
-## Incohérences du support d'origine et décision
+## Points de vigilance sur les unités
 
-| Support d'origine | Décision |
+| Piège | Décision |
 |---|---|
-| « 2 Ko = 2 × 1024 », alors que la diapositive précédente distingue Ko et Kio | Le TP demande les deux conversions et pose la règle « on précise l'hypothèse » |
-| 500 Go ≈ 500 Gio puis 32 Go ≈ 29,8 Gio → 17 clés | Deux hypothèses explicites (16 et 17 clés) ; on retient 17 et la marge |
-| Questions 12 et 13 sans hypothèse sur l'unité du disque | Même traitement |
+| Confondre Ko (1000) et Kio (1024) | Le TP demande les deux conversions et pose la règle « on précise l'hypothèse » |
+| 500 Go confondus avec 500 Gio, puis 32 Go ≈ 29,8 Gio → 17 clés | Deux hypothèses explicites (16 et 17 clés) ; on retient 17 et la marge |
+| Énoncé sans hypothèse sur l'unité du disque | Même traitement |
 
 ## Partie C – points d'attention
 

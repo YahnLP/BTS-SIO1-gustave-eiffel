@@ -56,9 +56,8 @@ La partie E (bi-processeur et NUMA) est facultative.
 <details markdown="1">
 <summary>Notes pour l'enseignant</summary>
 
-- **Sources :** questions 27 à 31 du support *Hardware, software et culture informatique* (processeurs, bureau et serveur), support *processeurs et serveurs* (questions Xeon, bi-processeur, QPI/UPI, NUMA), partie « Répondre à un appel d'offre » du TP 1.1.
-- **Catalogue :** le catalogue du support d'origine n'était pas fourni. J'ai écrit un **catalogue fictif** (`tp/catalogue-ochan-elize.txt`) : les prix sont inventés, les modèles de processeurs sont réels (générations 12) mais **les caractéristiques doivent être vérifiées sur les fiches constructeur** avant la séance. Remplacer par ton catalogue d'origine si tu l'as.
-- **Dimensionnement (partie D) :** cas, chiffres et règles empiriques (ratio de vCPU par cœur, marge de 25 %) sont de moi et sont signalés comme tels ; ils préparent la virtualisation et les sauvegardes mais ne sont pas dans les supports d'origine.
+- **Catalogue :** `tp/catalogue-ochan-elize.txt` est un catalogue **fictif** : prix inventés, modèles de processeurs réels (générations 12) mais **caractéristiques à vérifier sur les fiches constructeur** avant la séance. Remplace-le par ton propre catalogue si tu en as un.
+- **Dimensionnement (partie D) :** cas, chiffres et règles empiriques (ratio de vCPU par cœur, marge de 25 %) sont des **propositions** ; ils préparent la virtualisation et les sauvegardes.
 - **Sujet du semestre 2 :** le RAID n'est présenté ici que pour la tolérance de panne ; l'étude des sauvegardes (S20) montrera qu'un RAID n'est pas une sauvegarde.
 - **Corrigé :** dans `corriges/` à la racine du dépôt.
 - **Compétences :** codes et intitulés relus sur l'arrêté du 8 juillet 2024 ; le choix des compétences pour cette séance est une proposition de l'enseignant.

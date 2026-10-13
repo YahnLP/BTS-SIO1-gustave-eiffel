@@ -56,10 +56,10 @@
 <details markdown="1">
 <summary>Notes pour l'enseignant</summary>
 
-- **Choix :** la séance s'appuie sur **InfraLab** (version 1.2) : les TP 16, 18 et 19 du catalogue, dont le contenu et les vérifications viennent de l'application. Le support d'origine « ITIL – Suite » (cycle de vie, méthode de diagnostic, base de connaissances) et son TP de trois incidents Windows (imprimante, accès dossier, poste lent) fournissent le cadre méthodologique ; seul l'incident « poste lent » est conservé en partie D, car InfraLab ne couvre ni annuaire, ni droits de fichiers, ni GPO.
-- **Non repris du TP d'origine :** l'incident « accès dossier refusé » (droits de partage et NTFS) suppose un serveur de fichiers et un annuaire ; il peut faire l'objet d'une séance Windows Server hors de cette séquence. L'incident « imprimante » s'appuie sur du matériel réel.
+- **Choix :** la séance s'appuie sur **InfraLab** (version 1.2) : les TP 16, 18 et 19 du catalogue, dont le contenu et les vérifications viennent de l'application. Seul l'incident « poste lent » est traité en partie D, car InfraLab ne couvre ni annuaire, ni droits de fichiers, ni GPO.
+- **Non traités :** l'incident « accès dossier refusé » (droits de partage et NTFS) suppose un serveur de fichiers et un annuaire ; il peut faire l'objet d'une séance Windows Server hors de cette séquence. L'incident « imprimante » s'appuie sur du matériel réel.
 - **Autres TP InfraLab utiles :** TP 17 (serveur arrêté), 20 (incident majeur), 43 (arrêt d'un hyperviseur) : voir le [corrigé](https://github.com/YahnLP/BTS-SIO1-gustave-eiffel/blob/main/corriges/S16-resolution-incidents-infralab.md) pour le placement possible.
-- **Commandes d'origine :** le support d'origine utilise `wmic`, outil **obsolète** dans les versions récentes de Windows (je pense qu'il est désactivé par défaut dans Windows 11 récent ; **à vérifier** sur la version de la salle). Le TP utilise **PowerShell**.
+- **Commandes :** `wmic` est **obsolète** dans les versions récentes de Windows (je pense qu'il est désactivé par défaut dans Windows 11 récent ; **à vérifier** sur la version de la salle). Le TP utilise **PowerShell**.
 - **Poste lent :** l'incident doit être **préparé** sur la VM cliente (voir le corrigé) ; la préparation proposée n'a pas été testée.
 - **Compétences :** codes et intitulés relus sur l'arrêté du 8 juillet 2024 ; le choix des compétences pour cette séance est une proposition de l'enseignant.
 - **Licence d'InfraLab :** code sous EUPL 1.2 ; le nom et l'identité visuelle ne sont pas couverts (page d'accueil du projet).

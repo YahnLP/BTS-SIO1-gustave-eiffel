@@ -55,9 +55,8 @@
 <details markdown="1">
 <summary>Notes pour l'enseignant</summary>
 
-- **Sources :** partie « Culture informatique et transmission » du support *Hardware, software et culture informatique* (langages, Internet, transmission, quantique, énergie, protection du système) et exemples de systèmes d'exploitation de la partie « Software ». Le support d'origine ne contenait **pas** de séance « Découvrir Linux » : le contenu est de moi.
 - **Décision de séquence :** aucune installation ici. L'installation et la manipulation de Linux se font **après la virtualisation** : machine virtuelle en S06 et S07, terminal en S08 à S10. La partie D demande des **prédictions** (« J'anticipe ») que les étudiants vérifieront en S08.
-- **Incohérences corrigées :** (1) le support d'origine place Fortran et COBOL dans les années 1960 ; ils datent de la fin des années 1950. (2) Il cite CentOS parmi les systèmes serveur ; CentOS Linux n'est plus maintenu, remplacé en pratique par des distributions compatibles (Rocky Linux, AlmaLinux) et par CentOS Stream, qui se place en amont de Red Hat Enterprise Linux. (3) Le support parle de « langage machine → Internet » sans lien : la frise de la partie A les relie.
+- **Points d'attention :** (1) Fortran et COBOL datent de la fin des années 1950 ; (2) CentOS Linux n'est plus maintenu : remplacé en pratique par des distributions compatibles (Rocky Linux, AlmaLinux) et par CentOS Stream, qui se place en amont de Red Hat Enterprise Linux ; (3) la frise de la partie A relie langage machine, systèmes et Internet.
 - **Dates :** les dates du corrigé sont de ma mémoire et à **confirmer par les sources que citent les étudiants**.
 - **Cycles de support** (Debian, Ubuntu LTS, RHEL) : volontairement **laissés à rechercher** : ils changent et je ne les fige pas.
 - **Veille :** quantique, énergie des centres de données, sécurité du système sont des sujets qui évoluent vite ; exiger des sources datées.

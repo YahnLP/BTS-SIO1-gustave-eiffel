@@ -54,7 +54,7 @@
 <details markdown="1">
 <summary>Notes pour l'enseignant</summary>
 
-- **Sources :** aucun support d'origine pour cette séance. Elle repose sur le TP final d'**InfraLab** (TP 40, durée annoncée 2 h, niveau Administration, compétences **travaillées** : patrimoine, incidents et demandes, habilitations, mode projet ; **élément de preuve possible** : traçabilité) et sur les rendus des séances précédentes.
+- **Sources :** la séance repose sur le TP final d'**InfraLab** (TP 40, durée annoncée 2 h, niveau Administration, compétences **travaillées** : patrimoine, incidents et demandes, habilitations, mode projet ; **élément de preuve possible** : traçabilité) et sur les rendus des séances précédentes.
 - **Mode examen d'InfraLab :** d'après le guide du formateur, il supprime indices, solution et explication après réponse : c'est le mode à privilégier si le TP 40 sert d'évaluation. À **décider** par l'équipe pédagogique ; le TP fonctionne aussi avec aides, en entraînement.
 - **Aucune validation officielle :** la séance ne **valide** aucune compétence ; elle produit des **éléments de preuve** et une auto-évaluation. L'usage du dossier dans une épreuve ou un portfolio relève de l'**équipe pédagogique** et du référentiel officiel, que je n'ai pas pu consulter directement (voir la page du référentiel). Le cours ne cite aucune épreuve ni aucune exigence officielle.
 - **Matrice :** le tableau liste les séances qui travaillent chaque compétence **d'après les fiches de séance** du site (proposition, non validée). Les compétences non travaillées sont à lister honnêtement.

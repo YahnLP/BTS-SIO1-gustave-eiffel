@@ -51,7 +51,7 @@ FLUSH PRIVILEGES;
 
 À lancer dans l'**Invite de commandes** (pas dans PowerShell, d'après la documentation de l'installeur).
 
-## Variante OCS (agent Windows, d'après le TP d'origine)
+## Variante OCS (agent Windows)
 
 `"C:\Program Files\OCS Inventory Agent\OCSInventory.exe" /np /server:IP_SERVEUR /debug /logfile:C:\Temp\ocs.log`
 

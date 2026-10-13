@@ -9,9 +9,9 @@ Les réponses aux questions sont repliées dans le TP. **Aucune manipulation n'a
 | Point | Pourquoi |
 |---|---|
 | Création de **groupes**, **utilisateurs** du portail, **catégories** | Chemins et noms de champs à confirmer (partie D1) |
-| Création d'un **SLA / délai cible** et son **application** à un ticket (manuelle ou par règle) | Le support d'origine suppose un SLA déjà configuré ; sa création n'a pas été testée |
+| Création d'un **SLA / délai cible** et son **application** à un ticket (manuelle ou par règle) | Le TP suppose un SLA déjà configuré ; sa création n'a pas été testée |
 | **Échelle de priorité** de GLPI : noms, ordre, existence de « Majeure », matrice urgence × impact configurable | La correspondance P1 à P4 de la partie D1 en dépend |
-| **Statuts** disponibles et libellés (surtout « En cours (planifié) ») | Corrigés par rapport au support d'origine, non vérifiés |
+| **Statuts** disponibles et libellés (surtout « En cours (planifié) ») | Non vérifiés |
 | **Suivi privé / public** : libellé et emplacement | Utilisé dans les tickets 1 et 2 |
 | **Association** d'un ticket à un équipement | Chemin à confirmer |
 | **Base de connaissances** : disponibilité selon version et droits | Retirée de la version révisée |

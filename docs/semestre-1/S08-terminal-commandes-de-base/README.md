@@ -49,7 +49,7 @@ Les parties E et F du TP (recherche de fichiers, script) sont pour les étudiant
 
 ## Évaluation
 
-- Compte rendu PDF avec captures d'écran et explications, nommé `RENDU-CS1-TP3.1-NOM.pdf` (convention du TP d'origine).
+- Compte rendu PDF avec captures d'écran et explications, nommé `RENDU-CS1-TP3.1-NOM.pdf`.
 - Bilan de compétences rempli à la fin du TP (individuel).
 
 <details markdown="1">
@@ -57,8 +57,8 @@ Les parties E et F du TP (recherche de fichiers, script) sont pour les étudiant
 
 - **Compétences :** codes et intitulés relus sur l'arrêté du 8 juillet 2024 ; le choix des compétences pour cette séance est une proposition de l'enseignant.
 - **Corrigé :** dans `corriges/` à la racine du dépôt (hors du site publié, mais visible dans le dépôt GitHub).
-- **Répartition des contenus :** les liens symboliques et liens durs, les utilisateurs et groupes, `/etc/services` et l'affichage page par page sont prévus en S09. La création de l'utilisateur `tech2025` du support d'origine est donc reportée.
-- **Réseau de la salle :** le schéma d'origine indique une VM en accès par pont sur le réseau du lycée (plage 192.168.51.x) ; à confirmer pour la salle utilisée.
-- **Disque :** consigne d'origine : la VM doit être installée sur le disque `E:\`. À adapter si la salle change.
+- **Répartition des contenus :** les liens symboliques et liens durs, les utilisateurs et groupes, `/etc/services` et l'affichage page par page sont prévus en S09. La création de l'utilisateur `tech2025` est donc reportée.
+- **Réseau de la salle :** le TP suppose une VM en accès par pont sur le réseau du lycée (plage 192.168.51.x) ; à confirmer pour la salle utilisée.
+- **Disque :** la VM doit être installée sur le disque `E:\`. À adapter si la salle change.
 
 </details>
