@@ -18,7 +18,7 @@ Cours, TP et aide-mémoire de **BTS SIO option SISR, 1re année** (21 séances d
 
 ## Avancement
 
-Séances publiées : **toutes les séances du semestre 1 (S01 à S10)** : hardware et culture informatique (S01 à S03), systèmes d'exploitation (S04 et S05), virtualisation (S06 et S07), terminal Linux (S08 à S10). Semestre 2 : **S11 – Conteneurs avec DockerLab**, **S12 – Patrimoine et inventaire**, **S13 – Installation de GLPI et agent**, **S14 – Exploiter le parc dans GLPI**, **S15 – ITIL, incidents et tickets**, **S16 – Résoudre des incidents avec InfraLab**, **S17 – Services, SLA et catalogue**, **S18 – Clonage et déploiement avec FOG** et **S19 – Automatisation** sont publiées ; S20 et S21 sont indiquées « à venir » dans le tableau de progression.
+Séances publiées : **toutes les séances du semestre 1 (S01 à S10)** : hardware et culture informatique (S01 à S03), systèmes d'exploitation (S04 et S05), virtualisation (S06 et S07), terminal Linux (S08 à S10). Semestre 2 : **toutes les séances (S11 à S21)** : conteneurs (S11), gestion de parc (S12 à S14), ITIL et support (S15 et S16), mise à disposition de services (S17 à S21 : services et SLA, clonage avec FOG, automatisation, sauvegardes, projet de synthèse).
 
 ## Principe pédagogique
 

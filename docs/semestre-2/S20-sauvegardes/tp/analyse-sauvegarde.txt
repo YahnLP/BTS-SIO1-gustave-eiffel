@@ -1,0 +1,16 @@
+ANALYSE DES SAUVEGARDES DE NOVATECH - S20
+Binome : ______________   Jeu de donnees InfraLab : NovaTech complet
+
+Pour chaque service ou equipement, repondre apres exploration de la CMDB et du parc.
+
+Service / equipement   | Dependances (CMDB)   | Donnees a sauver            | RPO (perte max) | RTO (arret max) | Methode      | Frequence | Copie hors site ?
+-----------------------+----------------------+-----------------------------+-----------------+-----------------+--------------+-----------+------------------
+Facturation comptable  |                      |                             |                 |                 |              |           |
+Partage de fichiers    |                      |                             |                 |                 |              |           |
+Messagerie             |                      |                             |                 |                 |              |           |
+Intranet RH            |                      |                             |                 |                 |              |           |
+Outil ITSM (SRV-ITSM)  |                      |                             |                 |                 |              |           |
+Postes de travail      |                      |                             |                 |                 |              |           |
+
+Question : le NAS (NAS-DC-01) est dans le meme datacenter que les serveurs.
+Que se passe-t-il pour les sauvegardes si le datacenter est detruit ?  ______________________

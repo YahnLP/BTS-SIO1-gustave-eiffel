@@ -1,0 +1,18 @@
+GRILLE D'ORAL DE SYNTHESE - S21 (5 minutes + 2 minutes de questions)
+Presentateur : ______________   Observateur : ______________
+
+Critere                                                            | Observe ? | Remarque
+-------------------------------------------------------------------+-----------+---------
+Presente le contexte (qui, quoi, pourquoi) en 30 secondes          | oui / non |
+Montre UNE realisation et dit ce qu'il a fait LUI-MEME             | oui / non |
+Explique un choix technique et ce qu'il a ecarte                   | oui / non |
+Presente une difficulte rencontree et comment il l'a surmontee     | oui / non |
+Montre une preuve (capture, journal, compte rendu) lisible         | oui / non |
+Lie la realisation a une competence du referentiel                 | oui / non |
+Utilise le vocabulaire juste (CMDB, RPO, SLA, idempotent...)       | oui / non |
+Repond clairement a une question                                   | oui / non |
+Respecte le temps                                                  | oui / non |
+
+Une question posee : ______________________________________________
+Un point fort : ___________________________________________________
+Un conseil : ______________________________________________________

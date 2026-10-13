@@ -1,0 +1,16 @@
+JOURNAL DE SAUVEGARDE ET DE RESTAURATION - S20
+Binome : ______________   Date : ______________
+
+Sauvegarde        | Source            | Destination        | Outil / options        | Duree | Taille
+------------------+-------------------+--------------------+------------------------+-------+-------
+Archive (tar)     |                   |                    |                        |       |
+Synchronisation   |                   |                    |                        |       |
+Base GLPI         |                   |                    |                        |       |
+
+Test de restauration (OBLIGATOIRE : une sauvegarde non testee n'existe pas)
+Ce qui a ete restaure : ____________________    Ou : ____________________
+Verification (comparaison des empreintes, des fichiers, des tables) :
+  ________________________________________________________________
+Resultat : [ ] identique  [ ] ecarts (lesquels : ______________________ )
+Duree de la restauration (= RTO mesure) : ______ min
+Perte de donnees constatee (= RPO mesure) : ______________________
