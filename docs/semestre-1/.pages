@@ -5,3 +5,4 @@ nav:
   - S07-virtualisation-avancee
   - S08-terminal-commandes-de-base
   - S09-linux-fichiers-droits-utilisateurs
+  - S10-paquets-scripts-bash

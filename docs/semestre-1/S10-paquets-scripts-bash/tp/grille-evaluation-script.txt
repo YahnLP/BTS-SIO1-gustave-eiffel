@@ -1,0 +1,21 @@
+Grille d'auto-evaluation du script nom_prenom_create_tp.sh
+
+Critere                                                                       | Oui | Non | Preuve (commande, capture)
+------------------------------------------------------------------------------|-----|-----|---------------------------
+Le fichier commence par un shebang (#!/bin/bash)                              |     |     |
+Le script est executable et se lance depuis un terminal Debian                |     |     |
+Il affiche au moins un message clair sur ce qu'il fait                        |     |     |
+Il cree l'arborescence exacte de JackCelair, noms avec espaces et accents     |     |     |
+Il peut etre relance sans erreur et sans rien casser                          |     |     |
+Il gere un dossier deja present (message, pas d'erreur)                       |     |     |
+Il gere une erreur de creation (message clair, arret propre, code de retour)  |     |     |
+Le code est lisible : variables nommees, commentaires utiles                  |     |     |
+
+Test de non-regression : lancer le script deux fois de suite ; la seconde execution ne doit afficher aucune erreur.
+
+Journal des prompts (obligatoire si une IA a ete utilisee ; il est interdit de generer le script complet) :
+
+Prompt saisi                    | Ce que j'en ai retenu                 | Ce que j'ai modifie ou verifie moi-meme
+--------------------------------|---------------------------------------|----------------------------------------
+                                |                                       |
+                                |                                       |

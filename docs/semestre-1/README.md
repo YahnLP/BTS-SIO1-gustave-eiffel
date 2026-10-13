@@ -18,6 +18,6 @@
 | S07 | 07 | Virtualisation | [Virtualisation avancée : réseau, snapshots, Guest Additions](S07-virtualisation-avancee/README.md) | **disponible** |
 | S08 | 08 | Terminal Linux (bash) | [Commandes de base](S08-terminal-commandes-de-base/README.md) | **disponible** |
 | S09 | 09 | Terminal Linux (bash) | [Utilisateurs, droits et liens](S09-linux-fichiers-droits-utilisateurs/README.md) | **disponible** |
-| S10 | 10 | Terminal Linux (bash) | Paquets, scripts simples | à venir |
+| S10 | 10 | Terminal Linux (bash) | [Paquets et premiers scripts Bash](S10-paquets-scripts-bash/README.md) | **disponible** |
 
 Les numéros de semaine sont ceux de la séquence (semaine 01 à 21) : ils ne correspondent pas à des dates, les semaines n'étant pas consécutives.
