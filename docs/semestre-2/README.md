@@ -3,13 +3,13 @@
 **Objectif du semestre :** gérer le patrimoine informatique, organiser le support selon ITIL et mettre à disposition des services (déploiement, automatisation, sauvegardes).
 
 > [!NOTE]
-> Les séances ci-dessous sont **à venir** : les titres sont une proposition de plan, pas un contenu publié.
+> Les séances non encore publiées sont indiquées « à venir » : leur titre est une proposition de plan, pas un contenu.
 
 ## Progression
 
 | Séance | Semaine | Section | Thème | Statut |
 |---|---|---|---|---|
-| S11 | 11 | Conteneurs | Conteneurs avec DockerLab | à venir |
+| S11 | 11 | Conteneurs | [Conteneurs avec DockerLab](S11-conteneurs-dockerlab/README.md) | **disponible** |
 | S12 | 12 | Gestion de parc | Patrimoine informatique et inventaire | à venir |
 | S13 | 13 | Gestion de parc | Agent GLPI et inventaire automatique (OCS Inventory en repli) | à venir |
 | S14 | 14 | Gestion de parc | GLPI | à venir |

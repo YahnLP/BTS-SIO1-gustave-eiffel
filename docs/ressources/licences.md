@@ -12,7 +12,7 @@ Chaque document exporté en PDF (icône dans l'en-tête de chaque page) rappelle
 
 Le **Simulateur Réseau** (embarqué dans ce site) est © 2026 Yahn LE PRETTRE – Formaxion Landes, distribué sous licence libre **EUPL 1.2**. Texte officiel : [interoperable-europe.ec.europa.eu](https://interoperable-europe.ec.europa.eu/collection/eupl/eupl-text-eupl-12). Le nom, le logo et l'identité visuelle du simulateur ne sont pas cédés par la licence du code.
 
-**InfraLab** est présenté par son auteur comme distribué sous licence **EUPL 1.2** (d'après la page de l'outil). **DockerLab** : licence **à confirmer**. Ces simulateurs ne sont ni affiliés à, ni approuvés par les éditeurs des logiciels qu'ils reproduisent.
+**InfraLab** est présenté par son auteur comme distribué sous licence **EUPL 1.2** (d'après la page de l'outil). **DockerLab** : aucun fichier de licence n'est présent dans le dépôt GitHub de l'outil à la date de rédaction ; licence **à décider par l'auteur** avant de le déclarer ici. Ces simulateurs ne sont ni affiliés à, ni approuvés par les éditeurs des logiciels qu'ils reproduisent.
 
 ## Les outils tiers cités
 
