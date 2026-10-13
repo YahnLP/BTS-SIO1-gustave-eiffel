@@ -59,13 +59,15 @@ Exemples : le journal de commandes de S11, le journal d'installation de GLPI de 
 
 ## 4. S'auto-évaluer
 
-L'échelle des bilans :
+L'échelle des bilans reprend le vocabulaire des grilles nationales d'évaluation :
 
 | Niveau | Sens |
 |---|---|
-| **NA** | **Non acquis** : tu ne sais pas le faire, ou seulement avec une aide constante |
-| **EC** | **En cours d'acquisition** : tu le fais avec une aide ponctuelle ou en te trompant parfois |
-| **A** | **Acquis** : tu le fais **seul**, correctement, et tu peux l'**expliquer** |
+| **Non maîtrisé** | Tu ne sais pas encore le faire, ou seulement avec une aide constante |
+| **Maîtrise partielle** | Tu le fais avec une aide ponctuelle ou en te trompant parfois |
+| **Bonne maîtrise** | Tu le fais **seul** et correctement |
+| **Excellente maîtrise** | Tu le fais seul, correctement, tu peux l'**expliquer** et l'adapter à un autre contexte |
+| **Non évalué** | Tu n'as pas travaillé cette compétence |
 
 Deux pièges : **se surestimer** (« j'ai réussi le TP, donc je sais ») ; **se sous-estimer** (« ça ne m'a pas paru difficile »). Un bon critère : **sans l'aide-mémoire**, peux-tu refaire et expliquer ?
 
