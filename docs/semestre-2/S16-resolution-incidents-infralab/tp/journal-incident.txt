@@ -1,0 +1,26 @@
+JOURNAL D'INCIDENT EN TEMPS REEL - S16
+A remplir PENDANT l'intervention, jamais apres coup.
+Binome : ______________   Incident : ______________   Outil : [ ] InfraLab  [ ] Poste Windows
+
+Heure | Action realisee (une seule a la fois)           | Resultat observe (message exact si erreur)
+------+-------------------------------------------------+--------------------------------------------
+      |                                                 |
+      |                                                 |
+      |                                                 |
+      |                                                 |
+      |                                                 |
+      |                                                 |
+      |                                                 |
+      |                                                 |
+
+Les 5 questions (reponses AVANT d'agir) :
+ 1. Est-ce que ca a deja fonctionne ?            ______________________
+ 2. Qu'est-ce qui a change recemment ?           ______________________
+ 3. Est-ce reproductible (toujours / parfois) ?  ______________________
+ 4. Isole (1 poste) ou generalise (plusieurs) ?  ______________________
+ 5. Y a-t-il un message d'erreur ? (copie exacte) ______________________
+
+Cause identifiee : ____________________________________________
+Solution appliquee : __________________________________________
+Verification (cote realite ET cote outil) : ____________________
+Temps de resolution : ______ min       A documenter en base de connaissances : [ ] oui [ ] non

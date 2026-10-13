@@ -14,7 +14,7 @@
 | S13 | 13 | Gestion de parc | [Agent GLPI et inventaire automatique (OCS Inventory en repli)](S13-glpi-installation-agent/README.md) | **disponible** |
 | S14 | 14 | Gestion de parc | [Exploiter le parc dans GLPI](S14-glpi-exploiter-le-parc/README.md) | **disponible** |
 | S15 | 15 | ITIL et support | [ITIL : incidents, demandes et tickets](S15-itil-incidents-tickets/README.md) | **disponible** |
-| S16 | 16 | ITIL et support | Résolution d'incidents avec InfraLab | à venir |
+| S16 | 16 | ITIL et support | [Résoudre des incidents avec InfraLab](S16-resolution-incidents-infralab/README.md) | **disponible** |
 | S17 | 17 | Mise à disposition de services | Services, SLA, catalogue | à venir |
 | S18 | 18 | Mise à disposition de services | Clonage et déploiement (FOG) | à venir |
 | S19 | 19 | Mise à disposition de services | Automatisation | à venir |

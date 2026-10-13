@@ -1,0 +1,17 @@
+FICHE DE BASE DE CONNAISSANCES - S16
+Auteur : ______________   Date : ______________
+
+Titre (le symptome, en une phrase) : ____________________________________
+Symptomes (ce que voit l'utilisateur) :
+  ________________________________________________________________
+Cause(s) connue(s) (1 a 3, les plus frequentes) :
+  ________________________________________________________________
+Solution (etapes numerotees, precises) :
+  1. ____________________________________________________________
+  2. ____________________________________________________________
+  3. ____________________________________________________________
+Verification (comment s'assurer que c'est resolu) :
+  ________________________________________________________________
+Escalade (quand passer au niveau 2 si ces etapes echouent) :
+  ________________________________________________________________
+Mots-cles (pour la recherche) : _________________________________

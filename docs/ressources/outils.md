@@ -2,7 +2,7 @@
 
 | Outil | Usage dans la formation | Accès |
 |---|---|---|
-| **InfraLab** | Gestion de parc, inventaire, tickets, incidents, changements, CMDB, SLA (ITSM et ITAM). Version 1.2 : 46 TP, enregistrement en fichier `.infralab.json`. | [yahnlp.github.io/InfraLab](https://yahnlp.github.io/InfraLab/) |
+| **InfraLab** | Gestion de parc, inventaire, tickets, incidents, changements, CMDB, SLA (ITSM et ITAM). Version 1.2 : 48 TP d'après le dépôt (la page d'accueil en annonce 46), enregistrement en fichier `.infralab.json`. | [yahnlp.github.io/InfraLab](https://yahnlp.github.io/InfraLab/) |
 | **DockerLab** | Simulateur Docker : terminal, vue navigateur, ressources. | [yahnlp.github.io/DockerLab](https://yahnlp.github.io/DockerLab/) |
 | **Simulateur réseau** | Câblage, adressage, commandes sur équipements, hors ligne. | [Ouvrir](../simulateur/simulateur-reseau.html) · [mode d'emploi](simulateur.md) |
 | **VirtualBox** | Machines virtuelles Debian et Windows. | Installé sur les postes de la salle |
