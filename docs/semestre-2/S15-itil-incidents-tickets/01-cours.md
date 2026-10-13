@@ -60,15 +60,18 @@ La **priorité** décide de l'ordre de traitement. Elle combine :
 > [!NOTE]
 > **Ne te fie pas à l'utilisateur pour la priorité.** Il est presque toujours persuadé que son incident est le plus urgent. Tu évalues avec la matrice, ton jugement et ceux de tes collègues.
 
-**Matrice de priorité (proposition pour ce cours).** Valeurs : haut = 3, moyen = 2, bas = 1 ; on additionne.
+**Matrice de priorité.** C'est celle du laboratoire **[InfraLab](https://yahnlp.github.io/InfraLab/)**, reprise ici pour que tu n'en rencontres qu'une. La priorité est **calculée** à partir de l'impact et de l'urgence.
 
 | Urgence ↓ / Impact → | Haut | Moyen | Bas |
 |---|---|---|---|
-| **Haute** | **P1** | **P1** | **P2** |
-| **Moyenne** | **P1** | **P2** | **P3** |
-| **Basse** | **P2** | **P3** | **P4** |
+| **Haute** | **P1** | **P2** | **P3** |
+| **Moyenne** | **P2** | **P3** | **P4** |
+| **Basse** | **P3** | **P4** | **P4** |
 
-Somme 6 ou 5 → P1 ; 4 → P2 ; 3 → P3 ; 2 → P4. Chaque organisation fixe sa propre matrice et ses délais.
+Chaque organisation fixe sa propre matrice et ses délais ; celle-ci est un exemple d'enseignement.
+
+> [!TIP]
+> **Dans InfraLab** (TP, partie C) : le TP 14 te fait qualifier deux tickets d'apparence semblable ; le TP 21 distingue incident et demande ; le TP 47 te fait escalader au bon moment.
 
 | Priorité | Exemple | Prise en charge (exemple) | Résolution (exemple) |
 |---|---|---|---|

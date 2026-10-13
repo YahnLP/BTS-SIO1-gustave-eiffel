@@ -11,13 +11,13 @@
 | Demande de service | Demande standard, sans panne |
 | Changement | Modification planifiée de l'infrastructure |
 
-## Matrice de priorité (proposition du cours)
+## Matrice de priorité (celle d'InfraLab)
 
 | Urgence ↓ / Impact → | Haut | Moyen | Bas |
 |---|---|---|---|
-| Haute | P1 | P1 | P2 |
-| Moyenne | P1 | P2 | P3 |
-| Basse | P2 | P3 | P4 |
+| Haute | P1 | P2 | P3 |
+| Moyenne | P2 | P3 | P4 |
+| Basse | P3 | P4 | P4 |
 
 ## Ticket complet
 

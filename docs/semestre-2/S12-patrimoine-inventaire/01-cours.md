@@ -90,6 +90,11 @@ Un équipement change d'**état** au fil de ce cycle : l'inventaire doit le **su
 
 Le temps d'un déploiement automatisé dépend de l'organisation (déploiement par script, par stratégie de groupe, par un outil de déploiement) : les chiffres couramment cités sont des **estimations**, à discuter et à remplacer par des mesures sur son propre parc.
 
+**Quatre façons d'alimenter un parc.** Un outil de gestion de parc est **vide** tant qu'on ne l'a pas rempli. Il peut l'être par : la **saisie manuelle** (précise mais lente et périssable) ; l'**import** d'un fichier (rapide, mais reprend les défauts du fichier) ; la **découverte réseau** (détecte ce qui répond sur le réseau, sans le détail) ; l'**agent** (détail matériel et logiciels, mais seulement là où il est installé). Ces modes se **complètent**.
+
+> [!TIP]
+> **Dans InfraLab** (TP, partie D) : le TP 1 te fait constater un Parc vide puis le remplir par découverte, le TP 4 complète une fiche (numéro d'inventaire, numéro de série, garantie) et le TP 9 traite une imprimante sans agent. Tu vois **ce que chaque mode sait et ne sait pas**.
+
 **Agent ou sans agent ?** Un **agent** est un petit programme sur chaque poste. Une méthode **sans agent** (*agentless*) interroge à distance par des protocoles réseau comme **SNMP** (équipements réseau, imprimantes) ou **WMI** (Windows). Les deux se combinent : agent pour les postes, SNMP pour les imprimantes et les switchs.
 
 ## 5. La qualité des données

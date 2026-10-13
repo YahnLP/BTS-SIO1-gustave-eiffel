@@ -6,7 +6,7 @@
 | **Séance** | S13 – semaine 13 (semestre 2) |
 | **Durée** | 4 heures |
 | **Prérequis** | Virtualisation ([S06](../../semestre-1/S06-virtualisation-premieres-vm/README.md), [S07](../../semestre-1/S07-virtualisation-avancee/README.md)) ; terminal et paquets Linux ([S08](../../semestre-1/S08-terminal-commandes-de-base/README.md) à [S10](../../semestre-1/S10-paquets-scripts-bash/README.md)) ; inventaire ([S12](../S12-patrimoine-inventaire/README.md)) |
-| **Matériel** | VirtualBox ; une **VM serveur Debian** (ISO ou OVA) avec accès Internet pour `apt` et les téléchargements ; une **VM cliente Windows** (celle de S06) ; navigateur |
+| **Matériel** | **[InfraLab](https://yahnlp.github.io/InfraLab/)** (navigateur) ; VirtualBox ; une **VM serveur Debian** (ISO ou OVA) avec accès Internet pour `apt` et les téléchargements ; une **VM cliente Windows** (celle de S06) ; navigateur |
 | **Compétences travaillées** | B2.2 · B1.1 (voir [le référentiel](../../ressources/referentiel.md)) |
 
 > [!NOTE]
@@ -29,7 +29,7 @@
 | Document | Rôle |
 |---|---|
 | [Cours](01-cours.md) | Architecture GLPI, installation, inventaire natif et agent, variante OCS, diagnostic |
-| [TP : un serveur GLPI et un premier poste](02-tp.md) | Préparer, installer, inventorier, comparer, diagnostiquer, bilan |
+| [TP : un serveur GLPI et un premier poste](02-tp.md) | InfraLab (TP 6 et 10), préparer, installer GLPI, inventorier avec l'agent, comparer, bilan |
 | [Aide-mémoire](03-aide-memoire.md) | Commandes et paramètres de la séance |
 | [Plan de tests](tp/plan-de-tests.txt) | Tableau de tests à remplir pendant l'installation |
 
@@ -39,13 +39,17 @@
 |---|---|---|
 | 0 h 00 – 0 h 10 | **Accroche** : 22 postes, une seule console : démonstration d'une fiche d'ordinateur dans GLPI | Démonstration |
 | 0 h 10 – 0 h 40 | **Mini-cours** : architecture, installation, inventaire natif et agent (cours §1 à §4) | Cours et questions |
-| 0 h 40 – 1 h 00 | **TP partie A** : préparer les machines virtuelles | Binôme |
-| 1 h 00 – 2 h 05 | **TP partie B** : installer GLPI | Binôme |
-| 2 h 05 – 2 h 20 | Pause | |
-| 2 h 20 – 3 h 00 | **TP partie C** : activer l'inventaire, installer l'agent | Binôme |
-| 3 h 00 – 3 h 15 | **TP partie D** : comparer avec la fiche manuelle | Binôme |
-| 3 h 15 – 3 h 40 | **TP partie F** : questions de réflexion ; partie E (facultative) si le temps le permet | Individuel |
-| 3 h 40 – 4 h 00 | **Bilan de compétences** et retour sur les « pourquoi » | Individuel puis oral |
+| 0 h 40 – 1 h 05 | **TP partie A1 (InfraLab)** : TP 6 « Installer un agent » | Binôme, navigateur |
+| 1 h 05 – 1 h 40 | **TP partie A2 (InfraLab)** : TP 10 « Agent en erreur » | Binôme |
+| 1 h 40 – 1 h 50 | **TP partie B** : préparer les machines virtuelles (en réalité, restaurer les VM de la séance) | Binôme |
+| 1 h 50 – 2 h 50 | **TP partie C** : installer GLPI | Binôme |
+| 2 h 50 – 3 h 05 | Pause | |
+| 3 h 05 – 3 h 40 | **TP partie D** : activer l'inventaire, installer l'agent | Binôme |
+| 3 h 40 – 3 h 52 | **TP partie E** : comparer avec la fiche manuelle, lien avec InfraLab | Binôme |
+| 3 h 52 – 4 h 00 | **Bilan de compétences** (à terminer à la maison) | Individuel |
+
+> [!WARNING]
+> **Séance dense, et l'installation de GLPI est le point risqué.** Si l'installation prend du retard, le TP 10 d'InfraLab passe en travail personnel. Pour gagner du temps, l'enseignant peut fournir une **VM Debian avec la pile Apache, PHP et MariaDB déjà installée** (la partie C commence alors à l'assistant d'installation).
 
 ## Évaluation
 
@@ -64,6 +68,7 @@
 - **Cycle de collecte collaboratif :** le TP d'origine reconfigure l'agent à chaque cycle pour viser le serveur d'un autre élève. L'installeur de l'agent accepte une **liste de serveurs** (paramètre `SERVER` séparé par des virgules, d'après la documentation officielle) : la partie E s'appuie là-dessus au lieu de 12 reconfigurations.
 - **Réseau :** le TP d'origine utilise l'accès par pont avec l'adresse `192.168.X.1` pour le serveur et `192.168.X.10` pour le client (X = numéro d'élève). À confirmer selon le réseau de la salle (voir S07).
 - **Variante OCS :** serveur Apache + Perl + base `ocsweb`, console `ocsreports`, agent Windows, et plugin « OCS Inventory NG » dans GLPI. Le TP d'origine donne la procédure ; non reprise ici car les URLs et numéros de version du TP d'origine (`2.12.x`, `10.0.x`) sont génériques et non vérifiés.
+- **InfraLab (révision) :** la partie A s'appuie sur les TP 6 et 10 du catalogue ; les TP 7 et 8 sont proposés en remédiation. La variante OCS reste au cours ; la partie « serveur d'un voisin » (douze reconfigurations de l'agent) ont été **retirées du TP** : pas de temps, et InfraLab porte la notion. Les éléments de réponse de la partie A d'après le catalogue sont à **confronter à l'écran**.
 - **Corrigé :** dans `corriges/` à la racine du dépôt.
 - **Compétences :** B2.2 et B1.1 sont une proposition à valider.
 

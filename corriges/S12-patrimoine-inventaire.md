@@ -19,6 +19,12 @@ Les réponses sont repliées dans le TP. Ce document ajoute la vérification du 
 
 Remarque : la comparaison « date future » suppose la date du jour d'octobre 2026 ; sur une date de séance plus tardive, adapter le fichier.
 
+## Partie D (InfraLab) : repères
+
+- Les **objectifs** de chaque scénario sont évalués par InfraLab (TP 1 : expliquer pourquoi le Parc est vide, faire apparaître PC21, PC22 et PC23, dire ce que la découverte ne sait pas ; TP 4 : numéro d'inventaire, numéro de série, fin de garantie sur PC-COMPTA-01 ; TP 9 : IMP-COMPTA sans données d'agent). **Le score InfraLab n'est pas la note** : on note les **constats** du compte rendu et les réponses.
+- **Non vérifié :** les libellés exacts des champs et des boutons d'InfraLab ; les éléments de réponse de D1 à D3 sont rédigés d'après les contextes et objectifs du catalogue. À confronter à l'écran avant la première séance.
+- **D4 (hors catalogue)** : les chiffres sont à lire dans l'outil (jeu de données déterministe) ; d'après le code du jeu de données, un poste sur trois n'a pas d'agent. Non vérifié à l'écran.
+
 ## Points d'attention
 
 - Les étudiants qui travaillent sous **tableur** peuvent rencontrer le séparateur `;` mal interprété selon la langue du logiciel : prévoir l'import avec séparateur explicite.
@@ -27,7 +33,7 @@ Remarque : la comparaison « date future » suppose la date du jour d'octobre 20
 
 ## Barème indicatif (sur 20)
 
-Partie A (4) · partie B (4) · partie C (3) · partie D (6) · parties E et F (3).
+Partie A (3) · partie B (2) · partie C (2) · partie D, InfraLab (6) · partie E, CSV (5) · partie F (2).
 
 ## Écarts avec le support d'origine
 

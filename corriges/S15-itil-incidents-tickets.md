@@ -8,20 +8,19 @@ Les réponses aux questions sont repliées dans le TP. **Aucune manipulation n'a
 
 | Point | Pourquoi |
 |---|---|
-| Création de **groupes**, **utilisateurs** du portail, **catégories** | Chemins et noms de champs à confirmer (partie C) |
+| Création de **groupes**, **utilisateurs** du portail, **catégories** | Chemins et noms de champs à confirmer (partie D1) |
 | Création d'un **SLA / délai cible** et son **application** à un ticket (manuelle ou par règle) | Le support d'origine suppose un SLA déjà configuré ; sa création n'a pas été testée |
-| **Échelle de priorité** de GLPI : noms, ordre, existence de « Majeure », matrice urgence × impact configurable | La correspondance P1 à P4 de la partie C en dépend |
+| **Échelle de priorité** de GLPI : noms, ordre, existence de « Majeure », matrice urgence × impact configurable | La correspondance P1 à P4 de la partie D1 en dépend |
 | **Statuts** disponibles et libellés (surtout « En cours (planifié) ») | Corrigés par rapport au support d'origine, non vérifiés |
-| **Suivi privé / public** : libellé et emplacement | Utilisé dans les tickets 1 à 3 |
+| **Suivi privé / public** : libellé et emplacement | Utilisé dans les tickets 1 et 2 |
 | **Association** d'un ticket à un équipement | Chemin à confirmer |
-| **Base de connaissances** : disponibilité selon version et droits | Étape facultative du ticket 3 |
+| **Base de connaissances** : disponibilité selon version et droits | Retirée de la version révisée |
 | **Temps de résolution** affiché : calendrier, heures ouvrées | Peut différer du calcul manuel (c'est voulu) |
-| **Statistiques** : chemin et filtres par technicien | Partie D, ticket 4 |
+| **Statistiques** : chemin et filtres par technicien | Retirées de la version révisée |
 
 ## Pièges probables
 
 - Étudiants qui laissent la priorité à l'**urgence ressentie** de l'appelant : renvoyer à la matrice.
-- Ticket 3 sans reformulation : le titre recopie le mail. Exiger un titre de dix mots au plus.
 - Escalade sans motif écrit : le motif est dans le **suivi privé**, pas dans le public.
 - Jeu de rôle : l'observateur note des impressions plutôt que des critères observables.
 - Un seul ticket traité en entier : prévoir un ticket de rechange.
@@ -30,12 +29,14 @@ Les réponses aux questions sont repliées dans le TP. **Aucune manipulation n'a
 
 | Critère | Points |
 |---|---|
-| Classement des douze sollicitations justifié | 3 |
-| Tickets rédigés (scénarios A et B) | 4 |
-| Préparation de GLPI (groupes, demandeurs, catégories, délai, correspondance) | 3 |
-| Quatre tickets traités (création, lien, affectation, escalade, solution, clôture) | 6 |
-| Temps de résolution calculé et comparé ; statistiques lues | 2 |
-| Jeu de rôle et grille d'observation | 2 |
+| Classement des douze sollicitations justifié (matrice d'InfraLab) | 3 |
+| Ticket rédigé (partie B) | 2 |
+| InfraLab partie C : constats et justifications (priorité, incident ou demande, escalade) | 7 |
+| Préparation de GLPI (groupes, demandeur, catégories, correspondance des priorités) | 2 |
+| Deux tickets GLPI (création, lien, affectation, escalade, solution, clôture) et temps de résolution comparé | 4 |
+| Jeu de rôle et grille d'observation (facultatif : sinon points reportés sur C) | 2 |
+
+**Matrice d'InfraLab** (lue dans `src/itsm/taxonomy.ts`) : impact élevé / urgence élevée → P1 ; élevé / moyenne → P2 ; élevé / faible → P3 ; moyen / élevée → P2 ; moyen / moyenne → P3 ; moyen / faible → P4 ; faible / élevée → P3 ; faible / moyenne → P4 ; faible / faible → P4.
 
 ## Compétences
 
