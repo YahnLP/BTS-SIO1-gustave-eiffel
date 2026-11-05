@@ -15,6 +15,11 @@
 - [ ] expliquer ce que fait **`sudo`** et ce qui le distingue d'une session **root** ;
 - [ ] écrire un nom de dossier contenant **un espace ou un accent** sans casser la commande.
 
+> [!IMPORTANT] Idées reçues à confronter à tes réponses du TP
+> - « **`cd home` et `cd /home`, c'est la même chose.** » Non : le premier est **relatif**, le second **absolu** (§ 3).
+> - « **`rm`, c'est comme la corbeille.** » Non : la suppression est **définitive**, il n'y a pas de corbeille en ligne de commande (§ 5).
+> - « **`sudo`, c'est être root en permanence.** » Non : on emprunte les droits de root pour **une seule commande** (§ 6).
+
 ---
 
 ## 1. Le terminal, le shell et le prompt
@@ -59,6 +64,13 @@ Dans cette séance, les dossiers partagés de l'entreprise seront créés dans *
 - Un chemin **absolu** commence par `/` : il part de la racine et fonctionne **depuis n'importe où**. Exemple : `/etc/hostname`.
 - Un chemin **relatif** ne commence **pas** par `/` : il part du **dossier courant**. Exemple : depuis `/etc`, le fichier s'appelle simplement `hostname`.
 
+<figure class="raid-fig">
+<svg viewBox="0 0 720 296" role="img" aria-labelledby="ar-t" xmlns="http://www.w3.org/2000/svg"><title id="ar-t">Arborescence de Linux : chemin absolu et chemin relatif vers /etc/hostname depuis /var/log</title>
+<rect x="315.0" y="10" width="90" height="34" rx="8" class="rd-blk rd-k-d"/><text x="360.0" y="32" text-anchor="middle" class="rd-t" style="font-size:13px;font-weight:700">/</text><line x1="360" y1="44" x2="90" y2="80" class="rd-arrow"/><rect x="45.0" y="80" width="90" height="34" rx="8" class="rd-blk rd-k-b"/><text x="90.0" y="102" text-anchor="middle" class="rd-t" style="font-size:13px;font-weight:700">home</text><line x1="360" y1="44" x2="230" y2="80" class="rd-arrow"/><rect x="185.0" y="80" width="90" height="34" rx="8" class="rd-blk rd-k-b"/><text x="230.0" y="102" text-anchor="middle" class="rd-t" style="font-size:13px;font-weight:700">etc</text><line x1="360" y1="44" x2="390" y2="80" class="rd-arrow"/><rect x="345.0" y="80" width="90" height="34" rx="8" class="rd-blk rd-k-b"/><text x="390.0" y="102" text-anchor="middle" class="rd-t" style="font-size:13px;font-weight:700">var</text><line x1="360" y1="44" x2="540" y2="80" class="rd-arrow"/><rect x="495.0" y="80" width="90" height="34" rx="8" class="rd-blk rd-k-b"/><text x="540.0" y="102" text-anchor="middle" class="rd-t" style="font-size:13px;font-weight:700">tmp</text><line x1="360" y1="44" x2="650" y2="80" class="rd-arrow"/><rect x="605.0" y="80" width="90" height="34" rx="8" class="rd-blk rd-k-b"/><text x="650.0" y="102" text-anchor="middle" class="rd-t" style="font-size:13px;font-weight:700">usr</text><line x1="90" y1="114" x2="90" y2="150" class="rd-arrow"/><rect x="45.0" y="150" width="90" height="34" rx="8" class="rd-blk rd-k-b"/><text x="90.0" y="172" text-anchor="middle" class="rd-t" style="font-size:13px;font-weight:700">tech</text><line x1="230" y1="114" x2="230" y2="150" class="rd-arrow"/><rect x="185.0" y="150" width="90" height="34" rx="8" class="rd-blk rd-k-p"/><text x="230.0" y="172" text-anchor="middle" class="rd-t" style="font-size:13px;font-weight:700">hostname</text><line x1="390" y1="114" x2="330" y2="150" class="rd-arrow"/><rect x="285.0" y="150" width="90" height="34" rx="8" class="rd-blk rd-k-c"/><text x="330.0" y="172" text-anchor="middle" class="rd-t" style="font-size:13px;font-weight:700">log</text><line x1="390" y1="114" x2="450" y2="150" class="rd-arrow"/><rect x="405.0" y="150" width="90" height="34" rx="8" class="rd-blk rd-k-b"/><text x="450.0" y="172" text-anchor="middle" class="rd-t" style="font-size:13px;font-weight:700">partage</text><text x="330" y="202" text-anchor="middle" class="rd-note" style="font-size:12px;font-weight:700">dossier courant</text><text x="230" y="202" text-anchor="middle" class="rd-note" style="font-size:12px;font-weight:700">fichier visé</text><text x="20" y="236" text-anchor="start" class="rd-note" style="font-size:13px;font-weight:500">Chemin <tspan font-weight="700">absolu</tspan> : /etc/hostname (fonctionne depuis n'importe où)</text><text x="20" y="260" text-anchor="start" class="rd-note" style="font-size:13px;font-weight:500">Chemin <tspan font-weight="700">relatif</tspan> depuis /var/log : ../../etc/hostname</text><text x="20" y="282" text-anchor="start" class="rd-note" style="font-size:12px;font-weight:500">(.. = dossier parent : de log on remonte à var, puis à la racine, puis on descend dans etc)</text>
+</svg>
+<figcaption>Un seul arbre, une seule racine : le même fichier se désigne par deux chemins selon d'où l'on part.</figcaption>
+</figure>
+
 Trois raccourcis à connaître :
 
 | Symbole | Signification |
@@ -66,6 +78,15 @@ Trois raccourcis à connaître :
 | `.` | le dossier courant |
 | `..` | le dossier **parent** (celui du dessus) |
 | `~` | ton dossier personnel |
+
+**Je vérifie.** Depuis `/var/log`, écris le chemin relatif du fichier `/etc/hostname`.
+
+<details markdown="1">
+<summary>Voir la réponse</summary>
+
+`../../etc/hostname` : `..` mène à `/var`, un second `..` à `/`, puis on descend dans `etc`.
+
+</details>
 
 **Je vérifie.** Depuis `/var/log`, que désigne `../..` ? Et que donne `cd` tout seul, sans argument ?
 
@@ -162,6 +183,28 @@ Avec `mv` : renommer, c'est « déplacer » le fichier vers un nouveau nom dans 
 
 </details>
 
+### Lire un message d'erreur
+
+Une erreur n'est pas une catastrophe : le message dit presque toujours **ce qui ne va pas**. Selon la langue du système, il peut être en anglais ou en français.
+
+| Message (anglais / français) | Cause probable | Que vérifier ? |
+|---|---|---|
+| `No such file or directory` / « Aucun fichier ou dossier de ce type » | chemin faux, faute de frappe, majuscule oubliée | `pwd`, `ls`, la touche **Tab** pour compléter |
+| `Permission denied` / « Permission non accordée » | tu n'as pas le droit sur ce dossier ou ce fichier | `ls -l` ; `sudo` **si** l'action est légitime |
+| `command not found` / « commande introuvable » | faute de frappe, ou programme non installé | l'orthographe, puis `man` ou `--help` |
+| `Is a directory` / « est un dossier » | on a donné un dossier à une commande de fichier | `ls` pour voir ce qu'on désigne |
+| `File exists` / « Le fichier existe » | on veut créer ce qui existe déjà | `ls` avant de créer |
+
+
+**Je vérifie.** Tu tapes `cd documents` alors que le dossier s'appelle `Documents`. Quel message obtiens-tu, et pourquoi ?
+
+<details markdown="1">
+<summary>Voir la réponse</summary>
+
+« No such file or directory » : Linux distingue majuscules et minuscules, donc `documents` et `Documents` sont deux noms différents.
+
+</details>
+
 ## 6. `sudo` et `root`
 
 Sous Linux, l'utilisateur **`root`** est l'administrateur : il peut tout lire, tout modifier, tout supprimer. Créer un dossier dans `/var` demande ces droits.
@@ -209,7 +252,7 @@ Deux dossiers sont créés : `direction` et `générale`, au lieu d'un seul `dir
 
 </details>
 
-## 8. Rediriger et enchaîner
+## 8. Rediriger et enchaîner <span class="technique">à retenir seulement</span>
 
 Une commande affiche son résultat à l'écran. On peut l'envoyer ailleurs :
 
@@ -231,4 +274,5 @@ Elle affiche la liste détaillée de `/etc` **page par page** : le résultat de 
 
 </details>
 
-Les redirections et le tube serviront dans les séances suivantes (S09 et S10) ; retiens simplement leur rôle.
+> [!NOTE]
+> Les redirections et le tube serviront dans les séances suivantes (S09 et S10) ; **retiens simplement leur rôle** : cette section peut se lire plus vite que les précédentes.
