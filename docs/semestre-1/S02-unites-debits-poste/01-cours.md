@@ -15,6 +15,12 @@
 - [ ] trouver le **maillon le plus lent** d'une chaîne ;
 - [ ] interroger un poste Windows avec **PowerShell** et l'**Invite de commandes**.
 
+> [!IMPORTANT] Idées reçues à confronter à tes réponses du TP
+> - « **Mon disque de 1 To est défectueux : Windows n'affiche que 931 Go.** » Non : le fabricant compte par 1 000, Windows par 1 024 (§ 1).
+> - « **100 Mbit/s, ça fait 100 Mo/s.** » Non : il faut diviser par 8, donc 12,5 Mo/s (§ 3).
+> - « **Le Wi-Fi 6 donne 9,6 Gbit/s chez moi.** » C'est un maximum théorique de la norme ; le débit réel est bien plus bas (§ 3).
+> - « **Pour aller plus vite, il suffit d'améliorer un élément.** » Seul compte le plus lent de la chaîne (§ 3).
+
 ---
 
 ## 1. Bits, octets et préfixes
@@ -48,6 +54,15 @@ Rien n'est perdu : ce sont deux façons de compter. Le décimal donne un nombre 
 > [!NOTE]
 > Tous les systèmes ne comptent pas pareil : Windows affiche en binaire sous l'étiquette « Go », macOS affiche en décimal, et sous Linux `df -h` compte en puissances de 1024 alors que `df -H` compte en puissances de 1000.
 
+**Je vérifie.** Une clé USB annonce 64 Go. Quelle capacité approximative Windows affiche-t-il ?
+
+<details markdown="1">
+<summary>Voir la réponse</summary>
+
+64 × 10⁹ ÷ 2³⁰ ≈ 64 × 0,931 ≈ **59,6 Gio**, affichés « 59,6 Go » par Windows. Rien n'est perdu.
+
+</details>
+
 ## 2. Convertir : la méthode
 
 | Je pars de… | Je veux… | Je fais… |
@@ -80,6 +95,15 @@ On compte les débits en **décimal**. Pour passer de bit/s à octet/s : **÷ 8*
 
 Exemple : 700 Mo à 20 Mbit/s → 700 × 10⁶ × 8 ÷ (20 × 10⁶) = **280 s**, soit 4 min 40.
 
+**Les erreurs fréquentes.**
+
+| Erreur | Exemple | Comment l'éviter |
+|---|---|---|
+| Confondre bit et octet | lire « 100 Mbit/s » comme « 100 Mo/s » | Toujours demander : **b minuscule = bit, o ou B = octet** |
+| Oublier de convertir avant de calculer | diviser 700 Mo par 20 Mbit/s | Mettre taille **et** débit dans la **même unité** (en octets, ou en bits) |
+| Mélanger décimal et binaire | convertir des Go en Gio avec × 1 000 | Noter la famille de préfixes avant de calculer |
+| Arrondir trop tôt | arrondir 931,3 à 900 au milieu du calcul | Arrondir **à la fin**, avec une unité |
+
 **Débit théorique et débit réel.** Le débit **théorique** est le maximum de la norme. Le débit **réel** est plus bas : protocoles (en-têtes), qualité du signal, interférences Wi-Fi, charge du réseau, vitesse des disques aux deux bouts. Le calcul ci-dessus donne donc un temps **minimal**.
 
 **Ordres de grandeur** (valeurs théoriques ; à recouper avec les sources du TP) :
@@ -93,6 +117,36 @@ Exemple : 700 Mo à 20 Mbit/s → 700 × 10⁶ × 8 ÷ (20 × 10⁶) = **280 s**
 | Wi-Fi 6 (802.11ax) | jusqu'à environ 9,6 Gbit/s |
 
 **Le maillon le plus lent.** Quand une donnée traverse plusieurs éléments (disque source, réseau, disque destination), le débit global est celui du **plus lent**.
+
+**Exemple résolu.** On copie un dossier de **30 Go** d'un poste vers un autre. Le disque source est un HDD qui lit à **100 Mo/s**, le réseau est un Ethernet **1 Gbit/s**, le disque destination est un SSD qui écrit à **500 Mo/s**. Combien de temps, au minimum ?
+
+| Étape | Calcul | Résultat |
+|---|---|---|
+| 1. Tout mettre en octets/s | réseau : 1 Gbit/s ÷ 8 | 125 Mo/s |
+| 2. Comparer les trois maillons | 100 Mo/s, 125 Mo/s, 500 Mo/s | le plus lent : le **disque source** |
+| 3. Taille en Mo | 30 Go × 1 000 | 30 000 Mo |
+| 4. Temps | 30 000 ÷ 100 | **300 s**, soit 5 min |
+
+Le goulot n'est pas le réseau, mais le vieux disque : passer à un réseau 10 Gbit/s ne changerait rien, alors qu'un SSD source ramènerait la copie à environ 4 min (limitée alors par le réseau, 125 Mo/s : 30 000 ÷ 125 = 240 s).
+
+**Je vérifie.** Une chaîne comprend un SSD à 500 Mo/s, un réseau Wi-Fi à 300 Mbit/s et un disque à 120 Mo/s. Quel est le maillon le plus lent ?
+
+<details markdown="1">
+<summary>Voir la réponse</summary>
+
+Le Wi-Fi : 300 Mbit/s ÷ 8 = **37,5 Mo/s**, inférieur aux 120 et 500 Mo/s. Comparer en bit/s sans convertir aurait donné une mauvaise réponse.
+
+</details>
+
+**Je vérifie.** Combien de temps pour transférer 600 Mo à 80 Mbit/s, au minimum ?
+
+<details markdown="1">
+<summary>Voir la réponse</summary>
+
+80 Mbit/s = 10 Mo/s, donc 600 ÷ 10 = **60 s**. Autre écriture : 600 × 10⁶ × 8 ÷ (80 × 10⁶) = 60 s.
+
+</details>
+
 
 ## 4. PowerShell et Invite de commandes
 
@@ -110,12 +164,29 @@ Dans PowerShell, une commande (*cmdlet*) s'appelle `Verbe-Nom`, par exemple `Get
 Get-Process | Select-Object Name, Id
 ```
 
+**Texte contre objet : ce qu'on voit.** Pour lister les processus :
+
+```text
+C:\> tasklist
+Nom de l'image          PID  Nom de la session  Utilisation mémoire
+=================== ======== ================== ====================
+chrome.exe              4812 Console                      180 436 Ko
+```
+
+`tasklist` renvoie du **texte** déjà mis en forme : on le lit, mais on ne peut pas facilement en extraire une colonne. En PowerShell :
+
+```powershell
+PS C:\> Get-Process | Sort-Object WorkingSet -Descending | Select-Object -First 3 Name, Id
+```
+
+Ici chaque processus est un **objet** avec des propriétés (`Name`, `Id`, `WorkingSet`…) : on peut **trier**, **filtrer** et **choisir les colonnes** sans retraiter du texte.
+
 Chercher de l'aide : `Get-Help Get-Process`, ou `Get-Command *disk*` pour lister les commandes dont le nom contient « disk ».
 
 > [!TIP]
 > **Documenter une commande**, c'est écrire : (1) la commande exacte, (2) ce qu'elle fait en une phrase, (3) ce qu'on lit dans le résultat, (4) comment tu l'as trouvée. C'est ce qu'on attend d'un technicien : si la commande est perdue, le travail est à refaire.
 
-## 5. Lire les caractéristiques d'un poste
+## 5. Lire une fiche technique : les caractéristiques d'un poste
 
 | Élément | Ce qu'on cherche | Interface graphique | Ligne de commande |
 |---|---|---|---|
@@ -128,6 +199,24 @@ Chercher de l'aide : `Get-Help Get-Process`, ou `Get-Command *disk*` pour lister
 **Cœurs physiques et cœurs logiques.** Un cœur **physique** est une unité de calcul réelle. Un cœur **logique** (ou *thread*) provient de l'**Hyper-Threading** (Intel) ou du **SMT** (AMD) : un cœur physique traite alors deux fils d'exécution. Un processeur à 4 cœurs physiques avec Hyper-Threading apparaît donc avec **8 cœurs logiques**.
 
 **Half duplex et full duplex.** En **half duplex**, la carte réseau émet *ou* reçoit, pas les deux en même temps (comme un talkie-walkie). En **full duplex**, elle émet *et* reçoit simultanément (comme un téléphone). Les réseaux Ethernet modernes commutés fonctionnent en full duplex.
+
+**Je vérifie.** Un processeur annonce « 6 cœurs, 12 threads ». Combien de cœurs physiques et de cœurs logiques le Gestionnaire des tâches affichera-t-il ?
+
+<details markdown="1">
+<summary>Voir la réponse</summary>
+
+**6 cœurs physiques** et **12 cœurs logiques** : chaque cœur traite deux fils d'exécution grâce à l'Hyper-Threading ou au SMT.
+
+</details>
+
+**Je vérifie.** Dans quelle unité calcule-t-on un temps de transfert : en bit/s ou en octet/s ?
+
+<details markdown="1">
+<summary>Voir la réponse</summary>
+
+Dans **n'importe laquelle, à condition d'être cohérent** : taille en octets avec un débit en octets/s, ou taille en bits (× 8) avec un débit en bits/s.
+
+</details>
 
 ---
 
