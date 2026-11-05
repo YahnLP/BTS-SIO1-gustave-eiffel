@@ -25,13 +25,13 @@
 
 ## RAID
 
-| Niveau | Disques min. | Capacité utile | Pannes supportées |
-|---|---|---|---|
-| 0 | 2 | n × taille | 0 |
-| 1 | 2 | 1 × taille | 1 |
-| 5 | 3 | (n − 1) × taille | 1 |
-| 6 <span class="technique">notion technique</span> | 4 | (n − 2) × taille | 2 |
-| 10 <span class="technique">notion technique</span> | 4 | (n ÷ 2) × taille | 1 au minimum |
+| Niveau | Disques min. | Capacité utile | Pannes supportées | Avantage principal |
+|---|---|---|---|---|
+| 0 | 2 | n × taille | 0 | Vitesse, capacité totale |
+| 1 | 2 | 1 × taille | 1 | Simplicité, sécurité |
+| 5 | 3 | (n − 1) × taille | 1 | Compromis capacité / sécurité |
+| 6 <span class="technique">notion technique</span> | 4 | (n − 2) × taille | 2 | Deux pannes tolérées |
+| 10 <span class="technique">notion technique</span> | 4 | (n ÷ 2) × taille | 1 au minimum | Vitesse et sécurité |
 
 **RAID ≠ sauvegarde.**
 

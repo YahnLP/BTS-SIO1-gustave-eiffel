@@ -30,7 +30,7 @@
 | [Cours](01-cours.md) | Pourquoi et quand automatiser, qualités d'un script, planification, déclaratif |
 | [TP : du geste répété au script](02-tp.md) | Création de comptes en masse, planification, Compose, bilan |
 | [Aide-mémoire](03-aide-memoire.md) | Commandes et rappels |
-| [Fichier des utilisateurs](tp/utilisateurs.csv) | Données du TP (avec des défauts volontaires) |
+| [Fichier des utilisateurs](tp/utilisateurs.md) | Données du TP (avec des défauts volontaires) |
 
 ## Déroulé conseillé (4 h)
 

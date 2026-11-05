@@ -30,8 +30,8 @@
 | [Cours](01-cours.md) | Principes, vocabulaire, règle 3-2-1, outils, risques |
 | [TP : sauvegarder, restaurer, prouver](02-tp.md) | Analyse avec InfraLab, fichiers, base GLPI, plan, bilan |
 | [Aide-mémoire](03-aide-memoire.md) | Commandes et définitions |
-| [Analyse de sauvegarde](tp/analyse-sauvegarde.txt) | Tableau à remplir dans InfraLab |
-| [Journal de restauration](tp/journal-restauration.txt) | Preuves des sauvegardes et du test |
+| [Analyse de sauvegarde](tp/analyse-sauvegarde.md) | Tableau à remplir dans InfraLab |
+| [Journal de restauration](tp/journal-restauration.md) | Preuves des sauvegardes et du test |
 
 ## Déroulé conseillé (4 h)
 

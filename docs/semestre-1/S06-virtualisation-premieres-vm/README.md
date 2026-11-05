@@ -30,7 +30,7 @@
 | [Cours](01-cours.md) | Machine virtuelle, hyperviseur, types, façons de créer une VM |
 | [TP : ma première machine virtuelle](02-tp.md) | Activité de découverte, VM Windows, analyse, VM Ubuntu en autonomie, bilan |
 | [Aide-mémoire](03-aide-memoire.md) | La configuration d'une VM et le vocabulaire à retenir |
-| [Liste des captures](tp/liste-captures.txt) | Les captures d'écran à fournir dans le compte rendu |
+| [Liste des captures](tp/liste-captures.md) | Les captures d'écran à fournir dans le compte rendu |
 
 ## Déroulé conseillé (4 h)
 
@@ -57,6 +57,5 @@ Le déroulé tient en 4 h sans marge. Si le temps manque, la création de l'ISO 
 - **Identifiants :** le mot de passe n'est pas reproduit dans le site public : le TP renvoie à « le mot de passe donné par l'enseignant ».
 - **Disque de stockage :** le texte dit « le disque indiqué par l'enseignant » (`D:\` ou `E:\` selon la salle).
 - **Compétences :** codes et intitulés relus sur l'arrêté du 8 juillet 2024 ; le choix des compétences pour cette séance est une proposition de l'enseignant.
-- **Corrigé :** `corriges/S06-virtualisation-premieres-vm.md` (hors du site publié).
 
 </details>

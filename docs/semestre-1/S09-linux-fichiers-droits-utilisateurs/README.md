@@ -30,8 +30,8 @@
 | [Cours](01-cours.md) | Utilisateurs et groupes, lire les droits, `chmod`, `chown`, liens |
 | [TP : les habilitations de JackCelair](02-tp.md) | Utilisateurs, exercice `CommandesLinux`, liens, droits, habilitations, bilan |
 | [Aide-mémoire](03-aide-memoire.md) | Les commandes de la séance |
-| [Arborescence CommandesLinux attendue](tp/arborescence-commandeslinux-attendue.txt) | Résultat attendu de la partie B |
-| [Matrice des habilitations](tp/matrice-habilitations.txt) | Qui doit pouvoir faire quoi, dossier par dossier |
+| [Arborescence CommandesLinux attendue](tp/arborescence-commandeslinux-attendue.md) | Résultat attendu de la partie B |
+| [Matrice des habilitations](tp/matrice-habilitations.md) | Qui doit pouvoir faire quoi, dossier par dossier |
 
 ## Déroulé conseillé (4 h)
 
@@ -65,6 +65,5 @@
 - **Droits par défaut :** le droit attribué à un nouveau fichier dépend du `umask` ; je le fais constater en TP plutôt que de l'affirmer.
 - **Direction générale :** la partie E ne règle pas le cas d'un service qui doit lire les dossiers des autres (listes de contrôle d'accès, `setfacl`, non traité).
 - **Compétences :** codes et intitulés relus sur l'arrêté du 8 juillet 2024 ; le choix des compétences pour cette séance est une proposition de l'enseignant.
-- **Corrigé :** `corriges/S09-linux-fichiers-droits-utilisateurs.md` (hors du site publié).
 
 </details>

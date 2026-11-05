@@ -30,7 +30,7 @@
 | [Cours](01-cours.md) | Clonage, PXE, FOG, bonnes pratiques et risques |
 | [TP : un poste, puis des copies](02-tp.md) | Installer FOG, capturer, déployer, relier à l'inventaire, bilan |
 | [Aide-mémoire](03-aide-memoire.md) | Principes et étapes de la séance |
-| [Journal de déploiement](tp/journal-deploiement.txt) | Plan d'adressage, tests, chronométrage |
+| [Journal de déploiement](tp/journal-deploiement.md) | Plan d'adressage, tests, chronométrage |
 
 ## Déroulé conseillé (4 h)
 

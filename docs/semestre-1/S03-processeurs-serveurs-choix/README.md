@@ -30,7 +30,7 @@
 | [Cours](01-cours.md) | Processeurs, benchmarks, serveurs, RAID, bi-processeur, dimensionnement |
 | [TP : choisir un matériel](02-tp.md) | Appel d'offres, Xeon contre Core, dimensionnement, bilan de compétences |
 | [Aide-mémoire](03-aide-memoire.md) | Lire un processeur, RAID, dimensionner |
-| [Catalogue fictif de la société Ochan-Elizé](tp/catalogue-ochan-elize.txt) | Les quatre configurations à comparer |
+| [Catalogue fictif de la société Ochan-Elizé](tp/catalogue-ochan-elize.md) | Les quatre configurations à comparer |
 
 ## Déroulé conseillé (4 h)
 
@@ -56,10 +56,9 @@ La partie E (bi-processeur et NUMA) est facultative.
 <details markdown="1">
 <summary>Notes pour l'enseignant</summary>
 
-- **Catalogue :** `tp/catalogue-ochan-elize.txt` est un catalogue **fictif** : prix inventés, modèles de processeurs réels (générations 12) mais **caractéristiques à vérifier sur les fiches constructeur** avant la séance. Remplace-le par ton propre catalogue si tu en as un.
+- **Catalogue :** `tp/catalogue-ochan-elize.md` est un catalogue **fictif** : prix inventés, modèles de processeurs réels (générations 12) mais **caractéristiques à vérifier sur les fiches constructeur** avant la séance. Remplace-le par ton propre catalogue si tu en as un.
 - **Dimensionnement (partie D) :** cas, chiffres et règles empiriques (ratio de vCPU par cœur, marge de 25 %) sont des **propositions** ; ils préparent la virtualisation et les sauvegardes.
 - **Sujet du semestre 2 :** le RAID n'est présenté ici que pour la tolérance de panne ; l'étude des sauvegardes (S20) montrera qu'un RAID n'est pas une sauvegarde.
-- **Corrigé :** dans `corriges/` à la racine du dépôt.
 - **Compétences :** codes et intitulés relus sur l'arrêté du 8 juillet 2024 ; le choix des compétences pour cette séance est une proposition de l'enseignant.
 
 </details>

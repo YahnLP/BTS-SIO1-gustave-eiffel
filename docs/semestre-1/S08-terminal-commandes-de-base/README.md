@@ -30,7 +30,7 @@
 | [Cours](01-cours.md) | Terminal, arborescence, commandes, `sudo`, noms de fichiers |
 | [TP : l'arborescence de JackCelair](02-tp.md) | Découverte, observation, construction, bilan de compétences |
 | [Aide-mémoire](03-aide-memoire.md) | Les commandes de la séance, à garder sous la main |
-| [Arborescence attendue](tp/arborescence-attendue.txt) | Modèle à comparer avec le résultat du TP |
+| [Arborescence attendue](tp/arborescence-attendue.md) | Modèle à comparer avec le résultat du TP |
 
 ## Déroulé conseillé (4 h)
 
@@ -56,7 +56,6 @@ Les parties E et F du TP (recherche de fichiers, script) sont pour les étudiant
 <summary>Notes pour l'enseignant</summary>
 
 - **Compétences :** codes et intitulés relus sur l'arrêté du 8 juillet 2024 ; le choix des compétences pour cette séance est une proposition de l'enseignant.
-- **Corrigé :** dans `corriges/` à la racine du dépôt (hors du site publié, mais visible dans le dépôt GitHub).
 - **Répartition des contenus :** les liens symboliques et liens durs, les utilisateurs et groupes, `/etc/services` et l'affichage page par page sont prévus en S09. La création de l'utilisateur `tech2025` est donc reportée.
 - **Réseau de la salle :** le TP suppose une VM en accès par pont sur le réseau du lycée (plage 192.168.51.x) ; à confirmer pour la salle utilisée.
 - **Disque :** la VM doit être installée sur le disque `E:\`. À adapter si la salle change.

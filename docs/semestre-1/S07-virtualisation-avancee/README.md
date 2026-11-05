@@ -30,7 +30,7 @@
 | [Cours](01-cours.md) | Modes réseau, snapshots et disque de différences, Guest Additions, stockage |
 | [TP : relier des machines virtuelles](02-tp.md) | Import, snapshot, Guest Additions, tests réseau, bilan de compétences |
 | [Aide-mémoire](03-aide-memoire.md) | Tableau des modes réseau, commandes de test, snapshots |
-| [Plan d'adressage et de tests](tp/plan-adressage-et-tests.txt) | Adresses à utiliser et tableau de tests à compléter |
+| [Plan d'adressage et de tests](tp/plan-adressage-et-tests.md) | Adresses à utiliser et tableau de tests à compléter |
 
 ## Déroulé conseillé (4 h)
 
@@ -63,6 +63,5 @@ Les parties F à I (fonctionnalités avancées, accès au réseau de la salle, c
 - **Réseau NAT :** ce mode nécessite de créer un réseau NAT dans les préférences ou le gestionnaire de réseau de VirtualBox (l'emplacement varie selon la version). À préciser en salle.
 - **Salle :** les noms de cartes (Realtek, TP-Link), le dossier `D:\MVORG` et l'adressage `10.[salle].[plot].[poste]` sont propres à la salle.
 - **Compétences :** codes et intitulés relus sur l'arrêté du 8 juillet 2024 ; le choix des compétences pour cette séance est une proposition de l'enseignant.
-- **Corrigé :** `corriges/S07-virtualisation-avancee.md` (hors du site publié).
 
 </details>

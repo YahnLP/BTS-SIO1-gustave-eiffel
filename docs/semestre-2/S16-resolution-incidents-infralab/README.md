@@ -30,8 +30,8 @@
 | [Cours](01-cours.md) | Cycle de vie d'un incident, méthode de diagnostic, corrélation, connaissance |
 | [TP : dépanner, corréler, documenter](02-tp.md) | Parties A à D autour des TP d'InfraLab et d'un poste Windows, bilan |
 | [Aide-mémoire](03-aide-memoire.md) | Méthode et commandes de diagnostic |
-| [Journal d'incident](tp/journal-incident.txt) | À remplir en temps réel |
-| [Fiche de base de connaissances](tp/fiche-base-de-connaissances.txt) | Modèle de fiche |
+| [Journal d'incident](tp/journal-incident.md) | À remplir en temps réel |
+| [Fiche de base de connaissances](tp/fiche-base-de-connaissances.md) | Modèle de fiche |
 
 ## Déroulé conseillé (4 h)
 

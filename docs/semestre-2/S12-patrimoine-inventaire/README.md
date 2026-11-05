@@ -32,7 +32,7 @@
 | [Cours](01-cours.md) | Patrimoine, CI, inventaire manuel et automatisé, qualité des données, RGPD, outils |
 | [TP : l'inventaire de JackCelair](02-tp.md) | Fiche d'inventaire, inventaire de la salle, **InfraLab (TP 1, 4, 9)**, contrôle qualité, RGPD, choix d'outil, bilan |
 | [Aide-mémoire](03-aide-memoire.md) | Attributs d'une fiche, commandes de contrôle, vocabulaire |
-| [Extrait d'inventaire (CSV)](tp/inventaire-extrait.csv) | Un inventaire fictif de 18 équipements, à contrôler |
+| [Extrait d'inventaire (CSV)](tp/inventaire-extrait.md) | Un inventaire fictif de 18 équipements, à contrôler |
 
 ## Déroulé conseillé (4 h)
 
@@ -66,7 +66,6 @@
 - **Gain de temps :** les durées « inventaire automatisé » (2 min, 2 h, 4 h…) sont des **estimations non sourcées** ; le TP demande de les **discuter**, pas de les retenir comme des faits.
 - **Plugin et compétences :** le TP et le cours de S13 ne parlent que du plugin « OCS Inventory NG » (à ne pas confondre avec FusionInventory, un autre composant). Compétences : B1.1 et B3.1 (voir le [référentiel du site](../../ressources/referentiel.md)).
 - **RGPD :** la partie F reste au niveau « principes » (information, finalité, minimisation, charte). Le texte exact de la réponse juridique n'est **pas** un avis juridique ; à compléter avec le référent RGPD de l'établissement.
-- **Corrigé :** dans `corriges/` à la racine du dépôt.
 - **Compétences :** codes et intitulés relus sur l'arrêté du 8 juillet 2024 ; le choix des compétences pour cette séance est une proposition de l'enseignant.
 
 </details>

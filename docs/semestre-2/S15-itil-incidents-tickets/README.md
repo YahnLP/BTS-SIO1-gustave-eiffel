@@ -30,8 +30,8 @@
 | [Cours](01-cours.md) | ITIL, service, vocabulaire, priorités, SLA, centre de services, niveaux, tickets dans GLPI |
 | [TP : un centre de services](02-tp.md) | Classer, prioriser, rédiger, InfraLab (TP 14, 21, 47), deux tickets dans GLPI, jeu de rôle, bilan |
 | [Aide-mémoire](03-aide-memoire.md) | Matrice, statuts, structure d'un ticket |
-| [Fiche de ticket](tp/fiche-ticket-incident.txt) | Modèle papier pour la rédaction préalable |
-| [Grille d'observation](tp/grille-observation-jeu-de-role.txt) | Pour le jeu de rôle |
+| [Fiche de ticket](tp/fiche-ticket-incident.md) | Modèle papier pour la rédaction préalable |
+| [Grille d'observation](tp/grille-observation-jeu-de-role.md) | Pour le jeu de rôle |
 
 ## Déroulé conseillé (4 h)
 

@@ -30,7 +30,7 @@
 | [Cours](01-cours.md) | Paquets et dépôts, anatomie d'un script, conditions, boucles |
 | [TP : automatiser la création de l'arborescence](02-tp.md) | Paquets, premier script, conditions et boucles, script JackCelair, bilan |
 | [Aide-mémoire](03-aide-memoire.md) | Commandes `apt` et syntaxe Bash |
-| [Grille d'auto-évaluation du script](tp/grille-evaluation-script.txt) | Critères de réussite et journal des prompts |
+| [Grille d'auto-évaluation du script](tp/grille-evaluation-script.md) | Critères de réussite et journal des prompts |
 
 ## Déroulé conseillé (4 h)
 

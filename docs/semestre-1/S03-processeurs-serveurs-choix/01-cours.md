@@ -85,13 +85,13 @@ Deux processeurs à 3,5 GHz ne se valent pas : l'architecture (quantité de trav
 
 **RAID** regroupe plusieurs disques pour obtenir plus de **vitesse**, plus de **sécurité**, ou les deux.
 
-| Niveau | Principe | Disques minimum | Capacité utile | Pannes supportées |
-|---|---|---|---|---|
-| **RAID 0** | Les données sont réparties (*striping*) | 2 | n × taille | **aucune** |
-| **RAID 1** | Miroir : chaque donnée est écrite en double | 2 | 1 × taille | 1 disque |
-| **RAID 5** | Répartition + une parité | 3 | (n − 1) × taille | 1 disque |
-| **RAID 6** <span class="technique">notion technique</span> | Répartition + deux parités | 4 | (n − 2) × taille | 2 disques |
-| **RAID 10** <span class="technique">notion technique</span> | Miroirs répartis | 4 | (n ÷ 2) × taille | 1 disque au minimum (jusqu'à un par miroir) |
+| Niveau | Principe | Disques minimum | Capacité utile | Pannes supportées | Avantages |
+|---|---|---|---|---|---|
+| **RAID 0** | Les données sont réparties (*striping*) | 2 | n × taille | **aucune** | Meilleures performances en lecture et en écriture ; 100 % de la capacité utilisable. Aucune protection : à réserver aux données non critiques. |
+| **RAID 1** | Miroir : chaque donnée est écrite en double | 2 | 1 × taille | 1 disque | Simple et sûr ; reprise immédiate en cas de panne ; lecture rapide. Coût : la moitié de la capacité est « perdue ». |
+| **RAID 5** | Répartition + une parité | 3 | (n − 1) × taille | 1 disque | Bon compromis entre capacité, sécurité et performances en lecture ; seul un disque sert à la redondance. |
+| **RAID 6** <span class="technique">notion technique</span> | Répartition + deux parités | 4 | (n − 2) × taille | 2 disques | Tolère deux pannes simultanées : adapté aux gros volumes de disques ; plus sûr pendant une reconstruction. |
+| **RAID 10** <span class="technique">notion technique</span> | Miroirs répartis | 4 | (n ÷ 2) × taille | 1 disque au minimum (jusqu'à un par miroir) | Très bonnes performances et reconstruction rapide, avec la sécurité du miroir. Coût : la moitié de la capacité. |
 
 (n = nombre de disques de même taille.)
 

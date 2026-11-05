@@ -30,7 +30,7 @@
 | [Cours](01-cours.md) | Service, catalogue, SLA, OLA, calendrier, disponibilité, incident majeur |
 | [TP : promettre, mesurer, tenir](02-tp.md) | Parties A à D autour d'InfraLab et d'un catalogue, bilan |
 | [Aide-mémoire](03-aide-memoire.md) | Définitions, calculs, structure d'une fiche de service |
-| [Modèle de fiche de service](tp/modele-fiche-service.txt) | Pour la partie D |
+| [Modèle de fiche de service](tp/modele-fiche-service.md) | Pour la partie D |
 
 ## Déroulé conseillé (4 h)
 

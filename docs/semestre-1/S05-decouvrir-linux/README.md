@@ -30,7 +30,7 @@
 | [Cours](01-cours.md) | Histoire, noyau et distributions, familles, licence, Windows et Linux, culture informatique |
 | [TP : Linux, mode d'emploi pour choisir](02-tp.md) | Frise, fiches de distributions, choix argumenté, comparaison, veille, bilan de compétences |
 | [Aide-mémoire](03-aide-memoire.md) | Vocabulaire et correspondances Windows / Linux |
-| [Grille de choix d'un système](tp/grille-choix-systeme.txt) | Grille à remplir pendant la partie C |
+| [Grille de choix d'un système](tp/grille-choix-systeme.md) | Grille à remplir pendant la partie C |
 
 ## Déroulé conseillé (4 h)
 
@@ -60,7 +60,6 @@
 - **Dates :** les dates du corrigé sont de ma mémoire et à **confirmer par les sources que citent les étudiants**.
 - **Cycles de support** (Debian, Ubuntu LTS, RHEL) : volontairement **laissés à rechercher** : ils changent et je ne les fige pas.
 - **Veille :** quantique, énergie des centres de données, sécurité du système sont des sujets qui évoluent vite ; exiger des sources datées.
-- **Corrigé :** dans `corriges/` à la racine du dépôt.
 - **Compétences :** codes et intitulés relus sur l'arrêté du 8 juillet 2024 ; le choix des compétences pour cette séance est une proposition de l'enseignant.
 
 </details>

@@ -269,3 +269,16 @@ html.projection .side-toggle { display: none; }
 .hero .hero-author { font-size: .85rem; opacity: .85; }
 .hero .hero-quote { margin: 1.1rem auto .2rem; padding-top: .9rem; border-top: 1px solid rgba(255,255,255,.3); max-width: 30rem; font-size: 1rem; font-style: italic; line-height: 1.5; }
 .hero .hero-quote strong { font-style: normal; }
+
+/* Fiches à compléter : cases de saisie confortables et impression propre */
+.fiche { margin: 1em 0; }
+.fiche table { width: 100%; }
+.fiche td { min-height: 2.4rem; height: 2.4rem; vertical-align: middle; }
+.fiche td:empty { background: var(--md-code-bg-color); }
+@media print {
+  .fiche td { height: 3rem; }
+  .md-sidebar, .md-header, .md-footer, .md-tabs { display: none; }
+}
+.fiche .md-typeset__table { display: block; width: 100%; }
+.fiche .md-typeset__table table:not([class]) { display: table; width: 100%; }
+.fiche td:empty { min-width: 6rem; }

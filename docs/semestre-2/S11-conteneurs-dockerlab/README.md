@@ -32,7 +32,7 @@
 | [Cours](01-cours.md) | Machine virtuelle ou conteneur, image, cycle de vie, ports, variables, volumes, réseaux, diagnostic |
 | [TP : du conteneur au service](02-tp.md) | Quatre TP guidés de DockerLab, puis une mission complète, bilan de compétences |
 | [Aide-mémoire](03-aide-memoire.md) | Les commandes Docker de la séance |
-| [Journal de commandes](tp/journal-de-commandes.txt) | Modèle de journal à tenir pendant la mission |
+| [Journal de commandes](tp/journal-de-commandes.md) | Modèle de journal à tenir pendant la mission |
 
 ## Déroulé conseillé (4 h)
 
@@ -63,7 +63,6 @@ Les TP de DockerLab « Dépannage », « Réseaux Docker » et « Faire le ména
 - **Limites du simulateur** (d'après son README et mes essais) : aucun vrai programme exécuté, 13 images (alpine, busybox, ubuntu, debian, nginx, httpd, redis, postgres, mysql, mariadb, node, python, hello-world), `psql` non simulé (seul `pg_isready` répond), `curl` et `ping` absents des conteneurs nginx (ils existent dans alpine). Docker réel : à montrer en démonstration si la salle l'autorise.
 - **Licence de DockerLab :** EUPL 1.2, comme le Simulateur Réseau (indication de l'auteur) ; le dépôt de l'outil ne contient pas encore de fichier `LICENSE` (voir la page des licences).
 - **Suite :** Docker Compose et Dockerfile sont aussi simulés par DockerLab (TP intégrés) : à réserver à une séance ultérieure (automatisation, S19) si le planning le permet.
-- **Corrigé :** dans `corriges/` à la racine du dépôt.
 - **Compétences :** codes et intitulés relus sur l'arrêté du 8 juillet 2024 ; le choix des compétences pour cette séance est une proposition de l'enseignant.
 
 </details>

@@ -29,8 +29,8 @@
 | [Cours](01-cours.md) | Méthode : le projet de synthèse, la preuve, le bilan, l'oral |
 | [TP : projet de synthèse et bilan](02-tp.md) | InfraLab TP 40 (entraînement), réalisation individuelle documentée, dossier de preuves, entretien et recette croisés, bilan |
 | [Aide-mémoire](03-aide-memoire.md) | Liste de contrôle du dossier et de l'oral |
-| [Matrice de compétences](tp/matrice-competences.txt) | À remplir pour le dossier |
-| [Grille d'oral](tp/grille-oral.txt) | Pour l'oral croisé |
+| [Matrice de compétences](tp/matrice-competences.md) | À remplir pour le dossier |
+| [Grille d'oral](tp/grille-oral.md) | Pour l'oral croisé |
 
 ## Déroulé conseillé (4 h)
 
@@ -59,7 +59,6 @@
 - **Aucune validation officielle :** la séance ne **valide** aucune compétence ; elle produit des **éléments de preuve** et une auto-évaluation. L'usage du dossier dans une épreuve ou un portfolio relève de l'**équipe pédagogique** et du référentiel officiel, que je n'ai pas pu consulter directement (voir la page du référentiel). Le cours ne cite aucune épreuve ni aucune exigence officielle.
 - **Matrice :** le tableau liste les séances qui travaillent chaque compétence **d'après les fiches de séance** du site (proposition, non validée). Les compétences non travaillées sont à lister honnêtement.
 - **Oral :** 2 × 5 minutes pour une classe entière demande du temps : prévoir des binômes en parallèle, l'enseignant circulant. Aucune durée d'oral officielle n'est supposée.
-- **Corrigé :** dans `corriges/` à la racine du dépôt (solution du TP 40, grille de notation).
 - **Compétences :** codes et intitulés relus sur l'arrêté du 8 juillet 2024 ; le choix des compétences pour cette séance est une proposition de l'enseignant.
 
 </details>

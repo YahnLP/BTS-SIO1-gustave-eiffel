@@ -31,7 +31,7 @@
 | [Cours](01-cours.md) | Architecture GLPI, installation, inventaire natif et agent, variante OCS, diagnostic |
 | [TP : un serveur GLPI et un premier poste](02-tp.md) | InfraLab (TP 6 et 10), préparer, installer GLPI, inventorier avec l'agent, comparer, bilan |
 | [Aide-mémoire](03-aide-memoire.md) | Commandes et paramètres de la séance |
-| [Plan de tests](tp/plan-de-tests.txt) | Tableau de tests à remplir pendant l'installation |
+| [Plan de tests](tp/plan-de-tests.md) | Tableau de tests à remplir pendant l'installation |
 
 ## Déroulé conseillé (4 h)
 
@@ -68,7 +68,6 @@
 - **Réseau :** le TP utilise l'accès par pont avec l'adresse `192.168.X.1` pour le serveur et `192.168.X.10` pour le client (X = numéro d'élève). À confirmer selon le réseau de la salle (voir S07).
 - **Variante OCS :** serveur Apache + Perl + base `ocsweb`, console `ocsreports`, agent Windows, et plugin « OCS Inventory NG » dans GLPI. Non reprise ici : procédure, URLs et numéros de version non vérifiés.
 - **InfraLab (révision) :** la partie A s'appuie sur les TP 6 et 10 du catalogue ; les TP 7 et 8 sont proposés en remédiation. La variante OCS reste au cours ; la partie « serveur d'un voisin » (douze reconfigurations de l'agent) ont été **retirées du TP** : pas de temps, et InfraLab porte la notion. Les éléments de réponse de la partie A d'après le catalogue sont à **confronter à l'écran**.
-- **Corrigé :** dans `corriges/` à la racine du dépôt.
 - **Compétences :** codes et intitulés relus sur l'arrêté du 8 juillet 2024 ; le choix des compétences pour cette séance est une proposition de l'enseignant.
 
 </details>
