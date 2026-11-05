@@ -197,7 +197,7 @@ Dans les schémas, chaque colonne est un **disque** et chaque rectangle un **blo
 </figure>
 
 - **Principe.** Chaque bloc est écrit **en double**, sur deux disques. Les deux disques sont identiques à tout instant.
-- **Vitesse.** L'écriture se fait sur les deux disques à la fois : elle n'est pas plus rapide qu'avec un seul disque. La lecture peut être répartie entre les deux.
+- **Vitesse.** L'écriture se fait sur les deux disques : elle n'est pas plus rapide qu'avec un seul disque (parfois un peu plus lente). La lecture peut être répartie entre les deux disques selon le contrôleur.
 - **Panne.** Si un disque tombe, l'autre contient **toutes les données** : le service continue. On remplace le disque en panne, puis le nouveau est **reconstruit par simple copie** de l'autre.
 - **Capacité.** 2 disques de 1 To donnent **1 To** utile : la moitié de la capacité sert à la copie.
 - **Limite.** Une erreur (fichier supprimé, virus) est recopiée sur le miroir : ce n'est **pas** une sauvegarde.
@@ -273,7 +273,7 @@ Dans les schémas, chaque colonne est un **disque** et chaque rectangle un **blo
 - **Principe.** Pour chaque ligne de blocs, un disque reçoit un bloc de **parité** calculé à partir des autres. La parité change de disque à chaque ligne, pour qu'aucun disque ne soit plus sollicité que les autres.
 - **La parité.** Elle se calcule avec l'opération **« ou exclusif »** (XOR, notée ⊕) : le résultat vaut 1 si le nombre de 1 est impair, 0 sinon. Exemple sur des bits : A1 = 1, A2 = 0, A3 = 1, donc Pa = 1 ⊕ 0 ⊕ 1 = **0**.
 - **Reconstruction.** Si le disque 3 tombe, le bloc A3 est perdu, mais on le retrouve : A3 = Pa ⊕ A1 ⊕ A2 = 0 ⊕ 1 ⊕ 0 = **1**. Le même calcul s'applique à chaque ligne.
-- **Vitesse.** La lecture est rapide (plusieurs disques en parallèle). L'écriture est plus lente : pour modifier un bloc, il faut lire l'ancien bloc et l'ancienne parité, recalculer, puis écrire le bloc et la parité.
+- **Vitesse.** La lecture est rapide (plusieurs disques en parallèle). L'écriture est plus lente : pour modifier un bloc, il faut lire l'ancien bloc et l'ancienne parité, recalculer, puis écrire le nouveau bloc et la nouvelle parité : **4 opérations disque** pour une seule écriture.
 - **Panne.** **1 disque** peut tomber. Le RAID fonctionne alors en **mode dégradé** (plus lent) jusqu'au remplacement du disque et à la **reconstruction**. Si un second disque tombe pendant ce temps, tout est perdu.
 - **Capacité.** 4 disques de 1 To donnent (4 − 1) × 1 To = **3 To** utiles.
 - **Usage.** Serveurs de fichiers : bon compromis entre capacité, sécurité et coût.
@@ -348,7 +348,7 @@ Dans les schémas, chaque colonne est un **disque** et chaque rectangle un **blo
 
 - **Principe.** Comme le RAID 5, mais chaque ligne contient **deux** blocs de parité, **P** et **Q**, calculés par des formules différentes. Deux équations permettent de retrouver **deux** blocs inconnus. (Le calcul de Q fait appel à des mathématiques plus avancées, qu'on ne détaille pas ici.)
 - **Panne.** **2 disques** peuvent tomber en même temps sans perte de données.
-- **Vitesse.** L'écriture est un peu plus lente qu'en RAID 5 : il y a deux parités à calculer et à écrire.
+- **Vitesse.** L'écriture est plus lente qu'en RAID 5 : il y a deux parités à mettre à jour, soit **6 opérations disque** pour une écriture (contre 4 en RAID 5).
 - **Capacité.** 4 disques de 1 To donnent (4 − 2) × 1 To = **2 To** utiles. Avec 8 disques, on aurait 6 To : le « coût » de la protection supplémentaire diminue quand le nombre de disques augmente.
 - **Usage.** Grosses baies de disques volumineux : la reconstruction dure longtemps, et le risque d'une seconde panne pendant ce temps devient réel.
 
@@ -419,10 +419,13 @@ Dans les schémas, chaque colonne est un **disque** et chaque rectangle un **blo
 </figure>
 
 - **Principe.** On combine RAID 1 et RAID 0 : les disques sont d'abord regroupés en **paires miroirs**, puis les blocs sont **répartis** entre les paires.
-- **Vitesse.** Les écritures se répartissent entre les miroirs et il n'y a **pas de parité à calculer** : c'est le niveau le plus performant parmi ceux qui protègent les données. En cas de panne, la reconstruction consiste à recopier le disque jumeau, donc elle est rapide.
+- **Vitesse.** Les écritures se répartissent entre les miroirs et il n'y a **pas de parité à calculer** : l'écriture est nettement plus rapide qu'en RAID 5 ou 6. En cas de panne, la reconstruction consiste à recopier le disque jumeau, donc elle est rapide et ne sollicite que ce disque.
 - **Panne.** **1 disque** par miroir peut tomber. Avec 4 disques, la perte du disque 1 et du disque 3 est supportée (un par miroir). La perte des disques 1 **et** 2 (les deux d'un même miroir) détruit les données.
 - **Capacité.** 4 disques de 1 To donnent (4 ÷ 2) × 1 To = **2 To** utiles.
 - **Usage.** Bases de données et machines virtuelles, qui écrivent beaucoup.
+
+> [!NOTE] Sources
+> Définitions et chiffres (4 opérations en RAID 5, 6 en RAID 6, tolérance du RAID 10, reconstruction) recoupés avec : [StarWind, RAID 5 et RAID 6](https://www.starwindsoftware.com/blog/understanding-raid-5-raid-6-raid-50-and-raid-60-comprehensive-guide-to-raid-configurations-part2/), [Western Digital, RAID 5 vs RAID 10](https://www.westerndigital.com/en-ap/solutions/raid/raid-5-vs-raid-10) et [TechNewsToday, RAID 0 vs RAID 1](https://www.technewstoday.com/raid-0-vs-raid-1).
 
 > [!NOTE] Comment choisir ?
 > **Vitesse seule** : RAID 0. **Simplicité et sécurité sur 2 disques** : RAID 1. **Capacité, sécurité et coût raisonnable** : RAID 5. **Très grosses capacités** : RAID 6. **Performances et sécurité** : RAID 10. Dans tous les cas, le RAID ne remplace jamais une sauvegarde.
