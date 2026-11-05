@@ -15,6 +15,11 @@
 - [ ] dire à quoi servent les **Guest Additions** ;
 - [ ] distinguer un disque virtuel **dynamique** d'un disque **fixe**.
 
+> [!IMPORTANT] Idées reçues à confronter à tes réponses du TP
+> - « **Un `ping` sans réponse prouve qu'il n'y a pas de liaison.** » Non : le pare-feu de Windows bloque en général les `ping` entrants (§ 1).
+> - « **Deux machines avec la même adresse IP sont forcément en conflit.** » Pas en mode NAT : chaque VM est derrière son propre NAT (§ 1).
+> - « **Un snapshot est une sauvegarde.** » Non : il dépend du disque d'origine, stocké au même endroit (§ 2).
+
 ---
 
 ## 1. Les modes réseau de VirtualBox
@@ -42,9 +47,25 @@ La VM utilise la connexion de l'hôte grâce à une **traduction d'adresse** (NA
 - Avantage : Internet tout de suite, sans configuration.
 - Limite : pas de communication directe entre VM.
 
+
+<figure class="raid-fig">
+<svg viewBox="0 0 720 200" role="img" aria-labelledby="natt" xmlns="http://www.w3.org/2000/svg"><title id="natt">Mode NAT : chaque VM derrière son propre NAT</title>
+<defs><marker id="natm" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto-start-reverse"><path d="M0,0 L8,4 L0,8 z" fill="var(--disk-s)"/></marker></defs><rect x="8" y="8" width="440" height="184" rx="12" class="rd-disk"/><text x="22" y="28" text-anchor="start" class="rd-note" style="font-size:13px;font-weight:700">Hôte</text><rect x="30" y="40" width="120" height="50" rx="8" class="rd-blk rd-k-c" /><text x="90.0" y="62" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:700">VM 1</text><text x="90.0" y="78" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:500">10.0.2.15</text><rect x="30" y="120" width="120" height="50" rx="8" class="rd-blk rd-k-c" /><text x="90.0" y="142" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:700">VM 2</text><text x="90.0" y="158" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:500">10.0.2.15</text><rect x="240" y="40" width="100" height="50" rx="8" class="rd-blk rd-k-d" /><text x="290.0" y="62" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:700">NAT</text><text x="290.0" y="78" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:500">de la VM 1</text><rect x="240" y="120" width="100" height="50" rx="8" class="rd-blk rd-k-d" /><text x="290.0" y="142" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:700">NAT</text><text x="290.0" y="158" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:500">de la VM 2</text><line x1="150" y1="65" x2="240" y2="65" class="rd-arrow" marker-end="url(#natm)"/><line x1="150" y1="145" x2="240" y2="145" class="rd-arrow" marker-end="url(#natm)"/><line x1="340" y1="65" x2="560" y2="92" class="rd-arrow" marker-end="url(#natm)"/><line x1="340" y1="145" x2="560" y2="108" class="rd-arrow" marker-end="url(#natm)"/><rect x="560" y="70" width="130" height="60" rx="8" class="rd-blk rd-k-a" /><text x="625.0" y="98" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:700">Internet</text><text x="625.0" y="112" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:500">via l'hôte</text><line x1="90" y1="92" x2="90" y2="118" class="rd-arrow rd-copy"/><text x="98" y="109" text-anchor="start" class="rd-note" style="font-size:11px;font-weight:600">ne se voient pas</text>
+</svg>
+<figcaption>NAT : chaque VM sort sur Internet par son propre NAT. Même adresse, réseaux distincts : elles ne se voient pas.</figcaption>
+</figure>
+
 ### Réseau NAT
 
 Extension du NAT : les VM d'un **même réseau NAT** partagent un réseau privé, **communiquent entre elles** et sortent sur Internet par la connexion de l'hôte. Ce réseau doit être créé dans les paramètres de VirtualBox.
+
+
+<figure class="raid-fig">
+<svg viewBox="0 0 720 200" role="img" aria-labelledby="rnatt" xmlns="http://www.w3.org/2000/svg"><title id="rnatt">Mode Réseau NAT : un réseau partagé entre les VM</title>
+<defs><marker id="rnatm" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto-start-reverse"><path d="M0,0 L8,4 L0,8 z" fill="var(--disk-s)"/></marker></defs><rect x="8" y="8" width="440" height="184" rx="12" class="rd-disk"/><text x="22" y="28" text-anchor="start" class="rd-note" style="font-size:13px;font-weight:700">Hôte</text><rect x="30" y="40" width="120" height="50" rx="8" class="rd-blk rd-k-c" /><text x="90.0" y="70" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:700">VM 1</text><rect x="30" y="120" width="120" height="50" rx="8" class="rd-blk rd-k-c" /><text x="90.0" y="150" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:700">VM 2</text><rect x="240" y="70" width="130" height="60" rx="8" class="rd-blk rd-k-d" /><text x="305.0" y="98" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:700">Réseau NAT</text><text x="305.0" y="112" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:500">partagé par les VM</text><line x1="150" y1="65" x2="240" y2="92" class="rd-arrow" marker-end="url(#rnatm)" marker-start="url(#rnatm)"/><line x1="150" y1="145" x2="240" y2="108" class="rd-arrow" marker-end="url(#rnatm)" marker-start="url(#rnatm)"/><line x1="370" y1="100" x2="560" y2="100" class="rd-arrow" marker-end="url(#rnatm)"/><rect x="560" y="70" width="130" height="60" rx="8" class="rd-blk rd-k-a" /><text x="625.0" y="98" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:700">Internet</text><text x="625.0" y="112" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:500">via l'hôte</text><text x="305" y="152" text-anchor="middle" class="rd-note" style="font-size:11px;font-weight:600">les VM se parlent</text>
+</svg>
+<figcaption>Réseau NAT : les VM partagent un même réseau privé et sortent ensemble sur Internet.</figcaption>
+</figure>
 
 ### Accès par pont
 
@@ -53,24 +74,71 @@ La carte virtuelle est reliée directement à la **carte physique** de l'hôte :
 - Avantage : idéal pour tester des serveurs accessibles depuis l'extérieur.
 - Risques : moins sûr (la VM est **exposée sur le réseau réel**) ; certains réseaux **refusent** de donner une adresse à une VM. Si le DHCP refuse, on peut configurer une **adresse IP statique**.
 
+
+<figure class="raid-fig">
+<svg viewBox="0 0 720 200" role="img" aria-labelledby="pontt" xmlns="http://www.w3.org/2000/svg"><title id="pontt">Mode Accès par pont : la VM est une machine du réseau local</title>
+<defs><marker id="pontm" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto-start-reverse"><path d="M0,0 L8,4 L0,8 z" fill="var(--disk-s)"/></marker></defs><rect x="8" y="8" width="440" height="184" rx="12" class="rd-disk"/><text x="22" y="28" text-anchor="start" class="rd-note" style="font-size:13px;font-weight:700">Hôte</text><rect x="30" y="40" width="120" height="50" rx="8" class="rd-blk rd-k-c" /><text x="90.0" y="70" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:700">VM 1</text><rect x="30" y="120" width="120" height="50" rx="8" class="rd-blk rd-k-c" /><text x="90.0" y="150" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:700">VM 2</text><rect x="230" y="70" width="140" height="60" rx="8" class="rd-blk rd-k-d" /><text x="300.0" y="98" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:700">Carte physique</text><text x="300.0" y="112" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:500">de l'hôte</text><line x1="150" y1="65" x2="230" y2="92" class="rd-arrow" marker-end="url(#pontm)"/><line x1="150" y1="145" x2="230" y2="108" class="rd-arrow" marker-end="url(#pontm)"/><line x1="370" y1="100" x2="540" y2="100" class="rd-arrow" marker-end="url(#pontm)" marker-start="url(#pontm)"/><rect x="540" y="30" width="160" height="140" rx="8" class="rd-blk rd-k-a" /><text x="620.0" y="82" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:700">Réseau local</text><text x="620.0" y="98" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:500">(le réseau du lycée)</text><text x="620.0" y="112" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:500">autres machines,</text><text x="620.0" y="128" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:500">routeur, Internet</text><text x="380" y="90" text-anchor="start" class="rd-note" style="font-size:11px;font-weight:600">adresse du</text><text x="380" y="122" text-anchor="start" class="rd-note" style="font-size:11px;font-weight:600">réseau local</text>
+</svg>
+<figcaption>Accès par pont : la VM apparaît sur le réseau local comme une machine physique, avec sa propre adresse.</figcaption>
+</figure>
+
 ### Réseau interne
 
 VirtualBox crée un réseau **totalement isolé**, identifié par un **nom**. Toutes les VM dont la carte porte **le même nom** communiquent entre elles ; une VM avec un autre nom est sur un autre réseau. Rien ne distribue d'adresses : il faut **configurer l'IP à la main**.
 
-```mermaid
-flowchart LR
-  subgraph LAN[Réseau interne « LAN »]
-    A[VM Windows<br/>192.168.100.1] --- B[VM Kali<br/>192.168.100.2]
-  end
-  H[Hôte et Internet : aucun lien avec le réseau interne]
-```
+
+<figure class="raid-fig">
+<svg viewBox="0 0 720 200" role="img" aria-labelledby="intt" xmlns="http://www.w3.org/2000/svg"><title id="intt">Mode Réseau interne : réseau isolé</title>
+<defs><marker id="intm" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto-start-reverse"><path d="M0,0 L8,4 L0,8 z" fill="var(--disk-s)"/></marker></defs><rect x="8" y="8" width="500" height="184" rx="12" class="rd-disk"/><text x="22" y="28" text-anchor="start" class="rd-note" style="font-size:13px;font-weight:700">Hôte</text><rect x="30" y="44" width="400" height="124" rx="10" class="rd-disk" style="stroke-dasharray:5 3"/><text x="44" y="64" text-anchor="start" class="rd-note" style="font-size:12px;font-weight:700">Réseau interne « LAN »</text><rect x="50" y="80" width="150" height="60" rx="8" class="rd-blk rd-k-c" /><text x="125.0" y="108" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:700">VM 1</text><text x="125.0" y="122" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:500">192.168.100.1</text><rect x="260" y="80" width="150" height="60" rx="8" class="rd-blk rd-k-c" /><text x="335.0" y="108" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:700">VM 2</text><text x="335.0" y="122" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:500">192.168.100.2</text><line x1="200" y1="110" x2="260" y2="110" class="rd-arrow" marker-end="url(#intm)" marker-start="url(#intm)"/><line x1="430" y1="106" x2="560" y2="106" class="rd-arrow rd-copy"/><text x="495" y="98" text-anchor="middle" class="rd-note" style="font-size:11px;font-weight:600">aucun lien</text><rect x="560" y="76" width="140" height="60" rx="8" class="rd-blk rd-disk" style="stroke-dasharray:5 3"/><text x="630.0" y="111" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:700">Hôte et Internet</text>
+</svg>
+<figcaption>Réseau interne : les VM de même nom de réseau se parlent ; rien n'entre ni ne sort.</figcaption>
+</figure>
+
+
+**Pour que deux VM se parlent en réseau interne**, il faut qu'elles soient dans le **même réseau** : ici, les trois premiers nombres identiques (`192.168.100`) et le **même masque** (`255.255.255.0`, qui dit justement quelles machines sont « dans le même réseau » : voir la fiche [minimum réseau](../../ressources/minimum-reseau.md)). Si tu changes la VM 2 en `192.168.200.2`, elle sort de ce réseau et le `ping` échoue.
 
 ### Réseau privé hôte
 
 Un commutateur virtuel privé relie l'**hôte** et les VM : ils se parlent (réseau souvent en `192.168.56.0/24`, hôte en `192.168.56.1`), mais la VM n'a **pas d'accès Internet**.
 
+
+<figure class="raid-fig">
+<svg viewBox="0 0 720 200" role="img" aria-labelledby="privt" xmlns="http://www.w3.org/2000/svg"><title id="privt">Mode Réseau privé hôte : l'hôte et les VM, sans Internet</title>
+<defs><marker id="privm" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto-start-reverse"><path d="M0,0 L8,4 L0,8 z" fill="var(--disk-s)"/></marker></defs><rect x="20" y="40" width="120" height="50" rx="8" class="rd-blk rd-k-c" /><text x="80.0" y="70" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:700">VM 1</text><rect x="20" y="120" width="120" height="50" rx="8" class="rd-blk rd-k-c" /><text x="80.0" y="150" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:700">VM 2</text><rect x="220" y="70" width="150" height="60" rx="8" class="rd-blk rd-k-d" /><text x="295.0" y="98" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:700">Commutateur virtuel</text><text x="295.0" y="112" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:500">privé</text><line x1="140" y1="65" x2="220" y2="92" class="rd-arrow" marker-end="url(#privm)" marker-start="url(#privm)"/><line x1="140" y1="145" x2="220" y2="108" class="rd-arrow" marker-end="url(#privm)" marker-start="url(#privm)"/><line x1="370" y1="100" x2="460" y2="100" class="rd-arrow" marker-end="url(#privm)" marker-start="url(#privm)"/><rect x="460" y="70" width="150" height="60" rx="8" class="rd-blk rd-k-a" /><text x="535.0" y="98" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:700">Hôte</text><text x="535.0" y="112" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:500">192.168.56.1</text><text x="20" y="190" text-anchor="start" class="rd-note" style="font-size:12px;font-weight:600">Les VM ne peuvent pas aller sur Internet depuis ce réseau.</text>
+</svg>
+<figcaption>Réseau privé hôte : l'hôte et les VM se parlent ; aucun accès à Internet.</figcaption>
+</figure>
+
 > [!TIP]
 > Une VM peut avoir **plusieurs cartes réseau**, chacune dans un mode différent. Un serveur web peut par exemple avoir une carte en « Réseau interne » (vers la base de données) et une en « Accès par pont » (vers les utilisateurs).
+
+### Quel mode choisir ?
+
+
+<figure class="raid-fig">
+<svg viewBox="0 0 720 330" role="img" aria-labelledby="treet" xmlns="http://www.w3.org/2000/svg"><title id="treet">Arbre de décision : quel mode réseau choisir</title>
+<defs><marker id="treem" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto-start-reverse"><path d="M0,0 L8,4 L0,8 z" fill="var(--disk-s)"/></marker></defs><rect x="250" y="8" width="220" height="50" rx="8" class="rd-blk rd-k-d" /><text x="360.0" y="30" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:700">La VM doit-elle accéder</text><text x="360.0" y="46" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:500">à Internet ?</text><path d="M360,58 V73 H130 V88" class="rd-arrow" marker-end="url(#treem)"/><text x="240" y="70" text-anchor="end" class="rd-note" style="font-size:11px;font-weight:600">non</text><path d="M360,58 V73 H575 V88" class="rd-arrow" marker-end="url(#treem)"/><text x="470" y="70" text-anchor="start" class="rd-note" style="font-size:11px;font-weight:600">oui</text><rect x="10" y="88" width="240" height="56" rx="8" class="rd-blk rd-k-d" /><text x="130.0" y="114" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:700">L'hôte doit-il pouvoir</text><text x="130.0" y="128" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:500">lui parler ?</text><rect x="440" y="88" width="270" height="56" rx="8" class="rd-blk rd-k-d" /><text x="575.0" y="114" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:700">Doit-elle être visible sur le réseau</text><text x="575.0" y="128" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:500">local comme une vraie machine ?</text><path d="M70,144 V178" class="rd-arrow" marker-end="url(#treem)"/><text x="62" y="164" text-anchor="end" class="rd-note" style="font-size:11px;font-weight:600">oui</text><path d="M190,144 V178" class="rd-arrow" marker-end="url(#treem)"/><text x="198" y="164" text-anchor="start" class="rd-note" style="font-size:11px;font-weight:600">non</text><rect x="10" y="178" width="115" height="50" rx="8" class="rd-blk rd-k-b" /><text x="67.5" y="200" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:700">Réseau</text><text x="67.5" y="216" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:500">privé hôte</text><rect x="135" y="178" width="115" height="50" rx="8" class="rd-blk rd-k-b" /><text x="192.5" y="200" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:700">Réseau</text><text x="192.5" y="216" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:500">interne</text><path d="M490,144 V178" class="rd-arrow" marker-end="url(#treem)"/><text x="482" y="164" text-anchor="end" class="rd-note" style="font-size:11px;font-weight:600">oui</text><path d="M620,144 V170" class="rd-arrow" marker-end="url(#treem)"/><text x="628" y="160" text-anchor="start" class="rd-note" style="font-size:11px;font-weight:600">non</text><rect x="440" y="178" width="100" height="50" rx="8" class="rd-blk rd-k-b" /><text x="490.0" y="200" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:700">Accès</text><text x="490.0" y="216" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:500">par pont</text><rect x="555" y="170" width="130" height="64" rx="8" class="rd-blk rd-k-d" /><text x="620.0" y="192" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:700">Plusieurs VM</text><text x="620.0" y="207" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:500">doivent-elles</text><text x="620.0" y="222" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:500">se parler ?</text><path d="M585,234 V268" class="rd-arrow" marker-end="url(#treem)"/><text x="577" y="256" text-anchor="end" class="rd-note" style="font-size:11px;font-weight:600">oui</text><path d="M655,234 V268" class="rd-arrow" marker-end="url(#treem)"/><text x="658" y="256" text-anchor="start" class="rd-note" style="font-size:11px;font-weight:600">non</text><rect x="520" y="268" width="120" height="46" rx="8" class="rd-blk rd-k-b" /><text x="580.0" y="296" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:700">Réseau NAT</text><rect x="650" y="268" width="60" height="46" rx="8" class="rd-blk rd-k-b" /><text x="680.0" y="296" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:700">NAT</text>
+</svg>
+<figcaption>On part du besoin (Internet, hôte, visibilité, communication entre VM) pour arriver au mode.</figcaption>
+</figure>
+
+**Je vérifie.** Une VM héberge un serveur web que les postes du lycée doivent joindre. Quel mode ?
+
+<details markdown="1">
+<summary>Voir la réponse</summary>
+
+**Accès par pont** : la VM doit être visible sur le réseau local, avec sa propre adresse.
+
+</details>
+
+**Je vérifie.** Dans un réseau interne, la VM 1 est en `192.168.100.1` et la VM 2 en `192.168.200.2` (masque `255.255.255.0`). Se parlent-elles ?
+
+<details markdown="1">
+<summary>Voir la réponse</summary>
+
+Non : elles ne sont pas dans le même réseau (`192.168.100` contre `192.168.200`). Il faut mettre les trois premiers nombres identiques.
+
+</details>
 
 ### Options avancées d'une carte
 
@@ -125,10 +193,14 @@ Le nom change selon l'hyperviseur : *snapshot* (VirtualBox, VMware, Proxmox/KVM,
 
 Quand on crée un snapshot, l'hyperviseur **ne modifie plus le disque principal** : il crée un **fichier de différences** où vont toutes les nouvelles écritures.
 
-```mermaid
-flowchart TB
-  A[Disque principal<br/>figé] --> B[Snapshot 1<br/>fichier de différences] --> C[Snapshot 2<br/>fichier de différences] --> D[VM en fonctionnement]
-```
+
+<figure class="raid-fig">
+<svg viewBox="0 0 720 140" role="img" aria-labelledby="cht" xmlns="http://www.w3.org/2000/svg"><title id="cht">Chaîne de disques d'une VM avec deux snapshots</title>
+<defs><marker id="chm" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto-start-reverse"><path d="M0,0 L8,4 L0,8 z" fill="var(--disk-s)"/></marker></defs><rect x="10" y="30" width="150" height="64" rx="8" class="rd-blk rd-k-a" /><text x="85.0" y="60" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:700">Disque principal</text><text x="85.0" y="74" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:500">figé : plus modifié</text><rect x="185" y="30" width="150" height="64" rx="8" class="rd-blk rd-k-b" /><text x="260.0" y="60" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:700">Snapshot 1</text><text x="260.0" y="74" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:500">fichier de différences</text><rect x="360" y="30" width="150" height="64" rx="8" class="rd-blk rd-k-b" /><text x="435.0" y="60" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:700">Snapshot 2</text><text x="435.0" y="74" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:500">fichier de différences</text><rect x="560" y="30" width="150" height="64" rx="8" class="rd-blk rd-k-c" /><text x="635.0" y="60" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:700">VM en</text><text x="635.0" y="74" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:500">fonctionnement</text><line x1="160" y1="62" x2="185" y2="62" class="rd-arrow" marker-end="url(#chm)"/><line x1="335" y1="62" x2="360" y2="62" class="rd-arrow" marker-end="url(#chm)"/><line x1="510" y1="62" x2="560" y2="62" class="rd-arrow" marker-end="url(#chm)"/><text x="435" y="122" text-anchor="middle" class="rd-note" style="font-size:12px;font-weight:600">les nouvelles écritures vont ici</text><line x1="435" y1="108" x2="435" y2="96" class="rd-arrow" marker-end="url(#chm)"/>
+</svg>
+<figcaption>Chaque snapshot ajoute un fichier de différences : le disque principal n'est plus modifié.</figcaption>
+</figure>
+
 
 Plus un snapshot reste actif longtemps, plus le fichier de différences **grossit**.
 
