@@ -46,7 +46,16 @@ Nom · description · bénéficiaires · demande · prérequis · plage · dispo
 
 ## Identité numérique de l'organisation
 
-Domaine (échéance) · certificat (expiration) · comptes officiels (comptes nominatifs, double authentification) · messagerie : **SPF** (serveurs autorisés), **DKIM** (signature), **DMARC** (que faire si échec). Usurpation : documenter, prévenir la direction, signaler, communiquer.
+Domaine (échéance) · certificat (expiration) · comptes officiels (comptes nominatifs, double authentification) · messagerie : **SPF** (serveurs autorisés), **DKIM** (signature), **DMARC** (que faire si échec, rapports).
+
+```text
+jackcelair.example        TXT "v=spf1 ip4:203.0.113.10 include:_spf.messagerie.example -all"
+_dmarc.jackcelair.example TXT "v=DMARC1; p=quarantine; rua=mailto:dmarc@jackcelair.example"
+```
+
+`-all` refuser · `~all` suspect · `p=none` observer · `quarantine` spam · `reject` refuser. Vérifier : `nslookup -type=TXT domaine` ou `dig TXT _dmarc.domaine`. Déploiement : inventaire, SPF, DKIM, DMARC `none`, lire les rapports, `quarantine`, `reject`.
+
+Usurpation : **ne pas répondre**, conserver les preuves (en-têtes, captures datées), prévenir la direction (elle décide de la plainte), signaler : **Signal Spam** (courriel), **33700** (SMS), **Pharos** (site), **17Cyber** (diagnostic, tchat police/gendarmerie), **Afnic** (faux `.fr`), plateforme (faux profil).
 
 ## InfraLab
 

@@ -189,19 +189,97 @@ L'**identité numérique** d'une organisation, c'est l'ensemble des **marques de
 | **Faux profil ou compte piraté** | Faux compte « JackCelair Recrutement » | Comptes officiels **recensés**, **double authentification**, comptes nominatifs | Signaler à la plateforme, communiquer sur le compte officiel |
 | **Fuite de données** | Liste de clients publiée | Droits d'accès, chiffrement, journaux | Informer la direction et le DPO : une violation de données personnelles peut devoir être **notifiée** à l'autorité de contrôle |
 
-**SPF, DKIM, DMARC (messagerie).** Ce sont trois enregistrements publiés dans le **DNS** du domaine pour limiter l'usurpation d'expéditeur : **SPF** liste les serveurs autorisés à envoyer du courrier pour ce domaine ; **DKIM** ajoute aux messages une **signature** vérifiable ; **DMARC** dit au destinataire **quoi faire** (accepter, mettre en quarantaine, rejeter) si ces vérifications échouent, et où envoyer des rapports. Leur mise en place exacte dépend du fournisseur de messagerie : elle se lit dans sa documentation.
-
 **La gouvernance.** La meilleure mesure technique échoue si **personne n'est responsable**. On tient un **registre des identifiants de l'organisation** (domaines et échéances, certificats, comptes officiels, administrateurs de chaque compte) et une règle simple : peu de personnes **nommées**, **comptes individuels**, authentification forte, validation avant publication.
 
+### SPF, DKIM, DMARC : comment la messagerie prouve d'où vient un courriel
+
+Dans le protocole SMTP, **rien n'empêche** d'écrire n'importe quelle adresse dans le champ « De ». C'est ce qui rend l'usurpation d'expéditeur facile. Trois enregistrements publiés dans le **DNS** du domaine permettent au serveur qui **reçoit** un courriel de vérifier s'il vient bien de l'organisation. Ce sont trois **enregistrements TXT** : du texte que n'importe qui peut lire en interrogeant le DNS.
+
+| | **SPF** | **DKIM** | **DMARC** |
+|---|---|---|---|
+| **Question posée** | « Ce serveur a-t-il le droit d'envoyer pour ce domaine ? » | « Le message est-il bien signé par le domaine, et n'a-t-il pas été modifié ? » | « Que faire si SPF ou DKIM échouent, et qui prévenir ? » |
+| **Analogie** | La **liste des facteurs autorisés** affichée à la mairie | Le **cachet de cire** sur la lettre | La **consigne** donnée au guichet : « sans cachet ni facteur connu, refusez la lettre et prévenez-nous » |
+| **Où c'est publié** | `jackcelair.example` | `selecteur1._domainkey.jackcelair.example` | `_dmarc.jackcelair.example` |
+| **Qui agit** | Le serveur destinataire compare l'adresse IP de l'expéditeur à la liste | Le serveur expéditeur **signe** avec une clé privée ; le destinataire vérifie avec la **clé publique** du DNS | Le destinataire applique la consigne et envoie des **rapports** |
+
+**Exemple d'enregistrements (domaine fictif).**
+
+```text
+jackcelair.example.                 TXT  "v=spf1 ip4:203.0.113.10 include:_spf.messagerie.example -all"
+selecteur1._domainkey.jackcelair.example.  TXT  "v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8A..."
+_dmarc.jackcelair.example.          TXT  "v=DMARC1; p=quarantine; rua=mailto:dmarc@jackcelair.example"
+```
+
+**Comment les lire.**
+
+- **SPF** : `v=spf1` annonce la version. `ip4:203.0.113.10` autorise cette adresse (le serveur de messagerie de l'entreprise). `include:_spf.messagerie.example` autorise aussi les serveurs listés par le fournisseur de messagerie. La fin dit quoi faire des autres : `-all` = **refuser**, `~all` = **suspect, à traiter avec méfiance** (cas fréquent au début d'un déploiement).
+- **DKIM** : `p=` contient la **clé publique** (longue chaîne de caractères). Le **sélecteur** (`selecteur1`) permet de publier plusieurs clés et d'en changer. La clé privée, elle, reste sur le serveur d'envoi et n'est jamais publiée.
+- **DMARC** : `p=` est la **politique** : `none` (on observe, on ne bloque rien), `quarantine` (messages en échec placés en spam), `reject` (messages en échec refusés). `rua=` est l'adresse qui reçoit les **rapports** quotidiens (fichiers XML) listant qui a envoyé du courrier au nom du domaine.
+
+**Comment DMARC décide.** DMARC ne regarde pas seulement si SPF ou DKIM réussissent : il vérifie que le domaine ainsi authentifié **correspond** au domaine affiché dans le champ « De » (on parle d'**alignement**). Un message est accepté si **au moins un** des deux (SPF ou DKIM) réussit **et** est aligné. Un escroc qui signe avec son propre domaine réussit son DKIM, mais pas l'alignement avec `jackcelair.example`.
+
+**Mise en place, dans l'ordre** (démarche progressive, couramment recommandée pour ne pas bloquer du courrier légitime) :
+
+1. **Faire l'inventaire** de tout ce qui envoie du courrier au nom du domaine : messagerie, outil de facturation, lettre d'information, logiciel de tickets, imprimantes ou applications qui envoient des alertes.
+2. **Publier SPF** en listant ces expéditeurs (chaque fournisseur indique sa valeur `include:` dans sa documentation).
+3. **Activer DKIM** chez le fournisseur de messagerie, qui génère la paire de clés ; on publie la clé **publique** dans le DNS.
+4. **Publier DMARC en `p=none`** avec `rua=`, et **lire les rapports** pendant quelques semaines pour repérer les expéditeurs oubliés.
+5. **Passer à `quarantine`**, puis à `reject`, quand les rapports ne montrent plus que du courrier légitime.
+
+Chaque fournisseur de messagerie documente ses propres valeurs (`include:`, sélecteur DKIM) ; la **logique** ci-dessus est la même partout.
+
+**Vérifier un domaine.** On interroge le DNS :
+
+```text
+nslookup -type=TXT jackcelair.example
+nslookup -type=TXT _dmarc.jackcelair.example
+dig TXT _dmarc.jackcelair.example
+```
+
+La réponse contient le texte entre guillemets, à lire comme ci-dessus. Pas de réponse sur `_dmarc.` : **aucune consigne** n'est donnée aux destinataires.
+
+> [!NOTE]
+> Ces protections concernent **ton** domaine. Elles n'arrêtent pas un **domaine ressemblant** (`jackcelair-facturation.example`), pour lequel l'escroc peut publier ses propres SPF, DKIM et DMARC en règle. Un destinataire doit donc aussi **lire l'adresse complète**.
+
+### Réagir à une usurpation : qui fait quoi
+
+Tout le monde ne fait pas la même chose. Voici une répartition **de principe**.
+
+| Qui | Rôle |
+|---|---|
+| **Le technicien (toi)** | **Ne répond pas** à l'expéditeur, ne clique pas. **Conserve les preuves** : le message d'origine avec ses **en-têtes**, des captures d'écran **datées** du faux site ou du faux profil, l'adresse (URL) exacte. **Prévient** la direction et le référent sécurité. Prend les **mesures techniques** : bloquer le faux domaine sur la passerelle de messagerie, changer les mots de passe si quelqu'un a saisi ses identifiants. |
+| **La direction** | **Décide** des suites : dépôt de plainte (c'est l'organisation victime qui porte plainte, au nom de son représentant), communication aux clients. |
+| **Le DPO** (si des données personnelles sont touchées) | Évalue s'il y a **violation de données** et ce qu'il faut notifier. |
+
+**Où signaler** (dispositifs publics français ; pour chacun, on ne répond pas et on n'ouvre pas les liens) :
+
+| Ce qu'on a reçu ou constaté | Où signaler |
+|---|---|
+| Courriel de spam ou d'hameçonnage | **Signal Spam** (signal-spam.fr) : inscription gratuite, extension pour la messagerie, signalement en un clic |
+| SMS ou MMS frauduleux | Transférer le message au **33700** |
+| Site frauduleux ou contenu illicite | **Pharos** (internet-signalement.gouv.fr), plateforme de signalement du ministère de l'Intérieur |
+| Victime d'une cyberattaque (organisation ou particulier) | **17Cyber** (site du ministère de l'Intérieur) : diagnostic en quelques questions, puis, si l'atteinte est grave, **tchat avec un policier ou un gendarme** ; assistance technique possible via un prestataire référencé par **Cybermalveillance.gouv.fr** |
+| Faux domaine en `.fr` utilisant l'identité de l'organisation | **Afnic** (registre du `.fr`) : l'organisation peut demander la liste des noms enregistrés avec ses données, puis, **accompagnée d'une plainte pour usurpation d'identité**, la suppression de ses informations usurpées dans la base Whois |
+| Faux profil ou compte piraté | Le **formulaire de signalement de la plateforme** (réseau social) |
+
 > [!WARNING]
-> Ces points sont un **rappel de principes**. En cas d'incident réel (usurpation, fuite), c'est la **direction** et le **référent juridique ou DPO** qui décident des signalements et des plaintes ; le technicien **documente** et **conserve les preuves** (captures datées, en-têtes de messages).
+> Ce tableau t'indique **où** l'information va ; la **décision** de déposer plainte revient à la direction, jamais au technicien seul. Pour une violation de données personnelles, c'est le **DPO** qui conduit l'analyse. Les dispositifs et les délais évoluent : on vérifie sur les sites officiels au moment des faits.
 
 **Je vérifie.** Un client reçoit une « facture » de `compta@jackcelair-facturation.example` alors que le domaine de l'entreprise est `jackcelair.example`. Quelle est la nature du problème, et quelle est la première action du technicien ?
 
 <details markdown="1">
 <summary>Voir la réponse</summary>
 
-C'est une **usurpation d'identité** par un **domaine ressemblant**, pas une panne. Le technicien **documente** (capture et en-têtes du message), **prévient** la direction et le référent, **signale** au bureau d'enregistrement ou à l'hébergeur du faux domaine et prévient les clients par un canal officiel. Il ne répond pas à l'expéditeur.
+C'est une **usurpation d'identité** par un **domaine ressemblant**, pas une panne. Le technicien **ne répond pas**, **conserve les preuves** (message d'origine avec en-têtes, captures datées), **prévient** la direction, puis signale le courriel (Signal Spam) et le faux domaine ; la direction décide de la plainte et du message aux clients, envoyé par un canal officiel.
+
+</details>
+
+**Je vérifie.** Voici un enregistrement : `_dmarc.jackcelair.example TXT "v=DMARC1; p=none; rua=mailto:dmarc@jackcelair.example"`. Que fait-il, et que faut-il faire ensuite ?
+
+<details markdown="1">
+<summary>Voir la réponse</summary>
+
+Il **n'impose rien** (`p=none`) : les courriels en échec sont acceptés, mais l'adresse du `rua` **reçoit des rapports**. C'est l'étape d'observation. Ensuite on lit les rapports, on corrige SPF et DKIM pour les expéditeurs légitimes oubliés, puis on passe à `quarantine`, puis à `reject`.
 
 </details>
 
@@ -214,6 +292,7 @@ SPF dit quels serveurs peuvent envoyer pour le domaine, DMARC dit quoi faire si 
 
 </details>
 
+
 ## Je retiens
 
 - Un catalogue décrit **ce qu'on propose**, avec ses engagements.
@@ -222,5 +301,5 @@ SPF dit quels serveurs peuvent envoyer pour le domaine, DMARC dit quoi faire si 
 - Le calendrier du SLA doit correspondre à ce qui est promis.
 - L'horloge court dès la création, se **suspend** à bon escient.
 - Incident majeur : cause d'abord, coordinateur, communication, revue.
-- **Identité numérique** : domaine, messagerie (SPF, DKIM, DMARC), comptes officiels, certificats et échéances ; on **prévient**, on **documente**, on **signale** par la bonne personne.
+- **Identité numérique** : domaine, messagerie (SPF = qui peut envoyer, DKIM = signature, DMARC = consigne et rapports), comptes officiels, certificats et échéances ; on **conserve les preuves**, on **prévient** la direction, on **signale** (Signal Spam, Pharos, 17Cyber, Afnic) ; la direction décide de la plainte.
 - **Présence en ligne** : domaine et DNS, hébergement, HTTPS, mentions légales, cookies et RGPD, référencement, gouvernance de la publication.
