@@ -29,7 +29,7 @@
 
 | Document | Rôle |
 |---|---|
-| [TP : l'inventaire de JackCelair](02-tp.md) | **À faire en premier** : Fiche d'inventaire, inventaire de la salle, **InfraLab (TP 1, 4, 9)**, contrôle qualité, RGPD, choix d'outil, bilan |
+| [TP : l'inventaire de JackCelair](02-tp.md) | **À faire en premier** : Fiche d'inventaire, inventaire de la salle, **InfraLab (TP 1, 4, 9 ; facultatifs 29, 31, 32)**, contrôle qualité, RGPD, choix d'outil, bilan |
 | [Cours](01-cours.md) | **À lire après le TP**, pour confronter ses résultats : Patrimoine, CI, inventaire manuel et automatisé, qualité des données, RGPD, outils |
 | [Aide-mémoire](03-aide-memoire.md) | Attributs d'une fiche, commandes de contrôle, vocabulaire |
 | [Extrait d'inventaire (CSV)](tp/inventaire-extrait.md) | Un inventaire fictif de 18 équipements, à contrôler |
@@ -62,7 +62,7 @@
 <summary>Notes pour l'enseignant</summary>
 
 - **Choix pédagogique :** le TP précède le cours. L'élève cherche seul (essais, observation, aides données, Web), se trompe parfois, puis confronte ses réponses au cours : l'écart entre ce qu'il pensait et ce qui est établi crée le conflit cognitif qui fixe la notion. Il n'a donc pas le cours sous les yeux pendant le TP ; les « éléments de réponse » repliés restent à ouvrir **après** l'essai.
-- **InfraLab :** la partie D s'appuie sur les TP 1, 4 et 9 du catalogue (le TP 2 « Ajouter du matériel » et le TP 3 « Comprendre les deux vues » sont repris en S15 ou en remédiation) ; D4 est une mission **hors catalogue** écrite pour ce cours sur le jeu de données « NovaTech complet ». Le contrôle qualité d'un inventaire (partie E) et le CSV sont de moi.
+- **InfraLab :** la partie D s'appuie sur les TP 1, 4 et 9 du catalogue ; D5 (TP 29, cycle de vie) et D6 (TP 31 et 32, CI et impact) sont facultatifs, avec éléments de réponse **d'après le catalogue**, à confronter à l'écran (le TP 2 « Ajouter du matériel » et le TP 3 « Comprendre les deux vues » sont repris en S15 ou en remédiation) ; D4 est une mission **hors catalogue** écrite pour ce cours sur le jeu de données « NovaTech complet ». Le contrôle qualité d'un inventaire (partie E) et le CSV sont de moi.
 - **Données du CSV :** entièrement **fictives** ; utilisateurs pseudonymisés (U01…U12) volontairement, pour illustrer la minimisation des données. Défauts glissés dans le fichier (corrigé) : numéros de série en double et manquants, états écrits de plusieurs façons, un format de date différent, une date d'achat dans le futur, des noms manquants, trois postes sous Windows 10 dont un « retiré ».
 - **Gain de temps :** les durées « inventaire automatisé » (2 min, 2 h, 4 h…) sont des **estimations non sourcées** ; le TP demande de les **discuter**, pas de les retenir comme des faits.
 - **Plugin et compétences :** le TP et le cours de S13 ne parlent que du plugin « OCS Inventory NG » (à ne pas confondre avec FusionInventory, un autre composant). Compétences : B1.1 et B3.1 (voir le [référentiel du site](../../ressources/referentiel.md)).

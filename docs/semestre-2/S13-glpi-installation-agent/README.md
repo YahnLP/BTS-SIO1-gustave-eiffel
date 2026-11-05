@@ -28,7 +28,7 @@
 
 | Document | Rôle |
 |---|---|
-| [TP : un serveur GLPI et un premier poste](02-tp.md) | **À faire en premier** : InfraLab (TP 6 et 10), préparer, installer GLPI, inventorier avec l'agent, comparer, bilan |
+| [TP : un serveur GLPI et un premier poste](02-tp.md) | **À faire en premier** : InfraLab (TP 6 et 10, facultatif TP 49), préparer, installer GLPI, inventorier avec l'agent, comparer, bilan |
 | [Cours](01-cours.md) | **À lire après le TP**, pour confronter ses résultats : Architecture GLPI, installation, inventaire natif et agent, variante OCS, diagnostic |
 | [Aide-mémoire](03-aide-memoire.md) | Commandes et paramètres de la séance |
 | [Plan de tests](tp/plan-de-tests.md) | Tableau de tests à remplir pendant l'installation |
@@ -68,7 +68,7 @@
 - **Cycle de collecte collaboratif :** l'installeur de l'agent accepte une **liste de serveurs** (paramètre `SERVER` séparé par des virgules, d'après la documentation officielle) : la partie E s'appuie là-dessus au lieu de reconfigurer l'agent à chaque cycle.
 - **Réseau :** le TP utilise l'accès par pont avec l'adresse `192.168.X.1` pour le serveur et `192.168.X.10` pour le client (X = numéro d'élève). À confirmer selon le réseau de la salle (voir S07).
 - **Variante OCS :** serveur Apache + Perl + base `ocsweb`, console `ocsreports`, agent Windows, et plugin « OCS Inventory NG » dans GLPI. Non reprise ici : procédure, URLs et numéros de version non vérifiés.
-- **InfraLab (révision) :** la partie A s'appuie sur les TP 6 et 10 du catalogue ; les TP 7 et 8 sont proposés en remédiation. La variante OCS reste au cours ; la partie « serveur d'un voisin » (douze reconfigurations de l'agent) ont été **retirées du TP** : pas de temps, et InfraLab porte la notion. Les éléments de réponse de la partie A d'après le catalogue sont à **confronter à l'écran**.
+- **InfraLab (révision) :** le **TP 49** (audit d'inventaire, fichier `.infralab-tp.json` dans `tp/`) est facultatif et écrit pour ce cours ; il est généré à partir du code d'InfraLab sans le modifier, mais **non joué dans l'application** ; la partie A s'appuie sur les TP 6 et 10 du catalogue ; les TP 7 et 8 sont proposés en remédiation. La variante OCS reste au cours ; la partie « serveur d'un voisin » (douze reconfigurations de l'agent) ont été **retirées du TP** : pas de temps, et InfraLab porte la notion. Les éléments de réponse de la partie A d'après le catalogue sont à **confronter à l'écran**.
 - **Compétences :** codes et intitulés relus sur l'arrêté du 8 juillet 2024 ; le choix des compétences pour cette séance est une proposition de l'enseignant.
 
 </details>

@@ -45,6 +45,8 @@ Un **élément de configuration** (*Configuration Item*, **CI**) est tout élém
 <figcaption>Une CMDB conserve les éléments de configuration et leurs relations, pas seulement une liste.</figcaption>
 </figure>
 
+> **Dans InfraLab** (TP, partie D6) : les TP 31 et 32 te font créer des CI, déclarer des relations et lire l'encadré « Si ce CI tombe » pour mesurer l'impact d'une panne de switch.
+
 
 ## 2. Pourquoi inventorier ?
 
@@ -93,6 +95,8 @@ Sans inventaire fiable, une panne, une faille ou un contrôle de licences oblige
 
 
 Un équipement change d'**état** au fil de ce cycle : l'inventaire doit le **suivre**, sinon il vieillit.
+
+> **Dans InfraLab** (TP, partie D5) : le TP 29 suit un portable de la commande au rebut. Tu constates qu'on ne met pas en service sans utilisateur et qu'un actif retiré ne se réaffecte plus.
 
 **Je vérifie.** Pourquoi l'identifiant d'inventaire est-il préférable au nom de la machine pour retrouver un équipement ?
 

@@ -89,7 +89,7 @@ Une matrice n'est pas une table à recopier : c'est une **décision** de l'organ
 Les outils de gestion de tickets (dont GLPI) calculent la priorité à partir de l'impact et de l'urgence selon une correspondance **paramétrable** : à repérer dans la configuration de ta version, ce n'est pas une règle universelle.
 
 > [!TIP]
-> **Dans InfraLab** (TP, partie C) : le TP 14 te fait qualifier deux tickets d'apparence semblable ; le TP 21 distingue incident et demande ; le TP 47 te fait escalader au bon moment.
+> **Dans InfraLab** (TP, partie C) : le TP 14 te fait qualifier deux tickets d'apparence semblable ; le TP 21 distingue incident et demande ; le TP 47 te fait escalader au bon moment ; le TP 50 (facultatif, fichier à télécharger) mène un incident de bout en bout, de la qualification à la clôture.
 
 | Priorité | Exemple | Prise en charge (exemple) | Résolution (exemple) |
 |---|---|---|---|

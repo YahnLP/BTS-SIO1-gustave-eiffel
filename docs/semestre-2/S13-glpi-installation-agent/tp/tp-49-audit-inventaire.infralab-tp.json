@@ -1,0 +1,380 @@
+{
+ "format": "infralab-tp",
+ "version": 1,
+ "app": "InfraLab",
+ "scenario": {
+  "id": "tp-49-audit-inventaire",
+  "number": 49,
+  "title": "Audit d'inventaire : peut-on se fier aux chiffres ?",
+  "level": 2,
+  "levelLabel": "Inventaire",
+  "difficulty": 2,
+  "duration": "40 min",
+  "skills": [
+   {
+    "ref": "Gérer le patrimoine informatique",
+    "kind": "worked"
+   },
+   {
+    "ref": "Exploiter et dépanner",
+    "kind": "worked"
+   }
+  ],
+  "timeNote": "Trois jours simulés se sont écoulés depuis la mise en place des agents. Après une réparation, avancez l'horloge (+1 h ou +1 jour) ou forcez la remontée pour voir la fiche se mettre à jour.",
+  "context": "NovaTech compte cinq postes de travail. Quatre ont un agent, un seul n'en a pas. La direction demande un état des lieux avant d'acheter des licences : « Combien de postes sont réellement inventoriés, et peut-on se fier aux chiffres de l'outil ? »",
+  "stages": [
+   {
+    "id": "s1",
+    "title": "Mesurer la couverture réelle",
+    "objectives": [
+     "cover"
+    ],
+    "lesson": [
+     "Un agent **installé** n'est pas un agent **qui remonte**. Pour mesurer la couverture d'un inventaire, on compte les postes dont l'agent est **actif** (état « Agent actif » dans Inventaire → Agents), pas ceux où il a été posé un jour.",
+     "Comptez les cinq postes : combien remontent réellement leur inventaire ?"
+    ],
+    "debrief": [
+     "Le taux de couverture honnête se calcule sur les agents actifs, rapportés au nombre total de postes."
+    ]
+   },
+   {
+    "id": "s2",
+    "title": "Réparer les agents défaillants",
+    "objectives": [
+     "pc22",
+     "pc23",
+     "sync"
+    ],
+    "lesson": [
+     "Deux agents sont en défaut, pour deux causes différentes. Lisez l'état de chacun et le journal de l'agent (propriétés du poste, section Agent) avant d'agir.",
+     "Une fois réparé, un agent doit avoir remonté un inventaire **à jour** : la fiche ne doit plus montrer d'écart avec la réalité."
+    ],
+    "debrief": [
+     "Chaque cause a son remède : démarrer un agent arrêté, corriger l'adresse du serveur. C'est la remontée suivante qui rétablit la fiche."
+    ]
+   },
+   {
+    "id": "s3",
+    "title": "Ce que l'outil ne voit pas",
+    "objectives": [
+     "blind",
+     "pc24"
+    ],
+    "lesson": [
+     "TeamViewer est un logiciel de prise de contrôle à distance interdit par la politique de NovaTech. Comparez, dans Parc → Logiciels, ce que l'outil connaît avec ce qui est réellement installé (vue Infrastructure).",
+     "Un poste sans agent est invisible pour l'outil : ses installations, interdites ou non, lui échappent. Le remède est un agent, pas une saisie manuelle."
+    ],
+    "debrief": [
+     "Les chiffres d'un outil d'inventaire valent ce que valent ses agents : on les complète en couvrant le parc."
+    ]
+   }
+  ],
+  "setup": [
+   {
+    "do": "infra.addDevice",
+    "args": {
+     "kind": "workstation",
+     "name": "PC24",
+     "x": 656,
+     "y": 440
+    }
+   },
+   {
+    "do": "infra.connect",
+    "args": {
+     "aDevice": "@dev:PC24",
+     "aPort": "eth0",
+     "bDevice": "@dev:SW02",
+     "bPort": "port5"
+    }
+   },
+   {
+    "do": "infra.setIp",
+    "args": {
+     "id": "@dev:PC24",
+     "ip": "192.168.10.25",
+     "mask": 24
+    }
+   },
+   {
+    "do": "infra.installSoftware",
+    "args": {
+     "id": "@dev:PC24",
+     "softwareId": "sw-office"
+    }
+   },
+   {
+    "do": "infra.installSoftware",
+    "args": {
+     "id": "@dev:PC24",
+     "softwareId": "sw-teamviewer"
+    }
+   },
+   {
+    "do": "itsm.setSoftwarePolicy",
+    "args": {
+     "softwareId": "sw-teamviewer",
+     "policy": "forbidden"
+    }
+   },
+   {
+    "do": "inventory.discover",
+    "args": {
+     "cidr": "192.168.10.0/24"
+    }
+   },
+   {
+    "do": "agent.install",
+    "args": {
+     "id": "@dev:PC-COMPTA-01"
+    }
+   },
+   {
+    "do": "agent.install",
+    "args": {
+     "id": "@dev:PC21"
+    }
+   },
+   {
+    "do": "agent.install",
+    "args": {
+     "id": "@dev:PC22"
+    }
+   },
+   {
+    "do": "agent.install",
+    "args": {
+     "id": "@dev:PC23"
+    }
+   },
+   {
+    "do": "agent.runInventory",
+    "args": {
+     "id": "@dev:PC-COMPTA-01"
+    }
+   },
+   {
+    "do": "agent.runInventory",
+    "args": {
+     "id": "@dev:PC21"
+    }
+   },
+   {
+    "do": "agent.runInventory",
+    "args": {
+     "id": "@dev:PC22"
+    }
+   },
+   {
+    "do": "agent.runInventory",
+    "args": {
+     "id": "@dev:PC23"
+    }
+   },
+   {
+    "do": "agent.stop",
+    "args": {
+     "id": "@dev:PC22"
+    }
+   },
+   {
+    "do": "agent.configure",
+    "args": {
+     "id": "@dev:PC23",
+     "serverUrl": "http://srv-inventaire/inventory"
+    }
+   },
+   {
+    "do": "infra.installSoftware",
+    "args": {
+     "id": "@dev:PC22",
+     "softwareId": "sw-teamviewer"
+    }
+   },
+   {
+    "advance": 259200000
+   }
+  ],
+  "objectives": [
+   {
+    "id": "cover",
+    "label": "Compter les postes dont l'agent remonte réellement",
+    "question": {
+     "prompt": "Sur les cinq postes de travail, combien remontent réellement leur inventaire ?",
+     "choices": [
+      "Cinq : tous sont dans l'outil",
+      "Quatre : ceux où un agent est installé",
+      "Deux : PC-COMPTA-01 et PC21",
+      "Un seul"
+     ],
+     "correct": 2,
+     "explain": "PC22 a un agent arrêté, PC23 un agent mal configuré, PC24 n'a pas d'agent : seuls PC-COMPTA-01 et PC21 remontent."
+    }
+   },
+   {
+    "id": "pc22",
+    "label": "L'agent de PC22 est de nouveau actif",
+    "check": {
+     "k": "agentHealth",
+     "device": "@dev:PC22",
+     "is": "ok"
+    },
+    "requires": [
+     "cover"
+    ]
+   },
+   {
+    "id": "pc23",
+    "label": "L'agent de PC23 est de nouveau actif",
+    "check": {
+     "k": "agentHealth",
+     "device": "@dev:PC23",
+     "is": "ok"
+    },
+    "requires": [
+     "cover"
+    ]
+   },
+   {
+    "id": "sync",
+    "label": "Les fiches de PC22 et PC23 sont à jour, sans écart avec la réalité",
+    "check": {
+     "k": "all",
+     "of": [
+      {
+       "k": "assetInSync",
+       "device": "@dev:PC22"
+      },
+      {
+       "k": "assetInSync",
+       "device": "@dev:PC23"
+      }
+     ]
+    },
+    "requires": [
+     "pc22",
+     "pc23"
+    ]
+   },
+   {
+    "id": "blind",
+    "label": "Comparer installations connues et installations réelles de TeamViewer",
+    "requires": [
+     "sync"
+    ],
+    "question": {
+     "prompt": "Les agents de PC22 et PC23 sont réparés ; PC24 n'a toujours pas d'agent. Combien d'installations de TeamViewer l'outil connaît-il, et combien existent réellement ?",
+     "choices": [
+      "3 connues, 3 réelles",
+      "2 connues, 3 réelles",
+      "1 connue, 3 réelles",
+      "2 connues, 2 réelles"
+     ],
+     "correct": 1,
+     "explain": "PC22 et PC23 sont connus ; PC24, sans agent, échappe à l'outil : l'installation interdite y est invisible."
+    }
+   },
+   {
+    "id": "pc24",
+    "label": "PC24 est suivi par un agent actif",
+    "check": {
+     "k": "agentHealth",
+     "device": "@dev:PC24",
+     "is": "ok"
+    },
+    "requires": [
+     "blind"
+    ]
+   }
+  ],
+  "hints": [
+   {
+    "for": "pc22",
+    "levels": [
+     "Regardez l'état affiché dans la section Agent de PC22.",
+     "L'agent est arrêté : démarrez-le."
+    ]
+   },
+   {
+    "for": "pc23",
+    "levels": [
+     "Le journal de l'agent dit à quelle adresse il essaie de parler.",
+     "Comparez avec http://<nom du serveur>/inventory : l'adresse est fausse, corrigez-la."
+    ]
+   },
+   {
+    "for": "sync",
+    "levels": [
+     "Un agent réparé n'a pas encore forcément remonté.",
+     "Forcez l'inventaire de PC22 et de PC23, ou avancez l'horloge."
+    ]
+   },
+   {
+    "for": "pc24",
+    "levels": [
+     "Un poste sans agent est invisible pour l'outil.",
+     "Installez l'agent depuis les propriétés de PC24."
+    ]
+   }
+  ],
+  "solutionText": [
+   "Compter : seuls PC-COMPTA-01 et PC21 remontent (deux sur cinq).",
+   "PC22 : agent arrêté, le démarrer. PC23 : adresse du serveur fausse, la corriger (http://srv-itsm/inventory). Forcer l'inventaire des deux.",
+   "TeamViewer : 2 installations connues, 3 réelles. Installer l'agent sur PC24."
+  ],
+  "solution": [
+   {
+    "do": "scenario.answer",
+    "args": {
+     "objective": "cover",
+     "choice": 2
+    }
+   },
+   {
+    "do": "agent.start",
+    "args": {
+     "id": "@dev:PC22"
+    }
+   },
+   {
+    "do": "agent.configure",
+    "args": {
+     "id": "@dev:PC23",
+     "serverUrl": "http://srv-itsm/inventory"
+    }
+   },
+   {
+    "do": "agent.runInventory",
+    "args": {
+     "id": "@dev:PC22"
+    }
+   },
+   {
+    "do": "agent.runInventory",
+    "args": {
+     "id": "@dev:PC23"
+    }
+   },
+   {
+    "do": "scenario.answer",
+    "args": {
+     "objective": "blind",
+     "choice": 1
+    }
+   },
+   {
+    "do": "agent.install",
+    "args": {
+     "id": "@dev:PC24"
+    }
+   },
+   {
+    "do": "agent.runInventory",
+    "args": {
+     "id": "@dev:PC24"
+    }
+   }
+  ],
+  "realWorld": "Les outils réels (GLPI Agent, OCS, Intune, Configuration Manager) fournissent des rapports « dernier contact » ; un taux de couverture se calcule sur les agents qui remontent, pas sur les agents déployés."
+ }
+}

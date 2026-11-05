@@ -27,7 +27,7 @@
 
 | Document | Rôle |
 |---|---|
-| [TP : un centre de services](02-tp.md) | **À faire en premier** : Classer, prioriser, rédiger, InfraLab (TP 14, 21, 47), deux tickets dans GLPI, jeu de rôle, bilan |
+| [TP : un centre de services](02-tp.md) | **À faire en premier** : Classer, prioriser, rédiger, InfraLab (TP 14, 21, 47, facultatif TP 50), deux tickets dans GLPI, jeu de rôle, bilan |
 | [Cours](01-cours.md) | **À lire après le TP**, pour confronter ses résultats : ITIL, service, vocabulaire, priorités, SLA, centre de services, niveaux, tickets dans GLPI |
 | [Aide-mémoire](03-aide-memoire.md) | Matrice, statuts, structure d'un ticket |
 | [Fiche de ticket](tp/fiche-ticket-incident.md) | Modèle papier pour la rédaction préalable |
@@ -68,7 +68,7 @@
 - **Éléments non repris :** « 90 % des offres d'emploi citent ITIL » (non sourcé) ; les pourcentages de résolution par niveau et les certifications citées (non sourcés) ; la mention de l'épreuve E5 avec des codes de compétences qui ne correspondent pas au référentiel du dépôt.
 - **Éditeur d'ITIL 4 :** à ma connaissance, la gestion d'ITIL est passée à un autre éditeur (anciennement Axelos). **À vérifier** avant de l'afficher ; le cours ne nomme pas d'éditeur.
 - **Scénarios de la fiche GLPI :** ils supposent un annuaire (compte, groupe `GRP_MARKETING`) que nous n'avons pas : le ticket 3 reste **simulé** comme le prévoit l'original. Ils supposent aussi des groupes, des catégories et un délai cible **déjà créés** : la partie C les prépare.
-- **InfraLab (révision) :** la partie C s'appuie sur les TP 14, 21 et 47 ; les TP 11, 12, 15 et 3 sont en remédiation. Ont été **retirés** du TP : le ticket « demande de service » (couvert par le TP 21), les statistiques de GLPI, la partie sur le MTTR calculé sur trois tickets (reste au cours §6) ; le jeu de rôle devient facultatif. Éléments de réponse d'InfraLab **d'après le catalogue**, à confronter à l'écran.
+- **InfraLab (révision) :** le **TP 50** (incident de bout en bout, fichier `.infralab-tp.json` dans `tp/`) est facultatif et écrit pour ce cours ; il est généré à partir du code d'InfraLab sans le modifier, mais **non joué dans l'application** ; la partie C s'appuie sur les TP 14, 21 et 47 ; les TP 11, 12, 15 et 3 sont en remédiation. Ont été **retirés** du TP : le ticket « demande de service » (couvert par le TP 21), les statistiques de GLPI, la partie sur le MTTR calculé sur trois tickets (reste au cours §6) ; le jeu de rôle devient facultatif. Éléments de réponse d'InfraLab **d'après le catalogue**, à confronter à l'écran.
 - **Rien n'a été exécuté** dans GLPI : écrans et chemins à vérifier avant la séance (voir le [corrigé](https://github.com/YahnLP/BTS-SIO1-gustave-eiffel/blob/main/corriges/S15-itil-incidents-tickets.md)).
 - **Compétences :** codes et intitulés relus sur l'arrêté du 8 juillet 2024 ; le choix des compétences pour cette séance est une proposition de l'enseignant.
 

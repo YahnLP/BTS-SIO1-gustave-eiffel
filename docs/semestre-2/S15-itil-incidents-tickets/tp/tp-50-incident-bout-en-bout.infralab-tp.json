@@ -1,0 +1,276 @@
+{
+ "format": "infralab-tp",
+ "version": 1,
+ "app": "InfraLab",
+ "scenario": {
+  "id": "tp-50-incident-bout-en-bout",
+  "number": 50,
+  "title": "Un incident de bout en bout",
+  "level": 3,
+  "levelLabel": "Service Desk",
+  "difficulty": 2,
+  "duration": "35 min",
+  "skills": [
+   {
+    "ref": "Répondre aux incidents et aux demandes",
+    "kind": "worked"
+   },
+   {
+    "ref": "Assurer la traçabilité",
+    "kind": "evidence_possible"
+   }
+  ],
+  "context": "Alice (Comptabilité) a appelé à 8 h 55 : plus rien ne sort de l'imprimante, et c'est la clôture mensuelle. Le service desk a saisi le ticket INC-0001 à partir de l'appel, sans le qualifier. Menez-le jusqu'à la clôture.",
+  "stages": [
+   {
+    "id": "s1",
+    "title": "Qualifier, lier, attribuer",
+    "objectives": [
+     "qual"
+    ],
+    "lesson": [
+     "Catégorie « Matériel », sous-catégorie « Imprimante ». Huit personnes sont bloquées (impact élevé) avant l'échéance du jour (urgence élevée) : la matrice donne la priorité. Liez l'équipement **en cause** et attribuez le ticket à David."
+    ],
+    "debrief": [
+     "Qualifier, lier, attribuer : trois gestes qui rendent le ticket exploitable par un autre technicien."
+    ]
+   },
+   {
+    "id": "s2",
+    "title": "Diagnostiquer et remédier",
+    "objectives": [
+     "cause",
+     "fix"
+    ],
+    "lesson": [
+     "Avant de conclure, regardez l'équipement sur le schéma : est-il allumé ? joignable par l'outil ?",
+     "Une imprimante « en panne » n'est pas forcément cassée : on commence par le plus simple (voir S04)."
+    ],
+    "debrief": [
+     "Le diagnostic commence par la couche physique : alimentation, câble, voyants."
+    ]
+   },
+   {
+    "id": "s3",
+    "title": "Documenter, résoudre, clore",
+    "objectives": [
+     "solution",
+     "closed"
+    ],
+    "lesson": [
+     "L'outil refuse de résoudre sans solution écrite. Rédigez-la pour un collègue qui reprendrait le ticket, passez-le à « Résolu », puis « Clos »."
+    ],
+    "debrief": [
+     "La solution écrite est la mémoire du service ; résolu n'est pas clos."
+    ]
+   }
+  ],
+  "setup": [
+   {
+    "do": "inventory.discover",
+    "args": {
+     "cidr": "192.168.10.0/24"
+    }
+   },
+   {
+    "do": "infra.powerOff",
+    "args": {
+     "id": "@dev:IMP-COMPTA"
+    }
+   },
+   {
+    "do": "itsm.createTicket",
+    "args": {
+     "title": "Imprimante de la comptabilité en panne",
+     "description": "Appel d'Alice à 8 h 55. L'imprimante de la comptabilité ne sort plus rien. Clôture mensuelle aujourd'hui : les 8 personnes du service ne peuvent pas éditer les factures avant 17 h.",
+     "requester": "@usr:Alice",
+     "kind": "incident"
+    }
+   }
+  ],
+  "objectives": [
+   {
+    "id": "qual",
+    "label": "INC-0001 est qualifié (Matériel, Imprimante, priorité P1), lié à IMP-COMPTA et attribué à David",
+    "check": {
+     "k": "ticket",
+     "ref": "@tkt:INC-0001",
+     "category": "Matériel",
+     "subcategory": "Imprimante",
+     "priority": 1,
+     "linkedDevice": "@dev:IMP-COMPTA",
+     "assignee": "@usr:David"
+    }
+   },
+   {
+    "id": "cause",
+    "label": "Identifier la cause de la panne",
+    "requires": [
+     "qual"
+    ],
+    "question": {
+     "prompt": "Que montre le schéma pour IMP-COMPTA ?",
+     "choices": [
+      "L'imprimante est éteinte",
+      "Le câble réseau est coupé",
+      "Le serveur ITSM est arrêté",
+      "L'imprimante est allumée et joignable"
+     ],
+     "correct": 0,
+     "explain": "Un équipement éteint n'est pas joignable : le plus simple est souvent la cause."
+    }
+   },
+   {
+    "id": "fix",
+    "label": "IMP-COMPTA est de nouveau allumée et joignable",
+    "check": {
+     "k": "all",
+     "of": [
+      {
+       "k": "devicePowered",
+       "device": "@dev:IMP-COMPTA"
+      },
+      {
+       "k": "deviceOnline",
+       "device": "@dev:IMP-COMPTA"
+      }
+     ]
+    },
+    "requires": [
+     "cause"
+    ]
+   },
+   {
+    "id": "solution",
+    "label": "La solution est documentée et INC-0001 est résolu",
+    "check": {
+     "k": "ticket",
+     "ref": "@tkt:INC-0001",
+     "reached": "resolved",
+     "solutionMin": 30
+    },
+    "requires": [
+     "fix"
+    ]
+   },
+   {
+    "id": "closed",
+    "label": "INC-0001 est clos",
+    "check": {
+     "k": "ticket",
+     "ref": "@tkt:INC-0001",
+     "status": "closed"
+    },
+    "requires": [
+     "solution"
+    ]
+   }
+  ],
+  "hints": [
+   {
+    "for": "qual",
+    "levels": [
+     "Huit personnes bloquées, une échéance aujourd'hui : impact et urgence élevés.",
+     "Fiche du ticket : catégorie, impact, urgence, lien vers IMP-COMPTA, assigné, puis qualifier et attribuer."
+    ]
+   },
+   {
+    "for": "fix",
+    "levels": [
+     "Regardez l'état de l'équipement dans la vue Infrastructure."
+    ]
+   },
+   {
+    "for": "solution",
+    "levels": [
+     "Le bouton « Résoudre » se débloque quand la solution est renseignée."
+    ]
+   }
+  ],
+  "solutionText": [
+   "Qualifier : Matériel / Imprimante, impact élevé, urgence élevée (P1), lier IMP-COMPTA, attribuer à David.",
+   "Constater que l'imprimante est éteinte, la rallumer.",
+   "Rédiger la solution, résoudre, clore."
+  ],
+  "solution": [
+   {
+    "do": "itsm.updateTicket",
+    "args": {
+     "id": "@tkt:INC-0001",
+     "fields": {
+      "category": "Matériel",
+      "subcategory": "Imprimante",
+      "impact": "high",
+      "urgency": "high",
+      "assignee": "@usr:David"
+     }
+    }
+   },
+   {
+    "do": "itsm.linkAsset",
+    "args": {
+     "id": "@tkt:INC-0001",
+     "asset": "@ast:IMP-COMPTA"
+    }
+   },
+   {
+    "do": "itsm.transitionTicket",
+    "args": {
+     "id": "@tkt:INC-0001",
+     "to": "qualified"
+    }
+   },
+   {
+    "do": "itsm.transitionTicket",
+    "args": {
+     "id": "@tkt:INC-0001",
+     "to": "assigned"
+    }
+   },
+   {
+    "do": "itsm.transitionTicket",
+    "args": {
+     "id": "@tkt:INC-0001",
+     "to": "in_progress"
+    }
+   },
+   {
+    "do": "scenario.answer",
+    "args": {
+     "objective": "cause",
+     "choice": 0
+    }
+   },
+   {
+    "do": "infra.powerOn",
+    "args": {
+     "id": "@dev:IMP-COMPTA"
+    }
+   },
+   {
+    "do": "itsm.updateTicket",
+    "args": {
+     "id": "@tkt:INC-0001",
+     "fields": {
+      "solution": "Imprimante éteinte : rallumée, joignable de nouveau, impression de test réussie."
+     }
+    }
+   },
+   {
+    "do": "itsm.transitionTicket",
+    "args": {
+     "id": "@tkt:INC-0001",
+     "to": "resolved"
+    }
+   },
+   {
+    "do": "itsm.transitionTicket",
+    "args": {
+     "id": "@tkt:INC-0001",
+     "to": "closed"
+    }
+   }
+  ],
+  "realWorld": "Les outils réels imposent le même enchaînement : qualification, lien avec le CI, solution obligatoire avant résolution, clôture après confirmation ou délai."
+ }
+}
