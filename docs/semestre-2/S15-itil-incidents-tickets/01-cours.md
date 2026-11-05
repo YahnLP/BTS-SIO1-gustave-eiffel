@@ -16,6 +16,13 @@
 - [ ] **rédiger** un ticket complet ;
 - [ ] situer les **indicateurs** (MTTR, SLA…).
 
+> [!IMPORTANT] Idées reçues à confronter à tes réponses du TP
+> - « **L'utilisateur le plus mécontent passe en premier.** » Non : l'ordre vient de la **priorité** (impact et urgence), pas du ton de l'appel (§ 4).
+> - « **Un incident et un problème, c'est pareil.** » Un incident se **résout** ; un problème se **traite** en supprimant la cause (§ 3).
+> - « **Escalader, c'est avouer qu'on n'a pas su faire.** » Escalader au bon moment, avec un motif, protège le délai (§ 6).
+
+---
+
 ## 1. ITIL en deux phrases
 
 **ITIL** (*Information Technology Infrastructure Library*) est un **référentiel de bonnes pratiques** pour gérer les services informatiques. Ce n'est ni une norme à respecter, ni un logiciel : c'est un vocabulaire et des méthodes issus de l'expérience de nombreuses organisations. La version actuelle est **ITIL 4**, qui décrit **34 pratiques** de gestion.
@@ -75,6 +82,26 @@ La **priorité** décide de l'ordre de traitement. Elle combine :
 
 Chaque organisation fixe sa propre matrice et ses délais ; celle-ci est un exemple d'enseignement.
 
+**Exemple résolu : trois appels en même temps.** Avec la matrice ci-dessous (cas fictif, JackCelair).
+
+| Appel | Situation | Impact | Urgence | Priorité |
+|---|---|---|---|---|
+| A | Marc (comptabilité) n'accède plus à sa messagerie de bureau ; la messagerie web fonctionne | Bas (une personne) | Basse (contournement) | **P4** |
+| B | L'imprimante de la comptabilité est en panne ; huit personnes doivent éditer les factures, clôture mensuelle aujourd'hui | Haut | Haute | **P1** |
+| C | Le directeur (VIP) ne peut pas ouvrir la pièce jointe de sa réunion dans deux heures ; il peut l'ouvrir sur son téléphone | Haut (VIP) | Moyenne | **P2** |
+
+**Ordre de traitement : B, puis C, puis A**, justifié par la priorité et non par l'ordre des appels ni par le ton. Si B et un autre ticket sont tous deux en P1, on traite dans l'ordre d'arrivée.
+
+
+**Je vérifie.** Quatre situations : (1) la messagerie est en panne pour toute l'entreprise ; (2) un utilisateur demande l'installation d'un logiciel autorisé ; (3) le même poste plante pour la troisième fois ce mois-ci ; (4) trente postes redémarrent seuls depuis la mise à jour d'hier. Pour chacune, donne le type et, si c'est un incident, la priorité probable.
+
+<details markdown="1">
+<summary>Voir la réponse</summary>
+
+(1) **Incident**, impact haut et urgence haute : **P1**. (2) **Demande de service** : pas de priorité d'incident. (3) **Incident récurrent** : on le résout, et on ouvre un **problème** pour chercher la cause ; escalade possible (3e fois). (4) **Incident** à fort impact, qui touche une mise à jour : **P1 ou P2** selon l'urgence, et lien avec un **changement** (la mise à jour) à vérifier.
+
+</details>
+
 ### Construire et adapter une matrice à une organisation
 
 Une matrice n'est pas une table à recopier : c'est une **décision** de l'organisation, prise avec ses métiers. Pour en construire une (ou adapter celle-ci) :
@@ -118,6 +145,16 @@ Un **SLA** (*service level agreement*) est un **accord formel** entre le fournis
 
 **MTTR = somme des temps de résolution ÷ nombre d'incidents.** Exemple : 30, 45 et 15 minutes donnent 90 ÷ 3 = 30 minutes.
 
+**Je vérifie.** Quatre tickets sont résolus en 20, 60, 10 et 30 minutes. Quel est le MTTR ? Pourquoi une moyenne peut-elle cacher un problème ?
+
+<details markdown="1">
+<summary>Voir la réponse</summary>
+
+(20 + 60 + 10 + 30) ÷ 4 = 120 ÷ 4 = **30 minutes**. La moyenne cache les **cas extrêmes** : un ticket à 60 minutes pèse autant que le reste ; on regarde aussi le plus long et la répartition.
+
+</details>
+
+
 ## 6. Le centre de services et les niveaux
 
 Le **centre de services** (*service desk*) est le **point de contact unique** entre les utilisateurs et la DSI. Il : **reçoit** les sollicitations (téléphone, mail, portail), les **qualifie** (catégorie, priorité), **résout** ce qui est simple, **escalade** le reste, **suit** jusqu'à la clôture, et produit des **rapports**.
@@ -128,6 +165,13 @@ Le **centre de services** (*service desk*) est le **point de contact unique** en
 | Traite | Incidents simples, avec procédure | Incidents complexes, sans procédure | Incidents inconnus, non reproductibles |
 | Accès | Restreint (comptes, postes) | Étendu (serveurs, infrastructure) | Total |
 | Délai | Immédiat | Quelques heures | Plusieurs jours possibles |
+
+<figure class="raid-fig">
+<svg viewBox="0 0 720 214" role="img" aria-labelledby="tkt" xmlns="http://www.w3.org/2000/svg"><title id="tkt">Parcours d'un ticket : création, qualification, diagnostic N1, escalade éventuelle, résolution, clôture</title>
+<defs><marker id="tkm" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="var(--disk-s)"/></marker></defs><rect x="6" y="20" width="110" height="56" rx="8" class="rd-blk rd-k-c"/><text x="61.0" y="44.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:700">Création</text><text x="61.0" y="60.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:500">appel, mail, portail</text><rect x="152" y="20" width="110" height="56" rx="8" class="rd-blk rd-k-b"/><text x="207.0" y="44.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:700">Qualification</text><text x="207.0" y="60.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:500">catégorie, priorité</text><rect x="298" y="20" width="110" height="56" rx="8" class="rd-blk rd-k-b"/><text x="353.0" y="44.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:700">Diagnostic N1</text><text x="353.0" y="60.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:500">procédure connue ?</text><rect x="444" y="20" width="110" height="56" rx="8" class="rd-blk rd-k-a"/><text x="499.0" y="44.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:700">Résolu</text><text x="499.0" y="60.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:500">solution écrite</text><rect x="590" y="20" width="110" height="56" rx="8" class="rd-blk rd-k-a"/><text x="645.0" y="44.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:700">Clos</text><text x="645.0" y="60.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:500">confirmé ou délai</text><path d="M117,48 H151" class="rd-arrow" marker-end="url(#tkm)"/><path d="M263,48 H297" class="rd-arrow" marker-end="url(#tkm)"/><path d="M409,48 H443" class="rd-arrow" marker-end="url(#tkm)"/><path d="M555,48 H589" class="rd-arrow" marker-end="url(#tkm)"/><rect x="298" y="140" width="110" height="56" rx="8" class="rd-blk rd-k-d"/><text x="353.0" y="164.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:700">Escalade N2</text><text x="353.0" y="180.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:500">avec motif écrit</text><path d="M353,77 V139" class="rd-arrow" marker-end="url(#tkm)"/><text x="361" y="112" text-anchor="start" class="rd-note" style="font-size:11px;font-weight:600">critère d'escalade</text><path d="M409,168 H499 V77" class="rd-arrow" marker-end="url(#tkm)"/><text x="507" y="130" text-anchor="start" class="rd-note" style="font-size:11px;font-weight:600">solution N2</text>
+</svg>
+<figcaption>Le N1 résout ce qui a une procédure ; sinon il escalade avec un motif écrit. Un ticket résolu n'est clos qu'après confirmation ou délai.</figcaption>
+</figure>
 
 **Escalader du N1 vers le N2 quand :** hors compétence ou hors accès ; délai cible menacé ; incident **récurrent** (3e fois) ; impact **élargi** (plusieurs utilisateurs) ; **aucune procédure** connue ; système de production menacé.
 
@@ -163,6 +207,16 @@ Un ticket est le **dossier** d'une sollicitation : il garde la trace de tout, po
 | Délai cible (SLA) | Calcule l'échéance et alerte en cas de dépassement |
 
 **Résolu ou Clos ?** *Résolu* : le technicien a appliqué une solution. *Clos* : la solution est confirmée par l'utilisateur, ou la clôture est **automatique** après un nombre de jours configurable.
+
+
+**Je vérifie.** Un technicien N1 essaie depuis une heure de réparer un incident sans procédure connue, alors que trois autres utilisateurs viennent de signaler le même symptôme. Que fait-il ?
+
+<details markdown="1">
+<summary>Voir la réponse</summary>
+
+Il **escalade** au N2 : plusieurs critères sont réunis (aucune procédure, impact élargi, délai menacé), avec un **motif écrit** dans un suivi **privé**.
+
+</details>
 
 **Un suivi privé** sert aux notes techniques et au motif d'escalade ; **un suivi public** informe l'utilisateur. Ne mets jamais dans un suivi public ce qui ne regarde pas l'utilisateur.
 
