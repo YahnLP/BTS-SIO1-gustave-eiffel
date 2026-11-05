@@ -61,6 +61,7 @@
 - **Poste modèle Linux :** la documentation officielle prend l'exemple de Windows (avec `sysprep`, déchiffrement de BitLocker). Pour tenir en 4 heures, le TP clone un poste **Linux** ; l'exemple Windows reste dans le cours à titre d'extension. **À tester** : le clonage d'un Linux par FOG selon les options de l'image et du système de fichiers.
 - **Démarrage réseau dans VirtualBox :** type de carte réseau, ordre de démarrage, BIOS ou UEFI : **à tester** (je pars du BIOS classique, la documentation indiquant un processus presque identique en UEFI).
 - **Compte par défaut de l'interface :** à confirmer dans la documentation de la version installée et à **changer** (comme en S13).
+- **Cours (audit pédagogique) :** SVG du déroulé PXE à la place du Mermaid ; ordre de grandeur calculé (60 h, 7 h 30, multidiffusion) avec des durées d'exemple ; idées reçues et trois « Je vérifie ».
 - **Licence de FOG :** la documentation indique une licence GPL, sans préciser la version dans la page consultée : **à vérifier** avant d'afficher.
 - **Questions de sécurité :** l'image contient les données du poste modèle (donc possiblement personnelles) ; le serveur de déploiement est un **point sensible** (qui modifie l'image modifie tous les futurs postes). Le cours les évoque.
 - **Compétences :** codes et intitulés relus sur l'arrêté du 8 juillet 2024 ; le choix des compétences pour cette séance est une proposition de l'enseignant.

@@ -183,9 +183,6 @@ La **supervision** consiste à **surveiller en continu** l'état des équipement
 
 **Outils** (licences et versions à vérifier) : Zabbix, Nagios et dérivés, Centreon (complets, plus lourds) ; Uptime Kuma (léger, disponibilité de sites et de ports) ; outils intégrés des hébergeurs.
 
-> [!NOTE]
-> InfraLab ne couvre pas la supervision : cette partie se fait en environnement réel (partie E du TP).
-
 ## Je retiens
 
 - Sept étapes ; le ticket se remplit **en temps réel**.
