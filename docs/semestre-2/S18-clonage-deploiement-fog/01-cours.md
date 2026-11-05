@@ -85,6 +85,8 @@ Il n'a ni système ni adresse : le DHCP lui donne une **adresse IP** et lui indi
 
 </details>
 
+> **Dans [ProtoLab](https://yahnlp.github.io/ProtoLab/)** : le protocole **DHCP** montre les quatre messages (Discover, Offer, Request, ACK) par lesquels un poste reçoit son adresse. Le PXE ajoute à ce DHCP des informations de démarrage ; le TFTP, lui, n'est pas simulé dans ProtoLab.
+
 - **DHCP** : donne l'adresse IP **et** indique le serveur et le fichier de démarrage (options de démarrage réseau, qu'on appelle souvent « next-server » et « nom du fichier de démarrage »).
 - **TFTP** : protocole simple de transfert de fichiers, utilisé pour le chargeur.
 - **Chargeur** : programme qui affiche le **menu de démarrage** (ici celui de FOG).

@@ -125,6 +125,8 @@ Parce qu'il décrit **seulement** le poste où il est installé et envoie son r�
 
 > **Dans InfraLab** (TP, partie A) : les TP 6 et 10 te font poser un agent et diagnostiquer trois agents en erreur ; le TP 49 (facultatif, fichier à télécharger) mesure la **couverture réelle** d'un parc de cinq postes.
 
+> **Dans [ProtoLab](https://yahnlp.github.io/ProtoLab/)** : les protocoles **ICMP** (`ping`), **HTTP** et **HTTPS** montrent ce qui se passe quand le poste « joint » le serveur, puis quand l'agent envoie son inventaire par le Web. Le protocole **TCP** montre pourquoi un port fermé ou filtré se reconnaît (réponse RST, ou silence).
+
 | Étape | Question | Vérification |
 |---|---|---|
 | 1 | Le poste **joint-il** le serveur ? | `ping IP_SERVEUR` ; navigateur sur `http://IP_SERVEUR/` |

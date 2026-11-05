@@ -58,6 +58,8 @@ Un incident n'est résolu que lorsque le service est constaté rétabli **des de
 
 **Du plus simple au plus complexe** : avant de toucher au logiciel, vérifie le câble ; avant le câble, vérifie que la machine est allumée. On remonte ainsi la chaîne : **alimentation, câble, carte réseau, adresse, service, application**. (Pour les curieux : cela correspond à une remontée des couches du modèle OSI, de la couche physique vers l'application.)
 
+> **Dans [ProtoLab](https://yahnlp.github.io/ProtoLab/)** : **ICMP** (ping et traceroute, avec le TTL), **TCP** (SYN sans réponse ou RST : filtrage ou port fermé) et **DNS** (nom introuvable) permettent de voir ce qu'un test envoie et ce qu'il prouve. Chaque protocole a son onglet *Atelier* (cas de panne) et ses commandes à tester.
+
 **Cinq questions, dans l'ordre :**
 
 | Question | Ce qu'elle révèle |

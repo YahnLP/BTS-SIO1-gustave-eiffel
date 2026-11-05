@@ -239,6 +239,8 @@ Deux machines, deux clés. La **clé publique** est un cadenas : elle peut être
 </details>
 
 
+> **Dans [ProtoLab](https://yahnlp.github.io/ProtoLab/)** : le protocole **SSH** montre la négociation, l'échange des clés et la connexion chiffrée, et ce qu'un observateur du réseau peut (ou ne peut pas) lire.
+
 **Comprendre la paire de clés.** C'est comme un cadenas et sa clé. Tu fabriques les deux ensemble : le **cadenas** (clé publique) peut être copié et posé sur autant de serveurs que tu veux ; la **clé** (clé privée) reste chez toi et **ne se partage jamais**. Seule la clé privée ouvre un cadenas qui lui correspond.
 
 | Étape | Commande |

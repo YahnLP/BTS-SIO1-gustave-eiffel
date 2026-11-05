@@ -167,6 +167,8 @@ La **présence en ligne** d'une organisation, c'est tout ce qu'on trouve d'elle 
 | **Gouvernance** | Qui publie, qui valide, qui administre ; comptes individuels, double authentification |
 | **Veille d'e-réputation** | Surveiller ce qu'on dit de l'organisation, répondre aux avis |
 
+> **Dans [ProtoLab](https://yahnlp.github.io/ProtoLab/)** : les protocoles **DNS** (le nom de domaine pointe vers le serveur), **HTTPS** et **TLS/SSL** (certificat, négociation, échange chiffré) montrent ce que vérifie un navigateur avant d'afficher un site en toute confiance.
+
 > [!WARNING]
 > Ces points sont un **rappel de principes**, pas un avis juridique. Les obligations exactes dépendent de l'organisation et se vérifient auprès de son référent juridique ou du DPO.
 

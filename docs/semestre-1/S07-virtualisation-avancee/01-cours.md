@@ -29,6 +29,8 @@
 > [!NOTE]
 > **Mots de réseau dans ce tableau.** *Adresse IP* : numéro d'une machine sur un réseau ; *DHCP* : service qui distribue ces adresses automatiquement ; *NAT* : l'hôte fait sortir la VM sur Internet avec sa propre adresse. Ces notions seront **vues plus en détail en cours de réseau** ; la fiche [minimum réseau](../../ressources/minimum-reseau.md) donne l'essentiel. Ici, tu dois seulement choisir le bon mode pour un besoin donné.
 
+> **Pour visualiser** : [ProtoLab](https://yahnlp.github.io/ProtoLab/) montre, protocole par protocole, comment une machine obtient son adresse (**DHCP**) et comment la box traduit les adresses à la sortie (**IP**, NAT). C'est facultatif : ici, tu choisis seulement le bon mode.
+
 | Mode | Adresse IP automatique (DHCP) | Entre VM | Internet | Avec l'hôte | Usage typique |
 |---|---|---|---|---|---|
 | **NAT** | oui | non | oui | non (à vérifier en TP) | une VM isolée qui télécharge, met à jour, navigue |

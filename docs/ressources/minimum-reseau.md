@@ -21,9 +21,13 @@ Une machine qui n'a pas ces quatre premiers réglages ne peut pas atteindre Inte
 
 Dans la plupart des réseaux, tu ne tapes pas l'adresse IP à la main : un service appelé **DHCP** la donne automatiquement quand la machine se connecte. On parle d'**adresse fixe** (écrite à la main) pour un serveur, d'**adresse automatique** pour un poste.
 
+> **Dans [ProtoLab](https://yahnlp.github.io/ProtoLab/)** : choisis le protocole **DHCP** pour voir, paquet par paquet, la demande d'adresse du poste (Discover, Offer, Request, ACK) et le renouvellement du bail. Les onglets *Étape*, *Fiche*, *Atelier* et *Quiz* guident l'observation.
+
 ## 3. Adresses privées et NAT
 
 Les adresses qui commencent par `10.`, `172.16.` à `172.31.` ou `192.168.` sont **privées** : elles ne servent que dans un réseau local. Pour sortir sur Internet, le routeur fait passer toutes les machines par **sa** propre adresse publique : c'est le **NAT**. Dans VirtualBox, le mode « NAT » fait la même chose pour la machine virtuelle.
+
+> **Dans [ProtoLab](https://yahnlp.github.io/ProtoLab/)** : le protocole **IP** montre le passage par la box : l'adresse source change à la sortie (NAT), le TTL diminue et les adresses MAC changent à chaque saut.
 
 ## 4. Les trois tests de base
 
@@ -34,6 +38,8 @@ Les adresses qui commencent par `10.`, `172.16.` à `172.31.` ou `192.168.` sont
 | Je sais traduire un nom | `ping exemple.fr` | Le DNS fonctionne et j'accède à Internet |
 
 Si le test 2 réussit mais pas le test 3 : problème de **DNS** ou de sortie vers Internet. Si le test 1 échoue : problème de carte ou de DHCP.
+
+> **Dans [ProtoLab](https://yahnlp.github.io/ProtoLab/)** : les protocoles **ICMP** (le `ping` et le `traceroute`) et **DNS** (la traduction d'un nom en adresse, avec le cache) montrent ce que prouve chacun des trois tests.
 
 ## 5. Où cette fiche sert-elle ?
 
