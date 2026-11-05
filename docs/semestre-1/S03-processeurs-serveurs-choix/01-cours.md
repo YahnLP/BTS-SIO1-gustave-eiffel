@@ -160,18 +160,41 @@ Un seul serveur physique peut héberger plusieurs machines virtuelles (S06). Pou
 
 **Et la consommation ?** Les centres de données consomment beaucoup d'électricité. On mesure leur efficacité par le **PUE** (*Power Usage Effectiveness*) : énergie totale du site ÷ énergie consommée par les équipements informatiques. Un PUE de 1 serait idéal ; plus il est élevé, plus le refroidissement et les autres équipements pèsent. La question sera reprise en S05 (veille).
 
-**Exemple (valeurs fictives).** Une salle serveur consomme **15 kW** au total (informatique, climatisation, onduleurs, éclairage). Les équipements informatiques seuls en consomment **10 kW**.
+**Exemple (valeurs fictives).** Le compteur électrique d'une salle serveur indique **15 kW** au total. Cette puissance se répartit ainsi :
 
-- PUE = 15 ÷ 10 = **1,5** : pour 1 kWh utile à l'informatique, on consomme 1,5 kWh au total, donc 0,5 kWh pour le refroidissement et le reste.
-- Sur une année (24 h/24, 365 jours = 8 760 h) : informatique = 10 × 8 760 = **87 600 kWh** ; total = 15 × 8 760 = **131 400 kWh**.
-- À 0,20 € le kWh (prix fictif) : 131 400 × 0,20 = **26 280 € par an**.
-- Si un meilleur refroidissement ramène le PUE à **1,2** : total = 87 600 × 1,2 = 105 120 kWh, soit **21 024 € par an**. Économie : **5 256 € par an**, sans toucher aux serveurs.
+| Poste de consommation | Puissance |
+|---|---:|
+| Équipements informatiques (serveurs, stockage, commutateurs) | 10 kW |
+| Climatisation (refroidir la chaleur produite par les équipements) | 3,5 kW |
+| Onduleurs (pertes de conversion électrique) | 1 kW |
+| Éclairage et divers | 0,5 kW |
+| **Total mesuré au compteur** | **15 kW** |
 
-| | Situation actuelle | Après amélioration |
+Les **5 kW d'écart** entre les 15 kW du site et les 10 kW de l'informatique sont donc la consommation de tout ce qui **n'est pas** informatique : surtout la climatisation, puis les pertes des onduleurs et l'éclairage.
+
+**Pourquoi PUE = 15 ÷ 10 ?** Le PUE compare l'énergie **totale** du site (numérateur, ce qu'on paie : 15 kW) à celle qui sert **réellement** à l'informatique (dénominateur : 10 kW). PUE = 15 ÷ 10 = **1,5** : pour 1 kWh utile aux serveurs, on consomme 1,5 kWh au total, dont 0,5 kWh de « frais généraux ». Sans aucune consommation annexe, on aurait 10 ÷ 10 = 1, le PUE idéal.
+
+**Qu'est-ce qu'« améliorer » le PUE ?** On réduit les consommations annexes, **pas** celles des serveurs. Par exemple :
+
+- on sépare les **allées chaudes et froides** (confinement) pour ne pas refroidir de l'air déjà mélangé ;
+- on relève la température de consigne de la salle (par exemple de 21 °C à 25 °C), que les équipements supportent ;
+- on utilise l'**air extérieur** quand il est assez frais (*free cooling*) au lieu de faire tourner les groupes froids ;
+- on remplace les onduleurs par des modèles à meilleur rendement et on passe l'éclairage en LED avec détection de présence.
+
+Résultat (fictif) : climatisation 1 kW, onduleurs 0,8 kW, éclairage et divers 0,2 kW, soit 2 kW d'annexes. Total = 10 + 2 = **12 kW**, donc PUE = 12 ÷ 10 = **1,2**.
+
+**Ce que cela change sur une année** (24 h/24, 365 jours = 8 760 h) :
+
+| | Avant | Après amélioration |
 |---|---:|---:|
+| Puissance informatique | 10 kW | 10 kW |
+| Puissance annexe | 5 kW | 2 kW |
+| Puissance totale | 15 kW | 12 kW |
 | PUE | 1,5 | 1,2 |
 | Énergie annuelle totale | 131 400 kWh | 105 120 kWh |
-| Coût annuel (0,20 €/kWh) | 26 280 € | 21 024 € |
+| Coût annuel (0,20 €/kWh, prix fictif) | 26 280 € | 21 024 € |
+
+Économie : 26 280 − 21 024 = **5 256 € par an**, alors que les serveurs consomment toujours 87 600 kWh par an (10 kW × 8 760 h).
 
 Cela vaut aussi à petite échelle : le serveur dimensionné ci-dessus, s'il consomme en moyenne 400 W, utilise 0,4 × 8 760 = 3 504 kWh par an, soit **5 256 kWh** avec un PUE de 1,5.
 
