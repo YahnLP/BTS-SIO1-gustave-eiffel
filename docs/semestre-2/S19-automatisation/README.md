@@ -63,5 +63,5 @@
 - **Pas de PowerShell :** l'automatisation sous Windows (PowerShell) est évoquée au cours mais non pratiquée, faute de VM Windows imposée à cette séance.
 - **Lien ITIL :** la partie E rattache l'automatisation à la **demande standard** et au **changement standard** (S15, S17) ; les définitions sont celles du cours de S15.
 - **Compétences :** codes et intitulés relus sur l'arrêté du 8 juillet 2024 ; le choix des compétences pour cette séance est une proposition de l'enseignant.
-
+- **Cours (audit pédagogique) :** trois SVG (création de comptes à la place du Mermaid, cinq champs de `cron`, paire de clés SSH) ; idées reçues ; quatre « Je vérifie » ; socle et notions techniques distingués. Les exemples de lignes `cron` sont de ma main (cas fictifs).
 </details>

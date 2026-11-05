@@ -15,6 +15,16 @@
 - [ ] distinguer une approche **impérative** et **déclarative** ;
 - [ ] évaluer les **risques** d'un script.
 
+> [!IMPORTANT] Idées reçues à confronter à tes réponses du TP
+> - « **Un script qui a marché une fois est fiable.** » Pas tant qu'il n'a pas été **relancé**, testé sur des données invalides et journalisé (§ 2).
+> - « **`cron` voit mon environnement de terminal.** » Non : son environnement est **minimal** ; on utilise des chemins absolus (§ 4).
+> - « **Automatiser supprime le besoin de contrôle.** » Un script se trompe **en masse** : on teste, on journalise et on relit le journal (§ 6).
+
+> [!NOTE] Socle et notions techniques
+> **Socle à maîtriser :** §§ 1 à 4, 6, 7 et 9 (script fiable, `cron`, risques, SSH). **Notions techniques facultatives :** §§ 5 et 8 (déclaratif, annuaire).
+
+---
+
 ## 1. Pourquoi automatiser
 
 | Gain | Explication |
@@ -52,21 +62,32 @@ Tu as vu en [S10](../../semestre-1/S10-paquets-scripts-bash/01-cours.md) les var
 
 Exemple de tâche répétitive : à chaque rentrée, créer les comptes d'une liste d'utilisateurs.
 
-```mermaid
-flowchart TD
-    A["Lire une ligne du fichier"] --> B{"Ligne valide ?"}
-    B -- non --> C["Journaliser un refus"]
-    B -- oui --> D{"Compte déjà présent ?"}
-    D -- oui --> E["Journaliser : déjà existant"]
-    D -- non --> F{"Mode d'essai ?"}
-    F -- oui --> G["Afficher ce qui serait fait"]
-    F -- non --> H["Créer le compte"]
-    H --> I["Journaliser le résultat"]
-    C --> J["Ligne suivante"]
-    E --> J
-    G --> J
-    I --> J
-```
+<figure class="raid-fig">
+<svg viewBox="0 0 720 276" role="img" aria-labelledby="act" xmlns="http://www.w3.org/2000/svg"><title id="act">Création de comptes en masse : validation, existence, mode d'essai, création, journal</title>
+<defs><marker id="acm" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="var(--disk-s)"/></marker></defs><rect x="6" y="20" width="110" height="56" rx="8" class="rd-blk rd-k-c"/><text x="61.0" y="44.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:700">Lire une</text><text x="61.0" y="60.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:500">ligne</text><rect x="150" y="20" width="110" height="56" rx="8" class="rd-blk rd-k-d"/><text x="205.0" y="44.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:700">Ligne</text><text x="205.0" y="60.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:500">valide ?</text><rect x="294" y="20" width="110" height="56" rx="8" class="rd-blk rd-k-d"/><text x="349.0" y="44.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:700">Compte déjà</text><text x="349.0" y="60.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:500">présent ?</text><rect x="438" y="20" width="110" height="56" rx="8" class="rd-blk rd-k-d"/><text x="493.0" y="44.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:700">Mode</text><text x="493.0" y="60.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:500">d'essai ?</text><rect x="582" y="20" width="110" height="56" rx="8" class="rd-blk rd-k-b"/><text x="637.0" y="44.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:700">Créer</text><text x="637.0" y="60.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:500">le compte</text><path d="M117,48 H149" class="rd-arrow" marker-end="url(#acm)"/><path d="M261,48 H293" class="rd-arrow" marker-end="url(#acm)"/><text x="277" y="40" text-anchor="middle" class="rd-note" style="font-size:11px;font-weight:700">oui</text><path d="M405,48 H437" class="rd-arrow" marker-end="url(#acm)"/><text x="421" y="40" text-anchor="middle" class="rd-note" style="font-size:11px;font-weight:700">non</text><path d="M549,48 H581" class="rd-arrow" marker-end="url(#acm)"/><text x="565" y="40" text-anchor="middle" class="rd-note" style="font-size:11px;font-weight:700">non</text><rect x="150" y="140" width="110" height="50" rx="8" class="rd-blk rd-k-a"/><text x="205.0" y="161.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:700">Journaliser</text><text x="205.0" y="177.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:500">un refus</text><path d="M205,77 V139" class="rd-arrow" marker-end="url(#acm)"/><text x="213" y="112" text-anchor="start" class="rd-note" style="font-size:11px;font-weight:700">non</text><path d="M205,191 V229" class="rd-arrow" marker-end="url(#acm)"/><rect x="294" y="140" width="110" height="50" rx="8" class="rd-blk rd-k-a"/><text x="349.0" y="161.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:700">Journaliser :</text><text x="349.0" y="177.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:500">déjà existant</text><path d="M349,77 V139" class="rd-arrow" marker-end="url(#acm)"/><text x="357" y="112" text-anchor="start" class="rd-note" style="font-size:11px;font-weight:700">oui</text><path d="M349,191 V229" class="rd-arrow" marker-end="url(#acm)"/><rect x="438" y="140" width="110" height="50" rx="8" class="rd-blk rd-k-a"/><text x="493.0" y="161.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:700">Afficher ce</text><text x="493.0" y="177.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:500">qui serait fait</text><path d="M493,77 V139" class="rd-arrow" marker-end="url(#acm)"/><text x="501" y="112" text-anchor="start" class="rd-note" style="font-size:11px;font-weight:700">oui</text><path d="M493,191 V229" class="rd-arrow" marker-end="url(#acm)"/><rect x="582" y="140" width="110" height="50" rx="8" class="rd-blk rd-k-a"/><text x="637.0" y="161.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:700">Journaliser</text><text x="637.0" y="177.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:500">le résultat</text><path d="M637,77 V139" class="rd-arrow" marker-end="url(#acm)"/><path d="M637,191 V229" class="rd-arrow" marker-end="url(#acm)"/><rect x="6" y="230" width="704" height="34" rx="8" class="rd-blk rd-k-c"/><text x="358.0" y="251.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:700">Ligne suivante : retour au début tant qu'il reste des lignes</text>
+</svg>
+<figcaption>Chaque ligne du fichier passe par les mêmes contrôles ; chaque issue est journalisée.</figcaption>
+</figure>
+
+
+
+**Je vérifie.** Pourquoi ajoute-t-on un mode d'essai à un script de création de comptes ?
+
+<details markdown="1">
+<summary>Voir la réponse</summary>
+
+Parce qu'un script se trompe **en masse** : le mode d'essai montre ce qui **serait** fait sans rien modifier, et permet de corriger le fichier avant de toucher 22 comptes.
+
+</details>
+
+**Je vérifie.** Le script est lancé deux fois de suite sur le même fichier. Que doit-il afficher la deuxième fois ?
+
+<details markdown="1">
+<summary>Voir la réponse</summary>
+
+Que les comptes **existent déjà**, sans erreur ni doublon : c'est l'**idempotence**. Si la deuxième exécution échoue ou recrée des comptes, le script n'est pas fiable.
+
+</details>
 
 Commandes utiles sous Debian (administrateur) : `useradd` crée un compte ; `getent passwd NOM` ou `id NOM` teste son existence ; `groupadd` et `getent group` pour les groupes ; `userdel -r` supprime un compte et son dossier. Consulte `man useradd` pour les options.
 
@@ -84,7 +105,24 @@ Une ligne contient **cinq champs de temps**, puis la commande :
 | mois | 1 à 12 |
 | jour de la semaine | 0 à 7 (0 et 7 = dimanche) |
 
+<figure class="raid-fig">
+<svg viewBox="0 0 720 242" role="img" aria-labelledby="crt" xmlns="http://www.w3.org/2000/svg"><title id="crt">Les cinq champs de temps d'une ligne cron, avec trois exemples lus champ par champ</title>
+<defs><marker id="crm" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="var(--disk-s)"/></marker></defs><rect x="22" y="8" width="124" height="50" rx="8" class="rd-blk rd-k-b"/><text x="84.0" y="29.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:700">minute</text><text x="84.0" y="45.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:500">0 à 59</text><rect x="160" y="8" width="124" height="50" rx="8" class="rd-blk rd-k-b"/><text x="222.0" y="29.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:700">heure</text><text x="222.0" y="45.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:500">0 à 23</text><rect x="298" y="8" width="124" height="50" rx="8" class="rd-blk rd-k-b"/><text x="360.0" y="29.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:700">jour du mois</text><text x="360.0" y="45.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:500">1 à 31</text><rect x="436" y="8" width="124" height="50" rx="8" class="rd-blk rd-k-b"/><text x="498.0" y="29.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:700">mois</text><text x="498.0" y="45.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:500">1 à 12</text><rect x="574" y="8" width="124" height="50" rx="8" class="rd-blk rd-k-b"/><text x="636.0" y="29.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:700">jour semaine</text><text x="636.0" y="45.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:500">0 à 7</text><text x="84" y="92" text-anchor="middle" class="rd-t" style="font-family:ui-monospace,Consolas,monospace;font-size:16px;font-weight:700">30</text><text x="222" y="92" text-anchor="middle" class="rd-t" style="font-family:ui-monospace,Consolas,monospace;font-size:16px;font-weight:700">7</text><text x="360" y="92" text-anchor="middle" class="rd-t" style="font-family:ui-monospace,Consolas,monospace;font-size:16px;font-weight:700">*</text><text x="498" y="92" text-anchor="middle" class="rd-t" style="font-family:ui-monospace,Consolas,monospace;font-size:16px;font-weight:700">*</text><text x="636" y="92" text-anchor="middle" class="rd-t" style="font-family:ui-monospace,Consolas,monospace;font-size:16px;font-weight:700">1-5</text><text x="360" y="112" text-anchor="middle" class="rd-note" style="font-size:12px;font-weight:500">→ 7 h 30, du lundi au vendredi</text><text x="84" y="144" text-anchor="middle" class="rd-t" style="font-family:ui-monospace,Consolas,monospace;font-size:16px;font-weight:700">*/5</text><text x="222" y="144" text-anchor="middle" class="rd-t" style="font-family:ui-monospace,Consolas,monospace;font-size:16px;font-weight:700">*</text><text x="360" y="144" text-anchor="middle" class="rd-t" style="font-family:ui-monospace,Consolas,monospace;font-size:16px;font-weight:700">*</text><text x="498" y="144" text-anchor="middle" class="rd-t" style="font-family:ui-monospace,Consolas,monospace;font-size:16px;font-weight:700">*</text><text x="636" y="144" text-anchor="middle" class="rd-t" style="font-family:ui-monospace,Consolas,monospace;font-size:16px;font-weight:700">*</text><text x="360" y="164" text-anchor="middle" class="rd-note" style="font-size:12px;font-weight:500">→ toutes les 5 minutes</text><text x="84" y="196" text-anchor="middle" class="rd-t" style="font-family:ui-monospace,Consolas,monospace;font-size:16px;font-weight:700">0</text><text x="222" y="196" text-anchor="middle" class="rd-t" style="font-family:ui-monospace,Consolas,monospace;font-size:16px;font-weight:700">2</text><text x="360" y="196" text-anchor="middle" class="rd-t" style="font-family:ui-monospace,Consolas,monospace;font-size:16px;font-weight:700">1</text><text x="498" y="196" text-anchor="middle" class="rd-t" style="font-family:ui-monospace,Consolas,monospace;font-size:16px;font-weight:700">*</text><text x="636" y="196" text-anchor="middle" class="rd-t" style="font-family:ui-monospace,Consolas,monospace;font-size:16px;font-weight:700">*</text><text x="360" y="216" text-anchor="middle" class="rd-note" style="font-size:12px;font-weight:500">→ à 2 h 00, le 1er de chaque mois</text>
+</svg>
+<figcaption>On lit toujours de gauche à droite : minute, heure, jour du mois, mois, jour de la semaine ; la commande vient après les cinq champs.</figcaption>
+</figure>
+
 `*` veut dire « tous » ; `*/5` « toutes les 5 unités ». Exemples : `30 7 * * 1-5` : 7 h 30 du lundi au vendredi ; `*/5 * * * *` : toutes les 5 minutes.
+
+
+**Je vérifie.** Lis cette ligne de crontab : `15 3 * * 0 /usr/local/bin/sauvegarde.sh`.
+
+<details markdown="1">
+<summary>Voir la réponse</summary>
+
+Minute 15, heure 3, tous les jours du mois, tous les mois, jour de la semaine 0 : **dimanche à 3 h 15**, le script est lancé (chemin absolu).
+
+</details>
 
 **Pièges classiques :**
 
@@ -92,6 +130,16 @@ Une ligne contient **cinq champs de temps**, puis la commande :
 - la sortie d'un travail planifié doit être **redirigée** vers un fichier, sinon elle est perdue ou envoyée par courriel local ;
 - dans une ligne de crontab, le caractère `%` a un sens spécial : il doit être **protégé** par une barre oblique inverse ;
 - un travail planifié qui échoue **en silence** est pire qu'une tâche oubliée : on vérifie les journaux.
+
+
+**Je vérifie.** Pourquoi la ligne `0 2 * * * date +%F >> /var/log/essai.log` ne se comporte-t-elle pas comme prévu ?
+
+<details markdown="1">
+<summary>Voir la réponse</summary>
+
+Dans une crontab, `%` a un **sens spécial** (il marque une fin de ligne de commande) : il faut le protéger par une barre oblique inverse, `\%`. Sinon la commande est coupée.
+
+</details>
 
 > [!NOTE]
 > Il existe aussi les **minuteries systemd** (*timers*), plus récentes ; on ne les pratique pas ici. Sur une VM minimale, le service `cron` peut ne pas être installé : vérifie.
@@ -159,6 +207,13 @@ ssh utilisateur@adresse_du_serveur
 |---|---|---|
 | **Mot de passe** | Tu tapes le mot de passe du compte | Simple, mais peut être deviné ou volé |
 | **Paire de clés** | Une **clé privée** (secrète, sur ton poste) et une **clé publique** (déposée sur le serveur) | Pas de mot de passe qui circule ; plus sûr |
+
+<figure class="raid-fig">
+<svg viewBox="0 0 720 176" role="img" aria-labelledby="skt" xmlns="http://www.w3.org/2000/svg"><title id="skt">Principe d'une paire de clés SSH : la clé publique va sur le serveur, la clé privée reste sur le poste</title>
+<defs><marker id="skm" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="var(--disk-s)"/></marker></defs><rect x="10" y="20" width="200" height="110" rx="8" class="rd-blk rd-k-c"/><text x="110.0" y="63.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:700">Ton poste</text><text x="110.0" y="79.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:500">clé PRIVÉE</text><text x="110.0" y="95.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:500">secrète, jamais partagée</text><rect x="510" y="20" width="200" height="110" rx="8" class="rd-blk rd-k-a"/><text x="610.0" y="63.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:700">Le serveur</text><text x="610.0" y="79.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:500">clé PUBLIQUE</text><text x="610.0" y="95.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:500">déposée, copiable</text><path d="M211,55 H509" class="rd-arrow" marker-end="url(#skm)"/><text x="360" y="46" text-anchor="middle" class="rd-note" style="font-size:11px;font-weight:600">1. ssh-copy-id : on envoie la clé publique</text><path d="M211,100 H509" class="rd-arrow" marker-end="url(#skm)"/><text x="360" y="91" text-anchor="middle" class="rd-note" style="font-size:11px;font-weight:600">2. ssh : preuve de possession de la clé privée</text><text x="360" y="160" text-anchor="middle" class="rd-note" style="font-size:12px;font-weight:600">La clé privée ne quitte jamais le poste : seul le cadenas (clé publique) voyage.</text>
+</svg>
+<figcaption>Le serveur reconnaît le poste parce que celui-ci prouve qu'il détient la clé privée associée à la clé publique déposée.</figcaption>
+</figure>
 
 **Comprendre la paire de clés.** C'est comme un cadenas et sa clé. Tu fabriques les deux ensemble : le **cadenas** (clé publique) peut être copié et posé sur autant de serveurs que tu veux ; la **clé** (clé privée) reste chez toi et **ne se partage jamais**. Seule la clé privée ouvre un cadenas qui lui correspond.
 
