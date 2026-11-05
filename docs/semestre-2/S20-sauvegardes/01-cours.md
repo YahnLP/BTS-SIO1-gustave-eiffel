@@ -16,6 +16,13 @@
 - [ ] expliquer pourquoi une sauvegarde doit être **testée** ;
 - [ ] évaluer les **risques** (ransomware, données personnelles, accès).
 
+> [!IMPORTANT] Idées reçues à confronter à tes réponses du TP
+> - « **Une sauvegarde qui se termine sans erreur est une bonne sauvegarde.** » Seule une **restauration réussie** le prouve (§ 1).
+> - « **Un snapshot remplace la sauvegarde.** » Il disparaît avec la VM si le stockage tombe (§ 5).
+> - « **RAID ou réplication, c'est une sauvegarde.** » Le RAID protège d'une panne de disque ; la réplication copie aussi les erreurs et les suppressions (§ 5).
+
+---
+
 ## 1. Une sauvegarde sert à restaurer
 
 Une **sauvegarde** est une **copie de données**, conservée à part, qui permet de **restaurer** le service après une perte : panne de disque, erreur humaine, suppression, virus, sinistre.
@@ -59,6 +66,51 @@ Un NAS posé **à côté** du serveur protège d'une panne de disque, pas d'un i
 | **Complète** | **Tout** | Restauration simple | Longue, volumineuse |
 | **Différentielle** | Ce qui a changé depuis la **dernière complète** | Restauration en 2 étapes | Grossit jusqu'à la prochaine complète |
 | **Incrémentale** | Ce qui a changé depuis la **dernière sauvegarde** (quelle qu'elle soit) | Rapide, légère | Restauration = complète + toutes les incrémentales : la chaîne doit être intacte |
+
+<figure class="raid-fig">
+<svg viewBox="0 0 720 238" role="img" aria-labelledby="tyt" xmlns="http://www.w3.org/2000/svg"><title id="tyt">Trois types de sauvegarde de lundi à jeudi et fichiers nécessaires pour restaurer jeudi</title>
+<defs><marker id="tym" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="var(--disk-s)"/></marker></defs><text x="199" y="18" text-anchor="middle" class="rd-note" style="font-size:12px;font-weight:700">Lundi</text><text x="311" y="18" text-anchor="middle" class="rd-note" style="font-size:12px;font-weight:700">Mardi</text><text x="423" y="18" text-anchor="middle" class="rd-note" style="font-size:12px;font-weight:700">Mercredi</text><text x="535" y="18" text-anchor="middle" class="rd-note" style="font-size:12px;font-weight:700">Jeudi</text><text x="8" y="60" text-anchor="start" class="rd-t" style="font-size:13px;font-weight:700">Complète</text><rect x="150" y="30" width="98" height="44" rx="8" class="rd-blk rd-k-b"/><text x="199.0" y="56.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:700">100 Go</text><rect x="262" y="30" width="98" height="44" rx="8" class="rd-blk rd-k-b"/><text x="311.0" y="56.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:700">100 Go</text><rect x="374" y="30" width="98" height="44" rx="8" class="rd-blk rd-k-b"/><text x="423.0" y="56.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:700">100 Go</text><rect x="486" y="30" width="98" height="44" rx="8" class="rd-blk rd-k-a"/><text x="535.0" y="56.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:700">100 Go</text><text x="602" y="57" text-anchor="start" class="rd-note" style="font-size:12px;font-weight:700">Jeudi : 1 fichier</text><text x="8" y="120" text-anchor="start" class="rd-t" style="font-size:13px;font-weight:700">Différentielle</text><rect x="150" y="90" width="98" height="44" rx="8" class="rd-blk rd-k-a"/><text x="199.0" y="116.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:700">100 Go</text><rect x="262" y="90" width="98" height="44" rx="8" class="rd-blk rd-k-b"/><text x="311.0" y="116.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:700">+2 Go</text><rect x="374" y="90" width="98" height="44" rx="8" class="rd-blk rd-k-b"/><text x="423.0" y="116.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:700">+4 Go</text><rect x="486" y="90" width="98" height="44" rx="8" class="rd-blk rd-k-a"/><text x="535.0" y="116.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:700">+6 Go</text><text x="602" y="117" text-anchor="start" class="rd-note" style="font-size:12px;font-weight:700">Jeudi : 2 fichiers</text><text x="8" y="180" text-anchor="start" class="rd-t" style="font-size:13px;font-weight:700">Incrémentale</text><rect x="150" y="150" width="98" height="44" rx="8" class="rd-blk rd-k-a"/><text x="199.0" y="176.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:700">100 Go</text><rect x="262" y="150" width="98" height="44" rx="8" class="rd-blk rd-k-a"/><text x="311.0" y="176.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:700">+2 Go</text><rect x="374" y="150" width="98" height="44" rx="8" class="rd-blk rd-k-a"/><text x="423.0" y="176.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:700">+2 Go</text><rect x="486" y="150" width="98" height="44" rx="8" class="rd-blk rd-k-a"/><text x="535.0" y="176.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:700">+2 Go</text><text x="602" y="177" text-anchor="start" class="rd-note" style="font-size:12px;font-weight:700">Jeudi : 4 fichiers</text><text x="8" y="224" text-anchor="start" class="rd-note" style="font-size:12px;font-weight:500">Bleu : sauvegardes à rejouer pour restaurer l'état de jeudi. Vert : non nécessaires.</text>
+</svg>
+<figcaption>Complète : tout, chaque jour. Différentielle : ce qui a changé depuis la complète. Incrémentale : ce qui a changé depuis la veille.</figcaption>
+</figure>
+
+**Exemple chiffré d'espace** (cas fictif : 100 Go de données, **2 Go** de nouveautés par jour, sans recouvrement, une semaine avec la complète le lundi).
+
+| Stratégie sur 7 jours | Calcul | Espace utilisé | Fichiers pour restaurer le dimanche |
+|---|---|---|---|
+| Complète tous les jours | 7 × 100 Go | **700 Go** | 1 |
+| Complète + différentielles | 100 + (2 + 4 + 6 + 8 + 10 + 12) | **142 Go** | 2 |
+| Complète + incrémentales | 100 + 6 × 2 | **112 Go** | 7 |
+
+L'incrémentale **économise** l'espace, mais allonge la chaîne à rejouer ; la différentielle est un compromis. Ces chiffres sont des **ordres de grandeur** : la compression et les fichiers modifiés plusieurs fois les changent.
+
+
+**Je vérifie.** Avec une complète le lundi et des incrémentales ensuite, combien de sauvegardes faut-il pour restaurer l'état du jeudi soir ? Et si le fichier du mardi est corrompu ?
+
+<details markdown="1">
+<summary>Voir la réponse</summary>
+
+**Quatre** : lundi, mardi, mercredi et jeudi. Si celle du mardi est corrompue, la chaîne est **cassée** : on ne peut restaurer correctement que jusqu'à lundi. C'est pourquoi on **teste** les restaurations.
+
+</details>
+
+**Je vérifie.** Un serveur de fichiers est sauvegardé chaque soir sur un NAS posé dans la même salle. Respecte-t-on la règle 3-2-1 ? De quoi cela protège-t-il ?
+
+<details markdown="1">
+<summary>Voir la réponse</summary>
+
+**Non** : il manque une copie **hors site** (et le support est unique). Cela protège d'une panne de disque, pas d'un incendie ou d'un vol dans la salle.
+
+</details>
+
+**Je vérifie.** « En cas de panne, on doit être reparti en 4 heures et ne pas perdre plus d'une journée de travail. » Quel est le RPO, quel est le RTO ?
+
+<details markdown="1">
+<summary>Voir la réponse</summary>
+
+**RTO = 4 h** (durée d'arrêt admissible), **RPO = 24 h** (perte de données admissible : au moins une sauvegarde par jour).
+
+</details>
 
 **Rotation** : on garde plusieurs générations (par exemple 7 quotidiennes, 4 hebdomadaires, 12 mensuelles). Plus on garde longtemps, plus il faut de stockage **et** plus on garde de données personnelles (voir §6).
 
