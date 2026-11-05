@@ -15,6 +15,11 @@
 - [ ] situer la variante **OCS Inventory NG** ;
 - [ ] **diagnostiquer** un poste qui ne remonte pas.
 
+> [!IMPORTANT] Idées reçues à confronter à tes réponses du TP
+> - « **Installer GLPI, c'est installer une application.** » C'est installer une **pile** : serveur Web, PHP, base de données, puis l'application (§ 2).
+> - « **Les mots de passe par défaut peuvent rester en laboratoire.** » Non : changer ou supprimer les comptes par défaut est un **réflexe** à prendre dès le laboratoire (§ 2).
+> - « **L'agent inventorie tout le réseau.** » Non : il ne décrit que **le poste sur lequel il est installé** (§ 3).
+
 ---
 
 ## 1. GLPI : un outil de gestion de parc et d'assistance
@@ -29,12 +34,13 @@ Il est très répandu dans les organisations françaises. Son éditeur principal
 
 ## 2. Architecture et installation
 
-```mermaid
-flowchart LR
-    U["Navigateur<br/>(technicien, utilisateur)"] -- "HTTP / HTTPS" --> W["Serveur Web<br/>Apache + PHP<br/>(application GLPI)"]
-    W -- "SQL" --> D[("Base de données<br/>MariaDB")]
-    A["Agent GLPI<br/>(sur chaque poste)"] -- "inventaire<br/>HTTP / HTTPS" --> W
-```
+<figure class="raid-fig">
+<svg viewBox="0 0 720 238" role="img" aria-labelledby="glt" xmlns="http://www.w3.org/2000/svg"><title id="glt">Architecture de GLPI : navigateur et agent vers le serveur Web, puis la base de données</title>
+<defs><marker id="glm" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="var(--disk-s)"/></marker></defs><rect x="10" y="34" width="150" height="60" rx="8" class="rd-blk rd-k-c" /><text x="85.0" y="60.0" text-anchor="middle" class="rd-t" style="font-size:13px;font-weight:700">Navigateur</text><text x="85.0" y="76.0" text-anchor="middle" class="rd-t" style="font-size:13px;font-weight:500">technicien, utilisateur</text><rect x="10" y="150" width="150" height="60" rx="8" class="rd-blk rd-k-c" /><text x="85.0" y="176.0" text-anchor="middle" class="rd-t" style="font-size:13px;font-weight:700">Agent GLPI</text><text x="85.0" y="192.0" text-anchor="middle" class="rd-t" style="font-size:13px;font-weight:500">sur chaque poste</text><rect x="250" y="10" width="460" height="214" rx="12" class="rd-disk"/><text x="264" y="32" text-anchor="start" class="rd-note" style="font-size:13px;font-weight:700">Serveur GLPI (Debian, pile LAMP)</text><rect x="276" y="60" width="190" height="110" rx="8" class="rd-blk rd-k-b" /><text x="371.0" y="103.0" text-anchor="middle" class="rd-t" style="font-size:13px;font-weight:700">Serveur Web</text><text x="371.0" y="119.0" text-anchor="middle" class="rd-t" style="font-size:13px;font-weight:500">Apache + PHP</text><text x="371.0" y="135.0" text-anchor="middle" class="rd-t" style="font-size:13px;font-weight:500">(application GLPI)</text><rect x="520" y="60" width="164" height="110" rx="8" class="rd-blk rd-k-a" /><text x="602.0" y="111.0" text-anchor="middle" class="rd-t" style="font-size:13px;font-weight:700">Base de données</text><text x="602.0" y="127.0" text-anchor="middle" class="rd-t" style="font-size:13px;font-weight:500">MariaDB</text><path d="M160,64 L276,100" class="rd-arrow" marker-end="url(#glm)"/><text x="176" y="66" text-anchor="start" class="rd-note" style="font-size:11px;font-weight:600">pages web</text><path d="M160,180 L276,138" class="rd-arrow" marker-end="url(#glm)"/><text x="176" y="172" text-anchor="start" class="rd-note" style="font-size:11px;font-weight:600">inventaire</text><path d="M466,115 H520" class="rd-arrow" marker-end="url(#glm)"/><text x="493" y="106" text-anchor="middle" class="rd-note" style="font-size:11px;font-weight:600">SQL</text><text x="330" y="200" text-anchor="start" class="rd-note" style="font-size:12px;font-weight:500">échanges en HTTP ou HTTPS</text>
+</svg>
+<figcaption>Deux types de clients (navigateur, agent) parlent au serveur Web ; seul le serveur Web parle à la base.</figcaption>
+</figure>
+
 
 | Couche | Rôle | Paquets Debian (exemples) |
 |---|---|---|
@@ -83,6 +89,23 @@ Depuis la **version 10**, GLPI sait **recevoir des inventaires directement** (in
 | **Tâche planifiée** | Lancé toutes les X heures ou jours |
 | **Manuel** | Lancé à la demande |
 
+<figure class="raid-fig">
+<svg viewBox="0 0 720 150" role="img" aria-labelledby="agt" xmlns="http://www.w3.org/2000/svg"><title id="agt">Trajet de l'agent GLPI : collecte, envoi, réception, fiche à jour</title>
+<defs><marker id="agm" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="var(--disk-s)"/></marker></defs><rect x="4" y="16" width="148" height="70" rx="8" class="rd-blk rd-k-c" /><text x="78.0" y="39.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:700">1. Collecte</text><text x="78.0" y="55.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:500">matériel, logiciels</text><text x="78.0" y="71.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:500">(sur le poste)</text><path d="M153,51 H185" class="rd-arrow" marker-end="url(#agm)"/><rect x="186" y="16" width="148" height="70" rx="8" class="rd-blk rd-k-d" /><text x="260.0" y="39.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:700">2. Envoi</text><text x="260.0" y="55.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:500">par le réseau vers</text><text x="260.0" y="71.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:500">l'URL du serveur</text><path d="M335,51 H367" class="rd-arrow" marker-end="url(#agm)"/><rect x="368" y="16" width="148" height="70" rx="8" class="rd-blk rd-k-b" /><text x="442.0" y="39.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:700">3. Réception</text><text x="442.0" y="55.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:500">inventaire activé ?</text><text x="442.0" y="71.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:500">(côté serveur)</text><path d="M517,51 H549" class="rd-arrow" marker-end="url(#agm)"/><rect x="550" y="16" width="148" height="70" rx="8" class="rd-blk rd-k-a" /><text x="624.0" y="39.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:700">4. Fiche à jour</text><text x="624.0" y="55.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:500">dans la CMDB</text><text x="624.0" y="71.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:500">de GLPI</text><path d="M624,88 V116 H78 V90" class="rd-arrow" marker-end="url(#agm)"/><text x="360" y="136" text-anchor="middle" class="rd-note" style="font-size:12px;font-weight:600">5. recommence à intervalles réguliers</text>
+</svg>
+<figcaption>Si l'une des quatre étapes échoue, le poste n'apparaît pas ou n'est plus à jour dans GLPI.</figcaption>
+</figure>
+
+
+**Je vérifie.** Pourquoi l'agent ne fait-il pas apparaître un poste qui n'a pas d'agent ?
+
+<details markdown="1">
+<summary>Voir la réponse</summary>
+
+Parce qu'il décrit **seulement** le poste où il est installé et envoie son résultat au serveur. Un poste sans agent n'est connu que par une autre méthode (import, découverte réseau).
+
+</details>
+
 **Paramètres de l'installeur Windows** (documentation officielle de l'agent) :
 
 | Paramètre | Rôle |
@@ -110,6 +133,38 @@ Depuis la **version 10**, GLPI sait **recevoir des inventaires directement** (in
 | 6 | Le serveur a-t-il enregistré une **erreur** ? | Journaux de GLPI et d'Apache (`/var/log/apache2/`) |
 
 On remonte la **chaîne** : réseau → URL → activation → agent → serveur.
+
+**Tableau symptôme, cause probable, test.**
+
+| Symptôme | Cause probable | Test |
+|---|---|---|
+| Le poste n'apparaît **jamais** | URL fausse ou serveur injoignable | `ping`, navigateur vers le serveur, relire l'URL de l'agent |
+| Serveur joignable, mais poste absent | inventaire **désactivé** dans GLPI | menu Administration, rubrique Inventaire |
+| Poste connu, mais fiche **ancienne** | **service** de l'agent arrêté | état du service sur le poste, puis journal de l'agent |
+| Erreur de connexion dans le journal | **pare-feu** (poste ou serveur) | tester l'accès depuis le poste, relire les règles |
+| Poste connu, données incomplètes | agent trop **ancien** | version de l'agent ; mettre à jour ce poste |
+
+> [!WARNING]
+> Ne **réinstalle** pas l'agent partout « pour être tranquille » : cela masque la cause et peut faire perdre l'historique. On identifie la cause **d'abord**.
+
+**Je vérifie.** Le serveur répond bien au `ping`, mais un nouveau poste n'apparaît pas dans GLPI. Quelles étapes de la méthode tester ensuite ?
+
+<details markdown="1">
+<summary>Voir la réponse</summary>
+
+L'**URL** donnée à l'agent, puis l'**activation de l'inventaire** côté GLPI, puis le **pare-feu**, enfin le **journal** de l'agent. Le `ping` ne prouve que la liaison réseau.
+
+</details>
+
+**Je vérifie.** Pourquoi crée-t-on un utilisateur de base de données dédié, limité à la base de GLPI, plutôt que d'utiliser le compte administrateur de MariaDB ?
+
+<details markdown="1">
+<summary>Voir la réponse</summary>
+
+Par **moindre privilège** : si GLPI est compromis, l'attaquant n'a accès qu'à **sa** base, pas à toutes les bases du serveur.
+
+</details>
+
 
 ## 5. Variante : OCS Inventory NG
 
