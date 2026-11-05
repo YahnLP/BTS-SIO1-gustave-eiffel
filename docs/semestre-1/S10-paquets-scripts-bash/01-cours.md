@@ -15,6 +15,11 @@
 - [ ] utiliser une **condition** (`if`) et une **boucle** (`for`) ;
 - [ ] écrire un script **relançable** et gérer une **erreur**.
 
+> [!IMPORTANT] Idées reçues à confronter à tes réponses du TP
+> - « **`apt update` met le système à jour.** » Non : il rafraîchit seulement la **liste** des paquets disponibles (§ 1).
+> - « **Mon script a marché une fois, donc il est bon.** » Un bon script d'administration marche aussi la **deuxième** fois : il est **relançable** (§ 5).
+> - « **Le code de retour `0` signale une erreur.** » C'est le contraire : `0` = **réussite** (§ 3).
+
 ---
 
 ## 1. Les paquets sous Debian
@@ -119,6 +124,55 @@ Sans guillemets, le shell cherche à créer **deux** dossiers : `direction` et `
 
 </details>
 
+### Lire un script complet, ligne par ligne
+
+Voici un script **d'exemple** (cas fictif, différent de ceux du TP). Lis-le **avant** de lire l'explication.
+
+```bash
+#!/bin/bash
+# bilan.sh : note la date de passage dans le journal d'un service
+SERVICE="$1"
+if [ -z "$SERVICE" ]; then
+    echo "Usage : $0 nom_du_service" >&2
+    exit 1
+fi
+DOSSIER="/tmp/journaux/$SERVICE"
+mkdir -p "$DOSSIER"
+echo "Passage le $(date)" >> "$DOSSIER/journal.txt"
+echo "Journal mis à jour : $DOSSIER/journal.txt"
+```
+
+| Lignes | Ce qu'elles font |
+|---|---|
+| `#!/bin/bash` et commentaire | shebang et rôle du script |
+| `SERVICE="$1"` | range le premier argument dans une variable, entre guillemets |
+| `if [ -z "$SERVICE" ]` | **vrai si la variable est vide** : l'utilisateur n'a rien donné |
+| `echo "Usage : $0 …" >&2` | affiche comment utiliser le script (`$0` = le nom du script) sur la sortie d'erreur |
+| `exit 1` | arrête le script avec un code d'**échec** |
+| `DOSSIER="/tmp/journaux/$SERVICE"` | construit le chemin à partir de l'argument |
+| `mkdir -p "$DOSSIER"` | crée le dossier s'il manque, sans erreur s'il existe |
+| `echo "Passage le $(date)" >> …` | `$(date)` est **remplacé par le résultat** de la commande `date` ; `>>` **ajoute** une ligne au fichier |
+| dernier `echo` | dit à l'utilisateur ce qui a été fait |
+
+
+**Je vérifie.** Que se passe-t-il si on lance `./bilan.sh` sans argument ?
+
+<details markdown="1">
+<summary>Voir la réponse</summary>
+
+`$SERVICE` est vide : le test `-z` est vrai, le script affiche le message d'usage sur la sortie d'erreur et s'arrête avec le code `1`, **sans rien créer**.
+
+</details>
+
+**Je vérifie.** On lance deux fois `./bilan.sh compta`. Que contient `/tmp/journaux/compta/journal.txt` ?
+
+<details markdown="1">
+<summary>Voir la réponse</summary>
+
+**Deux lignes** « Passage le … » : `>>` ajoute à la fin sans écraser. Le `mkdir -p` n'a pas échoué à la deuxième exécution.
+
+</details>
+
 ## 3. Les conditions
 
 Un script doit souvent **tester** avant d'agir : le dossier existe-t-il déjà ?
@@ -182,6 +236,25 @@ Un bon script d'administration doit pouvoir être **relancé** sans risque : on 
 | tester avant d'agir | `if [ ! -d "$d" ]; then mkdir "$d"; fi` |
 | utiliser une option prévue pour cela | `mkdir -p` ne produit **pas** d'erreur si le dossier existe, et crée les parents |
 | dire ce qui a été fait ou non | « créé » / « déjà présent » |
+
+<figure class="raid-fig">
+<svg viewBox="0 0 720 272" role="img" aria-labelledby="id-t" xmlns="http://www.w3.org/2000/svg"><title id="id-t">Trois façons de créer un dossier, comparées à la première et à la deuxième exécution</title>
+<text x="390" y="26" text-anchor="middle" class="rd-t" style="font-size:13px;font-weight:700">1re exécution</text><text x="610" y="26" text-anchor="middle" class="rd-t" style="font-size:13px;font-weight:700">2e exécution</text><rect x="10" y="40" width="270" height="56" rx="8" class="rd-blk rd-disk"/><text x="145" y="73" text-anchor="middle" style="font:600 13px monospace;fill:var(--txt)">mkdir d</text><rect x="290" y="40" width="200" height="56" rx="8" class="rd-blk rd-k-b"/><text x="390" y="72" text-anchor="middle" class="rd-t" style="font-size:13px;font-weight:600">Dossier créé</text><rect x="510" y="40" width="200" height="56" rx="8" class="rd-blk rd-k-p"/><text x="610" y="72" text-anchor="middle" class="rd-t" style="font-size:13px;font-weight:600">Erreur : File exists</text><rect x="10" y="106" width="270" height="56" rx="8" class="rd-blk rd-disk"/><text x="145" y="139" text-anchor="middle" style="font:600 13px monospace;fill:var(--txt)">mkdir -p d</text><rect x="290" y="106" width="200" height="56" rx="8" class="rd-blk rd-k-b"/><text x="390" y="138" text-anchor="middle" class="rd-t" style="font-size:13px;font-weight:600">Dossier créé</text><rect x="510" y="106" width="200" height="56" rx="8" class="rd-blk rd-k-b"/><text x="610" y="130" text-anchor="middle" class="rd-t" style="font-size:13px;font-weight:600">Rien à faire,</text><text x="610" y="146" text-anchor="middle" class="rd-t" style="font-size:13px;font-weight:600">pas d'erreur</text><rect x="10" y="172" width="270" height="56" rx="8" class="rd-blk rd-disk"/><text x="145" y="205" text-anchor="middle" style="font:600 13px monospace;fill:var(--txt)">if [ ! -d d ]; then mkdir d; fi</text><rect x="290" y="172" width="200" height="56" rx="8" class="rd-blk rd-k-b"/><text x="390" y="196" text-anchor="middle" class="rd-t" style="font-size:13px;font-weight:600">Dossier créé</text><text x="390" y="212" text-anchor="middle" class="rd-t" style="font-size:13px;font-weight:600">(« créé »)</text><rect x="510" y="172" width="200" height="56" rx="8" class="rd-blk rd-k-b"/><text x="610" y="204" text-anchor="middle" class="rd-t" style="font-size:13px;font-weight:600">« déjà présent »</text><text x="360" y="254" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:500">Un script idempotent donne le même résultat, sans erreur, quel que soit le nombre de lancements.</text>
+</svg>
+<figcaption>Idempotence : le premier script échoue à la deuxième exécution ; les deux autres peuvent être relancés sans risque.</figcaption>
+</figure>
+
+
+### Les erreurs de débutant
+
+| Erreur | Message typique | Correction |
+|---|---|---|
+| Espaces autour du `=` : `NOM = "Alice"` | `NOM: command not found` | `NOM="Alice"` |
+| Crochets collés : `[-d "$x"]` | `[-d: command not found` | `[ -d "$x" ]` |
+| Variable sans guillemets contenant un espace | la commande reçoit **deux** mots au lieu d'un | `"$NOM"` |
+| `then` ou `fi` oublié | `syntax error: unexpected end of file` | relire avec `bash -n script.sh` |
+| Script écrit sous Windows (fins de ligne différentes) | `bad interpreter: No such file or directory` | réenregistrer avec des fins de ligne **Unix** |
+| Oubli du `chmod +x` | `Permission denied` | `chmod +x script.sh` |
 
 ## 6. Vérifier et déboguer un script
 
