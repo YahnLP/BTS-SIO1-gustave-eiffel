@@ -189,8 +189,6 @@ L'**identité numérique** d'une organisation, c'est l'ensemble des **marques de
 | **Faux profil ou compte piraté** | Faux compte « JackCelair Recrutement » | Comptes officiels **recensés**, **double authentification**, comptes nominatifs | Signaler à la plateforme, communiquer sur le compte officiel |
 | **Fuite de données** | Liste de clients publiée | Droits d'accès, chiffrement, journaux | Informer la direction et le DPO : une violation de données personnelles peut devoir être **notifiée** à l'autorité de contrôle |
 
-**La gouvernance.** La meilleure mesure technique échoue si **personne n'est responsable**. On tient un **registre des identifiants de l'organisation** (domaines et échéances, certificats, comptes officiels, administrateurs de chaque compte) et une règle simple : peu de personnes **nommées**, **comptes individuels**, authentification forte, validation avant publication.
-
 ### SPF, DKIM, DMARC : comment la messagerie prouve d'où vient un courriel
 
 Dans le protocole SMTP, **rien n'empêche** d'écrire n'importe quelle adresse dans le champ « De ». C'est ce qui rend l'usurpation d'expéditeur facile. Trois enregistrements publiés dans le **DNS** du domaine permettent au serveur qui **reçoit** un courriel de vérifier s'il vient bien de l'organisation. Ce sont trois **enregistrements TXT** : du texte que n'importe qui peut lire en interrogeant le DNS.
@@ -264,6 +262,10 @@ Tout le monde ne fait pas la même chose. Voici une répartition **de principe**
 
 > [!WARNING]
 > Ce tableau t'indique **où** l'information va ; la **décision** de déposer plainte revient à la direction, jamais au technicien seul. Pour une violation de données personnelles, c'est le **DPO** qui conduit l'analyse. Les dispositifs et les délais évoluent : on vérifie sur les sites officiels au moment des faits.
+
+### Gouvernance : tenir un registre des identifiants
+
+La meilleure mesure technique échoue si **personne n'en est responsable**. On tient donc un **registre des identifiants de l'organisation** : les noms de domaine et leurs échéances, les certificats, les comptes officiels et l'administrateur de chacun. On y applique une règle simple : peu de personnes **nommées**, des **comptes individuels**, une authentification forte et une validation avant toute publication.
 
 **Je vérifie.** Un client reçoit une « facture » de `compta@jackcelair-facturation.example` alors que le domaine de l'entreprise est `jackcelair.example`. Quelle est la nature du problème, et quelle est la première action du technicien ?
 
