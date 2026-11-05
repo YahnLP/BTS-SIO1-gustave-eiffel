@@ -196,6 +196,18 @@ Un inventaire relie des **machines** à des **personnes** (utilisateur, service)
 | **Sécurité** | Le serveur d'inventaire est protégé : authentification, accès restreint, chiffrement des échanges |
 | **Durée** | On ne garde pas les données au-delà du nécessaire |
 
+**Le registre des traitements.** Le RGPD demande de tenir un **registre** : une fiche par traitement de données personnelles. Pour l'inventaire, elle indique au minimum :
+
+| Rubrique | Ce qu'on y écrit |
+|---|---|
+| **Finalité** | Pourquoi on collecte (support, sécurité, licences) |
+| **Catégories de données** | Lesquelles concernent des personnes (nom, service, localisation) |
+| **Personnes concernées** | Qui (les utilisateurs des postes) |
+| **Destinataires** | Qui y a accès (équipe informatique, prestataire) |
+| **Durée de conservation** | Combien de temps, et quand c'est effacé |
+| **Mesures de sécurité** | Accès, authentification, sauvegarde, chiffrement |
+| **Base légale** | Ce sur quoi repose le traitement : à fixer avec le DPO ou le référent |
+
 > [!WARNING]
 > Ceci est un **rappel de principes**, pas un avis juridique. Pour un cas réel, on consulte le **délégué à la protection des données** (DPO) ou le référent de l'organisation.
 

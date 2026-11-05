@@ -158,6 +158,7 @@ La **présence en ligne** d'une organisation, c'est tout ce qu'on trouve d'elle 
 | Élément | Points d'attention |
 |---|---|
 | **Nom de domaine** | Réservé auprès d'un bureau d'enregistrement ; pointe vers le serveur par le **DNS** (enregistrements d'adresse, de messagerie) ; à renouveler |
+| **Nom de domaine (vérification)** | `nslookup` ou `dig` interrogent le DNS : adresse du serveur (enregistrement A ou AAAA), serveur de messagerie (enregistrement MX) |
 | **Hébergement** | Disponibilité (S17), sauvegarde (S20), supervision (S16) |
 | **HTTPS** | Un certificat chiffre les échanges et rassure ; il **expire** et doit être renouvelé |
 | **Mentions légales** | Identité de l'éditeur, de l'hébergeur et du responsable de la publication (site professionnel) |

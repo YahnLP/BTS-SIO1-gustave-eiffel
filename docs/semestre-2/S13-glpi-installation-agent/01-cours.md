@@ -66,6 +66,8 @@ Cet ensemble s'appelle une pile **LAMP** (Linux, Apache, MariaDB, PHP).
 > [!WARNING]
 > **Les versions changent.** Les procédures trouvées sur Internet datent souvent d'une ancienne version de GLPI, de PHP ou de Debian. Avant d'exécuter une commande, **vérifie la date et la version** de la page et **compare avec la documentation officielle**.
 
+**Réglages de PHP.** GLPI demande quelques réglages dans le fichier de configuration de PHP (`php.ini` : temps d'exécution, taille des envois, mémoire, cookie de session, **fuseau horaire**). La liste exacte dépend de la **version** : elle se lit dans la documentation officielle de ta version.
+
 ### Sécurité de l'installation
 
 | Risque | Mesure |

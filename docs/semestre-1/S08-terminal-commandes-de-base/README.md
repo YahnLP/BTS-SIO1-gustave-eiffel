@@ -41,9 +41,9 @@
 | 0 h 45 – 1 h 10 | **Confrontation** et mini-cours : terminal, prompt, arborescence, chemins (cours §1 à §3) | Mise en commun, cours et questions |
 | 1 h 10 – 1 h 25 | Pause |  |
 | 1 h 25 – 2 h 05 | **TP partie B** : commandes système, historique, `sudo` | Binôme |
-| 2 h 05 – 2 h 45 | **TP partie C** : se déplacer dans l'arborescence, créer et supprimer | Binôme |
-| 2 h 45 – 3 h 35 | **TP partie D** : l'arborescence de JackCelair | Binôme |
-| 3 h 35 – 4 h 00 | **Bilan de compétences** et retour sur les « pourquoi » | Individuel puis oral |
+| 2 h 05 – 2 h 55 | **TP partie C** : se déplacer dans l'arborescence, créer, copier, renommer et supprimer | Binôme |
+| 2 h 55 – 3 h 45 | **TP partie D** : l'arborescence de JackCelair | Binôme |
+| 3 h 45 – 4 h 00 | **Bilan de compétences** et retour sur les « pourquoi » | Individuel puis oral |
 
 Les parties E et F du TP (recherche de fichiers, script) sont pour les étudiants qui avancent vite.
 

@@ -163,6 +163,31 @@ Trois machines **du même nom** sur le réseau (conflit, inventaire confondu) ; 
 
 **Et après ?** Un poste déployé est un **nouvel équipement** : il doit entrer dans l'**inventaire** (S12 à S14) et son **cycle de vie** doit commencer proprement (S18, partie D d'InfraLab).
 
+## 6. Écrire une procédure de remplacement
+
+Remplacer un poste (déploiement d'une image) est une opération à **ordre fixe**, qu'un collègue doit pouvoir refaire sans toi. L'ordre type : **informer** l'utilisateur, **sauvegarder** ses données, **déployer**, **restituer** les données, **vérifier** avec l'utilisateur, **mettre à jour l'inventaire**, puis **effacer et traiter l'ancien poste**. Ce qui ne se rattrape pas (le déploiement efface le disque) vient **après** la sauvegarde.
+
+Une procédure exploitable contient :
+
+| Rubrique | Contenu |
+|---|---|
+| **Objectif** | Ce que la procédure garantit |
+| **Prérequis** | Ce qui doit exister avant (image à jour, sauvegarde, poste de remplacement) |
+| **Étapes numérotées** | Courtes, dans l'ordre, avec le **responsable** de chacune |
+| **Points de contrôle** | Comment vérifier que l'étape a réussi (mesurable) |
+| **Retour arrière** | Que faire si une étape échoue |
+| **Informations à consigner** | Date, numéro d'inventaire, qui, résultat |
+
+
+**Je vérifie.** Pourquoi la sauvegarde des données de l'utilisateur vient-elle avant le déploiement de l'image ?
+
+<details markdown="1">
+<summary>Voir la réponse</summary>
+
+Parce que le déploiement **remplace** le contenu du disque : sans sauvegarde préalable, les données sont perdues de façon définitive.
+
+</details>
+
 ## Je retiens
 
 - Clonage = **un modèle soigné**, une **image**, un **serveur** qui la distribue.
@@ -171,3 +196,4 @@ Trois machines **du même nom** sur le réseau (conflit, inventaire confondu) ; 
 - Un clone est identique : **nom, identifiants, clés** sont à personnaliser.
 - Le déploiement **écrase** le disque cible.
 - Le poste déployé **entre dans l'inventaire** et commence son cycle de vie.
+- Une procédure de remplacement a un **ordre fixe** : sauvegarder avant de déployer, avec points de contrôle et retour arrière.

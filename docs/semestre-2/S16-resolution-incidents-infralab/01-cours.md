@@ -70,6 +70,8 @@ Un incident n'est résolu que lorsque le service est constaté rétabli **des de
 | 4. Est-ce isolé ou généralisé ? | Un poste → le poste ; plusieurs → réseau ou serveur |
 | 5. Y a-t-il un message d'erreur ? | Information directe : **copie-le exactement**, ne le paraphrase pas |
 
+**Commandes de diagnostic sous Linux** (rappels de [minimum réseau](../../ressources/minimum-reseau.md)) : `ip a` (adresses de la machine), `ip route` (route par défaut), `ping` (joindre une adresse ou un nom), `ss -tln` (ports TCP à l'écoute sur la machine). On les lance **dans cet ordre**, du plus proche au plus lointain.
+
 **Une action à la fois.** Si tu en fais deux, tu ne sais pas laquelle a agi.
 
 **Je vérifie.** Un poste apparaît « hors ligne » dans l'outil. Quelle est la première vérification, et pourquoi ?

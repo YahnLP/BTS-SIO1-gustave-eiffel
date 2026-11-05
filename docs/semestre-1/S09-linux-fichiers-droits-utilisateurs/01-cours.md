@@ -14,9 +14,10 @@
 - [ ] **modifier** les droits (`chmod`) et le propriétaire (`chown`, `chgrp`) ;
 - [ ] expliquer l'effet des droits **sur un dossier** ;
 - [ ] distinguer un **lien dur** d'un **lien symbolique**.
+- [ ] expliquer ce qui rend un **mot de passe** solide, ce qu'apporte la **double authentification** et reconnaître un **hameçonnage**.
 
 > [!NOTE] Socle et pour aller plus loin
-> Le **socle** : utilisateurs et groupes (§ 1), lecture des droits (§ 2), `chmod`, `chown`, setgid (§ 3) et affichage d'un fichier (§ 5). Le `umask` et les **liens** (§ 4) sont des **compléments** : ils ne sont pas exigés.
+> Le **socle** : utilisateurs et groupes (§ 1), lecture des droits (§ 2), `chmod`, `chown`, setgid (§ 3) et affichage d'un fichier (§ 5). Le `umask` et les **liens** (§ 4) sont des **compléments** : ils ne sont pas exigés. L'**hygiène numérique** (§ 6) se lit pour la partie F du TP.
 
 > [!IMPORTANT] Idées reçues à confronter à tes réponses du TP
 > - « **Avoir `w` sur un dossier me permet de modifier un fichier qui n'est pas à moi.** » Non : `w` sur un **dossier** permet de créer, renommer et supprimer ce qu'il contient ; modifier le contenu d'un fichier demande `w` **sur le fichier** (§ 2).
@@ -273,3 +274,41 @@ Le lien symbolique absolu est **cassé** : le chemin qu'il contient n'existe plu
 | `head -n 5 fichier` · `tail -n 5 fichier` | les 5 premières · les 5 dernières lignes |
 
 Pour un long fichier (comme `/etc/services`), `cat` fait défiler l'écran sans qu'on puisse lire : on utilise `less`.
+
+## 6. Hygiène numérique : mots de passe, double authentification, hameçonnage
+
+Les droits posés sur les fichiers ne protègent rien si un **compte** est volé : la sécurité des **usages** fait partie du métier.
+
+**Le mot de passe.** Plus il y a de combinaisons possibles, plus il est long à deviner par essais successifs. Le nombre de combinaisons est (nombre de caractères possibles) **puissance** (longueur).
+
+| Mot de passe | Calcul | Combinaisons |
+|---|---|---|
+| 8 lettres minuscules | 26⁸ | ≈ 2,1 × 10¹¹ |
+| 8 caractères parmi 62 (lettres et chiffres) | 62⁸ | ≈ 2,2 × 10¹⁴ |
+| 12 lettres minuscules | 26¹² | ≈ 9,5 × 10¹⁶ |
+
+La **longueur** pèse plus que la variété : 12 minuscules dépassent largement 8 caractères variés. (Ces chiffres supposent un mot de passe **choisi au hasard** : un mot du dictionnaire ou une date se devine bien plus vite.)
+
+**Comment le système le stocke.** Linux ne garde pas le mot de passe : il garde une **empreinte** (hachage), dans `/etc/shadow` (lisible seulement par `root`, voir § 1). À la connexion, il calcule l'empreinte de ce que tu tapes et la **compare**. Le début de la chaîne indique l'algorithme utilisé. La commande `chage` règle une **durée de validité** (`chage -M 90 compte`) et `chage -l compte` affiche la règle. Imposer des changements fréquents est une pratique **discutée** : à débattre en classe.
+
+**La double authentification (MFA).** Un **facteur** est ce que tu **sais** (mot de passe), ce que tu **as** (téléphone, clé de sécurité) ou ce que tu **es** (empreinte digitale). La double authentification en combine **deux** : voler le mot de passe ne suffit plus. Elle ajoute une petite contrainte à l'utilisateur ; on la met **en premier** sur les comptes les plus puissants (administrateurs, messagerie, accès à distance).
+
+**L'hameçonnage** (*phishing*) est un message qui se fait passer pour une personne ou un service de confiance pour obtenir un clic, un mot de passe ou un paiement. **Indices** : urgence ou menace, expéditeur ou domaine inhabituel, lien qui mène ailleurs que ce qu'il annonce, demande inhabituelle d'argent ou d'identifiants, message imprévu. **Bonne réaction** : ne pas cliquer, ne rien répondre, **signaler** au service informatique, supprimer.
+
+**Je vérifie.** Pourquoi un mot de passe de 12 lettres minuscules est-il plus difficile à deviner qu'un mot de passe de 8 caractères mêlant lettres et chiffres ?
+
+<details markdown="1">
+<summary>Voir la réponse</summary>
+
+Parce que la longueur augmente l'exposant : 26¹² ≈ 9,5 × 10¹⁶ contre 62⁸ ≈ 2,2 × 10¹⁴ combinaisons. Chaque caractère ajouté multiplie le nombre de combinaisons.
+
+</details>
+
+**Je vérifie.** Pourquoi `/etc/shadow` contient-il une empreinte et non le mot de passe ?
+
+<details markdown="1">
+<summary>Voir la réponse</summary>
+
+Pour que quelqu'un qui lit le fichier ne puisse pas retrouver le mot de passe : le système compare l'empreinte de ce qui est tapé à l'empreinte enregistrée, sans jamais conserver le mot de passe lui-même.
+
+</details>
