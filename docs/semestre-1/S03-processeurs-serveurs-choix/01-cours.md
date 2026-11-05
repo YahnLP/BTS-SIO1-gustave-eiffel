@@ -424,9 +424,6 @@ Dans les schémas, chaque colonne est un **disque** et chaque rectangle un **blo
 - **Capacité.** 4 disques de 1 To donnent (4 ÷ 2) × 1 To = **2 To** utiles.
 - **Usage.** Bases de données et machines virtuelles, qui écrivent beaucoup.
 
-> [!NOTE] Sources
-> Définitions et chiffres (4 opérations en RAID 5, 6 en RAID 6, tolérance du RAID 10, reconstruction) recoupés avec : [StarWind, RAID 5 et RAID 6](https://www.starwindsoftware.com/blog/understanding-raid-5-raid-6-raid-50-and-raid-60-comprehensive-guide-to-raid-configurations-part2/), [Western Digital, RAID 5 vs RAID 10](https://www.westerndigital.com/en-ap/solutions/raid/raid-5-vs-raid-10) et [TechNewsToday, RAID 0 vs RAID 1](https://www.technewstoday.com/raid-0-vs-raid-1).
-
 > [!NOTE] Comment choisir ?
 > **Vitesse seule** : RAID 0. **Simplicité et sécurité sur 2 disques** : RAID 1. **Capacité, sécurité et coût raisonnable** : RAID 5. **Très grosses capacités** : RAID 6. **Performances et sécurité** : RAID 10. Dans tous les cas, le RAID ne remplace jamais une sauvegarde.
 
