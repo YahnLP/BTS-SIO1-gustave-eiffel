@@ -61,5 +61,5 @@
 - **Matrice :** le tableau liste les séances qui travaillent chaque compétence **d'après les fiches de séance** du site (proposition, non validée). Les compétences non travaillées sont à lister honnêtement.
 - **Oral :** 2 × 5 minutes pour une classe entière demande du temps : prévoir des binômes en parallèle, l'enseignant circulant. Aucune durée d'oral officielle n'est supposée.
 - **Compétences :** codes et intitulés relus sur l'arrêté du 8 juillet 2024 ; le choix des compétences pour cette séance est une proposition de l'enseignant.
-
+- **Cours (audit pédagogique) :** SVG de la démarche ; exemple de réalisation **fictive** (restauration de la base GLPI) avec preuve faible et forte, preuve commentée en cinq lignes et plan d'oral rempli ; idées reçues ; deux « Je vérifie ». Les chiffres (42 tickets, 12 minutes) sont inventés pour l'illustration.
 </details>
