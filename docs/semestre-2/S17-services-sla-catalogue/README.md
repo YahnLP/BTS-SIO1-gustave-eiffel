@@ -7,7 +7,7 @@
 | **Durée** | 4 heures |
 | **Prérequis** | Tickets, priorités ([S15](../S15-itil-incidents-tickets/README.md)) ; diagnostic et corrélation ([S16](../S16-resolution-incidents-infralab/README.md)) ; notion de CMDB ([S12](../S12-patrimoine-inventaire/README.md)) |
 | **Matériel** | Un navigateur par étudiant : **[InfraLab](https://yahnlp.github.io/InfraLab/)** (aucune installation) ; papier ou traitement de texte pour la partie D |
-| **Compétences travaillées** | B1.5 · B1.2 · B1.3 (voir [le référentiel](../../ressources/referentiel.md)) |
+| **Compétences travaillées** | B1.5 · B1.2 · B1.3 · B3.2 (voir [le référentiel](../../ressources/referentiel.md)) |
 
 > [!NOTE]
 > **Question qui guide la séance :** *« Que promet-on exactement à un utilisateur, comment le mesure-t-on, et que se passe-t-il quand le week-end est compté, ou qu'un équipement central tombe ? »*
@@ -21,7 +21,8 @@
 3. **Piloter** un SLA : qualification rapide, prise en charge, suspension de l'horloge, résolution ;
 4. **Choisir** le calendrier d'un SLA (continu ou heures ouvrées) et en mesurer l'effet ;
 5. **Conduire** un incident majeur : priorité, rétablissement, communication ;
-6. **Rédiger** des fiches de service pour un catalogue et les relier aux éléments de la CMDB.
+6. **Rédiger** des fiches de service pour un catalogue et les relier aux éléments de la CMDB ;
+7. **Reconnaître** une usurpation d'identité numérique de l'organisation (domaine, messagerie, comptes officiels) et proposer une réaction et une mesure durable (partie G, facultative).
 
 ## Contenu de la séance
 
@@ -43,7 +44,7 @@
 | 1 h 50 – 2 h 05 | Pause |  |
 | 2 h 05 – 2 h 55 | **TP partie C** : InfraLab, TP 20 « Incident majeur » | Binôme |
 | 2 h 55 – 3 h 40 | **TP partie D** : le catalogue de services de JackCelair | Binôme |
-| (selon avancement) | **TP partie E** (SLA et catalogue dans GLPI) et **partie F** (présence en ligne sur VM) ; reprise en début de S18 si besoin | Binôme |
+| (selon avancement) | **TP partie E** (SLA et catalogue dans GLPI) et **partie F** (présence en ligne sur VM) et, si le temps le permet, **partie G** (identité numérique, facultative) ; reprise en début de S18 si besoin | Binôme |
 | 3 h 40 – 4 h 00 | **Bilan de compétences** et retour sur les « pourquoi » | Individuel puis oral |
 
 ## Évaluation

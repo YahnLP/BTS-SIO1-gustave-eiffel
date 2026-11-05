@@ -14,7 +14,8 @@
 - [ ] **calculer** une indisponibilité tolérée et une échéance ;
 - [ ] expliquer le rôle du **calendrier** et de la **suspension** de l'horloge ;
 - [ ] décrire la conduite d'un **incident majeur** ;
-- [ ] relier un service aux **éléments de configuration** dont il dépend.
+- [ ] relier un service aux **éléments de configuration** dont il dépend ;
+- [ ] repérer une **usurpation d'identité numérique** et en limiter le risque (domaine, messagerie, comptes officiels, gouvernance).
 
 > [!IMPORTANT] Idées reçues à confronter à tes réponses du TP
 > - « **99,9 %, c'est presque 100 %.** » Sur 30 jours, c'est tout de même **43,2 minutes** d'arrêt toléré ; chaque chiffre de plus coûte cher (§ 4).
@@ -173,6 +174,46 @@ La **présence en ligne** d'une organisation, c'est tout ce qu'on trouve d'elle 
 > [!WARNING]
 > Ces points sont un **rappel de principes**, pas un avis juridique. Les obligations exactes dépendent de l'organisation et se vérifient auprès de son référent juridique ou du DPO.
 
+
+## Identité numérique de l'organisation : la préserver <span class="technique">compétence B3.2</span>
+
+L'**identité numérique** d'une organisation, c'est l'ensemble des **marques de reconnaissance** par lesquelles on la reconnaît et on lui fait confiance en ligne : son **nom de domaine**, ses **adresses de messagerie**, son **site** et son **certificat**, ses **comptes officiels** sur les réseaux, son logo et sa charte. Préserver cette identité, c'est empêcher qu'**un tiers parle ou agisse en son nom**, et savoir réagir s'il le fait.
+
+**Pourquoi c'est un enjeu.** Un faux site ou un faux courriel qui reprend le nom et le logo d'une organisation sert à **tromper ses clients, ses salariés ou ses partenaires** (fausse facture, faux ordre de virement, vol d'identifiants). Les victimes ne s'en prennent pas à l'escroc, qu'elles ne connaissent pas, mais à **l'organisation dont le nom a été utilisé**.
+
+| Menace | Exemple (cas fictif) | Mesure préventive | Réaction |
+|---|---|---|---|
+| **Domaine ressemblant** | `jackcelair-facturation.example` au lieu de `jackcelair.example` | Veille sur les noms proches ; réserver les variantes utiles | Signaler au bureau d'enregistrement et à l'hébergeur ; prévenir les clients |
+| **Domaine ou certificat qui expire** | Le domaine n'est pas renouvelé ; un tiers le rachète | Renouvellement **automatique**, **échéances** consignées, responsable nommé | Renouveler ; si perdu, évaluer l'impact (courriels, site) |
+| **Usurpation d'expéditeur** | Un courriel « de la direction » envoyé depuis un serveur étranger | Enregistrements **SPF**, **DKIM** et **DMARC** du domaine (voir ci-dessous) | Signaler, prévenir les destinataires |
+| **Faux profil ou compte piraté** | Faux compte « JackCelair Recrutement » | Comptes officiels **recensés**, **double authentification**, comptes nominatifs | Signaler à la plateforme, communiquer sur le compte officiel |
+| **Fuite de données** | Liste de clients publiée | Droits d'accès, chiffrement, journaux | Informer la direction et le DPO : une violation de données personnelles peut devoir être **notifiée** à l'autorité de contrôle |
+
+**SPF, DKIM, DMARC (messagerie).** Ce sont trois enregistrements publiés dans le **DNS** du domaine pour limiter l'usurpation d'expéditeur : **SPF** liste les serveurs autorisés à envoyer du courrier pour ce domaine ; **DKIM** ajoute aux messages une **signature** vérifiable ; **DMARC** dit au destinataire **quoi faire** (accepter, mettre en quarantaine, rejeter) si ces vérifications échouent, et où envoyer des rapports. Leur mise en place exacte dépend du fournisseur de messagerie : elle se lit dans sa documentation.
+
+**La gouvernance.** La meilleure mesure technique échoue si **personne n'est responsable**. On tient un **registre des identifiants de l'organisation** (domaines et échéances, certificats, comptes officiels, administrateurs de chaque compte) et une règle simple : peu de personnes **nommées**, **comptes individuels**, authentification forte, validation avant publication.
+
+> [!WARNING]
+> Ces points sont un **rappel de principes**. En cas d'incident réel (usurpation, fuite), c'est la **direction** et le **référent juridique ou DPO** qui décident des signalements et des plaintes ; le technicien **documente** et **conserve les preuves** (captures datées, en-têtes de messages).
+
+**Je vérifie.** Un client reçoit une « facture » de `compta@jackcelair-facturation.example` alors que le domaine de l'entreprise est `jackcelair.example`. Quelle est la nature du problème, et quelle est la première action du technicien ?
+
+<details markdown="1">
+<summary>Voir la réponse</summary>
+
+C'est une **usurpation d'identité** par un **domaine ressemblant**, pas une panne. Le technicien **documente** (capture et en-têtes du message), **prévient** la direction et le référent, **signale** au bureau d'enregistrement ou à l'hébergeur du faux domaine et prévient les clients par un canal officiel. Il ne répond pas à l'expéditeur.
+
+</details>
+
+**Je vérifie.** À quoi servent SPF et DMARC, et pourquoi ne suffisent-ils pas à eux seuls ?
+
+<details markdown="1">
+<summary>Voir la réponse</summary>
+
+SPF dit quels serveurs peuvent envoyer pour le domaine, DMARC dit quoi faire si la vérification échoue. Ils protègent **ton** domaine contre l'usurpation, mais pas contre un **domaine ressemblant** (autre nom) ni contre un compte piraté : il faut aussi veille, gouvernance et double authentification.
+
+</details>
+
 ## Je retiens
 
 - Un catalogue décrit **ce qu'on propose**, avec ses engagements.
@@ -181,4 +222,5 @@ La **présence en ligne** d'une organisation, c'est tout ce qu'on trouve d'elle 
 - Le calendrier du SLA doit correspondre à ce qui est promis.
 - L'horloge court dès la création, se **suspend** à bon escient.
 - Incident majeur : cause d'abord, coordinateur, communication, revue.
+- **Identité numérique** : domaine, messagerie (SPF, DKIM, DMARC), comptes officiels, certificats et échéances ; on **prévient**, on **documente**, on **signale** par la bonne personne.
 - **Présence en ligne** : domaine et DNS, hébergement, HTTPS, mentions légales, cookies et RGPD, référencement, gouvernance de la publication.

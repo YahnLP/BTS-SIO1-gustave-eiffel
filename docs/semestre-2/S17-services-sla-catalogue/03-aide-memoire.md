@@ -44,6 +44,10 @@ Cause d'abord · coordinateur · rétablir · communiquer sur un ticket principa
 
 Nom · description · bénéficiaires · demande · prérequis · plage · disponibilité · délais · exclusions · éléments de configuration · équipe · indicateur.
 
+## Identité numérique de l'organisation
+
+Domaine (échéance) · certificat (expiration) · comptes officiels (comptes nominatifs, double authentification) · messagerie : **SPF** (serveurs autorisés), **DKIM** (signature), **DMARC** (que faire si échec). Usurpation : documenter, prévenir la direction, signaler, communiquer.
+
 ## InfraLab
 
 Temps simulé : « +15 min », « +1 h », « +1 jour ». Calendrier : page **Paramètres** de la vue ITSM. Enregistrer : Ctrl+S.

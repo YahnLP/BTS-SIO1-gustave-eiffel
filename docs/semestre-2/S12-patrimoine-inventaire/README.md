@@ -7,7 +7,7 @@
 | **Durée** | 4 heures |
 | **Prérequis** | [S02](../../semestre-1/S02-unites-debits-poste/README.md) (fiche d'identité d'un poste) ; terminal Linux ([S08](../../semestre-1/S08-terminal-commandes-de-base/README.md) à [S10](../../semestre-1/S10-paquets-scripts-bash/README.md)) |
 | **Matériel** | Quelques équipements de la salle à inventorier (poste, écran, imprimante, switch…) ; un poste avec un **tableur** ou une **VM Debian** ; accès Internet pour **[InfraLab](https://yahnlp.github.io/InfraLab/)** (dans le navigateur, rien à installer) |
-| **Compétences travaillées** | B1.1 · B3.1 (voir [le référentiel](../../ressources/referentiel.md)) |
+| **Compétences travaillées** | B1.1 · B3.1 · B3.2 (voir [le référentiel](../../ressources/referentiel.md)) |
 
 > [!NOTE]
 > **Question qui guide la séance :** *« En S02, tu as mis 30 à 45 minutes à décrire UN poste. Une entreprise en a 200. Que veut-on savoir sur chaque équipement, comment éviter que ces informations soient fausses, et qu'a-t-on le droit de collecter ? »*

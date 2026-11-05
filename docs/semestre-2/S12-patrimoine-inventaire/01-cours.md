@@ -221,6 +221,21 @@ Oui pour le **nom** et l'**e-mail** : ils identifient une personne. Le numéro d
 
 </details>
 
+### L'inventaire, ressource sensible et partie de l'identité numérique <span class="technique">compétence B3.2</span>
+
+Un inventaire est aussi une **carte de l'organisation** : noms de machines et de serveurs, adresses, versions de logiciels, noms des utilisateurs. Entre de mauvaises mains, il aide à **cibler un hameçonnage** (noms et fonctions), à **repérer des logiciels vulnérables** (versions) ou à **cartographier** le réseau. Son accès doit donc être **restreint** comme un secret professionnel.
+
+L'inventaire doit aussi recenser les éléments qui font l'**identité numérique** de l'organisation (voir [S17](../S17-services-sla-catalogue/01-cours.md)) : **noms de domaine** (avec leur **échéance de renouvellement**), **certificats** (date d'expiration), **comptes officiels**. Ce sont des « actifs » comme les autres : un domaine ou un certificat oublié qui expire est un incident évitable, et un domaine perdu peut être racheté par un tiers.
+
+**Je vérifie.** Cite deux informations d'un inventaire qu'un attaquant pourrait utiliser, et pour quoi faire.
+
+<details markdown="1">
+<summary>Voir la réponse</summary>
+
+Les **noms et fonctions des utilisateurs** pour monter un hameçonnage crédible ; les **versions de logiciels** pour chercher des vulnérabilités connues. Les noms de serveurs et les adresses permettent aussi de **cartographier** le réseau.
+
+</details>
+
 ## 7. Quelques outils d'inventaire
 
 | Outil | Nature | Inventaire automatique | Tickets | Remarque |
