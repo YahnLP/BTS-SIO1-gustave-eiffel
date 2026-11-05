@@ -130,6 +130,34 @@ Un seul serveur physique peut héberger plusieurs machines virtuelles (S06). Pou
 > [!NOTE]
 > Le ratio de vCPU par cœur et la marge dépendent de la charge réelle des VM : ce sont des **points de départ**, pas des lois.
 
+### Exemple de dimensionnement
+
+*Cas fictif : une PME veut héberger cinq services sur un seul serveur de virtualisation.*
+
+| Machine virtuelle | vCPU | RAM | Disque |
+|---|---:|---:|---:|
+| Annuaire et DNS | 2 | 4 Go | 60 Go |
+| Serveur de fichiers | 2 | 8 Go | 500 Go |
+| Serveur Web | 4 | 8 Go | 100 Go |
+| Base de données | 4 | 16 Go | 200 Go |
+| Supervision | 2 | 4 Go | 80 Go |
+| **Total** | **14** | **40 Go** | **940 Go** |
+
+**Mémoire.** On ajoute 8 Go pour l'hôte : 40 + 8 = 48 Go. Marge de 25 % : 48 × 1,25 = **60 Go**. On arrondit à la configuration disponible : **64 Go** de RAM (ECC).
+
+**Processeur.** Avec 2 vCPU par cœur physique : 14 ÷ 2 = **7 cœurs** minimum. On prend un processeur de **8 cœurs** (16 threads), ce qui laisse un peu de réserve.
+
+**Stockage.** On prévoit 30 % pour la croissance et les instantanés : 940 × 1,3 = 1 222 Go, soit environ **1,25 To utiles**. En **RAID 5** avec 4 disques SSD de 500 Go : capacité utile = (4 − 1) × 500 Go = **1,5 To**. La contrainte est respectée, et un disque peut tomber sans perte de données.
+
+| Ressource | Besoin calculé | Choix retenu |
+|---|---|---|
+| Mémoire | 60 Go | 64 Go ECC |
+| Processeur | 7 cœurs | 8 cœurs (16 threads) |
+| Stockage | 1,25 To utiles | 4 × SSD 500 Go en RAID 5 (1,5 To utiles) |
+
+> [!TIP] Vérifier avant de valider
+> Une sauvegarde est à prévoir en plus (le RAID n'en tient pas lieu), ainsi qu'une alimentation redondante si le service doit être continu.
+
 **Et la consommation ?** Les centres de données consomment beaucoup d'électricité. On mesure leur efficacité par le **PUE** (*Power Usage Effectiveness*) : énergie totale du site ÷ énergie consommée par les équipements informatiques. Un PUE de 1 serait idéal ; plus il est élevé, plus le refroidissement et les autres équipements pèsent. La question sera reprise en S05 (veille).
 
 ---
