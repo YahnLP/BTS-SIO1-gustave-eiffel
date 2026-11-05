@@ -33,6 +33,7 @@
 | [Cours](01-cours.md) | **À lire après le TP**, pour confronter ses résultats : Machine virtuelle ou conteneur, image, cycle de vie, ports, variables, volumes, réseaux, diagnostic |
 | [Aide-mémoire](03-aide-memoire.md) | Les commandes Docker de la séance |
 | [Journal de commandes](tp/journal-de-commandes.md) | Modèle de journal à tenir pendant la mission |
+| [Exercices à ouvrir dans DockerLab](tp/exercices-dockerlab.md) | Deux laboratoires préparés (`.json`) à ouvrir avec le bouton *Ouvrir* de DockerLab : codes de sortie, retrouver la commande |
 
 ## Déroulé conseillé (4 h)
 

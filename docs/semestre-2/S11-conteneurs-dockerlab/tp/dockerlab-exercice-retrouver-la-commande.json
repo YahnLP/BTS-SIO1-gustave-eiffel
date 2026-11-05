@@ -1,0 +1,1 @@
+{"app":"docker-lab","v":1,"epoch":1791099480000,"seed":12,"now":39338,"journal":[{"l":"docker network create app","s":0,"t":0},{"l":"docker run -d --name base --network app -e POSTGRES_PASSWORD=exemple -v donnees:/var/lib/postgresql/data postgres:16","s":0,"t":1500},{"l":"docker run -d --name site --network app -p 8080:80 nginx:1.27","s":0,"t":6330}]}

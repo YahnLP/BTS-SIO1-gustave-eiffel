@@ -106,7 +106,7 @@ docker run -d --name base -e POSTGRES_PASSWORD=exemple -v donnees:/var/lib/postg
 | `nginx:1.27` · `postgres:16` | l'**image** et son **tag** (version) : toujours **en dernier** |
 
 > [!TIP] Dans DockerLab
-> Retrouve ces morceaux dans le TP **Le cycle de vie d'un conteneur** : repère à chaque commande ce que fait chaque option.
+> Retrouve ces morceaux dans le TP **Le cycle de vie d'un conteneur** : repère à chaque commande ce que fait chaque option. Exercice à ouvrir : [Retrouve la commande](tp/exercices-dockerlab.md#exercice-2-retrouve-la-commande).
 
 **Je vérifie.** Pourquoi `docker run --name site nginx:1.27` échoue-t-il quand on le tape une seconde fois ?
 
@@ -226,7 +226,7 @@ Il a été **tué brutalement** : 137 = 128 + 9 (SIGKILL). Par exemple, `docker 
 </details>
 
 > [!TIP] Dans DockerLab
-> TP **Dépannage**, puis **Faire le ménage sur un hôte encombré**.
+> TP **Dépannage**, puis **Faire le ménage sur un hôte encombré**. Exercice à ouvrir : [Que dit le code de sortie ?](tp/exercices-dockerlab.md#exercice-1-que-dit-le-code-de-sortie).
 
 ## 9. DockerLab : ce qu'il est, ce qu'il n'est pas
 
