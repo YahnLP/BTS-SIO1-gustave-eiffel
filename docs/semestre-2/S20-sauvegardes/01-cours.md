@@ -74,6 +74,14 @@ Un NAS posé **à côté** du serveur protège d'une panne de disque, pas d'un i
 <figcaption>Complète : tout, chaque jour. Différentielle : ce qui a changé depuis la complète. Incrémentale : ce qui a changé depuis la veille.</figcaption>
 </figure>
 
+**Comment lire cette frise.** Chaque ligne est une stratégie ; chaque case est **le fichier de sauvegarde produit ce jour-là**, et le texte dans la case dit **ce qu'il contient**. Imaginons que le **jeudi soir**, le serveur tombe en panne et qu'on veuille revenir à l'état de jeudi. La question est : **quels fichiers faut-il pour y arriver ?** Les cases **bleues** sont celles qu'il faut rejouer, les cases vertes ne servent pas.
+
+- **Complète (tout, chaque jour).** Chaque case contient **100 Go**, c'est-à-dire toutes les données. Le fichier de jeudi suffit à lui seul : **1 fichier**. C'est le plus simple à restaurer, mais c'est aussi le plus lourd (100 Go chaque soir).
+- **Différentielle (depuis la dernière complète).** Lundi : la complète (100 Go). Mardi : seulement ce qui a changé depuis lundi (+2 Go). Mercredi : tout ce qui a changé depuis lundi, **y compris mardi** (+4 Go). Jeudi : +6 Go, toujours **depuis lundi**. Pour restaurer jeudi : la complète de lundi **puis** la différentielle de jeudi, soit **2 fichiers**. Les mardi et mercredi ne servent pas, car jeudi les contient déjà.
+- **Incrémentale (depuis la veille).** Lundi : la complète (100 Go). Chaque jour suivant : seulement ce qui a changé **depuis la sauvegarde précédente** (+2 Go). Aucune case ne contient le travail des autres : pour restaurer jeudi, il faut **tout rejouer dans l'ordre** : lundi, mardi, mercredi, jeudi, soit **4 fichiers**. Si un seul manque ou est abîmé, la suite est inutilisable.
+
+**À retenir.** Plus la sauvegarde du jour est **petite**, plus la **restauration est longue** (il faut rejouer plus de fichiers) : la complète est lourde à faire et simple à restaurer ; l'incrémentale est légère à faire et plus fragile à restaurer ; la différentielle est un compromis.
+
 **Exemple chiffré d'espace** (cas fictif : 100 Go de données, **2 Go** de nouveautés par jour, sans recouvrement, une semaine avec la complète le lundi).
 
 | Stratégie sur 7 jours | Calcul | Espace utilisé | Fichiers pour restaurer le dimanche |
