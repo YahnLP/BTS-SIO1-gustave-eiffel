@@ -15,6 +15,13 @@
 - [ ] **corréler** plusieurs tickets avant d'intervenir ;
 - [ ] rédiger une **fiche de connaissance** utile à un collègue.
 
+> [!IMPORTANT] Idées reçues à confronter à tes réponses du TP
+> - « **Hors ligne, ça veut dire éteint.** » Non : l'outil dit seulement que le serveur **ne joint plus** l'équipement (§ 2).
+> - « **Redémarrer règle tout.** » Cela peut masquer la cause et effacer des indices : on diagnostique d'abord, **une action à la fois** (§ 3).
+> - « **Si plusieurs postes sont touchés, chaque utilisateur a un problème différent.** » C'est le plus souvent **un seul** élément partagé en amont (§ 4).
+
+---
+
 ## 1. Le cycle de vie d'un incident
 
 Un incident traverse sept étapes. À chacune correspond ce qu'on ajoute au ticket :
@@ -43,11 +50,13 @@ Deux choses à ne pas confondre :
 
 « **Hors ligne** » dans l'outil veut dire **non joignable par le serveur de gestion**, pas forcément éteint. Le geste central du dépannage est de **comparer** les deux : l'outil dit hors ligne ; la réalité montre quoi ?
 
+> **Dans InfraLab** (TP, partie A) : le TP 16 « PC déconnecté » te fait comparer ce que dit l'outil et ce que montre le schéma.
+
 Un incident n'est résolu que lorsque le service est constaté rétabli **des deux côtés** : la réalité (ça marche) et l'outil (il revoit l'équipement).
 
 ## 3. La méthode de diagnostic
 
-**Du plus simple au plus complexe** : avant de toucher au logiciel, vérifie le câble ; avant le câble, vérifie que la machine est allumée. Cela correspond à une remontée des couches du modèle OSI, de la couche physique vers l'application.
+**Du plus simple au plus complexe** : avant de toucher au logiciel, vérifie le câble ; avant le câble, vérifie que la machine est allumée. On remonte ainsi la chaîne : **alimentation, câble, carte réseau, adresse, service, application**. (Pour les curieux : cela correspond à une remontée des couches du modèle OSI, de la couche physique vers l'application.)
 
 **Cinq questions, dans l'ordre :**
 
@@ -61,21 +70,60 @@ Un incident n'est résolu que lorsque le service est constaté rétabli **des de
 
 **Une action à la fois.** Si tu en fais deux, tu ne sais pas laquelle a agi.
 
+**Je vérifie.** Un poste apparaît « hors ligne » dans l'outil. Quelle est la première vérification, et pourquoi ?
+
+<details markdown="1">
+<summary>Voir la réponse</summary>
+
+Regarder **la réalité** : le poste est-il allumé, le câble branché ? « Hors ligne » veut dire non joignable par le serveur, pas forcément éteint. On part du plus simple.
+
+</details>
+
+**Je vérifie.** Pourquoi ne change-t-on qu'une chose à la fois pendant un diagnostic ?
+
+<details markdown="1">
+<summary>Voir la réponse</summary>
+
+Si deux actions sont faites ensemble et que le problème disparaît, **on ne sait pas laquelle l'a corrigé** : la fiche de connaissance serait fausse et la cause pourrait revenir.
+
+</details>
+
+
 ## 4. Plusieurs tickets, une cause
 
 Quand plusieurs équipements tombent **en même temps**, la cause est rarement chez chacun : elle est le plus souvent **en amont**, dans un élément qu'ils partagent (commutateur, serveur, hôte de virtualisation). Avant d'intervenir poste par poste, **corrèle** : qu'ont-ils en commun ?
 
-```mermaid
-flowchart TD
-    SW["Commutateur<br/>éteint"] --> P1["Poste 1<br/>hors ligne"]
-    SW --> P2["Poste 2<br/>hors ligne"]
-    SW --> P3["Poste 3<br/>hors ligne"]
-    P1 --> T1["Ticket 1"]
-    P2 --> T2["Ticket 2"]
-    P3 --> T3["Ticket 3"]
-```
+<figure class="raid-fig">
+<svg viewBox="0 0 720 236" role="img" aria-labelledby="cot" xmlns="http://www.w3.org/2000/svg"><title id="cot">Une cause commune en amont produit plusieurs postes hors ligne, donc plusieurs tickets</title>
+<defs><marker id="com" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="var(--disk-s)"/></marker></defs><rect x="255" y="10" width="210" height="50" rx="8" class="rd-blk rd-k-d"/><text x="360.0" y="31.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:700">Cause commune</text><text x="360.0" y="47.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:500">commutateur éteint</text><rect x="60" y="96" width="110" height="50" rx="8" class="rd-blk rd-k-b"/><text x="115.0" y="117.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:700">Poste 1</text><text x="115.0" y="133.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:500">hors ligne</text><rect x="60" y="176" width="110" height="46" rx="8" class="rd-blk rd-k-a"/><text x="115.0" y="195.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:700">Ticket 1</text><text x="115.0" y="211.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:500">9 h 02</text><path d="M115,147 V175" class="rd-arrow" marker-end="url(#com)"/><rect x="305" y="96" width="110" height="50" rx="8" class="rd-blk rd-k-b"/><text x="360.0" y="117.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:700">Poste 2</text><text x="360.0" y="133.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:500">hors ligne</text><rect x="305" y="176" width="110" height="46" rx="8" class="rd-blk rd-k-a"/><text x="360.0" y="195.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:700">Ticket 2</text><text x="360.0" y="211.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:500">9 h 03</text><path d="M360,147 V175" class="rd-arrow" marker-end="url(#com)"/><rect x="550" y="96" width="110" height="50" rx="8" class="rd-blk rd-k-b"/><text x="605.0" y="117.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:700">Poste 3</text><text x="605.0" y="133.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:500">hors ligne</text><rect x="550" y="176" width="110" height="46" rx="8" class="rd-blk rd-k-a"/><text x="605.0" y="195.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:700">Ticket 3</text><text x="605.0" y="211.0" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:500">9 h 05</text><path d="M605,147 V175" class="rd-arrow" marker-end="url(#com)"/><path d="M300,61 L135,95" class="rd-arrow" marker-end="url(#com)"/><path d="M360,61 V95" class="rd-arrow" marker-end="url(#com)"/><path d="M420,61 L605,95" class="rd-arrow" marker-end="url(#com)"/>
+</svg>
+<figcaption>Trois tickets arrivés à quelques minutes d'intervalle pointent vers l'élément partagé : le commutateur.</figcaption>
+</figure>
 
-Une seule action sur la bonne cause rétablit tout ce qui en dépendait. Chaque ticket garde pourtant **sa propre résolution** et **sa propre vérification** auprès de son utilisateur. Traiter la cause commune est le début de la **gestion des problèmes** (ITIL).
+
+**Exemple de corrélation (cas fictif, NovaTech).**
+
+| Heure | Ticket | Poste | Lieu |
+|---|---|---|---|
+| 9 h 02 | INC-0101 | PC-A | Couloir 2 |
+| 9 h 03 | INC-0102 | PC-B | Couloir 2 |
+| 9 h 05 | INC-0103 | PC-C | Couloir 2 |
+
+Démarche : trois pannes en trois minutes, **même couloir** ; chaque poste est branché sur le **même commutateur** (on le lit dans la CMDB ou sur le schéma). Hypothèse : le commutateur, pas les postes. Vérification : le commutateur est-il alimenté ? Une seule action, et les trois postes reviennent. On traite ensuite **chaque ticket séparément** : résolution, vérification auprès de l'utilisateur, clôture.
+
+
+**Je vérifie.** Pourquoi n'est-il pas efficace d'intervenir poste par poste dans ce cas ?
+
+<details markdown="1">
+<summary>Voir la réponse</summary>
+
+Parce que la cause est **en amont** : trois interventions identiques sur les postes ne règlent rien tant que le commutateur est éteint. On perd du temps et on rate la cause.
+
+</details>
+
+Une seule action sur la bonne cause rétablit tout ce qui en dépendait. > **Dans InfraLab** (TP, parties B et C) : le TP 18 « Switch en panne » et le TP 19 « Plusieurs utilisateurs impactés » appliquent cette logique. Les TP 17 (serveur arrêté), 20 (incident majeur) et 43 (arrêt d'un hyperviseur) sont proposés en prolongement.
+
+Chaque ticket garde pourtant **sa propre résolution** et **sa propre vérification** auprès de son utilisateur. Traiter la cause commune est le début de la **gestion des problèmes** (ITIL).
 
 ## 5. La base de connaissances
 
