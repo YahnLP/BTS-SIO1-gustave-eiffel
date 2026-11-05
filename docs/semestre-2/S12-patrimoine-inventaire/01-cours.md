@@ -17,6 +17,11 @@
 - [ ] expliquer les **enjeux de données personnelles** d'un inventaire ;
 - [ ] citer des **outils** d'inventaire et leurs principes (agent, sans agent).
 
+> [!IMPORTANT] Idées reçues à confronter à tes réponses du TP
+> - « **Le nom de la machine peut servir d'identifiant.** » Non : il peut changer ; seul l'**identifiant d'inventaire** est stable (§ 3).
+> - « **Un inventaire, c'est un tableur.** » Un tableur en est un **support** ; l'inventaire est un ensemble de **données fiables et suivies** (§ 5).
+> - « **Un inventaire automatique est toujours exact.** » Il ne voit que ce qui a un **agent** ou répond sur le réseau (§ 4).
+
 ---
 
 ## 1. Le patrimoine informatique
@@ -32,6 +37,14 @@ Le **patrimoine informatique** (ou **parc**) est l'ensemble des **ressources num
 | **Personnes et lieux** | Utilisateurs, services, bureaux, sites |
 
 Un **élément de configuration** (*Configuration Item*, **CI**) est tout élément qu'on **gère** individuellement et dont on veut connaître la description et les liens. Une base qui rassemble les CI et leurs relations s'appelle une **CMDB** (*Configuration Management Database*, base de données de gestion des configurations). Les outils comme GLPI (S14) jouent ce rôle.
+
+<figure class="raid-fig">
+<svg viewBox="0 0 720 176" role="img" aria-labelledby="cmt" xmlns="http://www.w3.org/2000/svg"><title id="cmt">Mini-schéma de CMDB : des éléments reliés entre eux</title>
+<defs><marker id="cmm" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="var(--disk-s)"/></marker></defs><rect x="8" y="50" width="110" height="56" rx="8" class="rd-blk rd-k-c" /><text x="63.0" y="74.0" text-anchor="middle" class="rd-t" style="font-size:13px;font-weight:700">Utilisateur</text><text x="63.0" y="90.0" text-anchor="middle" class="rd-t" style="font-size:13px;font-weight:500">Léa, service RH</text><path d="M119,78 H207" class="rd-arrow" marker-end="url(#cmm)"/><text x="163" y="68" text-anchor="middle" class="rd-note" style="font-size:11px;font-weight:600">utilise</text><rect x="208" y="50" width="110" height="56" rx="8" class="rd-blk rd-k-b" /><text x="263.0" y="74.0" text-anchor="middle" class="rd-t" style="font-size:13px;font-weight:700">Poste</text><text x="263.0" y="90.0" text-anchor="middle" class="rd-t" style="font-size:13px;font-weight:500">PC-RH-01</text><path d="M319,78 H407" class="rd-arrow" marker-end="url(#cmm)"/><text x="363" y="68" text-anchor="middle" class="rd-note" style="font-size:11px;font-weight:600">se connecte à</text><rect x="408" y="50" width="110" height="56" rx="8" class="rd-blk rd-k-d" /><text x="463.0" y="74.0" text-anchor="middle" class="rd-t" style="font-size:13px;font-weight:700">Service</text><text x="463.0" y="90.0" text-anchor="middle" class="rd-t" style="font-size:13px;font-weight:500">Messagerie</text><path d="M519,78 H607" class="rd-arrow" marker-end="url(#cmm)"/><text x="563" y="68" text-anchor="middle" class="rd-note" style="font-size:11px;font-weight:600">hébergé sur</text><rect x="608" y="50" width="110" height="56" rx="8" class="rd-blk rd-k-a" /><text x="663.0" y="74.0" text-anchor="middle" class="rd-t" style="font-size:13px;font-weight:700">Serveur</text><text x="663.0" y="90.0" text-anchor="middle" class="rd-t" style="font-size:13px;font-weight:500">SRV-01</text><text x="360" y="150" text-anchor="middle" class="rd-t" style="font-size:13px;font-weight:600">Question à laquelle la CMDB répond : « si SRV-01 tombe, qui est touché ? »</text>
+</svg>
+<figcaption>Une CMDB conserve les éléments de configuration et leurs relations, pas seulement une liste.</figcaption>
+</figure>
+
 
 ## 2. Pourquoi inventorier ?
 
@@ -55,20 +68,41 @@ Sans inventaire fiable, une panne, une faille ou un contrôle de licences oblige
 | **Achat et contrat** | Date d'achat, fournisseur, durée de garantie |
 | **État** | En stock, en service, en panne, retiré |
 
+**Exemple de fiche remplie** (cas fictif) :
+
+| Famille | Attribut | Valeur |
+|---|---|---|
+| Identification | Identifiant d'inventaire | `INV-0101` |
+| | Numéro de série | `SN48213` |
+| | Nom de la machine | `PC-COMPTA-01` |
+| Description | Type, marque, modèle | Poste fixe, Dell, OptiPlex 3000 |
+| Affectation | Utilisateur · service · lieu | Inès Martin · Comptabilité · Bureau 12 |
+| Achat et contrat | Achat · fournisseur · garantie | 2024-03-12 · Fournisseur Alpha · 3 ans |
+| État | État | En service |
+
 **Identifiant unique.** Chaque équipement reçoit **un** identifiant qui ne change jamais (par exemple `INV-0042`). Le **numéro de série** est donné par le constructeur ; le **nom** d'une machine peut changer ; l'**adresse IP** aussi : seul l'identifiant d'inventaire est stable.
 
 **Cycle de vie d'un équipement :**
 
-```mermaid
-flowchart LR
-    A["Commande<br/>et achat"] --> B["Réception<br/>(en stock)"]
-    B --> C["Déploiement<br/>(en service)"]
-    C --> D["Exploitation<br/>et maintenance"]
-    D --> E["Retrait<br/>(retiré)"]
-    E --> F["Recyclage<br/>ou destruction"]
-```
+<figure class="raid-fig">
+<svg viewBox="0 0 720 236" role="img" aria-labelledby="cvt" xmlns="http://www.w3.org/2000/svg"><title id="cvt">Cycle de vie d'un équipement et états successifs</title>
+<defs><marker id="cvm" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="var(--disk-s)"/></marker></defs><rect x="24" y="14" width="180" height="66" rx="8" class="rd-blk rd-k-d" /><text x="114.0" y="43.0" text-anchor="middle" class="rd-t" style="font-size:13px;font-weight:700">1. Commande</text><text x="114.0" y="59.0" text-anchor="middle" class="rd-t" style="font-size:13px;font-weight:500">et achat</text><path d="M205,47 H253" class="rd-arrow" marker-end="url(#cvm)"/><rect x="254" y="14" width="180" height="66" rx="8" class="rd-blk rd-k-a" /><text x="344.0" y="43.0" text-anchor="middle" class="rd-t" style="font-size:13px;font-weight:700">2. Réception</text><text x="344.0" y="59.0" text-anchor="middle" class="rd-t" style="font-size:13px;font-weight:500">état : en stock</text><path d="M435,47 H483" class="rd-arrow" marker-end="url(#cvm)"/><rect x="484" y="14" width="180" height="66" rx="8" class="rd-blk rd-k-b" /><text x="574.0" y="43.0" text-anchor="middle" class="rd-t" style="font-size:13px;font-weight:700">3. Déploiement</text><text x="574.0" y="59.0" text-anchor="middle" class="rd-t" style="font-size:13px;font-weight:500">état : en service</text><rect x="24" y="126" width="180" height="66" rx="8" class="rd-blk rd-k-b" /><text x="114.0" y="147.0" text-anchor="middle" class="rd-t" style="font-size:13px;font-weight:700">4. Exploitation</text><text x="114.0" y="163.0" text-anchor="middle" class="rd-t" style="font-size:13px;font-weight:500">et maintenance</text><text x="114.0" y="179.0" text-anchor="middle" class="rd-t" style="font-size:13px;font-weight:500">état : en service (ou en panne)</text><path d="M205,159 H253" class="rd-arrow" marker-end="url(#cvm)"/><rect x="254" y="126" width="180" height="66" rx="8" class="rd-blk rd-k-p" /><text x="344.0" y="155.0" text-anchor="middle" class="rd-t" style="font-size:13px;font-weight:700">5. Retrait</text><text x="344.0" y="171.0" text-anchor="middle" class="rd-t" style="font-size:13px;font-weight:500">état : retiré</text><path d="M435,159 H483" class="rd-arrow" marker-end="url(#cvm)"/><rect x="484" y="126" width="180" height="66" rx="8" class="rd-blk rd-k-c" /><text x="574.0" y="155.0" text-anchor="middle" class="rd-t" style="font-size:13px;font-weight:700">6. Recyclage</text><text x="574.0" y="171.0" text-anchor="middle" class="rd-t" style="font-size:13px;font-weight:500">ou destruction</text><path d="M574,80 V98 H114 V126" class="rd-arrow" marker-end="url(#cvm)"/>
+</svg>
+<figcaption>Cycle de vie : à chaque étape, l'inventaire doit mettre à jour l'état de l'équipement.</figcaption>
+</figure>
+
 
 Un équipement change d'**état** au fil de ce cycle : l'inventaire doit le **suivre**, sinon il vieillit.
+
+**Je vérifie.** Pourquoi l'identifiant d'inventaire est-il préférable au nom de la machine pour retrouver un équipement ?
+
+<details markdown="1">
+<summary>Voir la réponse</summary>
+
+Parce qu'il **ne change jamais**, alors que le nom (et l'adresse IP) peuvent être modifiés : l'identifiant garde le lien entre la fiche et l'équipement physique.
+
+</details>
+
 
 ## 4. Inventaire manuel ou automatisé
 
@@ -115,6 +149,35 @@ Un inventaire faux est **pire** qu'un inventaire absent : on s'y fie à tort. Le
 | **Valeur incohérente** | Date d'achat dans le futur | Donnée suspecte |
 | **Fiche périmée** | Poste retiré encore affecté à un utilisateur | Mauvaises décisions |
 
+**Exemple : repérer les défauts.** Voici un extrait de quatre lignes (cas fictif). Cherche les défauts **avant** de lire la correction.
+
+| Identifiant | Nom | N° de série | Service | État | Date d'achat |
+|---|---|---|---|---|---|
+| INV-0101 | PC-COMPTA-01 | SN48213 | Comptabilité | En service | 2024-03-12 |
+| INV-0102 | PC-COMPTA-02 | SN48214 | Comptabilité | en service | 2024-03-12 |
+| INV-0103 | PC-RH-01 | SN48214 | RH | Actif | 15/04/2024 |
+| INV-0104 | PC-RH-02 | | RH | En service | 2027-01-10 |
+
+<details markdown="1">
+<summary>Voir les défauts</summary>
+
+1. **Doublon** : `SN48214` est sur les lignes INV-0102 et INV-0103 (deux équipements ne peuvent pas avoir le même numéro de série).
+2. **Valeurs non normalisées** : « En service », « en service » et « Actif » désignent le même état.
+3. **Formats différents** : `2024-04-15` attendu, mais `15/04/2024` en INV-0103.
+4. **Champ vide** : pas de numéro de série en INV-0104.
+5. **Valeur incohérente** : une date d'achat en 2027, dans le futur.
+
+</details>
+
+**Je vérifie.** Dans un parc de 120 postes, combien de temps faut-il pour un inventaire manuel à 45 minutes par poste ?
+
+<details markdown="1">
+<summary>Voir la réponse</summary>
+
+120 × 45 min = 5 400 min = **90 h**.
+
+</details>
+
 **Règles utiles** : un **dictionnaire de données** (liste des champs, format, valeurs permises), des **listes de choix** plutôt que du texte libre, un **contrôle** régulier (doublons, vides, incohérences), un **responsable** de l'inventaire.
 
 ## 6. Inventaire et données personnelles
@@ -131,6 +194,16 @@ Un inventaire relie des **machines** à des **personnes** (utilisateur, service)
 
 > [!WARNING]
 > Ceci est un **rappel de principes**, pas un avis juridique. Pour un cas réel, on consulte le **délégué à la protection des données** (DPO) ou le référent de l'organisation.
+
+
+**Je vérifie.** L'adresse e-mail et le nom de l'utilisateur sont-ils des données personnelles dans un inventaire ? Et le numéro de série d'un poste ?
+
+<details markdown="1">
+<summary>Voir la réponse</summary>
+
+Oui pour le **nom** et l'**e-mail** : ils identifient une personne. Le numéro de série d'un poste, seul, décrit un objet ; mais s'il est **relié** à une personne (affectation), il permet de l'identifier : la fiche entière relève alors du RGPD.
+
+</details>
 
 ## 7. Quelques outils d'inventaire
 
