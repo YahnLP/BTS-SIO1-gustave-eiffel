@@ -265,7 +265,27 @@ Tout le monde ne fait pas la même chose. Voici une répartition **de principe**
 
 ### Gouvernance : tenir un registre des identifiants
 
-La meilleure mesure technique échoue si **personne n'en est responsable**. On tient donc un **registre des identifiants de l'organisation** : les noms de domaine et leurs échéances, les certificats, les comptes officiels et l'administrateur de chacun. On y applique une règle simple : peu de personnes **nommées**, des **comptes individuels**, une authentification forte et une validation avant toute publication.
+**La gouvernance, c'est répondre à la question « qui est responsable de quoi ? ».** Une protection technique (SPF, double authentification, certificat) ne sert à rien si personne ne pense à la renouveler, la surveiller ou la retirer à un salarié qui part.
+
+**Un cas fictif pour comprendre.** Chez JackCelair, le nom de domaine a été acheté il y a trois ans par un stagiaire, avec sa propre adresse de messagerie et sa carte bancaire. Le stagiaire est parti. Un matin, le site et les courriels s'arrêtent : le renouvellement a échoué et personne n'a reçu l'avertissement, qui partait vers l'adresse du stagiaire. Aucune attaque, et pourtant l'identité de l'entreprise est perdue, avec le risque qu'un tiers rachète le domaine. La cause est un défaut de **gouvernance**, pas de technique.
+
+**Le remède : un registre des identifiants.** C'est un tableau tenu à jour qui recense tout ce qui représente l'organisation en ligne. Exemple (fictif) :
+
+| Élément | Où c'est géré | Responsable nommé | Échéance ou règle | Protection |
+|---|---|---|---|---|
+| Nom de domaine `jackcelair.example` | Bureau d'enregistrement | Responsable du SI | Renouvellement le 15 mars, **automatique** ; moyen de paiement de l'entreprise | Verrouillage du transfert, double authentification sur le compte |
+| Certificat HTTPS du site | Hébergeur ou autorité de certification | Technicien système | Expire le 2 septembre ; alerte 30 jours avant | Renouvellement automatique si possible |
+| Messagerie (SPF, DKIM, DMARC) | DNS et fournisseur de messagerie | Technicien réseau | Revue à chaque nouvel outil d'envoi | Rapports DMARC lus chaque mois |
+| Compte du réseau social officiel | Plateforme | Responsable communication + un suppléant | Revue des administrateurs à chaque départ | Compte nominatif, double authentification |
+
+**Les quatre règles du registre, et pourquoi.**
+
+1. **Peu de personnes, nommées.** Plus il y a d'administrateurs, plus il y a de comptes à protéger ; mais un seul administrateur est un risque d'absence. On en désigne **un titulaire et un suppléant**.
+2. **Des comptes individuels, jamais partagés.** Avec un compte commun, on ne sait pas qui a fait quoi et on ne peut pas retirer l'accès d'une seule personne.
+3. **Une authentification forte** (mot de passe long plus **double authentification**), surtout sur le compte du domaine : qui le contrôle peut rediriger le site et le courrier.
+4. **Une validation avant toute publication** : une seconde personne relit ce qui est publié au nom de l'organisation (site, réseaux sociaux).
+
+**Et lors d'un départ ?** On **retire** les accès de la personne et on remplace le contact de renouvellement par une adresse **de l'organisation** (par exemple `si@jackcelair.example`), pas une adresse personnelle. C'est le point qui manquait dans le cas du stagiaire.
 
 **Je vérifie.** Un client reçoit une « facture » de `compta@jackcelair-facturation.example` alors que le domaine de l'entreprise est `jackcelair.example`. Quelle est la nature du problème, et quelle est la première action du technicien ?
 
@@ -294,6 +314,15 @@ SPF dit quels serveurs peuvent envoyer pour le domaine, DMARC dit quoi faire si 
 
 </details>
 
+
+**Je vérifie.** Dans le cas du stagiaire, quelles deux lignes du registre auraient évité la perte du domaine ?
+
+<details markdown="1">
+<summary>Voir la réponse</summary>
+
+La ligne **Responsable nommé** (une personne et un suppléant connus de l'organisation) et la ligne **Échéance ou règle** (renouvellement automatique avec le moyen de paiement de l'entreprise, avertissements envoyés à une adresse de l'organisation). Le registre aurait aussi permis de retirer l'accès du stagiaire à son départ.
+
+</details>
 
 ## Je retiens
 
