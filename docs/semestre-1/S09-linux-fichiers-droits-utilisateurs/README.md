@@ -27,8 +27,8 @@
 
 | Document | Rôle |
 |---|---|
-| [Cours](01-cours.md) | Utilisateurs et groupes, lire les droits, `chmod`, `chown`, liens |
-| [TP : les habilitations de JackCelair](02-tp.md) | Utilisateurs, exercice `CommandesLinux`, liens, droits, habilitations, bilan |
+| [TP : les habilitations de JackCelair](02-tp.md) | **À faire en premier** : Utilisateurs, exercice `CommandesLinux`, liens, droits, habilitations, bilan |
+| [Cours](01-cours.md) | **À lire après le TP**, pour confronter ses résultats : Utilisateurs et groupes, lire les droits, `chmod`, `chown`, liens |
 | [Aide-mémoire](03-aide-memoire.md) | Les commandes de la séance |
 | [Arborescence CommandesLinux attendue](tp/arborescence-commandeslinux-attendue.md) | Résultat attendu de la partie B |
 | [Matrice des habilitations](tp/matrice-habilitations.md) | Qui doit pouvoir faire quoi, dossier par dossier |
@@ -37,13 +37,13 @@
 
 | Durée | Activité | Format |
 |---|---|---|
-| 0 h 00 – 0 h 40 | **Partie A** : utilisateurs et groupes (cours §1) | Binôme |
+| 0 h 00 – 0 h 40 | **Partie A** : utilisateurs et groupes | Binôme |
 | 0 h 40 – 1 h 20 | **Partie B** : l'arborescence `CommandesLinux`, afficher des fichiers | Binôme |
 | 1 h 20 – 1 h 50 | **Partie C** : liens durs et liens symboliques | Binôme |
 | 1 h 50 – 2 h 05 | Pause | |
 | 2 h 05 – 2 h 50 | **Partie D** : lire et modifier les droits | Binôme |
 | 2 h 50 – 3 h 40 | **Partie E** : les habilitations de JackCelair | Binôme |
-| 3 h 40 – 4 h 00 | **Bilan de compétences** et retour sur les « pourquoi » | Individuel puis oral |
+| 3 h 40 – 4 h 00 | **Confrontation avec le cours**, **bilan de compétences** et retour sur les « pourquoi » | Individuel puis oral |
 
 ## Évaluation
 
@@ -53,6 +53,7 @@
 <details markdown="1">
 <summary>Notes pour l'enseignant</summary>
 
+- **Choix pédagogique :** le TP précède le cours. L'élève cherche seul (essais, observation, aides données, Web), se trompe parfois, puis confronte ses réponses au cours : l'écart entre ce qu'il pensait et ce qui est établi crée le conflit cognitif qui fixe la notion. Il n'a donc pas le cours sous les yeux pendant le TP ; les « éléments de réponse » repliés restent à ouvrir **après** l'essai.
 - **Contenu :** le TP utilise l'utilisateur `tech2025`, l'arborescence `CommandesLinux`, les liens, `/etc/issue` et `/etc/services`. Les parties D (droits) et E (habilitations de JackCelair) sont ma proposition : groupes, comptes de test et politique de droits.
 - **Choix de rédaction :**
     - `carre.txt` et `carré.txt` : un seul nom, `carre.txt` ;

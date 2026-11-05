@@ -1,6 +1,6 @@
 # Cours – Utilisateurs, groupes, droits et liens sous Linux
 
-*BTS SIO SISR 1re année – S09 – à lire avec le [TP](02-tp.md)*
+*BTS SIO SISR 1re année – S09 – à lire **après** avoir cherché par toi-même dans le [TP](02-tp.md), pour confronter tes réponses*
 
 > [!NOTE] Ce que tu dois savoir déjà
 > - **Prérequis :** naviguer et gérer des fichiers dans le terminal (S08), utiliser `sudo`.

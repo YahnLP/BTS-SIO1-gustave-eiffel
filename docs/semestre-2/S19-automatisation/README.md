@@ -27,8 +27,8 @@
 
 | Document | Rôle |
 |---|---|
-| [Cours](01-cours.md) | Pourquoi et quand automatiser, qualités d'un script, planification, déclaratif |
-| [TP : du geste répété au script](02-tp.md) | Création de comptes en masse, planification, Compose, bilan |
+| [TP : du geste répété au script](02-tp.md) | **À faire en premier** : Création de comptes en masse, planification, Compose, bilan |
+| [Cours](01-cours.md) | **À lire après le TP**, pour confronter ses résultats : Pourquoi et quand automatiser, qualités d'un script, planification, déclaratif |
 | [Aide-mémoire](03-aide-memoire.md) | Commandes et rappels |
 | [Fichier des utilisateurs](tp/utilisateurs.md) | Données du TP (avec des défauts volontaires) |
 
@@ -37,10 +37,10 @@
 | Durée | Activité | Format |
 |---|---|---|
 | 0 h 00 – 0 h 10 | **Accroche** : 22 comptes à la main : combien de temps, combien d'erreurs ? | Calcul et discussion |
-| 0 h 10 – 0 h 40 | **Mini-cours** : automatiser, script robuste, `cron`, déclaratif (cours §1 à §6) | Cours et questions |
-| 0 h 40 – 1 h 30 | **TP partie A** : script de création de comptes depuis un fichier | Binôme |
+| 0 h 10 – 1 h 00 | **TP partie A** : script de création de comptes depuis un fichier | Binôme |
+| 1 h 00 – 1 h 30 | **Confrontation** et mini-cours : automatiser, script robuste, `cron`, déclaratif (cours §1 à §6) | Mise en commun, cours et questions |
 | 1 h 30 – 2 h 00 | **TP partie B** : planifier un rapport avec `cron` | Binôme |
-| 2 h 00 – 2 h 15 | Pause | |
+| 2 h 00 – 2 h 15 | Pause |  |
 | 2 h 15 – 2 h 55 | **TP partie C** : DockerLab, « Docker Compose » (facultative ou à la maison) ; les autres passent à **G** | Individuel |
 | 2 h 55 – 3 h 30 | **TP partie D** : la mission de S11 en un fichier Compose | Binôme |
 | 3 h 30 – 3 h 40 | **TP partie E** : automatiser, oui, mais quand ? | Individuel |
@@ -55,6 +55,7 @@
 <details markdown="1">
 <summary>Notes pour l'enseignant</summary>
 
+- **Choix pédagogique :** le TP précède le cours. L'élève cherche seul (essais, observation, aides données, Web), se trompe parfois, puis confronte ses réponses au cours : l'écart entre ce qu'il pensait et ce qui est établi crée le conflit cognitif qui fixe la notion. Il n'a donc pas le cours sous les yeux pendant le TP ; les « éléments de réponse » repliés restent à ouvrir **après** l'essai.
 - **Sources :** la séance s'appuie sur S10 (scripts, relançabilité), sur les **TP de DockerLab** (« Docker Compose : lancer une application en une commande », catalogue de l'application, dépôt consulté en octobre 2026) et sur la mission de S11. Les commandes Linux (`useradd`, `getent`, `crontab`…) sont des commandes courantes de Debian, **non exécutées** dans l'environnement de rédaction : à tester sur la VM de la salle.
 - **Partie D (hors catalogue) :** c'est un TP **non intégré** à DockerLab : les consignes sont dans ce site et se jouent dans un **laboratoire vide** de DockerLab. Compose y est **simulé** : les options exactes prises en charge sont à vérifier en jouant le TP avant la séance (champs `networks`, `volumes`, `environment`, `ports`).
 - **Fichier des utilisateurs :** il contient des **défauts volontaires** : doublon, ligne vide, majuscules, accent, espace dans l'identifiant, colonne manquante, colonne en trop. Les noms sont fictifs.

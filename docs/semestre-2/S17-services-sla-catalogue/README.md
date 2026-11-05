@@ -27,8 +27,8 @@
 
 | Document | Rôle |
 |---|---|
-| [Cours](01-cours.md) | Service, catalogue, SLA, OLA, calendrier, disponibilité, incident majeur |
-| [TP : promettre, mesurer, tenir](02-tp.md) | Parties A à D autour d'InfraLab et d'un catalogue, bilan |
+| [TP : promettre, mesurer, tenir](02-tp.md) | **À faire en premier** : Parties A à D autour d'InfraLab et d'un catalogue, bilan |
+| [Cours](01-cours.md) | **À lire après le TP**, pour confronter ses résultats : Service, catalogue, SLA, OLA, calendrier, disponibilité, incident majeur |
 | [Aide-mémoire](03-aide-memoire.md) | Définitions, calculs, structure d'une fiche de service |
 | [Modèle de fiche de service](tp/modele-fiche-service.md) | Pour la partie D |
 
@@ -37,10 +37,10 @@
 | Durée | Activité | Format |
 |---|---|---|
 | 0 h 00 – 0 h 10 | **Accroche** : « Disponible 99,9 % », ça fait combien de minutes d'arrêt par mois ? | Calcul au tableau |
-| 0 h 10 – 0 h 35 | **Mini-cours** : service, SLA, calendrier, incident majeur (cours §1 à §6) | Cours et questions |
-| 0 h 35 – 1 h 15 | **TP partie A** : InfraLab, TP 22 « SLA : tenir les délais » | Binôme |
+| 0 h 10 – 0 h 50 | **TP partie A** : InfraLab, TP 22 « SLA : tenir les délais » | Binôme |
+| 0 h 50 – 1 h 15 | **Confrontation** et mini-cours : service, SLA, calendrier, incident majeur (cours §1 à §6) | Mise en commun, cours et questions |
 | 1 h 15 – 1 h 50 | **TP partie B** : InfraLab, TP 41 « SLA : le week-end compte-t-il ? » (remédiation ou plus rapides ; les autres avancent) | Binôme |
-| 1 h 50 – 2 h 05 | Pause | |
+| 1 h 50 – 2 h 05 | Pause |  |
 | 2 h 05 – 2 h 55 | **TP partie C** : InfraLab, TP 20 « Incident majeur » | Binôme |
 | 2 h 55 – 3 h 40 | **TP partie D** : le catalogue de services de JackCelair | Binôme |
 | (selon avancement) | **TP partie E** (SLA et catalogue dans GLPI) et **partie F** (présence en ligne sur VM) ; reprise en début de S18 si besoin | Binôme |
@@ -55,6 +55,7 @@
 <details markdown="1">
 <summary>Notes pour l'enseignant</summary>
 
+- **Choix pédagogique :** le TP précède le cours. L'élève cherche seul (essais, observation, aides données, Web), se trompe parfois, puis confronte ses réponses au cours : l'écart entre ce qu'il pensait et ce qui est établi crée le conflit cognitif qui fixe la notion. Il n'a donc pas le cours sous les yeux pendant le TP ; les « éléments de réponse » repliés restent à ouvrir **après** l'essai.
 - **Sources :** la séance s'appuie sur **InfraLab** (version 1.2) : TP 22, 41 et 20 du catalogue ; TP 21 (incident ou demande) et 17 / 43 en remédiation ou approfondissement. Les définitions ITIL (SLA, OLA, contrat de sous-traitance, catalogue de services) viennent de **mes connaissances** : **à vérifier** avec la référence ITIL utilisée en classe.
 - **Calculs de la partie B :** l'échéance en heures ouvrées est **calculée à la main** dans le TP (calendrier lundi–vendredi, 8 h–18 h, comme dans InfraLab) puis **comparée** à l'application. Ma prévision (mercredi 11 h) suppose que « 24 h » se compte en heures **ouvrées** : à vérifier dans l'application avant la séance.
 - **Pas de pénalités chiffrées :** les pénalités ne sont pas présentées comme une règle.

@@ -1,6 +1,6 @@
 # Cours – Les conteneurs
 
-*BTS SIO SISR 1re année – S11 – à lire avant le [TP](02-tp.md)*
+*BTS SIO SISR 1re année – S11 – à lire **après** avoir cherché par toi-même dans le [TP](02-tp.md), pour confronter tes réponses*
 
 > [!NOTE] Ce que tu dois savoir déjà
 > - **Prérequis :** terminal Linux (S08 à S10) ; ce qu'est une VM (S06) ; port et adresse IP : voir la fiche [minimum réseau](../../ressources/minimum-reseau.md).

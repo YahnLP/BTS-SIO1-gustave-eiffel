@@ -27,8 +27,8 @@
 
 | Document | Rôle |
 |---|---|
-| [Cours](01-cours.md) | Modes réseau, snapshots et disque de différences, Guest Additions, stockage |
-| [TP : relier des machines virtuelles](02-tp.md) | Import, snapshot, Guest Additions, tests réseau, bilan de compétences |
+| [TP : relier des machines virtuelles](02-tp.md) | **À faire en premier** : Import, snapshot, Guest Additions, tests réseau, bilan de compétences |
+| [Cours](01-cours.md) | **À lire après le TP**, pour confronter ses résultats : Modes réseau, snapshots et disque de différences, Guest Additions, stockage |
 | [Aide-mémoire](03-aide-memoire.md) | Tableau des modes réseau, commandes de test, snapshots |
 | [Plan d'adressage et de tests](tp/plan-adressage-et-tests.md) | Adresses à utiliser et tableau de tests à compléter |
 
@@ -42,7 +42,7 @@
 | 1 h 25 – 1 h 40 | Pause | |
 | 1 h 40 – 2 h 10 | **Partie D** : Guest Additions (Windows et Kali) | Binôme |
 | 2 h 10 – 3 h 30 | **Partie E** : faire communiquer les VM, mode par mode | Binôme |
-| 3 h 30 – 3 h 45 | **Bilan de compétences** | Individuel |
+| 3 h 30 – 3 h 45 | **Confrontation avec le cours**, **bilan de compétences** | Individuel |
 | 3 h 45 – 4 h 00 | Marge, reprise des tests qui ont échoué | |
 
 Les parties F à I (fonctionnalités avancées, accès au réseau de la salle, compléments de cours, situation professionnelle) sont à faire si le temps le permet, ou en travail personnel.
@@ -55,6 +55,7 @@ Les parties F à I (fonctionnalités avancées, accès au réseau de la salle, c
 <details markdown="1">
 <summary>Notes pour l'enseignant</summary>
 
+- **Choix pédagogique :** le TP précède le cours. L'élève cherche seul (essais, observation, aides données, Web), se trompe parfois, puis confronte ses réponses au cours : l'écart entre ce qu'il pensait et ce qui est établi crée le conflit cognitif qui fixe la notion. Il n'a donc pas le cours sous les yeux pendant le TP ; les « éléments de réponse » repliés restent à ouvrir **après** l'essai.
 - **Durée :** le contenu dépasse 4 h ; **le tri est ma proposition**. Les paramètres généraux, la mémoire, les cœurs et threads, les formats, les systèmes de fichiers, l'OS Live, les fonctionnalités (copier-coller, glisser-déposer, dossier partagé) et l'accès au réseau de la salle sont en parties facultatives. À arbitrer.
 - **Adressage du réseau interne :** exemple 192.168.100.1 (Windows) et 192.168.100.2 (Kali), masque 255.255.255.0.
 - **Résultats attendus :** les cases du tableau de tests sont déduites du cours et ne sont **pas toutes vérifiées sur un poste**. En particulier, la communication entre la VM en mode NAT et l'hôte dépend de la version de VirtualBox et de la cible visée : à contrôler en salle avant de corriger.

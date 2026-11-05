@@ -27,8 +27,8 @@
 
 | Document | Rôle |
 |---|---|
-| [Cours](01-cours.md) | Clonage, PXE, FOG, bonnes pratiques et risques |
-| [TP : un poste, puis des copies](02-tp.md) | Installer FOG, capturer, déployer, relier à l'inventaire, bilan |
+| [TP : un poste, puis des copies](02-tp.md) | **À faire en premier** : Installer FOG, capturer, déployer, relier à l'inventaire, bilan |
+| [Cours](01-cours.md) | **À lire après le TP**, pour confronter ses résultats : Clonage, PXE, FOG, bonnes pratiques et risques |
 | [Aide-mémoire](03-aide-memoire.md) | Principes et étapes de la séance |
 | [Journal de déploiement](tp/journal-deploiement.md) | Plan d'adressage, tests, chronométrage |
 
@@ -37,9 +37,9 @@
 | Durée | Activité | Format |
 |---|---|---|
 | 0 h 00 – 0 h 10 | **Accroche** : 30 postes avant lundi : combien de temps, à la main ? | Calcul et discussion |
-| 0 h 10 – 0 h 35 | **Mini-cours** : image, PXE, FOG, identités après clonage (cours §1 à §5) | Cours et questions |
-| 0 h 35 – 1 h 30 | **TP partie A** : préparer le réseau isolé et installer le serveur FOG | Binôme |
-| 1 h 30 – 1 h 45 | Pause | |
+| 0 h 10 – 1 h 05 | **TP partie A** : préparer le réseau isolé et installer le serveur FOG | Binôme |
+| 1 h 05 – 1 h 30 | **Confrontation** et mini-cours : image, PXE, FOG, identités après clonage (cours §1 à §5) | Mise en commun, cours et questions |
+| 1 h 30 – 1 h 45 | Pause |  |
 | 1 h 45 – 2 h 25 | **TP partie B** : enregistrer et capturer le poste modèle | Binôme |
 | 2 h 25 – 2 h 55 | **TP partie C** : déployer sur le poste cible, vérifier les identités | Binôme |
 | 2 h 55 – 3 h 40 | **TP partie D** : InfraLab, TP 30 « Réaffectation d'un poste » | Individuel |
@@ -54,6 +54,7 @@
 <details markdown="1">
 <summary>Notes pour l'enseignant</summary>
 
+- **Choix pédagogique :** le TP précède le cours. L'élève cherche seul (essais, observation, aides données, Web), se trompe parfois, puis confronte ses réponses au cours : l'écart entre ce qu'il pensait et ce qui est établi crée le conflit cognitif qui fixe la notion. Il n'a donc pas le cours sous les yeux pendant le TP ; les « éléments de réponse » repliés restent à ouvrir **après** l'essai.
 - **Sources :** la séance s'appuie sur la **documentation officielle de FOG** (pages « capture an image », « deploy an image », prérequis, introduction) consultée à la rédaction, sur **InfraLab** (TP 30) et sur mes connaissances générales (PXE, DHCP). **Rien n'a été exécuté** : FOG n'a pas été installé ni testé ; les commandes d'installation et les questions de l'installeur sont reprises de la page officielle de FOG 1.6.
 - **Version et documentation :** la documentation officielle présente plusieurs versions (1.5, 1.6) ; la page d'introduction consultée contient encore des éléments anciens (systèmes cités, antivirus). Les numéros de version de FOG et de Debian ne sont **pas figés** : les étudiants téléchargent la version stable indiquée par le projet. **Les prérequis** (système du serveur, 2 cœurs, 2 Go de mémoire, carte gigabit, 512 Mo sur les postes) sont ceux de la page officielle : **à confirmer** pour la version choisie.
 - **Réseau :** FOG peut fournir le DHCP. **Ne jamais activer ce DHCP sur le réseau de l'établissement** : travailler sur un **réseau interne VirtualBox isolé** (voir S07). Le cours décrit le cas d'un DHCP existant (options de démarrage réseau).

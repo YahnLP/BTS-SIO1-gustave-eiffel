@@ -1,6 +1,6 @@
 # Cours – Virtualisation avancée : réseau, snapshots et Guest Additions
 
-*BTS SIO SISR 1re année – S07 – à lire avec le [TP](02-tp.md)*
+*BTS SIO SISR 1re année – S07 – à lire **après** avoir cherché par toi-même dans le [TP](02-tp.md), pour confronter tes réponses*
 
 > [!NOTE] Ce que tu dois savoir déjà
 > - **Prérequis :** créer et démarrer une VM dans VirtualBox (S06) ; savoir ce qu'est une adresse IP : voir la fiche [minimum réseau](../../ressources/minimum-reseau.md).

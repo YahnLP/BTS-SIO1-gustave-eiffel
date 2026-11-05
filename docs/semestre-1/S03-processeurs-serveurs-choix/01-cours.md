@@ -1,6 +1,6 @@
 # Cours – Processeurs, serveurs et choix d'un matériel
 
-*BTS SIO SISR 1re année – S03 – à lire avant le [TP](02-tp.md)*
+*BTS SIO SISR 1re année – S03 – à lire **après** avoir cherché par toi-même dans le [TP](02-tp.md), pour confronter tes réponses*
 
 > [!NOTE] Ce que tu dois savoir déjà
 > - **Prérequis :** lire les caractéristiques d'un poste et convertir les unités (S01, S02).

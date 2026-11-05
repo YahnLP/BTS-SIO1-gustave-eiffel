@@ -27,8 +27,8 @@
 
 | Document | Rôle |
 |---|---|
-| [Cours](01-cours.md) | Terminal, arborescence, commandes, `sudo`, noms de fichiers |
-| [TP : l'arborescence de JackCelair](02-tp.md) | Découverte, observation, construction, bilan de compétences |
+| [TP : l'arborescence de JackCelair](02-tp.md) | **À faire en premier** : Découverte, observation, construction, bilan de compétences |
+| [Cours](01-cours.md) | **À lire après le TP**, pour confronter ses résultats : Terminal, arborescence, commandes, `sudo`, noms de fichiers |
 | [Aide-mémoire](03-aide-memoire.md) | Les commandes de la séance, à garder sous la main |
 | [Arborescence attendue](tp/arborescence-attendue.md) | Modèle à comparer avec le résultat du TP |
 
@@ -37,9 +37,9 @@
 | Durée | Activité | Format |
 |---|---|---|
 | 0 h 00 – 0 h 15 | **Accroche** : à quoi sert un serveur sans écran ? Que voit-on sur un serveur en salle informatique ? | Oral |
-| 0 h 15 – 0 h 40 | **Mini-cours** : terminal, prompt, arborescence, chemins (cours §1 à §3) | Cours et questions |
-| 0 h 40 – 1 h 10 | **TP partie A** : préparer la VM Debian | Binôme |
-| 1 h 10 – 1 h 25 | Pause | |
+| 0 h 15 – 0 h 45 | **TP partie A** : préparer la VM Debian | Binôme |
+| 0 h 45 – 1 h 10 | **Confrontation** et mini-cours : terminal, prompt, arborescence, chemins (cours §1 à §3) | Mise en commun, cours et questions |
+| 1 h 10 – 1 h 25 | Pause |  |
 | 1 h 25 – 2 h 05 | **TP partie B** : commandes système, historique, `sudo` | Binôme |
 | 2 h 05 – 2 h 45 | **TP partie C** : se déplacer dans l'arborescence, créer et supprimer | Binôme |
 | 2 h 45 – 3 h 35 | **TP partie D** : l'arborescence de JackCelair | Binôme |
@@ -55,6 +55,7 @@ Les parties E et F du TP (recherche de fichiers, script) sont pour les étudiant
 <details markdown="1">
 <summary>Notes pour l'enseignant</summary>
 
+- **Choix pédagogique :** le TP précède le cours. L'élève cherche seul (essais, observation, aides données, Web), se trompe parfois, puis confronte ses réponses au cours : l'écart entre ce qu'il pensait et ce qui est établi crée le conflit cognitif qui fixe la notion. Il n'a donc pas le cours sous les yeux pendant le TP ; les « éléments de réponse » repliés restent à ouvrir **après** l'essai.
 - **Compétences :** codes et intitulés relus sur l'arrêté du 8 juillet 2024 ; le choix des compétences pour cette séance est une proposition de l'enseignant.
 - **Répartition des contenus :** les liens symboliques et liens durs, les utilisateurs et groupes, `/etc/services` et l'affichage page par page sont prévus en S09. La création de l'utilisateur `tech2025` est donc reportée.
 - **Réseau de la salle :** le TP suppose une VM en accès par pont sur le réseau du lycée (plage 192.168.51.x) ; à confirmer pour la salle utilisée.

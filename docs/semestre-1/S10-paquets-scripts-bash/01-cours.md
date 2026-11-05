@@ -1,6 +1,6 @@
 # Cours – Paquets Debian et premiers scripts Bash
 
-*BTS SIO SISR 1re année – S10 – à lire avec le [TP](02-tp.md)*
+*BTS SIO SISR 1re année – S10 – à lire **après** avoir cherché par toi-même dans le [TP](02-tp.md), pour confronter tes réponses*
 
 > [!NOTE] Ce que tu dois savoir déjà
 > - **Prérequis :** commandes de base, droits et `sudo` (S08, S09).

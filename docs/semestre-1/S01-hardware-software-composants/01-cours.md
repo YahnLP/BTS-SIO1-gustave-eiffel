@@ -1,6 +1,6 @@
 # Cours – Hardware et software : vocabulaire et composants
 
-*BTS SIO SISR 1re année – S01 – à lire avant le [TP](02-tp.md)*
+*BTS SIO SISR 1re année – S01 – à lire **après** avoir cherché par toi-même dans le [TP](02-tp.md), pour confronter tes réponses*
 
 > [!NOTE] Ce que tu dois savoir déjà
 > - **Prérequis :** aucun : tout est expliqué ici, même ce qui te paraît évident.

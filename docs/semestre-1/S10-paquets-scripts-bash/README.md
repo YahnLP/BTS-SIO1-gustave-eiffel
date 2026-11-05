@@ -27,8 +27,8 @@
 
 | Document | Rôle |
 |---|---|
-| [Cours](01-cours.md) | Paquets et dépôts, anatomie d'un script, conditions, boucles |
-| [TP : automatiser la création de l'arborescence](02-tp.md) | Paquets, premier script, conditions et boucles, script JackCelair, bilan |
+| [TP : automatiser la création de l'arborescence](02-tp.md) | **À faire en premier** : Paquets, premier script, conditions et boucles, script JackCelair, bilan |
+| [Cours](01-cours.md) | **À lire après le TP**, pour confronter ses résultats : Paquets et dépôts, anatomie d'un script, conditions, boucles |
 | [Aide-mémoire](03-aide-memoire.md) | Commandes `apt` et syntaxe Bash |
 | [Grille d'auto-évaluation du script](tp/grille-evaluation-script.md) | Critères de réussite et journal des prompts |
 
@@ -36,12 +36,12 @@
 
 | Durée | Activité | Format |
 |---|---|---|
-| 0 h 00 – 0 h 50 | **Partie A** : gérer des paquets avec `apt` (cours §1) | Binôme |
-| 0 h 50 – 1 h 35 | **Partie B** : mon premier script (cours §2) | Binôme |
+| 0 h 00 – 0 h 50 | **Partie A** : gérer des paquets avec `apt` | Binôme |
+| 0 h 50 – 1 h 35 | **Partie B** : mon premier script | Binôme |
 | 1 h 35 – 1 h 50 | Pause | |
-| 1 h 50 – 2 h 40 | **Partie C** : tests et boucles (cours §3 et §4) | Binôme |
+| 1 h 50 – 2 h 40 | **Partie C** : tests et boucles | Binôme |
 | 2 h 40 – 3 h 40 | **Partie D** : le script JackCelair | Individuel |
-| 3 h 40 – 4 h 00 | **Bilan de compétences** | Individuel |
+| 3 h 40 – 4 h 00 | **Confrontation avec le cours**, **bilan de compétences** | Individuel |
 
 La partie E (améliorations) est pour les étudiants qui avancent vite.
 
@@ -53,6 +53,7 @@ La partie E (améliorations) est pour les étudiants qui avancent vite.
 <details markdown="1">
 <summary>Notes pour l'enseignant</summary>
 
+- **Choix pédagogique :** le TP précède le cours. L'élève cherche seul (essais, observation, aides données, Web), se trompe parfois, puis confronte ses réponses au cours : l'écart entre ce qu'il pensait et ce qui est établi crée le conflit cognitif qui fixe la notion. Il n'a donc pas le cours sous les yeux pendant le TP ; les « éléments de réponse » repliés restent à ouvrir **après** l'essai.
 - **Contenu :** la partie D (script de préparation du TP, critères, règles sur l'IA, bonus) est précédée d'une progression A à C (`apt`, bases de Bash) pour qu'elle soit à portée de tous.
 - **Améliorations :**
     - la construction du script est **guidée** (blocs de syntaxe isolés, avec des exemples **sans rapport** avec JackCelair), pour ne pas donner la solution ;

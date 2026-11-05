@@ -1,6 +1,6 @@
 # Cours – Le terminal Linux : les commandes de base
 
-*BTS SIO SISR 1re année – S08 – à lire avant le [TP](02-tp.md)*
+*BTS SIO SISR 1re année – S08 – à lire **après** avoir cherché par toi-même dans le [TP](02-tp.md), pour confronter tes réponses*
 
 > [!NOTE] Ce que tu dois savoir déjà
 > - **Prérequis :** importer et démarrer une VM Debian (S06, S07) ; lire une arborescence de dossiers comme sur Windows.

@@ -27,8 +27,8 @@
 
 | Document | Rôle |
 |---|---|
-| [Cours](01-cours.md) | ITIL, service, vocabulaire, priorités, SLA, centre de services, niveaux, tickets dans GLPI |
-| [TP : un centre de services](02-tp.md) | Classer, prioriser, rédiger, InfraLab (TP 14, 21, 47), deux tickets dans GLPI, jeu de rôle, bilan |
+| [TP : un centre de services](02-tp.md) | **À faire en premier** : Classer, prioriser, rédiger, InfraLab (TP 14, 21, 47), deux tickets dans GLPI, jeu de rôle, bilan |
+| [Cours](01-cours.md) | **À lire après le TP**, pour confronter ses résultats : ITIL, service, vocabulaire, priorités, SLA, centre de services, niveaux, tickets dans GLPI |
 | [Aide-mémoire](03-aide-memoire.md) | Matrice, statuts, structure d'un ticket |
 | [Fiche de ticket](tp/fiche-ticket-incident.md) | Modèle papier pour la rédaction préalable |
 | [Grille d'observation](tp/grille-observation-jeu-de-role.md) | Pour le jeu de rôle |
@@ -38,11 +38,11 @@
 | Durée | Activité | Format |
 |---|---|---|
 | 0 h 00 – 0 h 10 | **Accroche** : trois appels en même temps, un seul technicien : lequel d'abord ? | Oral |
-| 0 h 10 – 0 h 35 | **Mini-cours** : types de sollicitations, priorité, niveaux, ticket (cours §1 à §6) | Cours et questions |
-| 0 h 35 – 1 h 00 | **TP partie A** : classer douze sollicitations | Binôme |
+| 0 h 10 – 0 h 35 | **TP partie A** : classer douze sollicitations | Binôme |
+| 0 h 35 – 1 h 00 | **Confrontation** et mini-cours : types de sollicitations, priorité, niveaux, ticket (cours §1 à §6) | Mise en commun, cours et questions |
 | 1 h 00 – 1 h 15 | **TP partie B** : rédiger un ticket | Binôme |
 | 1 h 15 – 1 h 45 | **TP partie C1 (InfraLab)** : TP 14 « Priorité : impact et urgence » | Binôme, navigateur |
-| 1 h 45 – 2 h 00 | Pause | |
+| 1 h 45 – 2 h 00 | Pause |  |
 | 2 h 00 – 2 h 30 | **TP partie C2 (InfraLab)** : TP 21 « Incident ou demande ? » (remédiation ou plus rapides ; les autres avancent sur C3) | Binôme |
 | 2 h 30 – 3 h 10 | **TP partie C3 (InfraLab)** : TP 47 « Passer la main : l'escalade » | Binôme |
 | 3 h 10 – 3 h 45 | **TP partie D** : préparer GLPI et traiter deux tickets | Individuel |
@@ -60,6 +60,7 @@
 <details markdown="1">
 <summary>Notes pour l'enseignant</summary>
 
+- **Choix pédagogique :** le TP précède le cours. L'élève cherche seul (essais, observation, aides données, Web), se trompe parfois, puis confronte ses réponses au cours : l'écart entre ce qu'il pensait et ce qui est établi crée le conflit cognitif qui fixe la notion. Il n'a donc pas le cours sous les yeux pendant le TP ; les « éléments de réponse » repliés restent à ouvrir **après** l'essai.
 - **Contenu :** service, types de sollicitations, priorité, SLA, centre de services, niveaux, ticket ; exercices de classification, rédaction et jeu de rôle ; modèle de ticket d'incident. Le cycle de vie en sept étapes, le diagnostic et la base de connaissances sont traités en **S16**.
 - **Matrice de priorité :** retenue : la matrice **impact × urgence d'InfraLab** (lue dans le code du laboratoire), pour qu'une seule matrice circule. À ajuster si besoin.
 - **Priorités de GLPI :** je pense que GLPI classe de « Très basse » à « Très haute » plus une priorité « Majeure », sans certitude du sens des numéros. **À vérifier**. Le TP utilise P1 à P4 (échelle pédagogique) et demande de **faire correspondre** l'échelle de GLPI.

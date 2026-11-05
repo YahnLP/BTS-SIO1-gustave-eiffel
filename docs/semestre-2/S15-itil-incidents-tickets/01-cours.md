@@ -1,6 +1,6 @@
 # Cours – ITIL, incidents, demandes et tickets
 
-*BTS SIO SISR 1re année – S15 – à lire avant le [TP](02-tp.md)*
+*BTS SIO SISR 1re année – S15 – à lire **après** avoir cherché par toi-même dans le [TP](02-tp.md), pour confronter tes réponses*
 
 > [!NOTE] Ce que tu dois savoir déjà
 > - **Prérequis :** GLPI configuré (S13, S14) ; CMDB (S12).

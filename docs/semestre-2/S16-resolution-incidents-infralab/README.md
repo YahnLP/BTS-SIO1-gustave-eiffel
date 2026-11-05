@@ -27,8 +27,8 @@
 
 | Document | Rôle |
 |---|---|
-| [Cours](01-cours.md) | Cycle de vie d'un incident, méthode de diagnostic, corrélation, connaissance |
-| [TP : dépanner, corréler, documenter](02-tp.md) | Parties A à D autour des TP d'InfraLab et d'un poste Windows, bilan |
+| [TP : dépanner, corréler, documenter](02-tp.md) | **À faire en premier** : Parties A à D autour des TP d'InfraLab et d'un poste Windows, bilan |
+| [Cours](01-cours.md) | **À lire après le TP**, pour confronter ses résultats : Cycle de vie d'un incident, méthode de diagnostic, corrélation, connaissance |
 | [Aide-mémoire](03-aide-memoire.md) | Méthode et commandes de diagnostic |
 | [Journal d'incident](tp/journal-incident.md) | À remplir en temps réel |
 | [Fiche de base de connaissances](tp/fiche-base-de-connaissances.md) | Modèle de fiche |
@@ -38,10 +38,10 @@
 | Durée | Activité | Format |
 |---|---|---|
 | 0 h 00 – 0 h 10 | **Accroche** : « Hors ligne » veut-il dire « éteint » ? | Discussion |
-| 0 h 10 – 0 h 35 | **Mini-cours** : cycle de vie, méthode, corrélation (cours §1 à §4) | Cours et questions |
-| 0 h 35 – 1 h 25 | **TP partie A** : InfraLab, TP 16 « PC déconnecté » | Binôme |
+| 0 h 10 – 1 h 00 | **TP partie A** : InfraLab, TP 16 « PC déconnecté » | Binôme |
+| 1 h 00 – 1 h 25 | **Confrontation** et mini-cours : cycle de vie, méthode, corrélation (cours §1 à §4) | Mise en commun, cours et questions |
 | 1 h 25 – 1 h 50 | **TP partie B** : InfraLab, TP 18 « Switch en panne » (remédiation ou plus rapides ; les autres avancent) | Binôme |
-| 1 h 50 – 2 h 05 | Pause | |
+| 1 h 50 – 2 h 05 | Pause |  |
 | 2 h 05 – 3 h 05 | **TP partie C** : InfraLab, TP 19 « Plusieurs utilisateurs impactés » | Binôme |
 | 3 h 05 – 3 h 40 | **TP partie D** : poste Windows lent, ticket et fiche de connaissance | Binôme |
 | (suite) | **TP partie E** : supervision légère et panne provoquée sur VM (à caler sur les temps gagnés ; sinon reprise en début de S17) | Binôme |
@@ -56,6 +56,7 @@
 <details markdown="1">
 <summary>Notes pour l'enseignant</summary>
 
+- **Choix pédagogique :** le TP précède le cours. L'élève cherche seul (essais, observation, aides données, Web), se trompe parfois, puis confronte ses réponses au cours : l'écart entre ce qu'il pensait et ce qui est établi crée le conflit cognitif qui fixe la notion. Il n'a donc pas le cours sous les yeux pendant le TP ; les « éléments de réponse » repliés restent à ouvrir **après** l'essai.
 - **Choix :** la séance s'appuie sur **InfraLab** (version 1.2) : les TP 16, 18 et 19 du catalogue, dont le contenu et les vérifications viennent de l'application. Seul l'incident « poste lent » est traité en partie D, car InfraLab ne couvre ni annuaire, ni droits de fichiers, ni GPO.
 - **Non traités :** l'incident « accès dossier refusé » (droits de partage et NTFS) suppose un serveur de fichiers et un annuaire ; il peut faire l'objet d'une séance Windows Server hors de cette séquence. L'incident « imprimante » s'appuie sur du matériel réel.
 - **Autres TP InfraLab utiles :** TP 17 (serveur arrêté), 20 (incident majeur), 43 (arrêt d'un hyperviseur) : voir le [corrigé](https://github.com/YahnLP/BTS-SIO1-gustave-eiffel/blob/main/corriges/S16-resolution-incidents-infralab.md) pour le placement possible.

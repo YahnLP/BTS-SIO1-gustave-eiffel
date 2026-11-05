@@ -26,8 +26,8 @@
 
 | Document | Rôle |
 |---|---|
-| [Cours](01-cours.md) | Unités, débits, temps de transfert, PowerShell et CMD |
-| [TP : le poste et ses chiffres](02-tp.md) | Conversions, débits, analyse du poste, bilan de compétences |
+| [TP : le poste et ses chiffres](02-tp.md) | **À faire en premier** : Conversions, débits, analyse du poste, bilan de compétences |
+| [Cours](01-cours.md) | **À lire après le TP**, pour confronter ses résultats : Unités, débits, temps de transfert, PowerShell et CMD |
 | [Aide-mémoire](03-aide-memoire.md) | Tableaux de conversion et formules |
 | [Fiche d'identité du poste](tp/fiche-identite-du-poste.md) | Fiche à compléter pendant la partie C |
 
@@ -36,12 +36,12 @@
 | Durée | Activité | Format |
 |---|---|---|
 | 0 h 00 – 0 h 10 | **Accroche** : le disque de 1 To qui affiche 931 Go | Oral |
-| 0 h 10 – 0 h 40 | **Mini-cours** : unités et débits (cours §1 à §3) | Cours et questions |
-| 0 h 40 – 1 h 15 | **TP partie A** : unités de stockage | Binôme |
-| 1 h 15 – 1 h 30 | Pause | |
+| 0 h 10 – 0 h 45 | **TP partie A** : unités de stockage | Binôme |
+| 0 h 45 – 1 h 15 | **Confrontation** et mini-cours : unités et débits (cours §1 à §3) | Mise en commun, cours et questions |
+| 1 h 15 – 1 h 30 | Pause |  |
 | 1 h 30 – 2 h 15 | **TP partie B** : débits et temps de transfert | Binôme |
-| 2 h 15 – 2 h 30 | **Mini-cours** : PowerShell et CMD (cours §4 et §5) | Cours et démonstration |
-| 2 h 30 – 3 h 40 | **TP partie C** : analyser le poste | Binôme |
+| 2 h 15 – 3 h 25 | **TP partie C** : analyser le poste | Binôme |
+| 3 h 25 – 3 h 40 | **Confrontation** et mini-cours : PowerShell et CMD (cours §4 et §5) | Mise en commun, cours et questions |
 | 3 h 40 – 4 h 00 | **Bilan de compétences** et retour sur les « pourquoi » | Individuel puis oral |
 
 La partie D (raccourcis clavier) est facultative.
@@ -55,6 +55,7 @@ La partie D (raccourcis clavier) est facultative.
 <details markdown="1">
 <summary>Notes pour l'enseignant</summary>
 
+- **Choix pédagogique :** le TP précède le cours. L'élève cherche seul (essais, observation, aides données, Web), se trompe parfois, puis confronte ses réponses au cours : l'écart entre ce qu'il pensait et ce qui est établi crée le conflit cognitif qui fixe la notion. Il n'a donc pas le cours sous les yeux pendant le TP ; les « éléments de réponse » repliés restent à ouvrir **après** l'essai.
 - **Commandes Windows :** les commandes données en aide (repliées) sont celles que je propose ; elles n'ont **pas été exécutées** sur la version de Windows de la salle. À tester avant la séance, en particulier `Get-Package` et la mesure de débit disque. La commande `wmic`, employée dans beaucoup de tutoriels, est dépréciée sur les versions récentes de Windows : elle n'est pas utilisée ici.
 - **Mesure de la vitesse de lecture du disque :** non prévue avec un outil imposé (licence non vérifiée) ; à adapter à ce que la salle autorise.
 - **Compétences :** codes et intitulés relus sur l'arrêté du 8 juillet 2024 ; le choix des compétences pour cette séance est une proposition de l'enseignant.

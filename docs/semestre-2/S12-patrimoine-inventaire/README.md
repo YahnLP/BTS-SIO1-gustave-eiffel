@@ -29,8 +29,8 @@
 
 | Document | Rôle |
 |---|---|
-| [Cours](01-cours.md) | Patrimoine, CI, inventaire manuel et automatisé, qualité des données, RGPD, outils |
-| [TP : l'inventaire de JackCelair](02-tp.md) | Fiche d'inventaire, inventaire de la salle, **InfraLab (TP 1, 4, 9)**, contrôle qualité, RGPD, choix d'outil, bilan |
+| [TP : l'inventaire de JackCelair](02-tp.md) | **À faire en premier** : Fiche d'inventaire, inventaire de la salle, **InfraLab (TP 1, 4, 9)**, contrôle qualité, RGPD, choix d'outil, bilan |
+| [Cours](01-cours.md) | **À lire après le TP**, pour confronter ses résultats : Patrimoine, CI, inventaire manuel et automatisé, qualité des données, RGPD, outils |
 | [Aide-mémoire](03-aide-memoire.md) | Attributs d'une fiche, commandes de contrôle, vocabulaire |
 | [Extrait d'inventaire (CSV)](tp/inventaire-extrait.md) | Un inventaire fictif de 18 équipements, à contrôler |
 
@@ -39,15 +39,15 @@
 | Durée | Activité | Format |
 |---|---|---|
 | 0 h 00 – 0 h 10 | **Accroche** : 200 postes, 45 minutes chacun : combien de temps ? | Oral |
-| 0 h 10 – 0 h 40 | **Mini-cours** : patrimoine, CI, cycle de vie, inventaire (cours §1 à §4) | Cours et questions |
-| 0 h 40 – 1 h 05 | **TP partie A** : concevoir la fiche d'inventaire | Binôme |
+| 0 h 10 – 0 h 35 | **TP partie A** : concevoir la fiche d'inventaire | Binôme |
+| 0 h 35 – 1 h 05 | **Confrontation** et mini-cours : patrimoine, CI, cycle de vie, inventaire (cours §1 à §4) | Mise en commun, cours et questions |
 | 1 h 05 – 1 h 25 | **TP partie B** : inventorier la salle (4 équipements) | Binôme |
 | 1 h 25 – 1 h 35 | **TP partie C** : chiffrer l'inventaire manuel | Binôme |
-| 1 h 35 – 1 h 50 | Pause | |
+| 1 h 35 – 1 h 50 | Pause |  |
 | 1 h 50 – 2 h 15 | **TP partie D1 (InfraLab)** : TP 1 « Découvrir le SI de NovaTech » | Binôme, navigateur |
 | 2 h 15 – 2 h 45 | **TP partie D2 (InfraLab)** : TP 4 « Identifier un actif » | Binôme |
 | 2 h 45 – 3 h 15 | **TP partie D3 (InfraLab)** : TP 9 « Équipement sans agent » (ou D4 pour les plus rapides) | Binôme |
-| 3 h 15 – 3 h 40 | **Mini-cours** qualité (cours §5) puis **TP partie E** : contrôler un inventaire | Cours puis binôme |
+| 3 h 15 – 3 h 40 | **TP partie E** : contrôler un inventaire (sans le cours), puis **confrontation** : mini-cours qualité (cours §5) | Binôme puis cours |
 | 3 h 40 – 4 h 00 | **Partie F** (données personnelles, choix d'outil) en version courte, puis bilan | Oral et individuel |
 
 > [!WARNING]
@@ -61,6 +61,7 @@
 <details markdown="1">
 <summary>Notes pour l'enseignant</summary>
 
+- **Choix pédagogique :** le TP précède le cours. L'élève cherche seul (essais, observation, aides données, Web), se trompe parfois, puis confronte ses réponses au cours : l'écart entre ce qu'il pensait et ce qui est établi crée le conflit cognitif qui fixe la notion. Il n'a donc pas le cours sous les yeux pendant le TP ; les « éléments de réponse » repliés restent à ouvrir **après** l'essai.
 - **InfraLab :** la partie D s'appuie sur les TP 1, 4 et 9 du catalogue (le TP 2 « Ajouter du matériel » et le TP 3 « Comprendre les deux vues » sont repris en S15 ou en remédiation) ; D4 est une mission **hors catalogue** écrite pour ce cours sur le jeu de données « NovaTech complet ». Le contrôle qualité d'un inventaire (partie E) et le CSV sont de moi.
 - **Données du CSV :** entièrement **fictives** ; utilisateurs pseudonymisés (U01…U12) volontairement, pour illustrer la minimisation des données. Défauts glissés dans le fichier (corrigé) : numéros de série en double et manquants, états écrits de plusieurs façons, un format de date différent, une date d'achat dans le futur, des noms manquants, trois postes sous Windows 10 dont un « retiré ».
 - **Gain de temps :** les durées « inventaire automatisé » (2 min, 2 h, 4 h…) sont des **estimations non sourcées** ; le TP demande de les **discuter**, pas de les retenir comme des faits.

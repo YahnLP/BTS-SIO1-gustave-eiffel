@@ -27,8 +27,8 @@
 
 | Document | Rôle |
 |---|---|
-| [Cours](01-cours.md) | Histoire, noyau et distributions, familles, licence, Windows et Linux, culture informatique |
-| [TP : Linux, mode d'emploi pour choisir](02-tp.md) | Frise, fiches de distributions, choix argumenté, comparaison, veille, bilan de compétences |
+| [TP : Linux, mode d'emploi pour choisir](02-tp.md) | **À faire en premier** : Frise, fiches de distributions, choix argumenté, comparaison, veille, bilan de compétences |
+| [Cours](01-cours.md) | **À lire après le TP**, pour confronter ses résultats : Histoire, noyau et distributions, familles, licence, Windows et Linux, culture informatique |
 | [Aide-mémoire](03-aide-memoire.md) | Vocabulaire et correspondances Windows / Linux |
 | [Grille de choix d'un système](tp/grille-choix-systeme.md) | Grille à remplir pendant la partie C |
 
@@ -37,10 +37,10 @@
 | Durée | Activité | Format |
 |---|---|---|
 | 0 h 00 – 0 h 10 | **Accroche** : où y a-t-il du Linux autour de nous ? | Oral |
-| 0 h 10 – 0 h 50 | **Mini-cours** : histoire, noyau, distributions, licence (cours §1 à §5) | Cours et questions |
-| 0 h 50 – 1 h 20 | **TP partie A** : la frise des jalons | Binôme |
+| 0 h 10 – 0 h 40 | **TP partie A** : la frise des jalons | Binôme |
+| 0 h 40 – 1 h 20 | **Confrontation** et mini-cours : histoire, noyau, distributions, licence (cours §1 à §5) | Mise en commun, cours et questions |
 | 1 h 20 – 1 h 55 | **TP partie B** : fiches de distributions | Binôme |
-| 1 h 55 – 2 h 10 | Pause | |
+| 1 h 55 – 2 h 10 | Pause |  |
 | 2 h 10 – 2 h 55 | **TP partie C** : choisir un système pour six situations | Binôme |
 | 2 h 55 – 3 h 25 | **TP partie D** : Windows et Linux, côte à côte | Binôme |
 | 3 h 25 – 3 h 40 | **TP partie E** : veille (une question au choix) | Individuel |
@@ -55,6 +55,7 @@
 <details markdown="1">
 <summary>Notes pour l'enseignant</summary>
 
+- **Choix pédagogique :** le TP précède le cours. L'élève cherche seul (essais, observation, aides données, Web), se trompe parfois, puis confronte ses réponses au cours : l'écart entre ce qu'il pensait et ce qui est établi crée le conflit cognitif qui fixe la notion. Il n'a donc pas le cours sous les yeux pendant le TP ; les « éléments de réponse » repliés restent à ouvrir **après** l'essai.
 - **Décision de séquence :** aucune installation ici. L'installation et la manipulation de Linux se font **après la virtualisation** : machine virtuelle en S06 et S07, terminal en S08 à S10. La partie D demande des **prédictions** (« J'anticipe ») que les étudiants vérifieront en S08.
 - **Points d'attention :** (1) Fortran et COBOL datent de la fin des années 1950 ; (2) CentOS Linux n'est plus maintenu : remplacé en pratique par des distributions compatibles (Rocky Linux, AlmaLinux) et par CentOS Stream, qui se place en amont de Red Hat Enterprise Linux ; (3) la frise de la partie A relie langage machine, systèmes et Internet.
 - **Dates :** les dates du corrigé sont de ma mémoire et à **confirmer par les sources que citent les étudiants**.

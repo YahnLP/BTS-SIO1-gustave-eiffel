@@ -27,8 +27,8 @@
 
 | Document | Rôle |
 |---|---|
-| [Cours](01-cours.md) | Principes, vocabulaire, règle 3-2-1, outils, risques |
-| [TP : sauvegarder, restaurer, prouver](02-tp.md) | Analyse avec InfraLab, fichiers, base GLPI, plan, bilan |
+| [TP : sauvegarder, restaurer, prouver](02-tp.md) | **À faire en premier** : Analyse avec InfraLab, fichiers, base GLPI, plan, bilan |
+| [Cours](01-cours.md) | **À lire après le TP**, pour confronter ses résultats : Principes, vocabulaire, règle 3-2-1, outils, risques |
 | [Aide-mémoire](03-aide-memoire.md) | Commandes et définitions |
 | [Analyse de sauvegarde](tp/analyse-sauvegarde.md) | Tableau à remplir dans InfraLab |
 | [Journal de restauration](tp/journal-restauration.md) | Preuves des sauvegardes et du test |
@@ -38,10 +38,10 @@
 | Durée | Activité | Format |
 |---|---|---|
 | 0 h 00 – 0 h 10 | **Accroche** : « Mon snapshot, c'est ma sauvegarde » : vrai ou faux ? | Débat |
-| 0 h 10 – 0 h 40 | **Mini-cours** : vocabulaire, 3-2-1, méthodes, outils (cours §1 à §6) | Cours et questions |
-| 0 h 40 – 1 h 10 | **TP partie A** : InfraLab, quoi sauvegarder à NovaTech ? | Binôme |
+| 0 h 10 – 0 h 40 | **TP partie A** : InfraLab, quoi sauvegarder à NovaTech ? | Binôme |
+| 0 h 40 – 1 h 10 | **Confrontation** et mini-cours : vocabulaire, 3-2-1, méthodes, outils (cours §1 à §6) | Mise en commun, cours et questions |
 | 1 h 10 – 2 h 00 | **TP partie B** : fichiers avec `tar` et `rsync`, test de restauration | Binôme |
-| 2 h 00 – 2 h 15 | Pause | |
+| 2 h 00 – 2 h 15 | Pause |  |
 | 2 h 15 – 2 h 55 | **TP partie C** : sauvegarder et restaurer la base de GLPI | Binôme |
 | 2 h 55 – 3 h 40 | **TP partie D** : le plan de sauvegarde de JackCelair | Binôme |
 | 3 h 40 – 4 h 00 | **Bilan de compétences** et retour sur les « pourquoi » | Individuel puis oral |
@@ -55,6 +55,7 @@
 <details markdown="1">
 <summary>Notes pour l'enseignant</summary>
 
+- **Choix pédagogique :** le TP précède le cours. L'élève cherche seul (essais, observation, aides données, Web), se trompe parfois, puis confronte ses réponses au cours : l'écart entre ce qu'il pensait et ce qui est établi crée le conflit cognitif qui fixe la notion. Il n'a donc pas le cours sous les yeux pendant le TP ; les « éléments de réponse » repliés restent à ouvrir **après** l'essai.
 - **Sources :** la séance s'appuie sur S14 (`mysqldump` de la base GLPI), S19 (scripts, `cron`) et sur **InfraLab** : le jeu de données « NovaTech complet » (4 sites, environ 45 équipements, une CMDB de services dont la facturation, le partage de fichiers, la messagerie et l'intranet RH, un NAS dans le datacenter, deux machines virtuelles sur un hôte). Le jeu de données est exploité **hors catalogue** : c'est un TP de lecture et de décision, à jouer en exploration libre (aucun objectif n'est vérifié par l'application).
 - **Lecture de la CMDB :** les relations de NovaTech sont lues dans le code du jeu de données (dépôt consulté en octobre 2026) : facturation → logiciel de facturation → SRV-FACT ; partage de fichiers → SRV-FICHIERS ; intranet RH → application RH → HV-DC-01 ; messagerie → SRV-ITSM. **À vérifier à l'écran** avant la séance.
 - **Commandes :** `tar`, `rsync`, `mysqldump`, `mysql` sont des commandes standard de Debian, **non exécutées** dans l'environnement de rédaction : à tester sur la VM de la salle. L'**emplacement des fichiers de GLPI** (configuration, documents) dépend de la version et de l'installation : ils sont à retrouver dans la documentation de la version installée (voir S13 et S14).

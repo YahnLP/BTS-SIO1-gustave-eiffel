@@ -1,6 +1,6 @@
 # Cours – GLPI et l'inventaire automatique
 
-*BTS SIO SISR 1re année – S13 – à lire avant le [TP](02-tp.md)*
+*BTS SIO SISR 1re année – S13 – à lire **après** avoir cherché par toi-même dans le [TP](02-tp.md), pour confronter tes réponses*
 
 > [!NOTE] Ce que tu dois savoir déjà
 > - **Prérequis :** virtualisation (S06, S07), terminal et paquets (S08 à S10), inventaire (S12).

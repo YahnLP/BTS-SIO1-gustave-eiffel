@@ -1,6 +1,6 @@
 # Cours – Sauvegarder et restaurer
 
-*BTS SIO SISR 1re année – S20 – à lire avant le [TP](02-tp.md)*
+*BTS SIO SISR 1re année – S20 – à lire **après** avoir cherché par toi-même dans le [TP](02-tp.md), pour confronter tes réponses*
 
 > [!NOTE] Ce que tu dois savoir déjà
 > - **Prérequis :** scripts et `cron` (S10, S19) ; GLPI et sa base de données (S13, S14).

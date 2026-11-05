@@ -26,8 +26,8 @@
 
 | Document | Rôle |
 |---|---|
-| [Cours](01-cours.md) | Méthode : le projet de synthèse, la preuve, le bilan, l'oral |
-| [TP : projet de synthèse et bilan](02-tp.md) | InfraLab TP 40 (entraînement), réalisation individuelle documentée, dossier de preuves, entretien et recette croisés, bilan |
+| [TP : projet de synthèse et bilan](02-tp.md) | **À faire en premier** : InfraLab TP 40 (entraînement), réalisation individuelle documentée, dossier de preuves, entretien et recette croisés, bilan |
+| [Cours](01-cours.md) | **À lire après le TP**, pour confronter ses résultats : Méthode : le projet de synthèse, la preuve, le bilan, l'oral |
 | [Aide-mémoire](03-aide-memoire.md) | Liste de contrôle du dossier et de l'oral |
 | [Matrice de compétences](tp/matrice-competences.md) | À remplir pour le dossier |
 | [Grille d'oral](tp/grille-oral.md) | Pour l'oral croisé |
@@ -54,6 +54,7 @@
 <details markdown="1">
 <summary>Notes pour l'enseignant</summary>
 
+- **Choix pédagogique :** le TP précède le cours. L'élève cherche seul (essais, observation, aides données, Web), se trompe parfois, puis confronte ses réponses au cours : l'écart entre ce qu'il pensait et ce qui est établi crée le conflit cognitif qui fixe la notion. Il n'a donc pas le cours sous les yeux pendant le TP ; les « éléments de réponse » repliés restent à ouvrir **après** l'essai.
 - **Sources :** la séance repose sur le TP final d'**InfraLab** (TP 40, durée annoncée 2 h, niveau Administration, compétences **travaillées** : patrimoine, incidents et demandes, habilitations, mode projet ; **élément de preuve possible** : traçabilité) et sur les rendus des séances précédentes.
 - **Mode examen d'InfraLab :** d'après le guide du formateur, il supprime indices, solution et explication après réponse : c'est le mode à privilégier si le TP 40 sert d'évaluation. À **décider** par l'équipe pédagogique ; le TP fonctionne aussi avec aides, en entraînement.
 - **Aucune validation officielle :** la séance ne **valide** aucune compétence ; elle produit des **éléments de preuve** et une auto-évaluation. L'usage du dossier dans une épreuve ou un portfolio relève de l'**équipe pédagogique** et du référentiel officiel, que je n'ai pas pu consulter directement (voir la page du référentiel). Le cours ne cite aucune épreuve ni aucune exigence officielle.

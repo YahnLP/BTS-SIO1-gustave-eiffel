@@ -27,8 +27,8 @@
 
 | Document | Rôle |
 |---|---|
-| [Cours](01-cours.md) | Processeurs, benchmarks, serveurs, RAID, bi-processeur, dimensionnement |
-| [TP : choisir un matériel](02-tp.md) | Appel d'offres, Xeon contre Core, dimensionnement, bilan de compétences |
+| [TP : choisir un matériel](02-tp.md) | **À faire en premier** : Appel d'offres, Xeon contre Core, dimensionnement, bilan de compétences |
+| [Cours](01-cours.md) | **À lire après le TP**, pour confronter ses résultats : Processeurs, benchmarks, serveurs, RAID, bi-processeur, dimensionnement |
 | [Aide-mémoire](03-aide-memoire.md) | Lire un processeur, RAID, dimensionner |
 | [Catalogue fictif de la société Ochan-Elizé](tp/catalogue-ochan-elize.md) | Les quatre configurations à comparer |
 
@@ -37,12 +37,12 @@
 | Durée | Activité | Format |
 |---|---|---|
 | 0 h 00 – 0 h 10 | **Accroche** : même prix, deux processeurs, deux performances | Oral |
-| 0 h 10 – 0 h 45 | **Mini-cours** : processeurs et benchmarks (cours §1 et §2) | Cours et questions |
-| 0 h 45 – 1 h 05 | **TP partie A** : lire un processeur | Binôme |
+| 0 h 10 – 0 h 30 | **TP partie A** : lire un processeur | Binôme |
+| 0 h 30 – 1 h 05 | **Confrontation** et mini-cours : processeurs et benchmarks (cours §1 et §2) | Mise en commun, cours et questions |
 | 1 h 05 – 2 h 05 | **TP partie B** : appel d'offres | Binôme |
-| 2 h 05 – 2 h 20 | Pause | |
-| 2 h 20 – 2 h 40 | **Mini-cours** : serveurs, RAID, bi-processeur (cours §3 à §5) | Cours et questions |
-| 2 h 40 – 3 h 10 | **TP partie C** : Xeon contre Core | Binôme |
+| 2 h 05 – 2 h 20 | Pause |  |
+| 2 h 20 – 2 h 50 | **TP partie C** : Xeon contre Core | Binôme |
+| 2 h 50 – 3 h 10 | **Confrontation** et mini-cours : serveurs, RAID, bi-processeur (cours §3 à §5) | Mise en commun, cours et questions |
 | 3 h 10 – 3 h 40 | **TP partie D** : dimensionner un serveur de virtualisation | Binôme |
 | 3 h 40 – 4 h 00 | **Bilan de compétences** et retour sur les « pourquoi » | Individuel puis oral |
 
@@ -56,6 +56,7 @@ La partie E (bi-processeur et NUMA) est facultative.
 <details markdown="1">
 <summary>Notes pour l'enseignant</summary>
 
+- **Choix pédagogique :** le TP précède le cours. L'élève cherche seul (essais, observation, aides données, Web), se trompe parfois, puis confronte ses réponses au cours : l'écart entre ce qu'il pensait et ce qui est établi crée le conflit cognitif qui fixe la notion. Il n'a donc pas le cours sous les yeux pendant le TP ; les « éléments de réponse » repliés restent à ouvrir **après** l'essai.
 - **Catalogue :** `tp/catalogue-ochan-elize.md` est un catalogue **fictif** : prix inventés, modèles de processeurs réels (générations 12) mais **caractéristiques à vérifier sur les fiches constructeur** avant la séance. Remplace-le par ton propre catalogue si tu en as un.
 - **Dimensionnement (partie D) :** cas, chiffres et règles empiriques (ratio de vCPU par cœur, marge de 25 %) sont des **propositions** ; ils préparent la virtualisation et les sauvegardes.
 - **Sujet du semestre 2 :** le RAID n'est présenté ici que pour la tolérance de panne ; l'étude des sauvegardes (S20) montrera qu'un RAID n'est pas une sauvegarde.

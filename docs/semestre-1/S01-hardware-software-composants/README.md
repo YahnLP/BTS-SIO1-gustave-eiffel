@@ -27,8 +27,8 @@
 
 | Document | Rôle |
 |---|---|
-| [Cours](01-cours.md) | Hardware et software, composants, Von Neumann, mémoires, stockage |
-| [TP : ouvrir un ordinateur](02-tp.md) | Identifier, comparer, exécuter un programme « à la main », bilan de compétences |
+| [TP : ouvrir un ordinateur](02-tp.md) | **À faire en premier** : Identifier, comparer, exécuter un programme « à la main », bilan de compétences |
+| [Cours](01-cours.md) | **À lire après le TP**, pour confronter ses résultats : Hardware et software, composants, Von Neumann, mémoires, stockage |
 | [Aide-mémoire](03-aide-memoire.md) | Vocabulaire et composants à garder sous la main |
 | [Questionnaire de positionnement](tp/questionnaire-positionnement.md) | À remplir au début, sans note, pour situer le groupe |
 
@@ -37,11 +37,11 @@
 | Durée | Activité | Format |
 |---|---|---|
 | 0 h 00 – 0 h 25 | **Accueil** : présentation de la formation, du site, du mode de travail (J'anticipe / Je comprends / bilan). **Questionnaire de positionnement** (non noté) | Collectif puis individuel |
-| 0 h 25 – 1 h 00 | **Mini-cours** : hardware, software, composants (cours §1 à §3) | Cours et questions |
-| 1 h 00 – 1 h 45 | **TP partie A** : identifier les composants sur une machine ouverte | Binôme |
-| 1 h 45 – 2 h 00 | Pause | |
-| 2 h 00 – 2 h 20 | **Mini-cours** : Von Neumann, mémoires, stockage (cours §4 à §6) | Cours et questions |
-| 2 h 20 – 2 h 50 | **TP partie B** : mémoires et stockage (HDD / SSD) | Binôme |
+| 0 h 25 – 1 h 10 | **TP partie A** : identifier les composants sur une machine ouverte | Binôme |
+| 1 h 10 – 1 h 45 | **Confrontation** et mini-cours : hardware, software, composants (cours §1 à §3) | Mise en commun, cours et questions |
+| 1 h 45 – 2 h 00 | Pause |  |
+| 2 h 00 – 2 h 30 | **TP partie B** : mémoires et stockage (HDD / SSD) | Binôme |
+| 2 h 30 – 2 h 50 | **Confrontation** et mini-cours : Von Neumann, mémoires, stockage (cours §4 à §6) | Mise en commun, cours et questions |
 | 2 h 50 – 3 h 30 | **TP partie C** : exécuter un programme à la main (la « machine papier ») | Binôme |
 | 3 h 30 – 3 h 40 | **TP partie D** : du pseudo-code au langage machine | Binôme |
 | 3 h 40 – 4 h 00 | **Bilan de compétences** et retour sur les « pourquoi » | Individuel puis oral |
@@ -54,6 +54,7 @@
 <details markdown="1">
 <summary>Notes pour l'enseignant</summary>
 
+- **Choix pédagogique :** le TP précède le cours. L'élève cherche seul (essais, observation, aides données, Web), se trompe parfois, puis confronte ses réponses au cours : l'écart entre ce qu'il pensait et ce qui est établi crée le conflit cognitif qui fixe la notion. Il n'a donc pas le cours sous les yeux pendant le TP ; les « éléments de réponse » repliés restent à ouvrir **après** l'essai.
 - **Observation d'une machine réelle :** la séance repose sur l'observation d'un poste de récupération ouvert. À défaut de machine ouverte, utiliser des photos annotées.
 - **Découpage :** les conversions d'unités et les débits passent en S02 ; les processeurs, les serveurs et l'appel d'offres en S03 ; BIOS, système d'exploitation et licences en S04 ; l'histoire d'Internet, le quantique et l'énergie en S05.
 - **Sécurité en salle :** débrancher les machines avant ouverture, ne pas toucher le bloc d'alimentation, se décharger de l'électricité statique (toucher le châssis métallique) avant de manipuler une carte.

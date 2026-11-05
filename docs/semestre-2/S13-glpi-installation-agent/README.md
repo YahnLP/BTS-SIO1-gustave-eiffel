@@ -28,8 +28,8 @@
 
 | Document | Rôle |
 |---|---|
-| [Cours](01-cours.md) | Architecture GLPI, installation, inventaire natif et agent, variante OCS, diagnostic |
-| [TP : un serveur GLPI et un premier poste](02-tp.md) | InfraLab (TP 6 et 10), préparer, installer GLPI, inventorier avec l'agent, comparer, bilan |
+| [TP : un serveur GLPI et un premier poste](02-tp.md) | **À faire en premier** : InfraLab (TP 6 et 10), préparer, installer GLPI, inventorier avec l'agent, comparer, bilan |
+| [Cours](01-cours.md) | **À lire après le TP**, pour confronter ses résultats : Architecture GLPI, installation, inventaire natif et agent, variante OCS, diagnostic |
 | [Aide-mémoire](03-aide-memoire.md) | Commandes et paramètres de la séance |
 | [Plan de tests](tp/plan-de-tests.md) | Tableau de tests à remplir pendant l'installation |
 
@@ -38,12 +38,12 @@
 | Durée | Activité | Format |
 |---|---|---|
 | 0 h 00 – 0 h 10 | **Accroche** : 22 postes, une seule console : démonstration d'une fiche d'ordinateur dans GLPI | Démonstration |
-| 0 h 10 – 0 h 40 | **Mini-cours** : architecture, installation, inventaire natif et agent (cours §1 à §4) | Cours et questions |
-| 0 h 40 – 1 h 05 | **TP partie A1 (InfraLab)** : TP 6 « Installer un agent » | Binôme, navigateur |
+| 0 h 10 – 0 h 35 | **TP partie A1 (InfraLab)** : TP 6 « Installer un agent » | Binôme, navigateur |
+| 0 h 35 – 1 h 05 | **Confrontation** et mini-cours : architecture, installation, inventaire natif et agent (cours §1 à §4) | Mise en commun, cours et questions |
 | 1 h 05 – 1 h 40 | **TP partie A2 (InfraLab)** : TP 10 « Agent en erreur » | Binôme |
 | 1 h 40 – 1 h 50 | **TP partie B** : préparer les machines virtuelles (en réalité, restaurer les VM de la séance) | Binôme |
 | 1 h 50 – 2 h 50 | **TP partie C** : installer GLPI | Binôme |
-| 2 h 50 – 3 h 05 | Pause | |
+| 2 h 50 – 3 h 05 | Pause |  |
 | 3 h 05 – 3 h 40 | **TP partie D** : activer l'inventaire, installer l'agent | Binôme |
 | 3 h 40 – 3 h 52 | **TP partie E** : comparer avec la fiche manuelle, lien avec InfraLab | Binôme |
 | 3 h 52 – 4 h 00 | **Bilan de compétences** (à terminer à la maison) | Individuel |
@@ -60,6 +60,7 @@
 <details markdown="1">
 <summary>Notes pour l'enseignant</summary>
 
+- **Choix pédagogique :** le TP précède le cours. L'élève cherche seul (essais, observation, aides données, Web), se trompe parfois, puis confronte ses réponses au cours : l'écart entre ce qu'il pensait et ce qui est établi crée le conflit cognitif qui fixe la notion. Il n'a donc pas le cours sous les yeux pendant le TP ; les « éléments de réponse » repliés restent à ouvrir **après** l'essai.
 - **Choix :** l'agent d'inventaire est l'**agent GLPI** (inventaire natif de GLPI depuis la version 10, d'après l'aide officielle de GLPI). OCS reste une **variante** décrite au cours (§5) et dans les « Notes » ci-dessous, pas une procédure complète.
 - **Version de GLPI :** la page d'installation officielle consultée à la rédaction décrit GLPI **11.0.x** (répertoire public `/var/www/html/glpi/public`, séparation configuration, données et journaux). **Les commandes du TP n'ont pas été exécutées** : elles sont écrites d'après cette page et mes connaissances. Un test complet sur une VM de la salle est **indispensable avant la séance** (versions de PHP et de MariaDB de Debian, règles de réécriture d'Apache, extensions PHP manquantes, droits des dossiers). Les numéros de version ne sont pas figés : les étudiants téléchargent la dernière version stable indiquée sur la page des publications de GLPI.
 - **Agent :** les paramètres de l'installeur Windows (`SERVER`, `TAG`, `RUNNOW`, `EXECMODE`…) viennent de la documentation officielle de l'agent ; les points **non vérifiés** (commande exacte pour forcer un inventaire, port de l'interface locale de l'agent, nom du service Windows) sont laissés à la recherche des étudiants dans la documentation.

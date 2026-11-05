@@ -1,6 +1,6 @@
 # Cours – Services, SLA et catalogue
 
-*BTS SIO SISR 1re année – S17 – à lire avant le [TP](02-tp.md)*
+*BTS SIO SISR 1re année – S17 – à lire **après** avoir cherché par toi-même dans le [TP](02-tp.md), pour confronter tes réponses*
 
 > [!NOTE] Ce que tu dois savoir déjà
 > - **Prérequis :** tickets, priorités et SLA (S15) ; diagnostic (S16) ; CMDB (S12).
