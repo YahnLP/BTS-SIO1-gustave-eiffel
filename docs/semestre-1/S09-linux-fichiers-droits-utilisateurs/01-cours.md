@@ -15,6 +15,14 @@
 - [ ] expliquer l'effet des droits **sur un dossier** ;
 - [ ] distinguer un **lien dur** d'un **lien symbolique**.
 
+> [!NOTE] Socle et pour aller plus loin
+> Le **socle** : utilisateurs et groupes (§ 1), lecture des droits (§ 2), `chmod`, `chown`, setgid (§ 3) et affichage d'un fichier (§ 5). Le `umask` et les **liens** (§ 4) sont des **compléments** : ils ne sont pas exigés.
+
+> [!IMPORTANT] Idées reçues à confronter à tes réponses du TP
+> - « **Avoir `w` sur un dossier me permet de modifier un fichier qui n'est pas à moi.** » Non : `w` sur un **dossier** permet de créer, renommer et supprimer ce qu'il contient ; modifier le contenu d'un fichier demande `w` **sur le fichier** (§ 2).
+> - « **`chmod 777` règle tout.** » Cela règle le message d'erreur en ouvrant l'accès à **tout le monde** : c'est presque toujours une mauvaise réponse (§ 3).
+> - « **Un lien dur est une copie.** » Non : c'est un **second nom** pour les mêmes données (§ 4).
+
 ---
 
 ## 1. Utilisateurs et groupes
@@ -99,6 +107,14 @@ Ils se lisent **par groupes de trois** : le **propriétaire** (`u`, *user*), le 
 
 Exemple : `rwxr-x---` = propriétaire `rwx` (4+2+1 = **7**), groupe `r-x` (4+0+1 = **5**), autres `---` (**0**). En octal : **750**.
 
+<figure class="raid-fig">
+<svg viewBox="0 0 720 266" role="img" aria-labelledby="dr-t" xmlns="http://www.w3.org/2000/svg"><title id="dr-t">Décomposition de drwxr-x--- en type, propriétaire, groupe et autres, puis calcul de l'octal 750</title>
+<text x="55" y="38" text-anchor="middle" class="rd-note" style="font-size:12px;font-weight:700">Type</text><rect x="20" y="48" width="70" height="48" rx="8" class="rd-blk rd-k-d" /><text x="55" y="79" text-anchor="middle" class="rd-t" style="font-size:20px;font-weight:700">d</text><text x="55" y="114" text-anchor="middle" class="rd-note" style="font-size:12px;font-weight:500">dossier</text><text x="200" y="38" text-anchor="middle" class="rd-note" style="font-size:12px;font-weight:700">Propriétaire (u)</text><rect x="110" y="48" width="54" height="48" rx="8" class="rd-blk rd-k-a" /><text x="137" y="79" text-anchor="middle" class="rd-t" style="font-size:20px;font-weight:700">r</text><text x="137" y="114" text-anchor="middle" class="rd-note" style="font-size:13px;font-weight:500">4</text><rect x="170" y="48" width="54" height="48" rx="8" class="rd-blk rd-k-b" /><text x="197" y="79" text-anchor="middle" class="rd-t" style="font-size:20px;font-weight:700">w</text><text x="197" y="114" text-anchor="middle" class="rd-note" style="font-size:13px;font-weight:500">2</text><rect x="230" y="48" width="54" height="48" rx="8" class="rd-blk rd-k-c" /><text x="257" y="79" text-anchor="middle" class="rd-t" style="font-size:20px;font-weight:700">x</text><text x="257" y="114" text-anchor="middle" class="rd-note" style="font-size:13px;font-weight:500">1</text><text x="200" y="152" text-anchor="middle" class="rd-t" style="font-size:15px;font-weight:700">4 + 2 + 1 = 7</text><text x="410" y="38" text-anchor="middle" class="rd-note" style="font-size:12px;font-weight:700">Groupe (g)</text><rect x="320" y="48" width="54" height="48" rx="8" class="rd-blk rd-k-a" /><text x="347" y="79" text-anchor="middle" class="rd-t" style="font-size:20px;font-weight:700">r</text><text x="347" y="114" text-anchor="middle" class="rd-note" style="font-size:13px;font-weight:500">4</text><rect x="380" y="48" width="54" height="48" rx="8" class="rd-blk rd-disk" /><text x="407" y="79" text-anchor="middle" class="rd-t" style="font-size:20px;font-weight:700">-</text><text x="407" y="114" text-anchor="middle" class="rd-note" style="font-size:13px;font-weight:500">0</text><rect x="440" y="48" width="54" height="48" rx="8" class="rd-blk rd-k-c" /><text x="467" y="79" text-anchor="middle" class="rd-t" style="font-size:20px;font-weight:700">x</text><text x="467" y="114" text-anchor="middle" class="rd-note" style="font-size:13px;font-weight:500">1</text><text x="410" y="152" text-anchor="middle" class="rd-t" style="font-size:15px;font-weight:700">4 + 0 + 1 = 5</text><text x="620" y="38" text-anchor="middle" class="rd-note" style="font-size:12px;font-weight:700">Autres (o)</text><rect x="530" y="48" width="54" height="48" rx="8" class="rd-blk rd-disk" /><text x="557" y="79" text-anchor="middle" class="rd-t" style="font-size:20px;font-weight:700">-</text><text x="557" y="114" text-anchor="middle" class="rd-note" style="font-size:13px;font-weight:500">0</text><rect x="590" y="48" width="54" height="48" rx="8" class="rd-blk rd-disk" /><text x="617" y="79" text-anchor="middle" class="rd-t" style="font-size:20px;font-weight:700">-</text><text x="617" y="114" text-anchor="middle" class="rd-note" style="font-size:13px;font-weight:500">0</text><rect x="650" y="48" width="54" height="48" rx="8" class="rd-blk rd-disk" /><text x="677" y="79" text-anchor="middle" class="rd-t" style="font-size:20px;font-weight:700">-</text><text x="677" y="114" text-anchor="middle" class="rd-note" style="font-size:13px;font-weight:500">0</text><text x="620" y="152" text-anchor="middle" class="rd-t" style="font-size:15px;font-weight:700">0 + 0 + 0 = 0</text><line x1="20" y1="132" x2="700" y2="132" class="rd-arrow" style="stroke-dasharray:4 4;stroke-width:1"/><text x="20" y="118" text-anchor="middle" class="rd-t" style="font-size:1px;font-weight:700"></text><text x="110" y="190" text-anchor="start" class="rd-note" style="font-size:13px;font-weight:600">r = 4</text><text x="190" y="190" text-anchor="start" class="rd-note" style="font-size:13px;font-weight:600">w = 2</text><text x="270" y="190" text-anchor="start" class="rd-note" style="font-size:13px;font-weight:600">x = 1</text><text x="350" y="190" text-anchor="start" class="rd-note" style="font-size:13px;font-weight:600">- = 0</text><rect x="250" y="206" width="220" height="44" rx="8" class="rd-blk rd-k-d" /><text x="360" y="234" text-anchor="middle" class="rd-t" style="font-size:18px;font-weight:700">chmod 750</text><text x="484" y="234" text-anchor="start" class="rd-note" style="font-size:13px;font-weight:500">= 7 · 5 · 0 dans l'ordre u · g · o</text>
+</svg>
+<figcaption>Lecture de <code>drwxr-x---</code> : un type, puis trois groupes de trois droits. Chaque groupe s'additionne en un chiffre.</figcaption>
+</figure>
+
+
 ### Ce que les droits signifient sur un dossier
 
 | Droit | Sur un fichier | Sur un dossier |
@@ -160,7 +176,7 @@ En `rwxr-x---` : rien du tout (`---`), il ne peut même pas entrer. En `rwxr-xr-
 
 Ces changements demandent en général les droits d'administrateur (`sudo`).
 
-### Droits par défaut : le `umask` <span class="technique">notion technique</span>
+### Droits par défaut : le `umask` <span class="technique">complément</span>
 
 > [!TIP] Pour aller plus loin
 > Le `umask` n'est pas exigé en première année : retiens seulement que **les nouveaux fichiers reçoivent des droits par défaut**, que l'on corrige ensuite avec `chmod`.
@@ -180,7 +196,45 @@ Quand un utilisateur crée un fichier, celui-ci appartient normalement à **son*
 
 </details>
 
-## 4. Les liens <span class="technique">notion technique</span>
+### Exemple résolu : un dossier partagé par un groupe
+
+**Situation (fictive).** Inès et Karim, du groupe `grp-logistique`, doivent travailler dans `/var/partage/logistique`. Sam, du groupe `grp-direction`, ne doit **rien voir** de ce dossier.
+
+| Étape | Commande | Effet |
+|---|---|---|
+| 1 | `sudo mkdir /var/partage/logistique` | crée le dossier |
+| 2 | `sudo chown root:grp-logistique /var/partage/logistique` | propriétaire `root`, groupe `grp-logistique` |
+| 3 | `sudo chmod 2770 /var/partage/logistique` | `rwx` pour `root`, `rwx` pour le groupe, `---` pour les autres, plus **setgid** |
+
+Résultat attendu avec `ls -ld` : `drwxrws--- 2 root grp-logistique … logistique`.
+
+| Qui ? | Ce qu'il peut faire | Pourquoi |
+|---|---|---|
+| **Inès** (membre) | entrer, lister, créer des fichiers ; ses fichiers appartiennent à `grp-logistique` | droits `rwx` du groupe ; le **setgid** transmet le groupe du dossier |
+| **Sam** (autre) | rien : `Permission denied` dès le `cd` | les « autres » ont `---` |
+
+Pour qu'Inès arrive jusqu'au dossier, il faut aussi le droit `x` sur **chaque dossier du chemin** (`/var`, `/var/partage`).
+
+**Je vérifie.** Karim vient d'être ajouté à `grp-logistique` avec `sudo usermod -aG grp-logistique karim`. Il est déjà connecté : peut-il entrer dans le dossier ?
+
+<details markdown="1">
+<summary>Voir la réponse</summary>
+
+Pas encore : l'appartenance à un groupe n'est prise en compte qu'à l'**ouverture d'une nouvelle session**. Il doit se déconnecter et se reconnecter.
+
+</details>
+
+### Erreurs fréquentes
+
+| Erreur | Ce qu'on observe | Correction |
+|---|---|---|
+| `x` oublié sur un dossier parent | `Permission denied` alors que le fichier est lisible | donner `x` à chaque dossier du chemin |
+| `usermod -G` sans `-a` | l'utilisateur perd ses autres groupes | `usermod -aG` |
+| Ne pas se reconnecter après `usermod` | l'accès est toujours refusé | ouvrir une nouvelle session |
+| `chown` sans `sudo` | `Operation not permitted` | `sudo chown …` |
+| `chmod 777` pour « que ça marche » | tout le monde peut lire, écrire, supprimer | choisir les droits utiles (ex. `770` + groupe) |
+
+## 4. Les liens <span class="technique">complément</span>
 
 > [!TIP] Pour aller plus loin
 > Les liens ne font pas partie du socle exigé : retiens qu'un **lien symbolique** est un raccourci, et que le **lien dur** (même `inode`, c'est-à-dire même numéro interne de fichier) est une notion technique facultative.
