@@ -15,6 +15,11 @@
 - [ ] distinguer un hyperviseur de **type 1** et de **type 2**, et justifier le choix selon le contexte ;
 - [ ] citer les **deux façons** de créer une VM et les formats de fichiers associés.
 
+> [!IMPORTANT] Idées reçues à confronter à tes réponses du TP
+> - « **Une VM, c'est un simple dossier.** » Au repos, ce sont des fichiers ; **allumée**, elle consomme de la RAM et du processeur de l'hôte (§ 1).
+> - « **Une VM utilise en permanence toute la puissance qu'on lui a donnée.** » La RAM est réservée tant qu'elle tourne ; le processeur n'est utilisé que selon le travail réellement demandé (§ 1).
+> - « **Émulation et virtualisation, c'est pareil.** » Non : l'émulation traduit chaque instruction d'une autre architecture, donc elle est plus lente (§ 3).
+
 ---
 
 ## 1. La machine virtuelle
@@ -35,12 +40,34 @@ Toute machine, physique ou virtuelle, a besoin de quatre ressources :
 > [!NOTE]
 > Une machine hôte n'utilise pas 100 % de sa puissance en permanence : elle peut en « prêter » une partie à une ou plusieurs VM.
 
+**Exemple de répartition.** Un poste hôte dispose de **16 Go de RAM** et **8 cœurs**. On lance trois VM :
+
+| VM | RAM | Cœurs |
+|---|---|---|
+| Windows | 4 Go | 2 |
+| Ubuntu | 2 Go | 1 |
+| Debian (serveur) | 2 Go | 1 |
+| **Total donné aux VM** | **8 Go** | **4** |
+| **Reste pour l'hôte** | 16 − 8 = **8 Go** | 8 − 4 = 4 |
+
+La RAM donnée est **réservée** tant que les VM tournent : l'hôte, lui, doit continuer à faire fonctionner son système et ses applications avec les 8 Go restants. Règle de prudence en TP : ne **jamais donner plus de la moitié** de la RAM de l'hôte aux VM. Les cœurs fonctionnent différemment : ils sont **partagés dans le temps** entre l'hôte et les VM selon la charge.
+
 **Je vérifie.** Si ton poste a 16 Go de mémoire et que tu lances une VM avec 4 Go, combien reste-t-il à l'hôte pour lui-même et ses applications ?
 
 <details markdown="1">
 <summary>Voir la réponse</summary>
 
 Il reste au plus 12 Go à l'hôte : la mémoire donnée à la VM est prélevée sur celle de l'hôte tant que la VM est allumée. Il faut aussi laisser de quoi faire tourner l'hôte lui-même.
+
+</details>
+
+
+**Je vérifie.** Sur le même hôte de 16 Go, peut-on lancer quatre VM de 6 Go chacune ? Pourquoi ?
+
+<details markdown="1">
+<summary>Voir la réponse</summary>
+
+Non : 4 × 6 = 24 Go, plus que les 16 Go de l'hôte. La RAM donnée aux VM est prélevée sur celle de l'hôte tant qu'elles tournent.
 
 </details>
 
@@ -96,17 +123,13 @@ Un conteneur partage le noyau de l'hôte. Le noyau Linux de l'hôte ne peut pas 
 | **Usage typique** | tests, formation, développement, quelques machines | production, serveurs, centres de données |
 | **Exemples** | Oracle VirtualBox, VMware Workstation, VMware Fusion, Parallels Desktop, UTM | VMware ESXi, Microsoft Hyper-V, KVM, Xen |
 
-```mermaid
-flowchart TB
-  subgraph T2[Type 2]
-    direction TB
-    M2[Matériel] --> O2[Système hôte] --> H2[Hyperviseur] --> V2[VM 1 / VM 2]
-  end
-  subgraph T1[Type 1]
-    direction TB
-    M1[Matériel] --> H1[Hyperviseur] --> V1[VM 1 / VM 2 / VM 3]
-  end
-```
+<figure class="raid-fig">
+<svg viewBox="0 0 720 270" role="img" aria-labelledby="hy-t" xmlns="http://www.w3.org/2000/svg"><title id="hy-t">Hyperviseur de type 2 posé sur un système hôte, et de type 1 posé directement sur le matériel</title>
+<text x="170" y="22" text-anchor="middle" class="rd-name" style="font-size:14px">Type 2 (hébergé)</text><rect x="20.0" y="34" width="146.0" height="52" rx="8" class="rd-blk rd-k-c"/><text x="93.0" y="58" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:700">VM 1</text><text x="93.0" y="72" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:500">système invité</text><rect x="174.0" y="34" width="146.0" height="52" rx="8" class="rd-blk rd-k-c"/><text x="247.0" y="58" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:700">VM 2</text><text x="247.0" y="72" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:500">système invité</text><rect x="20" y="94" width="300" height="46" rx="8" class="rd-blk rd-k-d"/><text x="170.0" y="114" text-anchor="middle" class="rd-t" style="font-size:13px;font-weight:700">Hyperviseur</text><text x="170.0" y="130" text-anchor="middle" class="rd-t" style="font-size:13px;font-weight:500">une application de l'hôte</text><rect x="20" y="148" width="300" height="46" rx="8" class="rd-blk rd-k-b"/><text x="170.0" y="168" text-anchor="middle" class="rd-t" style="font-size:13px;font-weight:700">Système d'exploitation hôte</text><text x="170.0" y="184" text-anchor="middle" class="rd-t" style="font-size:13px;font-weight:500">Windows, Linux, macOS</text><rect x="20" y="202" width="300" height="46" rx="8" class="rd-blk rd-k-a"/><text x="170.0" y="230" text-anchor="middle" class="rd-t" style="font-size:13px;font-weight:700">Matériel</text>
+<text x="550" y="22" text-anchor="middle" class="rd-name" style="font-size:14px">Type 1 (natif)</text><rect x="400.0" y="34" width="94.66666666666667" height="52" rx="8" class="rd-blk rd-k-c"/><text x="447.3333333333333" y="58" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:700">VM 1</text><text x="447.3333333333333" y="72" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:500">système invité</text><rect x="502.6666666666667" y="34" width="94.66666666666667" height="52" rx="8" class="rd-blk rd-k-c"/><text x="550.0" y="58" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:700">VM 2</text><text x="550.0" y="72" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:500">système invité</text><rect x="605.3333333333334" y="34" width="94.66666666666667" height="52" rx="8" class="rd-blk rd-k-c"/><text x="652.6666666666667" y="58" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:700">VM 3</text><text x="652.6666666666667" y="72" text-anchor="middle" class="rd-t" style="font-size:12px;font-weight:500">système invité</text><rect x="400" y="94" width="300" height="46" rx="8" class="rd-blk rd-k-d"/><text x="550.0" y="114" text-anchor="middle" class="rd-t" style="font-size:13px;font-weight:700">Hyperviseur</text><text x="550.0" y="130" text-anchor="middle" class="rd-t" style="font-size:13px;font-weight:500">directement sur le matériel</text><rect x="400" y="148" width="300" height="46" rx="8" class="rd-blk rd-k-a"/><text x="550.0" y="176" text-anchor="middle" class="rd-t" style="font-size:13px;font-weight:700">Matériel</text>
+</svg>
+<figcaption>Type 2 : un étage de plus entre le matériel et les VM. Type 1 : l'hyperviseur parle directement au matériel.</figcaption>
+</figure>
 
 ### Type 2 : accessible, mais sans priorité
 
@@ -135,9 +158,21 @@ Type 1 : en production on veut des performances, de la fiabilité et la priorit�
 
 </details>
 
+
+**Je vérifie.** Avec quel outil vérifier, sous Windows, que la virtualisation matérielle est activée ?
+
+<details markdown="1">
+<summary>Voir la réponse</summary>
+
+Dans le **Gestionnaire des tâches**, onglet **Performances**, section **UC** : la ligne **Virtualisation** doit indiquer **Activé**.
+
+</details>
+
 ## 5. Créer une machine virtuelle
 
 Avant de créer une VM, il faut que le processeur prenne en charge la **virtualisation matérielle** : **VT-x** (Intel) ou **AMD-V** (AMD). Elle s'active, si besoin, dans le BIOS/UEFI. Sans elle, ou si elle est désactivée, les performances sont moindres.
+
+**Comment vérifier ?** Sous Windows, ouvre le Gestionnaire des tâches (`Ctrl + Maj + Échap`), onglet **Performances**, puis **UC** : la ligne **Virtualisation** indique **Activé** ou **Désactivé**. Si elle est désactivée, on l'active dans le firmware (S04), sans rien modifier d'autre.
 
 ### Deux façons d'obtenir une VM
 
