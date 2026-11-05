@@ -17,6 +17,11 @@
 - [ ] décrire un serveur à **deux processeurs** et la notion de **NUMA** ;
 - [ ] **dimensionner** un serveur pour héberger des machines virtuelles.
 
+> [!IMPORTANT] Idées reçues à confronter à tes réponses du TP
+> - « **Plus de GHz, c'est forcément plus rapide.** » Non : la génération, le nombre de cœurs et le cache comptent autant (§ 1 et 3).
+> - « **Un i7 vaut toujours mieux qu'un i5.** » Non : un i5 récent peut battre un i7 ancien ; on compare avec des benchmarks (§ 2).
+> - « **Avec un RAID, mes données sont protégées.** » Seulement contre une **panne de disque**, pas contre une suppression ou un virus (§ 4).
+
 ---
 
 ## 1. Lire un processeur
@@ -57,8 +62,41 @@ Bonnes pratiques :
 - Lire la **date** et la méthode du test.
 - Mettre le score en regard du **prix** et de la **consommation**.
 
+**Exemple de lecture de scores** (valeurs fictives, pour s'entraîner).
+
+| | Processeur A | Processeur B |
+|---|---|---|
+| Cœurs | 6 | 16 |
+| Score monocœur | 3 900 | 3 700 |
+| Score multicœur | 18 500 | 38 000 |
+| Consommation | 65 W | 125 W |
+| Prix | 190 € | 480 € |
+| Score multicœur par euro | 18 500 ÷ 190 ≈ **97** | 38 000 ÷ 480 ≈ **79** |
+
+- **Bureautique et navigation** (peu de parallélisme) : les scores monocœur sont proches, A suffit et coûte moins de la moitié.
+- **Plusieurs machines virtuelles ou montage vidéo** : B fait plus de **deux fois** le travail en multicœur ; il se justifie **si le budget et le refroidissement suivent**.
+- **Piège :** B est meilleur en valeur absolue, A meilleur « par euro » : la bonne réponse **dépend du profil**, pas du plus gros score.
+
+**Je vérifie.** Pour un secrétariat qui ne lance que de la bureautique, quel processeur de l'exemple choisir, et pourquoi ?
+
+<details markdown="1">
+<summary>Voir la réponse</summary>
+
+Le **A** : en usage peu parallèle, les scores monocœur sont quasi identiques (3 900 contre 3 700). B coûterait 290 € de plus et consommerait presque le double sans bénéfice visible.
+
+</details>
+
 > [!TIP]
 > **Démarche de choix d'un matériel.** (1) Décrire les **besoins** de chaque profil (logiciels, volumes, usages). (2) Traduire en **critères** mesurables (RAM, cœurs, stockage, écran, graphique). (3) **Comparer** les candidats avec des sources. (4) **Vérifier** les contraintes (budget, compatibilité Windows 11). (5) **Justifier** par écrit.
+
+**Exemple de choix justifié** (modèle de la réponse attendue en TP, cas fictif). *Profil : un technicien de support qui lance 3 machines virtuelles en même temps.*
+
+1. **Besoins :** 3 VM de 4 Go de RAM chacune, plus le système hôte : environ 16 Go au total ; plusieurs cœurs libres.
+2. **Critères mesurables :** au moins 8 cœurs logiques, 16 Go de RAM extensible, SSD de 512 Go, compatible Windows 11.
+3. **Comparaison :** deux candidats comparés sur deux sources de benchmark, scores multicœur et prix relevés.
+4. **Contraintes :** budget de 900 €, un seul des deux candidats respecte le budget **et** les critères.
+5. **Justification :** « Je retiens le modèle X : il respecte les 8 cœurs logiques et les 16 Go pour 870 €, alors que Y dépasse le budget. »
+
 
 ## 3. Poste de travail et serveur
 
@@ -150,10 +188,16 @@ Dans les schémas, chaque colonne est un **disque** et chaque rectangle un **blo
 </figure>
 
 - **Principe.** Les fichiers sont découpés en blocs, écrits à tour de rôle sur chaque disque (*striping*). Rien n'est copié ni protégé.
-- **Vitesse.** Les disques lisent et écrivent **en parallèle** : le débit se rapproche de celui d'un disque multiplié par le nombre de disques.
 - **Panne.** Si **un seul** disque tombe, **tout** est perdu : chaque fichier a des blocs sur tous les disques. Plus il y a de disques, plus le risque de panne augmente.
 - **Capacité.** 2 disques de 1 To donnent **2 To** utiles.
+
+<details markdown="1">
+<summary>Pour comprendre en détail</summary>
+
+- **Vitesse.** Les disques lisent et écrivent **en parallèle** : le débit se rapproche de celui d'un disque multiplié par le nombre de disques.
 - **Usage.** Données temporaires ou faciles à recréer (cache, montage vidéo en cours), jamais des données importantes.
+
+</details>
 
 #### RAID 1 : le miroir
 
@@ -197,11 +241,17 @@ Dans les schémas, chaque colonne est un **disque** et chaque rectangle un **blo
 </figure>
 
 - **Principe.** Chaque bloc est écrit **en double**, sur deux disques. Les deux disques sont identiques à tout instant.
-- **Vitesse.** L'écriture se fait sur les deux disques : elle n'est pas plus rapide qu'avec un seul disque (parfois un peu plus lente). La lecture peut être répartie entre les deux disques selon le contrôleur.
 - **Panne.** Si un disque tombe, l'autre contient **toutes les données** : le service continue. On remplace le disque en panne, puis le nouveau est **reconstruit par simple copie** de l'autre.
 - **Capacité.** 2 disques de 1 To donnent **1 To** utile : la moitié de la capacité sert à la copie.
+
+<details markdown="1">
+<summary>Pour comprendre en détail</summary>
+
+- **Vitesse.** L'écriture se fait sur les deux disques : elle n'est pas plus rapide qu'avec un seul disque (parfois un peu plus lente). La lecture peut être répartie entre les deux disques selon le contrôleur.
 - **Limite.** Une erreur (fichier supprimé, virus) est recopiée sur le miroir : ce n'est **pas** une sauvegarde.
 - **Usage.** Disques système d'un serveur, petits volumes importants.
+
+</details>
 
 #### RAID 5 : la parité répartie
 
@@ -271,12 +321,18 @@ Dans les schémas, chaque colonne est un **disque** et chaque rectangle un **blo
 </figure>
 
 - **Principe.** Pour chaque ligne de blocs, un disque reçoit un bloc de **parité** calculé à partir des autres. La parité change de disque à chaque ligne, pour qu'aucun disque ne soit plus sollicité que les autres.
+- **Panne.** **1 disque** peut tomber. Le RAID fonctionne alors en **mode dégradé** (plus lent) jusqu'au remplacement du disque et à la **reconstruction**. Si un second disque tombe pendant ce temps, tout est perdu.
+- **Capacité.** 4 disques de 1 To donnent (4 − 1) × 1 To = **3 To** utiles.
+
+<details markdown="1">
+<summary>Pour comprendre en détail</summary>
+
 - **La parité.** Elle se calcule avec l'opération **« ou exclusif »** (XOR, notée ⊕) : le résultat vaut 1 si le nombre de 1 est impair, 0 sinon. Exemple sur des bits : A1 = 1, A2 = 0, A3 = 1, donc Pa = 1 ⊕ 0 ⊕ 1 = **0**.
 - **Reconstruction.** Si le disque 3 tombe, le bloc A3 est perdu, mais on le retrouve : A3 = Pa ⊕ A1 ⊕ A2 = 0 ⊕ 1 ⊕ 0 = **1**. Le même calcul s'applique à chaque ligne.
 - **Vitesse.** La lecture est rapide (plusieurs disques en parallèle). L'écriture est plus lente : pour modifier un bloc, il faut lire l'ancien bloc et l'ancienne parité, recalculer, puis écrire le nouveau bloc et la nouvelle parité : **4 opérations disque** pour une seule écriture.
-- **Panne.** **1 disque** peut tomber. Le RAID fonctionne alors en **mode dégradé** (plus lent) jusqu'au remplacement du disque et à la **reconstruction**. Si un second disque tombe pendant ce temps, tout est perdu.
-- **Capacité.** 4 disques de 1 To donnent (4 − 1) × 1 To = **3 To** utiles.
 - **Usage.** Serveurs de fichiers : bon compromis entre capacité, sécurité et coût.
+
+</details>
 
 #### RAID 6 : deux parités <span class="technique">notion technique</span>
 
@@ -348,9 +404,15 @@ Dans les schémas, chaque colonne est un **disque** et chaque rectangle un **blo
 
 - **Principe.** Comme le RAID 5, mais chaque ligne contient **deux** blocs de parité, **P** et **Q**, calculés par des formules différentes. Deux équations permettent de retrouver **deux** blocs inconnus. (Le calcul de Q fait appel à des mathématiques plus avancées, qu'on ne détaille pas ici.)
 - **Panne.** **2 disques** peuvent tomber en même temps sans perte de données.
-- **Vitesse.** L'écriture est plus lente qu'en RAID 5 : il y a deux parités à mettre à jour, soit **6 opérations disque** pour une écriture (contre 4 en RAID 5).
 - **Capacité.** 4 disques de 1 To donnent (4 − 2) × 1 To = **2 To** utiles. Avec 8 disques, on aurait 6 To : le « coût » de la protection supplémentaire diminue quand le nombre de disques augmente.
+
+<details markdown="1">
+<summary>Pour comprendre en détail</summary>
+
+- **Vitesse.** L'écriture est plus lente qu'en RAID 5 : il y a deux parités à mettre à jour, soit **6 opérations disque** pour une écriture (contre 4 en RAID 5).
 - **Usage.** Grosses baies de disques volumineux : la reconstruction dure longtemps, et le risque d'une seconde panne pendant ce temps devient réel.
+
+</details>
 
 #### RAID 10 : des miroirs répartis <span class="technique">notion technique</span>
 
@@ -419,10 +481,16 @@ Dans les schémas, chaque colonne est un **disque** et chaque rectangle un **blo
 </figure>
 
 - **Principe.** On combine RAID 1 et RAID 0 : les disques sont d'abord regroupés en **paires miroirs**, puis les blocs sont **répartis** entre les paires.
-- **Vitesse.** Les écritures se répartissent entre les miroirs et il n'y a **pas de parité à calculer** : l'écriture est nettement plus rapide qu'en RAID 5 ou 6. En cas de panne, la reconstruction consiste à recopier le disque jumeau, donc elle est rapide et ne sollicite que ce disque.
 - **Panne.** **1 disque** par miroir peut tomber. Avec 4 disques, la perte du disque 1 et du disque 3 est supportée (un par miroir). La perte des disques 1 **et** 2 (les deux d'un même miroir) détruit les données.
 - **Capacité.** 4 disques de 1 To donnent (4 ÷ 2) × 1 To = **2 To** utiles.
+
+<details markdown="1">
+<summary>Pour comprendre en détail</summary>
+
+- **Vitesse.** Les écritures se répartissent entre les miroirs et il n'y a **pas de parité à calculer** : l'écriture est nettement plus rapide qu'en RAID 5 ou 6. En cas de panne, la reconstruction consiste à recopier le disque jumeau, donc elle est rapide et ne sollicite que ce disque.
 - **Usage.** Bases de données et machines virtuelles, qui écrivent beaucoup.
+
+</details>
 
 > [!NOTE] Comment choisir ?
 > **Vitesse seule** : RAID 0. **Simplicité et sécurité sur 2 disques** : RAID 1. **Capacité, sécurité et coût raisonnable** : RAID 5. **Très grosses capacités** : RAID 6. **Performances et sécurité** : RAID 10. Dans tous les cas, le RAID ne remplace jamais une sauvegarde.
@@ -525,6 +593,42 @@ Résultat (fictif) : climatisation 1 kW, onduleurs 0,8 kW, éclairage et divers 
 Économie : 26 280 − 21 024 = **5 256 € par an**, alors que les serveurs consomment toujours 87 600 kWh par an (10 kW × 8 760 h).
 
 Cela vaut aussi à petite échelle : le serveur dimensionné ci-dessus, s'il consomme en moyenne 400 W, utilise 0,4 × 8 760 = 3 504 kWh par an, soit **5 256 kWh** avec un PUE de 1,5.
+
+**Je vérifie.** Cinq disques de 2 To en RAID 5 : quelle capacité utile, et combien de disques peuvent tomber ?
+
+<details markdown="1">
+<summary>Voir la réponse</summary>
+
+(5 − 1) × 2 To = **8 To** utiles ; **un seul** disque peut tomber sans perte.
+
+</details>
+
+**Je vérifie.** Que change la mémoire ECC par rapport à une mémoire non-ECC, et pourquoi la trouve-t-on dans les serveurs ?
+
+<details markdown="1">
+<summary>Voir la réponse</summary>
+
+La mémoire **ECC** détecte et corrige certaines erreurs de bits spontanées ; la non-ECC ne les corrige pas. Un serveur tourne en continu et une erreur silencieuse coûte cher : l'ECC y est la norme.
+
+</details>
+
+**Je vérifie.** Un centre de données consomme 9 kW au total, dont 6 kW pour les équipements informatiques. Quel est son PUE ?
+
+<details markdown="1">
+<summary>Voir la réponse</summary>
+
+PUE = énergie totale ÷ énergie informatique = 9 ÷ 6 = **1,5**.
+
+</details>
+
+**Je vérifie.** Pourquoi deux processeurs de fréquences identiques peuvent-ils avoir des performances très différentes ?
+
+<details markdown="1">
+<summary>Voir la réponse</summary>
+
+Parce que la **génération** (efficacité par cycle), le **nombre de cœurs** et la taille du **cache** changent le travail effectué à chaque seconde : les GHz seuls ne suffisent pas.
+
+</details>
 
 ---
 
