@@ -69,7 +69,12 @@ Exemple de tâche répétitive : à chaque rentrée, créer les comptes d'une li
 <figcaption>Chaque ligne du fichier passe par les mêmes contrôles ; chaque issue est journalisée.</figcaption>
 </figure>
 
-**Comment lire ce schéma.** On suit **une ligne du fichier à la fois**, de gauche à droite. Si la ligne n'est pas valide, on journalise un refus et on passe à la suivante. Si le compte existe déjà, on le note et on passe à la suivante (c'est ce qui rend le script **relançable**). Sinon, en mode d'essai on affiche seulement ce qui serait fait ; hors mode d'essai on crée le compte et on journalise le résultat. Toutes les issues mènent à la même étape : **la ligne suivante**.
+<details markdown="1">
+<summary>Comment lire ce schéma</summary>
+
+On suit **une ligne du fichier à la fois**, de gauche à droite. Si la ligne n'est pas valide, on journalise un refus et on passe à la suivante. Si le compte existe déjà, on le note et on passe à la suivante (c'est ce qui rend le script **relançable**). Sinon, en mode d'essai on affiche seulement ce qui serait fait ; hors mode d'essai on crée le compte et on journalise le résultat. Toutes les issues mènent à la même étape : **la ligne suivante**.
+
+</details>
 
 
 
@@ -115,7 +120,12 @@ Une ligne contient **cinq champs de temps**, puis la commande :
 <figcaption>On lit toujours de gauche à droite : minute, heure, jour du mois, mois, jour de la semaine ; la commande vient après les cinq champs.</figcaption>
 </figure>
 
-**Comment lire ce schéma.** Les cinq cases du haut donnent **l'ordre** et les **valeurs permises** de chaque champ. Chaque exemple en dessous remplit ces cinq champs dans l'ordre ; la phrase sous les chiffres est la **lecture en français**. Pour `30 7 * * 1-5` : minute 30, heure 7, tous les jours du mois (`*`), tous les mois (`*`), du lundi (1) au vendredi (5), donc 7 h 30 en semaine. Une étoile veut dire « peu importe ».
+<details markdown="1">
+<summary>Comment lire ce schéma</summary>
+
+Les cinq cases du haut donnent **l'ordre** et les **valeurs permises** de chaque champ. Chaque exemple en dessous remplit ces cinq champs dans l'ordre ; la phrase sous les chiffres est la **lecture en français**. Pour `30 7 * * 1-5` : minute 30, heure 7, tous les jours du mois (`*`), tous les mois (`*`), du lundi (1) au vendredi (5), donc 7 h 30 en semaine. Une étoile veut dire « peu importe ».
+
+</details>
 
 
 `*` veut dire « tous » ; `*/5` « toutes les 5 unités ». Exemples : `30 7 * * 1-5` : 7 h 30 du lundi au vendredi ; `*/5 * * * *` : toutes les 5 minutes.
@@ -221,7 +231,12 @@ ssh utilisateur@adresse_du_serveur
 <figcaption>Le serveur reconnaît le poste parce que celui-ci prouve qu'il détient la clé privée associée à la clé publique déposée.</figcaption>
 </figure>
 
-**Comment lire ce schéma.** Deux machines, deux clés. La **clé publique** est un cadenas : elle peut être copiée sur le serveur (flèche 1), sans danger si quelqu'un la voit. La **clé privée** est la clé du cadenas : elle reste sur le poste. À la connexion (flèche 2), le poste **prouve** qu'il possède la clé privée sans jamais l'envoyer, et le serveur, qui connaît le cadenas correspondant, le laisse entrer.
+<details markdown="1">
+<summary>Comment lire ce schéma</summary>
+
+Deux machines, deux clés. La **clé publique** est un cadenas : elle peut être copiée sur le serveur (flèche 1), sans danger si quelqu'un la voit. La **clé privée** est la clé du cadenas : elle reste sur le poste. À la connexion (flèche 2), le poste **prouve** qu'il possède la clé privée sans jamais l'envoyer, et le serveur, qui connaît le cadenas correspondant, le laisse entrer.
+
+</details>
 
 
 **Comprendre la paire de clés.** C'est comme un cadenas et sa clé. Tu fabriques les deux ensemble : le **cadenas** (clé publique) peut être copié et posé sur autant de serveurs que tu veux ; la **clé** (clé privée) reste chez toi et **ne se partage jamais**. Seule la clé privée ouvre un cadenas qui lui correspond.

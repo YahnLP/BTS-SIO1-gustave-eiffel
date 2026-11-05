@@ -173,7 +173,12 @@ Le **centre de services** (*service desk*) est le **point de contact unique** en
 <figcaption>Le N1 résout ce qui a une procédure ; sinon il escalade avec un motif écrit. Un ticket résolu n'est clos qu'après confirmation ou délai.</figcaption>
 </figure>
 
-**Comment lire ce schéma.** On suit la rangée du haut de gauche à droite : le ticket est **créé**, **qualifié** (catégorie, priorité), puis **diagnostiqué** par le N1. Deux issues à l'étape du diagnostic : soit le N1 trouve la solution et le ticket passe directement à **Résolu**, puis **Clos** ; soit un **critère d'escalade** est atteint (hors compétence, délai menacé, incident récurrent, impact élargi) et le ticket descend vers le **N2**, avec un motif écrit. Le N2 apporte sa solution et le ticket revient à **Résolu**. Dans les deux cas, la clôture vient après confirmation ou délai.
+<details markdown="1">
+<summary>Comment lire ce schéma</summary>
+
+On suit la rangée du haut de gauche à droite : le ticket est **créé**, **qualifié** (catégorie, priorité), puis **diagnostiqué** par le N1. Deux issues à l'étape du diagnostic : soit le N1 trouve la solution et le ticket passe directement à **Résolu**, puis **Clos** ; soit un **critère d'escalade** est atteint (hors compétence, délai menacé, incident récurrent, impact élargi) et le ticket descend vers le **N2**, avec un motif écrit. Le N2 apporte sa solution et le ticket revient à **Résolu**. Dans les deux cas, la clôture vient après confirmation ou délai.
+
+</details>
 
 
 **Escalader du N1 vers le N2 quand :** hors compétence ou hors accès ; délai cible menacé ; incident **récurrent** (3e fois) ; impact **élargi** (plusieurs utilisateurs) ; **aucune procédure** connue ; système de production menacé.
