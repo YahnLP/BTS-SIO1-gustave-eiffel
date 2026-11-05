@@ -100,6 +100,9 @@ Quand plusieurs équipements tombent **en même temps**, la cause est rarement c
 <figcaption>Trois tickets arrivés à quelques minutes d'intervalle pointent vers l'élément partagé : le commutateur.</figcaption>
 </figure>
 
+**Comment lire ce schéma.** On part du **haut** : un seul élément en panne (le commutateur) rend **hors ligne** les trois postes qui en dépendent, et chaque utilisateur ouvre **son** ticket. On voit donc trois tickets à l'arrivée, mais une seule cause à la source. La démarche est de **remonter** des tickets vers ce que les postes ont en commun, puis d'agir **une fois** sur la cause.
+
+
 
 **Exemple de corrélation (cas fictif, NovaTech).**
 

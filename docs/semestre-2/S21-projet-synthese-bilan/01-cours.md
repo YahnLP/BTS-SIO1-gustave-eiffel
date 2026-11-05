@@ -53,6 +53,9 @@ La séparation des rôles (qui **demande**, qui **approuve**) est une **protecti
 <figcaption>On avance du plus urgent au plus durable, et on garde une trace à chaque étape.</figcaption>
 </figure>
 
+**Comment lire ce schéma.** Les quatre cases du haut se lisent de gauche à droite : on traite d'abord ce qui **bloque** les utilisateurs, puis ce qui est **faux ou incomplet**, puis les **droits**, enfin la **cause** et la prévention. La bande du bas montre que la **trace** (tickets, journaux, preuves) se construit **pendant** toutes les étapes, pas après coup : c'est elle qui permettra de prouver le travail.
+
+
 ## 2. La trace : tout se prouve
 
 Un travail sans trace n'existe pas pour quelqu'un d'autre : tickets documentés, solutions en **quatre éléments** (symptôme, cause, action, vérification), historique d'actifs, journal d'audit. La **trace** sert à **reprendre un dossier**, à **auditer**, et à **te défendre** si tu es mis en cause.

@@ -66,6 +66,9 @@ Un poste neuf n'a pas de système : il doit **démarrer par le réseau**. Le **P
 <figcaption>Six échanges avant que le poste n'exécute la tâche : l'adresse vient du DHCP, le chargeur du TFTP, le système de déploiement du serveur FOG.</figcaption>
 </figure>
 
+**Comment lire ce schéma.** Les quatre colonnes sont les quatre machines concernées ; les traits pointillés représentent le **temps qui passe vers le bas**. Chaque flèche est un message, dans l'ordre, de 1 à 6 : (1) le poste, qui n'a ni système ni adresse, **cherche** un serveur DHCP ; (2) le DHCP lui répond avec une **adresse IP** et lui dit **où trouver le chargeur** ; (3) et (4) le poste télécharge ce chargeur auprès du serveur **TFTP**, qui affiche le menu de démarrage ; (5) et (6) le poste télécharge le petit système de déploiement auprès du serveur FOG. À la fin, le poste est prêt à **capturer** ou **déployer** une image.
+
+
 
 
 **Je vérifie.** Pourquoi un poste qui démarre en PXE commence-t-il par un échange avec le DHCP ?
