@@ -160,6 +160,21 @@ Un seul serveur physique peut héberger plusieurs machines virtuelles (S06). Pou
 
 **Et la consommation ?** Les centres de données consomment beaucoup d'électricité. On mesure leur efficacité par le **PUE** (*Power Usage Effectiveness*) : énergie totale du site ÷ énergie consommée par les équipements informatiques. Un PUE de 1 serait idéal ; plus il est élevé, plus le refroidissement et les autres équipements pèsent. La question sera reprise en S05 (veille).
 
+**Exemple (valeurs fictives).** Une salle serveur consomme **15 kW** au total (informatique, climatisation, onduleurs, éclairage). Les équipements informatiques seuls en consomment **10 kW**.
+
+- PUE = 15 ÷ 10 = **1,5** : pour 1 kWh utile à l'informatique, on consomme 1,5 kWh au total, donc 0,5 kWh pour le refroidissement et le reste.
+- Sur une année (24 h/24, 365 jours = 8 760 h) : informatique = 10 × 8 760 = **87 600 kWh** ; total = 15 × 8 760 = **131 400 kWh**.
+- À 0,20 € le kWh (prix fictif) : 131 400 × 0,20 = **26 280 € par an**.
+- Si un meilleur refroidissement ramène le PUE à **1,2** : total = 87 600 × 1,2 = 105 120 kWh, soit **21 024 € par an**. Économie : **5 256 € par an**, sans toucher aux serveurs.
+
+| | Situation actuelle | Après amélioration |
+|---|---:|---:|
+| PUE | 1,5 | 1,2 |
+| Énergie annuelle totale | 131 400 kWh | 105 120 kWh |
+| Coût annuel (0,20 €/kWh) | 26 280 € | 21 024 € |
+
+Cela vaut aussi à petite échelle : le serveur dimensionné ci-dessus, s'il consomme en moyenne 400 W, utilise 0,4 × 8 760 = 3 504 kWh par an, soit **5 256 kWh** avec un PUE de 1,5.
+
 ---
 
 ## À retenir
