@@ -16,6 +16,13 @@
 - [ ] décrire la conduite d'un **incident majeur** ;
 - [ ] relier un service aux **éléments de configuration** dont il dépend.
 
+> [!IMPORTANT] Idées reçues à confronter à tes réponses du TP
+> - « **99,9 %, c'est presque 100 %.** » Sur 30 jours, c'est tout de même **43,2 minutes** d'arrêt toléré ; chaque chiffre de plus coûte cher (§ 4).
+> - « **Un SLA ne concerne que les pannes.** » Il couvre aussi les **demandes** (délai de traitement) et la **plage de service** (§ 3).
+> - « **On peut promettre 24 h / 24 sans solution de secours.** » Une promesse se **soutient** : équipe, astreinte, fournisseur, redondance (§ 2 et 3).
+
+---
+
 ## 1. Un service, un catalogue
 
 Un **service** est ce que l'utilisateur obtient sans avoir à gérer la complexité derrière (S15). Le **catalogue de services** est la liste, **lisible par l'utilisateur**, de ce que la DSI propose : à quoi ça sert, comment le demander, en combien de temps, avec quel engagement.
@@ -41,6 +48,16 @@ Une **fiche de service** contient au minimum : nom, description simple, bénéfi
 | **Contrat de sous-traitance** | La DSI et un **fournisseur externe** | « Le fournisseur intervient sur le matériel sous 4 heures ouvrées » |
 
 Le SLA ne tient que si les accords qui le soutiennent tiennent : une promesse de 4 heures au client est impossible si le fournisseur du matériel ne promet que 2 jours.
+
+**Je vérifie.** Le niveau 2 système s'engage à répondre au niveau 1 sous 1 heure. De quel type d'accord s'agit-il, et pourquoi est-il lié au SLA ?
+
+<details markdown="1">
+<summary>Voir la réponse</summary>
+
+C'est une **OLA** (accord entre deux équipes internes). Si le N2 met 3 heures à répondre, le N1 ne peut pas tenir un SLA de résolution de 4 heures vis-à-vis du client : l'OLA **soutient** le SLA.
+
+</details>
+
 
 ## 3. Ce que contient un SLA
 
@@ -69,9 +86,29 @@ Exemple, mois de 30 jours : 30 × 24 × 60 = 43 200 minutes.
 | 99,5 % | 216 min, soit 3 h 36 |
 | 99,9 % | 43,2 min |
 
+
+**Je vérifie.** Calcule l'indisponibilité tolérée d'un SLA à 99,95 % sur un mois de 30 jours.
+
+<details markdown="1">
+<summary>Voir la réponse</summary>
+
+(1 − 0,9995) × 43 200 = 0,0005 × 43 200 = **21,6 minutes**, soit environ 21 min 36 s.
+
+</details>
+
 Un chiffre de plus après la virgule coûte souvent très cher : redondance, supervision, astreinte. C'est un choix économique autant que technique.
 
 **Échéance en heures ouvrées.** On ne compte que les heures de la plage de service. Exemple : plage lundi–vendredi, 8 h–18 h (10 h par jour). Un incident P3 (24 h de résolution) ouvert vendredi à 17 h consomme 1 h le vendredi, 10 h le lundi, 10 h le mardi, puis 3 h le mercredi : échéance **mercredi 11 h**. Avec un calendrier **continu** (24 h / 24), l'échéance serait **samedi 17 h**.
+
+**Je vérifie.** Même plage (lundi au vendredi, 8 h à 18 h). Un ticket P3 (24 h de résolution) est ouvert le jeudi à 16 h. Quelle est l'échéance en heures ouvrées ?
+
+<details markdown="1">
+<summary>Voir la réponse</summary>
+
+Jeudi : 2 h (16 h à 18 h). Vendredi : 10 h (total 12 h). Lundi : 10 h (total 22 h). Mardi : il reste 2 h, donc de 8 h à 10 h. Échéance : **mardi 10 h**. Le week-end ne compte pas.
+
+</details>
+
 
 ## 5. Piloter un SLA
 
@@ -81,8 +118,20 @@ Un chiffre de plus après la virgule coûte souvent très cher : redondance, sup
 - Un ticket peut être « en cours », « **à risque** » puis « **dépassé** » : un SLA se **pilote**, il ne se constate pas à la fin.
 - Le **calendrier** change le verdict : le même ticket peut être « dépassé » en continu et « dans les temps » en heures ouvrées. Le calendrier doit correspondre à ce qui est **promis** : un service annoncé 24 h / 24 se mesure en continu.
 
+
+**Je vérifie.** Pourquoi suspend-on l'horloge quand le ticket attend une réponse de l'utilisateur ? Quel risque y a-t-il à en abuser ?
+
+<details markdown="1">
+<summary>Voir la réponse</summary>
+
+L'équipe n'est pas responsable de ce délai : la pénaliser serait injuste. Mais si on suspend à tort pour « améliorer » les chiffres, le SLA devient **trompeur** et l'utilisateur attend sans suivi.
+
+</details>
+
 > [!WARNING]
 > Un SLA **mesuré avec un mauvais calendrier** donne de faux dépassements (ou de fausses réussites) : les rapports deviennent trompeurs.
+
+> **Dans InfraLab** (TP, parties A à C) : le TP 22 te fait piloter des délais, le TP 41 te montre l'effet du calendrier (le week-end compte-t-il ?), le TP 20 te fait conduire un incident majeur.
 
 ## 6. L'incident majeur
 
@@ -100,7 +149,9 @@ Plusieurs tickets qui arrivent en même temps ont souvent **une seule cause** (S
 
 Un service dépend d'éléments (serveurs, commutateurs, hôtes de virtualisation, fournisseurs). La **CMDB** garde ces **relations**. Quand un élément tombe, la CMDB permet de dire **quels services sont touchés** (analyse d'impact) ; l'inverse permet de savoir **quoi vérifier** quand un service ne répond plus.
 
-## Présence en ligne
+## Application : la présence en ligne d'un service
+
+*Cette section applique la séance à un service rendu **vers l'extérieur** : le site d'une organisation est un service comme un autre, avec une disponibilité promise (§ 4), un certificat qui expire (un incident prévisible), des éléments dont il dépend (§ 7) et un responsable.*
 
 La **présence en ligne** d'une organisation, c'est tout ce qu'on trouve d'elle sur Internet : son **site**, ses **profils** sur les réseaux, ses fiches sur les cartes et annuaires, les **avis**. Elle fait partie de son **identité numérique** et de son image (**e-réputation**).
 
