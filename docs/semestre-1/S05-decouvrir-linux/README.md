@@ -28,7 +28,7 @@
 | Document | Rôle |
 |---|---|
 | [TP : Linux, mode d'emploi pour choisir](02-tp.md) | **À faire en premier** : Frise, fiches de distributions, choix argumenté, comparaison, veille, bilan de compétences |
-| [Cours](01-cours.md) | **À lire après le TP**, pour confronter ses résultats : Histoire, noyau et distributions, familles, licence, Windows et Linux, culture informatique |
+| [Cours](01-cours.md) | **À lire après le TP**, pour confronter ses résultats : Histoire, noyau et distributions, familles, licence, Windows et Linux, sujets de veille |
 | [Aide-mémoire](03-aide-memoire.md) | Vocabulaire et correspondances Windows / Linux |
 | [Grille de choix d'un système](tp/grille-choix-systeme.md) | Grille à remplir pendant la partie C |
 
@@ -57,7 +57,7 @@
 
 - **Choix pédagogique :** le TP précède le cours. L'élève cherche seul (essais, observation, aides données, Web), se trompe parfois, puis confronte ses réponses au cours : l'écart entre ce qu'il pensait et ce qui est établi crée le conflit cognitif qui fixe la notion. Il n'a donc pas le cours sous les yeux pendant le TP ; les « éléments de réponse » repliés restent à ouvrir **après** l'essai.
 - **Décision de séquence :** aucune installation ici. L'installation et la manipulation de Linux se font **après la virtualisation** : machine virtuelle en S06 et S07, terminal en S08 à S10. La partie D demande des **prédictions** (« J'anticipe ») que les étudiants vérifieront en S08.
-- **Points d'attention :** (1) Fortran et COBOL datent de la fin des années 1950 ; (2) CentOS Linux n'est plus maintenu : remplacé en pratique par des distributions compatibles (Rocky Linux, AlmaLinux) et par CentOS Stream, qui se place en amont de Red Hat Enterprise Linux ; (3) la frise de la partie A relie langage machine, systèmes et Internet.
+- **Points d'attention :** (1) CentOS Linux n'est plus maintenu : remplacé en pratique par des distributions compatibles (Rocky Linux, AlmaLinux) et par CentOS Stream, qui se place en amont de Red Hat Enterprise Linux ; (2) la frise de la partie A relie Unix, Internet, GNU, Linux et les premières distributions ; (3) le cours ne reprend plus l'histoire des langages : seuls restent les sujets de veille de la partie E.
 - **Dates :** les dates du corrigé sont de ma mémoire et à **confirmer par les sources que citent les étudiants**.
 - **Cycles de support** (Debian, Ubuntu LTS, RHEL) : volontairement **laissés à rechercher** : ils changent et je ne les fige pas.
 - **Veille :** quantique, énergie des centres de données, sécurité du système sont des sujets qui évoluent vite ; exiger des sources datées.
