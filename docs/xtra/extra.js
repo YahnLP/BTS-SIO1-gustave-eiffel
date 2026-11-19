@@ -145,7 +145,7 @@ if (window.document$) document$.subscribe(decorate); else document.addEventListe
   /* Zones de réponse : les « Voir la réponse » / « Correction » ne sont PAS imprimés ; ils deviennent des cadres lignés
      où l'élève écrit à la main (corrigé ensuite par l'enseignant). Les aides et commandes restent imprimées. */
   var ANSWER = /^(?:🔑\s*|🔒\s*)?(voir la réponse|voir des réponses|réponse|éléments de réponse|correction|causes cachées)/i;
-  var TEACHER = /^(points d.attention|notes? pour l.enseignant)/i;
+  var TEACHER = /^(points d.attention|notes? pour l.enseignant|aide\b|aides\b)/i;   /* « Aide (à ouvrir après avoir cherché) » : donne la réponse, donc jamais imprimée */
   function prepareAnswers(undo) {
     document.querySelectorAll(".md-content details").forEach(function (d) {
       var s = d.querySelector(":scope > summary"), t = clean(s ? s.textContent : "");
@@ -174,17 +174,41 @@ if (window.document$) document$.subscribe(decorate); else document.addEventListe
         }
       });
     });
-    function mkBlank(n) { var sp = document.createElement("span"); sp.className = n >= 40 ? "blank blank-long" : "blank"; sp.style.setProperty("--n", Math.min(n, 60)); return sp; }
+    /* Traits « ______ » (que Markdown transforme parfois en <strong><em>_</em></strong>) : supprimés à l'impression ;
+       la question reçoit à la place un cadre « Ma réponse » (sauf si un cadre suit déjà, ou dans un tableau). */
+    /* Lignes d'identité courtes (« Binôme : ____ / ____ ») : on garde de vrais traits à compléter */
+    host.querySelectorAll(".md-typeset > p, .md-content__inner > p").forEach(function (pp) {
+      if (pp.closest("details, table, li")) return;
+      var raw = pp.textContent;
+      if (!/^\s*(binôme|nom|prénom|date|classe|groupe|élève|équipe)\b[^_]{0,30}:/i.test(raw) || !/_/.test(raw)) return;
+      var oldHtml = pp.innerHTML, label = raw.match(/^\s*([^:_]{1,40}:)/)[1];
+      var rest = raw.slice(raw.indexOf(label) + label.length).replace(/_+/g, "\u0000").replace(/\u0000(\s*\u0000)+/g, "\u0000");
+      var html = '<strong>' + esc(label) + '</strong> ' + esc(rest).replace(/\u0000/g, '<span class="blank" style="--n:14"></span>');
+      pp.innerHTML = html;
+      undo.push(function () { pp.innerHTML = oldHtml; });
+    });
+    var blocks = [], seen = [];
+    function mark(node) {
+      if (node.closest && node.closest("details.print-hide")) return;
+      var td = node.closest ? node.closest("td, th") : null;
+      if (td) { if (!td.textContent.replace(/_/g, "").trim()) { /* cellule vide : case à remplir */ } return; }
+      var blk = node.closest("li, p"); if (!blk) return;
+      if (blk.tagName === "P" && blk.parentNode && blk.parentNode.tagName === "LI" && blk.parentNode.querySelectorAll(":scope > p").length === 1) blk = blk.parentNode;
+      if (seen.indexOf(blk) < 0) { seen.push(blk); blocks.push({ el: blk, n: 0 }); }
+      blocks[seen.indexOf(blk)].n += 1;
+    }
     host.querySelectorAll("strong").forEach(function (st) {
       if (!st.parentNode || st.dataset.pfDone) return;
       if (st.textContent.trim() !== "_") return;
       var group = [st], nx = st.nextSibling;
       while (nx && nx.nodeType === 1 && nx.tagName === "STRONG" && nx.textContent.trim() === "_") { group.push(nx); nx = nx.nextSibling; }
       group.forEach(function (g) { g.dataset.pfDone = "1"; });
-      var sp = mkBlank(group.length * 7), parent = st.parentNode;
-      parent.insertBefore(sp, st);
-      group.forEach(function (g) { parent.removeChild(g); });
-      undo.push(function () { if (sp.parentNode) { group.forEach(function (g) { sp.parentNode.insertBefore(g, sp); delete g.dataset.pfDone; }); sp.remove(); } });
+      if (st.closest("details.print-hide")) return;
+      mark(st);
+      var hid = group.map(function (g) { g.style.display = "none"; return g; });
+      var tail = (nx && nx.nodeType === 3 && /^\s*_+\s*$/.test(nx.nodeValue)) ? nx : null, tailOld = tail ? tail.nodeValue : "";
+      if (tail) tail.nodeValue = "";
+      undo.push(function () { hid.forEach(function (g) { g.style.display = ""; delete g.dataset.pfDone; }); if (tail) tail.nodeValue = tailOld; });
     });
     var walker = document.createTreeWalker(host, NodeFilter.SHOW_TEXT, { acceptNode: function (n) {
       if (!/_{3,}/.test(n.nodeValue)) return NodeFilter.FILTER_REJECT;
@@ -192,10 +216,26 @@ if (window.document$) document$.subscribe(decorate); else document.addEventListe
       return NodeFilter.FILTER_ACCEPT; } });
     var nodes = []; while (walker.nextNode()) nodes.push(walker.currentNode);
     nodes.forEach(function (n) {
-      var frag = document.createDocumentFragment();
-      n.nodeValue.split(/(_{3,})/).forEach(function (p) { if (/^_{3,}$/.test(p)) frag.appendChild(mkBlank(p.length)); else if (p) frag.appendChild(document.createTextNode(p)); });
-      var kids = Array.prototype.slice.call(frag.childNodes); n.parentNode.replaceChild(frag, n);
-      undo.push(function () { if (kids[0] && kids[0].parentNode) { kids[0].parentNode.insertBefore(n, kids[0]); kids.forEach(function (k) { if (k.parentNode) k.parentNode.removeChild(k); }); } });
+      var old = n.nodeValue; if (n.parentNode.closest && n.parentNode.closest("details.print-hide")) return; mark(n.parentNode);
+      n.nodeValue = old.replace(/\s*_{3,}\s*/g, " ");
+      undo.push(function () { n.nodeValue = old; });
+    });
+    /* Restes de traits mal analysés par Markdown (« _ » isolés, <em>_</em>) dans les blocs concernés */
+    blocks.forEach(function (b) {
+      b.el.querySelectorAll("em, strong").forEach(function (e) {
+        if (/^\s*_+\s*$/.test(e.textContent) && e.style.display !== "none" && !e.closest("code,pre")) { e.style.display = "none"; undo.push(function () { e.style.display = ""; }); }
+      });
+      var w = document.createTreeWalker(b.el, NodeFilter.SHOW_TEXT), tn, list = [];
+      while ((tn = w.nextNode())) { if (/(^|\s)_+(?=\s|$|[·,.;:\/)])/.test(tn.nodeValue) && !tn.parentNode.closest("code,pre")) list.push(tn); }
+      list.forEach(function (tn) { var o = tn.nodeValue; tn.nodeValue = o.replace(/(^|\s)_+(?=\s|$|[·,.;:\/)])/g, "$1"); undo.push(function () { tn.nodeValue = o; }); });
+    });
+    blocks.forEach(function (b) {
+      var nx = b.el.nextElementSibling;
+      if (nx && (nx.classList.contains("answer-zone") || (nx.classList.contains("print-hide") && nx.nextElementSibling && nx.nextElementSibling.classList.contains("answer-zone")))) return;
+      var z = document.createElement("div"); z.className = "answer-zone"; z.style.setProperty("--lines", b.n > 1 ? 3 : 2);
+      z.innerHTML = '<span class="az-label">Ma réponse</span>';
+      if (b.el.tagName === "LI") b.el.appendChild(z); else b.el.parentNode.insertBefore(z, b.el.nextSibling);
+      undo.push(function () { z.remove(); });
     });
   }
   /* Titres sans pictogrammes (aspect « manuel ») */
